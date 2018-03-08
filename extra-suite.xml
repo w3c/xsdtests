@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<ts:testSuite xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ nistMeta/AnnotatedTSSchema.xsd" name="TS_2006" releaseDate="2007-06-15" schemaVersion="W3C XML Schema 1.0 2nd edition">
+ <ts:annotation>
+  <ts:documentation>The IBM and Saxonica tests for the precisionDecimal data type
+    have been removed from the main test suite, and are referenced from here
+    to avoid losing them entirely</ts:documentation>
+ </ts:annotation>
+
+ <ts:testSetRef xlink:href="common/introspection.testSet"/>
+ <ts:testSetRef xlink:href="saxonMeta/PDecimal.testSet"/>
+ <ts:testSetRef xlink:href="ibmMeta/precisionDecimal.testSet"/> 
+
+  
+</ts:testSuite>

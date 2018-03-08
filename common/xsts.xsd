@@ -1,0 +1,2074 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--* AnnotatedTSSchema.xsd:  annotated schema for the XML Schema 
+    * Test Suite. 
+    *-->
+
+<!--* Revisions:
+    * 2012-01-20 : MSM : add new types to the known-token union, fix some
+    *   miscellaneous problems:
+    *   - rename type known-version as known-xsd-version
+    *   - rename type editions-1.0 as xsd-1.0-editions
+    *   - add values xml-1.0-1e-4e and xml-1.0-5e to type xml-substrate
+    *   - correct botched enumeration in runtime-schema-error (replace
+    *     'xml-1.0' and 'xml-1.1' with the correct enumeration,
+    *     'CTR-all-compile', 'CTR-all-runtime', and 'CTR-all-idep');
+    *     add query on whether these tokens are still relevant or whether
+    *     they no longer apply.
+    *   - add type XDM-filtering with values 'comments-and-PIs-excluded'
+    *     (default) and 'comments-and-PIs-included' (legal at user option).
+    * 2011-07-29 : MSM : add full-xpath-in-CTA and restricted-xpath-in-CTA
+    *   to known-token type
+    * 2010-07-02 : MSM : commit to XSTS common subdirectory
+    * 2010-06-21 : MSM : revisions to reflect proposal made in email
+    *   to test suite discussion list today, responding to MK
+    * 2010-06-14 : MSM : revisions to make treatment of versions
+    *   more coherent.  Add stylesheet link.  Mark up documentation
+    *   in HTML.  Move attribute documentation to the attribute
+    *   declarations.
+    * (undated)  : HST : add 'version' and 'implDe' attributes
+    * 2006-11-16 : HST : changed to a proper namespace, superseding note
+    *   (1) below.
+    * (undated) : JT: This schema differs from the official version 
+    *   adopted by the WG in that
+    *   1) these attribute declarations in the xsd:schema element:
+    *      xmlns:ts="http://www.w3.org/2003/XMLSchema/TestSuite/PLACEHOLDER"
+    *      targetNamespace="http://www.w3.org/2003/XMLSchema/TestSuite/PLACEHOLDER"
+    *   are replaced by lines to enable the use of a local copy of this 
+    *   schema.
+    *   2) The import declarations for XLink and XML namespace are given 
+    *   schemaLocation attributes.
+-->
+<?xml-stylesheet type="text/xsl" href="xsd.xsl"?>
+<xsd:schema xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/" 
+  targetNamespace="http://www.w3.org/XML/2004/xml-schema-test-suite/" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <xsd:import namespace="http://www.w3.org/1999/xlink" 
+    schemaLocation="http://www.w3.org/XML/2008/06/xlink.xsd"/>
+
+  <xsd:import namespace="http://www.w3.org/XML/1998/namespace" 
+    schemaLocation="http://www.w3.org/2001/xml.xsd"/>
+
+  <xsd:annotation>
+    <xsd:documentation>
+      <div xmlns="http://www.w3.org/1999/xhtml" >
+	<h2>This schema document</h2>
+
+	<p>This is the schema document for the July 2010 version of 
+	  the W3C XML Schema Test Suite collection (XSTS), as approved
+	  by the W3C XML Schema Working Group on May 12, 2003 and as
+	  modified since.  It defines the namespace:
+	</p>
+	<pre>
+	  http://www.w3.org/XML/2004/xml-schema-test-suite/
+	</pre>
+
+	<p>
+	  This version is makes a number of changes, vis a vis the
+	  version of April 2010.  That version in turn differs from
+	  the version originally approved by the WG in May 2003.  For
+	  a list of changes in this version, including one important
+	  change planned but not yet executed, see the changelist <a
+	  href="#changelist">below</a>.
+	</p>
+      </div>
+    </xsd:documentation>
+  </xsd:annotation>
+  <xsd:annotation>
+    <xsd:documentation>
+      <div xmlns="http://www.w3.org/1999/xhtml" >
+	<h2>Overall organization of this vocabulary</h2>
+
+	<p>
+	  The XSTS consists of a set of test suites, each of which is
+	  identified according to the versions of XSD it is designed
+	  to test. Previous versions of test suites are archived and
+	  are also available, identifiable by the version of the test
+	  suite itself.
+	</p>
+	<p>
+	  This schema defines three separate but related document
+	  types for the XSTS:
+	</p>
+	<ol>
+	  <li><p>
+	      The <tt>testSuite</tt> element is the root element of a
+	      document which defines a test suite as described above
+	      (e.g. the 2003-10-25 version of the test suite for
+	      version 1 of the Recommendation, or the 2010-08-31
+	      version of the test suite for XSD 1.0 First Edition, XSD
+	      1.0 Second Edition, and XSD 1.1).
+	    </p>
+	    <p>
+	      The principal purpose of a <tt>testSuite</tt> document
+	      is to provide a high-level description of the test suite
+	      and a set of links to documents defining the tests which
+	      constitute the test suite.
+	    </p>
+	    <p>
+	      Files containing <tt>testSuite</tt> documents
+	      conventionally have the filename suffix
+	      "<tt>.suite</tt>" or "<tt>.suite.xml</tt>" (or are named
+	      "<tt>suite.xml</tt>".
+	    </p>
+	  </li>
+	  <li>
+	    <p>
+	      The <tt>testSet</tt> element is the root element of a
+	      document which describes a set of tests. Each
+	      <tt>testSuite</tt> consists primarily of a set of links
+	      to <tt>testSet</tt> documents.  The scope of the
+	      <tt>testSet</tt> is typically determined by the
+	      contributor of the tests which make up the
+	      <tt>testSet</tt>: it is the unit in which tests are
+	      contributed to the collection.
+	    </p>
+	    <p>
+	      Files containing <tt>testSet</tt> documents
+	      conventionally have the filename suffix
+	      "<tt>.testSet</tt>" or "<tt>.testSet.xml</tt>".
+	    </p>
+	  </li>
+	  <li>	    
+	    <p>
+	      The <tt>testSuiteResults</tt> element is the root
+	      element of a document describing the results of testing
+	      a processor against a <tt>testSuite</tt>.
+	    </p>
+	    <p>
+	      Files containing <tt>testSuiteResults</tt> documents
+	      conventionally have the filename suffix
+	      "<tt>.results</tt>" or "<tt>.results.xml</tt>".
+	    </p>
+	  </li>
+	</ol>
+      </div>
+    </xsd:documentation>
+  </xsd:annotation>
+
+
+  <xsd:element name="testSuite">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    The root element of a document describing a set of tests for one
+	    or more versions of W3C XML Schema.
+	  </p>
+	  <p>
+	    The element has three attributes, each of which is required:
+	  </p>
+	  <ul>
+	    <li><p>
+	      <tt>name</tt> - the name of this test suite.
+	    </p></li>
+	    <li><p>
+	      <tt>releaseDate</tt> - the date on which this test
+	      suite was released. This value serves to identify the
+	      version of the test suite.
+	    </p></li>
+	    <li><p>
+	      <tt>schemaVersion</tt> - the versions of XSD for which
+	      the tests are designed.  This has documentary function
+	      only, and is intended for human readers.  The
+	      machine-processable version information is handled by
+	      the <tt>version</tt> attribute.
+	    </p></li>
+	    <li><p>
+		<tt>version</tt> - a list of version tokens indicating
+		versions and features for which at least some tests in the 
+		test suite are applicable.
+	      </p>
+	      <p>Any processor or processor configuration which
+		supports <em>any</em> of the tokens given should run
+		the tests.  Processors which support none of the named
+		features can skip the entire test suite without loss.
+		If no <tt>version</tt> value is given, or if the value
+		is the empty string, all processors should run the
+		tests.</p>
+	      <p>For example <code>version="1.1"</code> on a test suite
+		element indicates that XSD 1.1 processors will find
+		relevant tests, and XSD 1.0 processors will not,
+		while <code>version="1.0 1.1"</code>, or no
+		<code>version</code> attribute at all, indicates
+		that the test suite contains tests relevant to both.		
+	      </p>
+	      <p>Logically, the <tt>version</tt> attribute on
+		the <tt>testSuite</tt> element, if given explicitly,
+		should include all the tokens used on any
+		<tt>testSet</tt>, <tt>testGroup</tt>,
+		<tt>schemaTest</tt>, or <tt>instanceTest</tt> in the
+		test suite, and no others.  This is not necessarily
+		enforced, however, by the schema for this
+		vocabulary.</p>
+	    </li>
+	  </ul>
+	  <p>
+	    Two child elements may optionally be present:
+	  </p>
+	  <ul>
+	    <li><tt>annotation</tt> - zero or more instances of
+	      general documentation.</li>
+	    <li><tt>testSetRef</tt> - a set of references to the sets
+	      of tests which make up this test suite. No two test sets
+	      referenced may have the same name.</li>
+	  </ul>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ts:annotation" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="ts:testSetRef" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" use="required" type="xsd:Name"/>
+      <xsd:attribute name="releaseDate" use="required" type="xsd:date"/>
+      <xsd:attribute name="schemaVersion" use="required" type="xsd:string"/>
+      <xsd:attribute name="version" use="optional" type="ts:version-info"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:element name="testSetRef" type="ts:ref"/>
+
+
+  <xsd:element name="testSet">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    The root element of a document describing a set of tests,
+	    normally from a single contributor.  A contributor may
+	    supply any number of <tt>testSet</tt> files.
+	  </p>
+	  <p class="note">
+	    Note: In order to make it possible to browse the test
+	    suite in a browser, it is helpful if large test
+	    collections are broken up into several <tt>testSet</tt>
+	    documents of no more than a megabyte or so each.  If
+	    contributions have larger <tt>testSet</tt> documents, they
+	    may be broken up into smaller ones.
+	  </p>
+	  <p>
+	    The element has two attributes:
+	  </p>
+	  <ul>
+	    <li><p><tt>contributor (required)</tt> - the name of the contributor of
+		this <tt>testSet</tt>.  May contain any string of characters;
+		intended for human readers.</p></li>
+
+	    <li><p><tt>name (required)</tt> - the name of this <tt>testSet</tt>,
+	      which must be a name unique among the names of 
+	      <tt>testSet</tt> elements within the enclosing
+	      <tt>testSuite</tt>.</p></li>
+
+	    <li><p>
+		<tt>version (optional)</tt> - a list of version tokens indicating
+		versions and features for which at least some tests in the 
+		test set are applicable.</p>
+	      <p>Any processor or processor configuration which
+		supports <em>any</em> of the tokens given should run
+		the tests.  Processors which support none of the named
+		features can skip the entire test set without loss.
+		If no <tt>version</tt> value is given, or if the value
+		is the empty string, all processors should run the
+		tests.</p>
+	      <p>Logically, the tokens given in the <tt>version</tt>
+		attribute should all also be included in the
+		<tt>version</tt> attribute [if any] of any
+		<tt>testSuite</tt> including this test set.  And
+		similarly the <tt>version</tt> attribute on a
+		<tt>testSet</tt> element should include all the tokens
+		used on any <tt>testGroup</tt>, <tt>schemaTest</tt>,
+		or <tt>instanceTest</tt> in the test set, and no
+		others.  Otherwise processors may skip test sets they
+		ought to run.  This logical rule is not necessarily
+		enforced, however, by the schema for this
+		vocabulary.</p>
+	    </li>
+	  </ul>
+	  <p>
+	    Two child elements may optionally be present:
+	  </p>
+	  <ul>
+	    <li>
+	      <tt>annotation</tt> - zero or more instances of general
+	      documentation.
+	    </li>
+	    <li>
+	      <tt>testGroup</tt> - a set of <tt>testGroup</tt>
+	      elements, each of which defines a group of closely
+	      related tests.
+	      
+	      No two <tt>testGroup</tt> elements in the same
+	      <tt>testSet</tt> may have the same name.
+	    </li>
+	  </ul>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ts:annotation" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="ts:testGroup" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="contributor" use="required" type="xsd:string"/>
+      <xsd:attribute name="name" use="required" type="xsd:Name"/>
+      <xsd:attribute name="version" use="optional" type="ts:version-info"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+    <xsd:unique name="uniqueGroupName">
+      <xsd:annotation>
+        <xsd:documentation>
+	  <div xmlns="http://www.w3.org/1999/xhtml" >
+	    <p>
+	      No two <tt>testGroup</tt> elements in the same
+	      <tt>testSet</tt> may have the same name.
+	    </p>
+	  </div>
+        </xsd:documentation>
+      </xsd:annotation>
+      <xsd:selector xpath="ts:testGroup"/>
+      <xsd:field xpath="@name"/>
+    </xsd:unique>
+  </xsd:element>
+
+
+  <xsd:element name="testGroup">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    This element groups a collection of closely related
+	    tests. All instance tests in the group are to be
+	    validated against the same schema; if a <tt>schemaTest</tt>
+	    is present, it is the schema produced for that test
+	    which should be used for the instance tests; if no
+	    <tt>schemaTest</tt> is present, the instance tests
+	    should be validated against a schema consisting only
+	    of the built-in components.
+	  </p>
+	  <p>	    
+	    The <tt>testGroup</tt> element has one attribute which is
+	    required:
+	  </p>
+	  <ul>
+	    <li>
+	      <tt>name</tt> - an identifier for the <tt>testGroup</tt>
+	      which differs from the name of any other
+	      <tt>testGroup</tt> in the enclosing <tt>testSet</tt>.
+	    </li>
+	  </ul>
+	  <p>	    
+	    And one attribute which is optional:
+	  </p>
+	  <ul>
+	    <li><p>
+		<tt>version</tt> - a list of version tokens, indicating
+		that the tests in the group are applicable to implementations
+		supporting <em>any</em> of the versions or features
+		or behaviors indicated.  Any processor or processor 
+		configuration which supports <em>any</em> of the features
+		indicated should run the tests.  Processors which support 
+		<em>none</em> of them can skip the entire test set.
+		See the definition of the 
+		<a href="#type_version-info"><tt>version-info</tt></a>
+		type.
+	      </p>
+	      <p>
+		Logically, all keywords appearing here should also appear
+		in the <tt>version</tt> attribute of the enclosing
+		<tt>testSet</tt>, if it has one. 
+	      </p>
+	    </li>
+	  </ul>
+	  <p>
+	    Four child elements may optionally be present:
+	  </p>
+	  <ul>
+	    <li>
+	      <p><tt>annotation</tt> - zero or more instances of
+		general documentation.</p>
+	    </li>
+	    <li>
+	      <p><tt>documentationReference</tt> - any number of
+		references to external documentation upon which the
+		test is based, e.g. links to relevant sections of the
+		Recommendation, to the Errata, etc.</p>
+	    </li>
+	    <li><p>
+		<tt>schemaTest</tt> - at most on <tt>schemaTest</tt>
+		element, containing any number of
+		<tt>schemaDocument</tt> elements, each of which holds
+		information on a single schema document.
+	      </p>
+	      <p>
+		When more than one schema document is present, a single
+		schema is constructed from the set (or from other
+		schemas via import).
+	      </p>
+	      <p class="note">Note: XSD's rules for schema composition
+		mean that the order in which schema documents are
+		encountered may be significant.  When more than one
+		schema document is listed in the <tt>schemaTest</tt>
+		element, the test should be run as if the schema
+		documents given were loaded one by one, in order.  For
+		most processors that will correspond to the result of
+		processing an otherwise empty schema document for an
+		otherwise unused namespace, containing one
+		<tt>xsd:import</tt> element for each schema document
+		listed in the <tt>schemaTest</tt>, with the location
+		indicated, in a processing mode that involves
+		following the schema-location hints in import
+		statements.
+	      </p>
+	      <p class="note">Note: the working group has made no
+		decision on whether the schema should be constructed
+		solely from the schema documents listed in the
+		<tt>schemaTest</tt> element, or from those schema
+		documents plus the transitive closure of their
+		references to other schema documents.  Similarly, the
+		working group has not decided whether
+		<tt>schemaLocation</tt> hints in the instance tests
+		should be honored or not.  It is therefore advisable
+		to draft test cases without dependencies on
+		<tt>schemaLocation</tt> hints and the like.
+	      </p>
+	      <p class="note">Note: work is pending on these issues of
+		schema composition.  When it's complete, this part o
+		the test suite schema may be expected to change.
+	      </p>
+	      <p>
+		Schema documents may be omitted, for the purpose of
+		testing a processor's validation of an instance
+		containing only the built-in datatypes defined in the
+		Recommendation.
+	      </p>
+	    </li>
+	    <li>
+	      <p><tt>instanceTest</tt> - any number of elements, each
+		of which holds information on a single instance
+		document to be validated against the included
+		schema.</p>
+	    </li>
+	  </ul>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ts:annotation" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="ts:documentationReference" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="ts:schemaTest" minOccurs="0"/>
+        <xsd:element ref="ts:instanceTest" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" use="required" type="xsd:Name"/>
+      <xsd:attribute name="version" use="optional" type="ts:version-info"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+    <xsd:unique name="uniqueTestName">
+      <xsd:annotation>
+        <xsd:documentation>
+	  <div xmlns="http://www.w3.org/1999/xhtml" >
+	    <p>
+	      No two tests within a test group may have the same name.
+	    </p>
+	  </div>
+        </xsd:documentation>
+      </xsd:annotation>
+      <xsd:selector xpath="ts:schemaTest|ts:instanceTest"/>
+      <xsd:field xpath="@name"/>
+    </xsd:unique>
+  </xsd:element>
+
+
+  <xsd:element name="schemaTest">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    This element groups together information about the schema
+	    for a particular test group.
+	  </p>
+	  <p>
+	    It has one attribute which is required:
+	  </p>
+	  <ul>
+	    <li>
+	      <tt>name</tt> - the name of the schema test, which must be
+	      unique within the enclosing <tt>testGroup</tt> (i.e. it must
+	      differ from the name(s) of any associated <tt>instanceTest</tt>
+	      elements).
+	    </li>
+	  </ul>
+	  <p>
+	    and one attribute which is optional, for identifying a subset
+	    of versions and/or editions for which the test is valid:
+	  </p>
+	  <ul>
+	    <!--*
+	    <li>
+	      <tt>implDe</tt> - the test depends on something
+	      identified in the spec. as implementation-defined or
+	      implementation-dependent.  Disagreement with the expected
+	      result is therefore not necessarily a sign
+	      that the specification has not been implemented correctly.
+	    </li>
+	    *-->
+	    <li><p>
+		<tt>version</tt> - Tests which only apply to certain
+		versions of XML Schema list those versions in the
+		<tt>version</tt> attribute.  Processors supporting
+		<em>any</em> version or feature indicated by a keyword
+		in the attribute should run the test.  (Or, phrased
+		more declaratively: the test is meaningful to any
+		processor which supports any of the features or
+		versions listed.)
+	      </p>
+	      <p>If no value is specified, all processors which 
+		haven't already skipped the enclosing test group,
+		test set, or test suite should run the test.  
+	      </p>
+	      <p>
+		The value is a list of version tokens.  See the
+		definition of the <a
+		  href="#type_version-info"><tt>version-info</tt></a>
+		type.</p> 
+	      <p>Note that the omission of a version token on a schema
+		test is in some sense strictly advisory: any schema
+		test is meaningful for any processor in any
+		configuration.  For processor configurations not
+		supporting any of the features or versions named, the
+		expected result is that the schema is not a conforming
+		schema.  This will <em>not</em> be indicated with an
+		explicit <tt>expected</tt> element.
+	      </p>
+	    </li>
+	    <!--*
+	    <li>
+	      <tt>edition</tt> - Tests which only apply to certain
+	      editions of XML Schema list those editions in the
+	      edition attribute. <tt>version</tt> should have a single
+	      value if <tt>edition</tt> has a value. An absent
+	      <tt>edition</tt> implies that the test applies to all
+	      editions of the version(s) specified in <tt>version</tt>.
+	    </li>
+	    *-->
+	  </ul>
+	  <p>
+	    One child element is required:
+	  </p>
+	  <ul>
+	    <li>
+	      <tt>schemaDocument</tt> - at least one link to a file
+	      containing a schema document. The schema for the test is
+	      constructed from the set (or from other schemas via
+	      import).
+	    </li>
+	  </ul>
+	  <p>Four child elements may optionally be present:</p>
+	  <ul>
+	    <li><tt>annotation</tt> - zero or more instances of general
+	      documentation</li>
+	    <li>
+	      <tt>expected</tt> - indicates the conformance or 
+	      non-conformance of the schema described by the schema 
+	      document(s)
+	      (<tt>valid</tt> = conformant, <tt>invalid</tt> =
+	      non-conformant).
+	    </li>
+	    <li>
+	      <tt>current</tt> - the current status of this test in
+	      the XSTS (an indication of the test's accuracy in testing
+	      the feature it is intended to test).
+	    </li>
+	    <li>
+	      <tt>prior</tt> - the history of any changes in the
+	      status of this test.
+	    </li>
+	  </ul>
+	  <p>
+	    The elements "<tt>expected</tt>" and "<tt>current</tt>"
+	    may be absent when tests are contributed, but will always
+	    be present for tests included in the XSTS.
+	  </p>
+	  <p>
+	    The <tt>current</tt> and <tt>prior</tt> elements were originally
+	    designed for tracking changes of status in tests; they can and
+	    should be used to keep a general change history of the test.  
+	    Whenever anything changes that may be of importance for users
+	    of the test suite, it is appropriate to clone the existing
+	    <tt>current</tt> element into a pair of similar elements, then
+	    rename the second one <tt>prior</tt>.  In the new <tt>current</tt>
+	    element, the change made should be described in the 
+	    <tt>annotation</tt> children, and the date of the change
+	    should be recorded. 
+	  </p>
+	  <p>
+	    Examples:  The status of the test changes.  The expected 
+	    result is questions and reaffirmed.  The expected result is
+	    changed, or multiple expected results are given for different
+	    processor configurations.
+	  </p>
+	  <p>
+	    For status changes involving bug reports, the relevant status
+	    entries should have a Bugzilla cross-reference.
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ts:annotation" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="ts:schemaDocument" maxOccurs="unbounded"/>
+        <xsd:element ref="ts:expected" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="ts:current" minOccurs="0"/>
+        <xsd:element ref="ts:prior" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" use="required" type="xsd:Name"/>
+      <xsd:attribute name="version" use="optional" type="ts:version-info"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:element name="instanceTest">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    This element groups together information about an instance
+	    document which should be validated against the schema
+	    referenced in the enclosing <tt>testGroup</tt>.
+	  </p>
+	  <p>
+	    Note: per section 5.2 "Assessing Schema-Validity" of the
+	    Recommendation "XML Schema Part 1: Structures", validation
+	    may be started in a variety of ways.  For the purposes of
+	    the XSTS, only the third method shall be used:
+	  </p>
+	  <blockquote>
+	    <p>
+	      The processor starts from Schema-Validity Assessment
+	      (Element) (3.3.4) with no stipulated declaration or
+	      definition.
+	    </p>
+	  </blockquote>
+	  <p>The validation root is the outermost element in the
+	    instance document.</p>
+	  <p>
+	    The <tt>instanceTest</tt> element has one required
+	    attribute:
+	  </p>
+	  <ul>
+	    <li>
+	      <tt>name</tt> - the name of the instance document, which
+	      must differ from the name of any other
+	      <tt>schemaTest</tt> or <tt>instanceTest</tt> element
+	      within the enclosing <tt>testGroup</tt>
+	    </li>
+	  </ul>
+	  <p>
+	    and one attribute which is optional, for signaling
+	    that the test is applicable only to a particular set of
+	    versions of XSD:
+	  </p>
+	  <ul>
+	    <!--*
+	    <li>
+	      <tt>implDe</tt> - the test depends on something
+	      identified in the spec as implementation-defined or
+	      implementation-dependent.  Disagreement with the expected
+	      result is therefore not necessarily a sign that the
+	      specification has not been ipmlemented correctly.
+	    </li>
+	    *-->
+	    <li><p>
+		<tt>version</tt> - Tests which only apply to certain
+		versions of XML Schema list those versions in the
+		<tt>version</tt> attribute.  
+	      </p>
+	      <p>Processors supporting <em>any</em> version or feature
+		indicated by a keyword in the attribute should run the
+		test.  (Or, more declaratively: the test is meaningful
+		to any processor which supports any of the features or
+		versions listed.)  If no value is specified, all
+		processors which haven't already skipped the enclosing
+		test group, test set, or test suite should run the
+		test.
+	      </p>
+	      <p>
+		The value is a list of version tokens.  See the
+		definition of the <a
+		  href="#type_version-info"><tt>version-info</tt></a>
+		type.</p> 
+	      <p class="note">Note: running instance tests with a
+		processor for an inapplicable version may produce an
+		failure owing to non-conformant constructs in the
+		schema document; if the processor does not detect the
+		problem or continues anyway, the results are certain
+		to be meaningless.
+	      </p>
+	    </li>
+	    <!--*
+	    <li>
+	      <tt>edition</tt> - Tests which only apply to certain
+	      editions of XML Schema list those editions in the
+	      edition attribute. <tt>version</tt> should have a single
+	      value if <tt>edition</tt> has a value. An absent
+	      <tt>edition</tt> implies that the test applies to all
+	      editions.
+	    </li>
+	    *-->
+	  </ul>
+	  <p>
+	    One child element is required:
+	  </p>
+	  <ul>
+	    <li>
+	      <tt>instanceDocument</tt> - a link to a file containing
+	      the instance document.
+	    </li>
+	  </ul>
+	  <p>
+	    Four child elements may optionally be present:
+	  </p>
+	  <ul>
+	    <li><tt>annotation</tt> - zero or more instances of general
+	      documentation</li>
+	    <li>
+	      <tt>expected</tt> - the prescribed validation outcome for
+	      the instance document.  Optional, and repeatable.
+	      Each <tt>expected</tt> element indicates the result 
+	      on this test for a particular set of versions of the 
+	      language.
+	    </li>
+	    <li>
+	      <tt>current</tt> - the current status of this test in
+	      the XSTS (an indication of the test's accuracy in testing
+	      the feature it is intended to test).
+	    </li>
+	    <li>
+	      <tt>prior</tt> - the history of any changes in the
+	      status of this test.
+	    </li>
+	  </ul>
+	  <p>
+	    The elements "<tt>expected</tt>" and "<tt>current</tt>" may 
+	    be absent when tests are contributed, but will always be 
+	    present for tests included in the XSTS.
+	  </p>
+	  <p>The <tt>current</tt> and <tt>prior</tt> elements should
+	    be used to keep a change history of the test; see
+	    discussion under the <a href="#elem_schemaTest"
+	      ><tt>schemaTest</tt></a> element.
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ts:annotation" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="ts:instanceDocument"/>
+        <xsd:element ref="ts:expected" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="ts:current" minOccurs="0"/>
+        <xsd:element ref="ts:prior" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" use="required" type="xsd:Name"/>
+      <xsd:attribute name="version" use="optional" type="ts:version-info"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:element name="schemaDocument" type="ts:ref"/>
+  <xsd:element name="instanceDocument" type="ts:ref"/>
+
+
+  <xsd:element name="current" type="ts:statusEntry">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>The current status of a test in the XSTS.</p>
+	  <p>This element has two attributes, both of which are
+	    required:</p>
+	  <ul>
+	    <li><tt>status</tt> - the status of the test. One of
+	      "<tt>accepted</tt>", "<tt>stable</tt>",
+	      "<tt>disputed-test</tt>" or "<tt>disputed-spec</tt>"
+	      (see the XSTS website for an explanation of these values).
+	    </li>
+	    <li>
+	      <tt>date</tt> - the date on which the test or the
+	      metadata (including the value in the
+	      <tt>status</tt> attribute, but also anything else
+	      of importance) was last changed.
+	    </li>
+	  </ul>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+
+  <xsd:element name="prior" type="ts:statusEntry">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>A former status of a test in the XSTS.</p>
+	  <p>This element has two attributes, both of which are
+	    required:</p>
+	  <ul>
+	    <li>
+	      <tt>status</tt> - the former status of the test. One of
+	      "<tt>accepted</tt>", "<tt>stable</tt>",
+	      "<tt>disputed-test</tt>" or "<tt>disputed-spec</tt>"
+	      (see the XSTS website for an explanation of these values).
+	    </li>
+	    <li>
+	      <tt>date</tt> - the date on which the test or the
+	      metadata (including the value in the
+	      <tt>status</tt> attribute, but also anything else
+	      of importance) was last changed.
+	    </li>
+	  </ul>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+
+  <xsd:complexType name="statusEntry">
+    <xsd:sequence>
+      <xsd:element ref="ts:annotation" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="status" use="required" type="ts:status"/>
+    <xsd:attribute name="date" use="required" type="xsd:date"/>
+    <xsd:attribute name="bugzilla" type="ts:bugURI"/>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+
+  <xsd:simpleType name="status">
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="accepted"/>
+      <xsd:enumeration value="stable"/>
+      <xsd:enumeration value="queried"/>
+      <xsd:enumeration value="disputed-test"/>
+      <xsd:enumeration value="disputed-spec"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+ 
+ <xsd:simpleType name="bugURI">
+  <xsd:restriction base="xsd:anyURI">
+   <xsd:pattern value="http://www\.w3\.org/Bugs/Public/show_bug\.cgi\?id=[0-9]*"/>
+  </xsd:restriction>
+ </xsd:simpleType>
+
+
+  <xsd:element name="expected">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>The validation outcome prescribed by the spec
+	    for a test in the XSTS.</p>
+	  <p>This element has one optional attribute:</p>
+	  <ul>
+	    <li>
+	      <p><tt>version</tt> - a list of version tokens.
+		The result specified is applicable to processor
+		configurations supporting <em>all</em> of the
+		indicated versions or features of XSD.
+		See the definition of the 
+		<a href="#type_version-info"><tt>version-info</tt></a>
+		type.
+	      </p>      
+	      <p>It is an error for more than one <tt>expected</tt>
+		element to be applicable to any given processor
+		configuration; this is most easily avoided by
+		making sure that any two sibling <tt>expected</tt>
+		elements have <tt>version</tt> attributes containing
+		mutually exclusive tokens.
+	      </p>
+	    </li>
+	  </ul>
+	  <p class="note">Note: The meaning of the <tt>version</tt>
+	  attribute on this element differs from its meaning
+	  elsewhere.</p>
+	  <p>
+	    On tests and elements for groups of
+	    tests (<tt>testGroup</tt> etc.), a <tt>version</tt>
+	    attribute of the form <code>version="<i>x</i> <i>y</i>
+	      <i>z</i>"</code> means "If <strong>any</strong> of
+	    <tt>x</tt>, <tt>y</tt>, or <tt>z</tt> are supported, tests
+	    in this group are applicable." 
+	  </p> 
+	  <p>On the <tt>expected</tt> element, the
+	    meaning changes in a crucial way: the tokens are connected
+	    with an implicit <tt>and</tt>, not an <tt>or</tt>. So
+	    <code>version="<i>x</i> <i>y</i> <i>z</i>"</code> means
+	    "If <strong>all</strong> of <tt>x</tt>, <tt>y</tt>, or
+	    <tt>z</tt> are supported, the prescribed outcome is as
+	    described.  So on a test group, <code>version="1.0
+	      1.1"</code> means tests for both versions are included.
+	    On an <tt>expected</tt> element, <code>version="1.0
+	      1.1"</code> would mean the expected result holds only if a
+	    given processor is using both version 1.0 and version 1.1
+	    in the same validation episode.  Since the two tokens are
+	    defined as mutually exclusive, this would be a
+	    contradiction.
+	  </p>
+	  <p class="note">As a matter of test suite design, it
+	    is a good idea to keep <tt>version</tt> attributes
+	    on <tt>expected</tt> elements to a single token if
+	    possible, to minimize opportunities for confusion.
+	  </p>
+	  <p>And one required attribute:</p>
+	  <ul>
+	    <li>
+	      <p><tt>validity</tt> - indicates the expected outcome
+		of the test, using a value of type
+		<a href="#type_expected-outcome">ts:expected-outcome</a>.</p>
+	      <p>
+		For an instance test, this typically indicates the expected
+		value of the <code>[validity]</code> property on the
+		root element of the instance document, or indicates
+		that the value may vary among processors.
+	      </p>
+	      <p>
+		For a schema test, this indicates whether the
+		schema created from the schema documents in the test
+		is expected to be a conforming schema (<code>valid</code>)
+		or a non-conforming schema (<code>invalid</code>).
+		The value <code>notKnown</code> has no meaning
+		for a schema test.
+	      </p>
+	    </li>
+	  </ul>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:attribute name="validity" use="required" type="ts:expected-outcome"/>
+      <xsd:attribute name="version" use="optional" type="ts:version-info"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:simpleType name="test-outcome">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    Enumerates the possible outcomes of running a test.
+	    Usually, these are values of the <tt>[validity]</tt>
+	    property on the validation root.
+	  </p>
+      
+	  <p>The most common values are:</p>
+	  <dl>
+	    <dt><tt>valid</tt></dt>
+	    <dd>(For instance tests) The value of the <tt>[validity]</tt>
+	      property on the validation root is <tt>valid</tt>.</dd>
+	    <dd>(For schema tests) The schema is a conforming schema.</dd>
+	    
+	    <dt><tt>invalid</tt></dt>
+	    <dd>(For instance tests) The value of the <tt>[validity]</tt>
+	      property on the validation root is <tt>invalid</tt>.</dd>
+	    <dd>(For schema tests) The schema is <em>not</em> a 
+	      conforming schema.</dd>
+	    
+	    <dt><tt>notKnown</tt></dt>
+	    <dd>(For instance tests) The value of the <tt>[validity]</tt>
+	      property on the validation root is <tt>notKnown</tt>.</dd>
+	    <dd>(For schema tests, this value is meaningless.)</dd>
+	  </dl>
+	  <p>Note:  processors built as <a 
+	      href="http://www.w3.org/TR/xmlschema11-1/#key-validator"
+	      >instance validators</a> are not required by XSD to 
+	    distinguish between invalid documents and documents with
+	    unknown validity; it is thus not an absolute requirement
+	    (although it is desirable for clarity)
+	    that a test result distinguish <tt>invalid</tt>
+	    from <tt>notKnown</tt> outcomes.
+	  </p>
+	  
+	  <p>One further value is needed only in fairly specialized
+	    circumstances (but is essential there):</p>
+	  <dl>
+	    <dt><tt>runtime-schema-error</tt></dt>
+	    <dd><p>(For instance tests) The instance has a schema with
+		a latent error (see description below in the documentation
+		for type <a href="#type_expected-outcome">ts:expected-outcome</a>);
+		the processor did not detect the latent error on the
+		corresponding schema test, but the instance document 
+		has exposed the error (by including content
+		which is valid against the apparent content model of the
+		governing type, but not valid against the base type)
+		and the processor has detected the schema error in the
+		course of instance validation.
+	      </p>
+	      <p>Note: processors are encouraged, though not required, to
+		distinguish this outcome from <tt>invalid</tt>, since
+		on an instance test <tt>invalid</tt> normally means that
+		the processor has found an invalid instance, not a
+		non-conforming schema.
+	      </p>
+	    </dd>
+	    <dd><p>(For schema tests) The value <tt>runtime-schema-error</tt>
+		is meaningless for schema tests and should not be used for
+		them.  (It would be a contradiction in terms.)</p>
+	    </dd>
+	  </dl>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="valid"/>
+      <xsd:enumeration value="invalid"/>
+      <xsd:enumeration value="notKnown"/>
+      <xsd:enumeration value="runtime-schema-error"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="expected-outcome">
+    <xsd:annotation>
+      <xsd:documentation>      
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    Enumerates the possible values for the prescribed outcome
+	    of a test.  Values include both (a) the possible values of
+	    type <a href="#type_test-outcome">ts:test-outcome</a> and
+	    the following additional values:
+	  </p>
+	  <dl>
+	    <dt><tt>implementation-defined</tt></dt>
+	    <dd>(For instance tests) The value of the
+	      <tt>[validity]</tt> property on the validation root
+	      depends upon some property or behavior which is
+	      explicitly described in the relevant version of the spec
+	      as "implementation-defined", or for which the spec explicitly
+              imposes a requirement that implementations specify their
+              behavior.  (It follows that this
+	      value should never occur for 1.0 tests.)</dd>
+	    <dd>(For schema tests) The conformance of the schema
+	      depends upon some property or behavior explicitly
+	      described in the spec as "implementation-defined", 
+              or for which the spec explicitly
+              imposes a requirement that implementations specify their
+              behavior.</dd>
+	  </dl>
+
+	  <p>Note: in most cases of implementation-defined behaviors,
+	    as a matter of test suite design it is better to analyse
+	    the set of possible implementation behaviors, define
+	    version tokens for the possible behaviors, and specify
+	    more informative results based on those tokens.  The value
+	    <tt>implementation-defined</tt> is provided for situations
+	    where this is not feasible for whatever reason.
+	  </p>
+
+	  <dl>
+	    <dt><tt>implementation-dependent</tt></dt>
+	    <dd>(For instance tests) The value of the
+	      <tt>[validity]</tt> property on the validation root
+	      depends upon some property or behavior which is
+	      explicitly described in the relevant version of the spec
+	      as "implementation-dependent", or otherwise explicitly
+	      described as varying among implementations but not
+	      "implementation-defined".  (For XSD 1.0, this will often
+	      take the form of a normative "<span
+	      class="rfc">may</span>" in the text.)
+	    </dd>
+	    <dd>(For schema tests) The conformance of the schema
+	      depends upon some property or behavior explicitly
+	      described in the spec as "implementation-dependent" or
+	      as varying among implementations, but not described as
+	      "implementation-defined".</dd>
+    
+	    <dt><tt>indeterminate</tt></dt>
+	    <dd>The intended result is indeterminate for one of the
+	      following reasons, or for other reasons:<ul>
+		<li>The result is under-determined (the spec is vague
+		  or underspecified), but not described explicitly as
+		  varying among conforming implementations.
+		</li>
+		<li>The spec imposed contradictory requirements on the
+		  result. (I.e. the result is
+		  <em>over-determined.)</em>
+		</li>
+		<li><!--* The working group cannot agree on *-->
+		  There is an unresolved dispute within the working
+		  group as to what the spec requires the result to be.
+		  (This includes cases where the working group cannot
+		  agree on whether the spec explicitly labels the
+		  result as implementation-dependent or
+		  implementation-defined or not, as well as cases
+		  where the group cannot agree on how to apply the
+		  spec to the case in hand.)
+		</li>
+	      </ul>
+	    </dd>
+	  </dl>
+
+	  <p>N.B. the values <tt>implementation-dependent</tt> and
+	    <tt>implementation-defined</tt> should be used only when
+	    the spec is explicit about the implementation-dependence
+	    of the result and it is thus clear that the
+	    implementation-dependence is a design choice consciously
+	    made by the working group. They must not be used in cases
+	    where the spec simply appeals to some concept which it
+	    turns out not to define: such cases are to be marked
+	    <tt>indeterminate</tt>.
+	  </p>
+
+	  <p>Note:  in most cases, as a matter of language design
+	    it is better for the language specification to prescribe
+	    clearly a particular result for a test, or to identify the
+	    result explicitly as implementation-defined or
+	    implementation-dependent.  The value 
+	    <tt>indeterminate</tt> is provided for situations where 
+	    this has not been done for whatever reason.
+	  </p>
+	  <p class="note">The value <tt>invalid-latent</tt> described
+	    in earlier drafts of this schema document is no longer
+	    needed; the version keywords for complex-type restriction
+	    behaviors can be used to describe the relevant cases
+	    more precisely.
+	  </p>
+
+<!--*
+	  <p>One further value is needed only in fairly specialized
+	    circumstances (but is essential there):</p>
+	  <dl>
+	    <dt><tt>invalid-latent</tt></dt>
+
+	    <dd><p>(For schema tests) The schema does not conform but
+		the spec explicitly allows conforming processors to
+		accept the schema provisionally, because processors
+		are not required to detect the problem by examining
+		the schema in isolation.</p>
+	      <p>If the processor detects the problem during a schema
+		test, it should label the schema non-conforming; if it
+		does not detect the problem then the schema will
+		apparently pass the schema test, but the problem
+		should be detected in an instance test.
+	      </p>
+	      <p>Cases in which this value is applicable are described in
+		section <a
+		  href="http://www.w3.org/TR/xmlschema11-1/#sec-derivation-ok-restriction"
+		  >3.4.6.3 Derivation Valid (Restriction, Complex)</a> of
+		XSD 1.1: when a complex type with <tt>all</tt>-group is
+		derived by restriction from another complex type.
+	      </p>
+	    </dd>
+
+	    <dd><p>(For instance tests) The value <tt>invalid-latent</tt>
+		should not be used for instance tests.  Instead:</p>
+	      <ul>
+		<li>If the instance document exposes the latent schema
+		  error (normally by including content which is valid
+		  against the apparent content model of the governing
+		  type, but not valid against the base type), then use
+		  <tt>runtime-schema-error</tt>. 
+		  (<em>Or should we just specify <tt>invalid</tt> 
+		    instead?</em>)</li>
+		<li>If the instance document <em>does not</em> expose
+		  the latent schema error, then use
+		  <tt>implementation-dependent</tt>, since the
+		  processor is explicitly authorized to treat such
+		  instances as valid, but also explicitly authorized
+		  to detect the latent schema error even if the
+		  instance does not force it to the surface.
+		</li>
+	      </ul>
+	      <p>Note: By distinguishing these two situations in the
+		instance tests, a test group can provide fuller
+		testing for the behavior of processors in such cases,
+		with a <tt>schemaTest</tt> (expected outcome
+		<tt>invalid-latent</tt>), instance tests which expose
+		the latent error (expected outcome
+		<tt>runtime-schema-error</tt>), and instance tests
+		which allow but do not require the processor to detect
+		the schema error (expected outcome
+		<tt>implementation-dependent</tt>).
+	      </p>
+	    </dd>
+
+	  </dl>
+*-->
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    
+    <xsd:union memberTypes="ts:test-outcome">
+      <xsd:simpleType>
+	<xsd:restriction base="xsd:token">
+	  <xsd:enumeration value="implementation-defined"/>
+	  <xsd:enumeration value="implementation-dependent"/>
+	  <xsd:enumeration value="indeterminate"/>
+	  <xsd:enumeration value="invalid-latent"/>
+	</xsd:restriction>
+      </xsd:simpleType>
+    </xsd:union>
+  </xsd:simpleType>
+
+
+  <xsd:element name="testSuiteResults">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    This is the root element of a document containing a test
+	    result report. The report takes the form of a set of test
+	    results returned by a processor/validator when run against
+	    the XSTS.
+	  </p>
+	  <p>
+	    It has three required attributes:
+	  </p>
+	  <ul>
+	    <li>
+	      <tt>suite</tt> - the name of the test suite to which
+	      these results correspond.  This should be the value of
+	      the <tt>name</tt> attribute of the <tt>testSuite</tt>
+	      element at the root of the test suite document
+	      describing the tests to which these results correspond.
+	      </li>
+	    <li>
+	      <tt>processor</tt> - some identifying information for
+	      the processor/ validator which produced the reported
+	      results. The value of this attribute is left to the
+	      discretion of the reporter.
+	      </li>
+	    <li>
+	      <tt>submitDate</tt> - the date on which these results
+	      were submitted to the XSTS Task Force.
+	      </li>
+	  </ul>
+	  <p>The element also has one optional attribute:</p>
+	  <ul>
+	    <li>
+	      <tt>publicationPermission</tt> - the degree to which the
+	      result reporter authorizes the W3C to disseminate the
+	      reported results. One of "<tt>W3C members</tt>" or
+	      "<tt>public</tt>" (see the XSTS website for an explanation
+	      of these values). If this attribute is absent, no
+	      permission to publish is granted.
+	    </li>
+	  </ul>
+	  <p>This element has two optional elements:</p>
+	  <ul>
+	    <li>
+	      <tt>annotation</tt> - zero or more instances of more
+	      detailed (<tt>ts:documentation</tt>) or structured
+	      (<tt>ts:appinfo</tt>) information or commentary
+	      regarding the enclosed test results.
+	    </li>
+	    <li>
+	      <tt>testResult</tt> - any number of reports of the
+	      results of individual tests. Any results may be omitted,
+	      particularly those for tests of features for which the
+	      processor claims no support.
+	    </li>
+	  </ul>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ts:annotation" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="ts:testResult" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="suite" use="required" type="xsd:Name"/>
+      <xsd:attribute name="processor" use="required" type="xsd:string"/>
+      <xsd:attribute name="submitDate" use="required" type="xsd:date"/>
+      <xsd:attribute name="publicationPermission">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="W3C members"/>
+            <xsd:enumeration value="public"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:attribute>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:element name="testResult">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    The result of an individual instance test or a schema test.
+	  </p>
+	  <p>        
+	    This element has four required attributes:
+	  </p>
+	  <ul>
+	    <li>
+	      <tt>validity</tt> - the validition outcome of the test.
+	      A value of type <a href="#type_expected-outcome">ts:expected-outcome</a>,
+	      i.e. 
+	      one of "<tt>valid</tt>", "<tt>invalid</tt>",
+	      "<tt>notKnown</tt>", or "<tt>runtime-schema-error</tt>".
+	    </li>
+	    <li>
+	      <tt>set</tt> - the value of the "<tt>name</tt>"
+	      attribute of the test set to which the test belongs.
+	    </li>
+	    <li>
+	      <tt>group</tt> - the value of the "<tt>name</tt>"
+	      attribute of the test group to which the test belongs.
+	    </li>
+	    <li>
+	      <tt>test</tt> - the value of the "<tt>name</tt>"
+	      attribute of the schema test or instance test, the
+	      validation outcome of which this result reports.
+	    </li>
+	  </ul>
+	  <p>
+
+            NOTE: The "<tt>set</tt>", "<tt>group</tt>" and
+	    "<tt>test</tt>" attributes are used to uniquely identify
+	    the test within the XSTS for which this result reports the
+	    validation outcome.  Each matches the "<tt>name</tt>" 
+	    attribute of the respective element in the test suite.
+	  </p>
+	  <p>
+	    This element has one optional attribute:
+        </p>
+	  <ul>
+	    <li>
+	      <tt>normalizedLoad</tt> - a relative load value, intended as an indicator
+	      of the resource requirements of an individual
+	      test. Values may be based on processing time,
+	      memory usage or a combination of the two.
+	      Values should be in the vicinity of 1.0.
+	    </li>
+	  </ul>
+	  <p>The element has one optional element:</p>
+	  <ul>
+	    <li>
+	      <tt>annotation</tt> - zero or more instances of more detailed
+	      (<tt>ts:documentation</tt>) or structured (<tt>ts:appinfo</tt>)
+	      information or commentary regarding the individual
+	      test result. Reporters are encouraged to use
+	      <tt>annotation/appinfo</tt> to report more detailed outcome
+	      information, such as error and warning messages.
+	    </li>
+	  </ul>
+	</div>
+     </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="ts:annotation" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="validity" use="required" type="ts:test-outcome"/>
+      <xsd:attribute name="set" use="required" type="xsd:Name"/>
+      <xsd:attribute name="group" use="required" type="xsd:Name"/>
+      <xsd:attribute name="test" use="required" type="xsd:Name"/>
+      <xsd:attribute name="normalizedLoad" type="xsd:decimal"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:complexType name="ref">
+    <xsd:sequence>
+      <xsd:element ref="ts:annotation" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute ref="xlink:type" default="locator"/>
+    <xsd:attribute ref="xlink:href"/>
+    <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+
+
+  <xsd:element name="documentationReference" type="ts:ref">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    A link to documentation relevant to a test, such as a link to the
+	    Recommendation, an erratum, an archived email discussion, etc.
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+
+  <xsd:simpleType name="version-info">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>Value type for the <tt>version</tt> attribute.</p>
+	  <p>The value is a list of version tokens indicating the 
+	    versions and features for which the test is applicable 
+	    and/or has the expected result indicated.
+	  </p>
+	  <p>
+	    Note that on <tt>testSuite</tt>, <tt>testSet</tt>,
+	    <tt>testGroup</tt>, <tt>schemaTest</tt>, and
+	    <tt>instanceTest</tt>, the tokens have an implicit
+	    <strong>or</strong> connecting them: if a processor
+	    configuration supports <em>any</em> of them, the tests
+	    included are applicable.
+	    On the <tt>expected</tt> element, by contrast, the implicit
+	    connector is an <strong>and</strong>:  if a processor
+	    configuration supports <em>all</em> of them, the result
+	    given is prescribed.
+	  </p>
+	  <p>	  
+	    It will reduce confusion if wherever feasible
+	    <tt>expected</tt> elements use <tt>version</tt>
+	    attributes with single tokens.  The following is
+	    legal:
+	  </p>
+	  <pre><![CDATA[
+            <testGroup version="1.0">
+              ...
+	      <instanceTest ...>
+	        ...
+	          <expected version="1.0 1.0-1e" validity="invalid"/>
+	          <expected version="1.0 1.0-2e" validity="valid"/>
+              </instanceTest>
+	    </testGroup>
+	  ]]></pre>
+	  <p>But since only 1.0 processors will be processing 
+	    this test group anyway, and only 1.0 processors will
+	    support either the <tt>1.0-1e</tt> or the <tt>1.0-2e</tt>
+	    feature, the following may be clearer:</p>
+	  <pre><![CDATA[
+            <testGroup version="1.0">
+              ...
+	      <instanceTest ...>
+	        ...
+	          <expected version="1.0-1e" validity="invalid"/>
+	          <expected version="1.0-2e" validity="valid"/>
+              </instanceTest>
+	    </testGroup>
+	  ]]></pre>
+	  <p>There may, however, be cases in which it is logically
+	    necessary to provide multiple tokens.  
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:list itemType="ts:version-token"/>
+  </xsd:simpleType>
+
+
+  <xsd:simpleType name="version-token">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>Tokens to denote single versions, features, or
+	    implementation-defined behaviors, of XSD.</p>
+	  
+	  <p>It is expected that users of the test suite will
+            use the version tokens associated with a test to
+            determine whether there is any point in running
+            the test with a given processor (or with a particular
+            configuration of the processor); version tokens 
+            are also used to determine which expected result
+            applies to a given processor or a given configuration.
+	    See the documentation for the 
+	    <a href="elem_testSuite">testSuite</a> element 
+	    for more details.
+	  </p>	    
+
+	  <p>Ideally, only instances of the <tt>known-token</tt> type
+	    should be used.  Decimal and NMTOKEN literals may be
+	    used if necessary; this allows new features or
+	    behaviors to be described and given keywords without
+	    waiting to update this schema document.  To
+	    document the tokens, however, it is desirable to 
+	    add all new tokens here once they are accepted by
+	    the working group.
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:union memberTypes="ts:known-token xsd:decimal xsd:NMTOKEN"/>
+  </xsd:simpleType>
+
+  <xsd:simpleType name="known-token">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>Tokens to denote well-known (i.e. documented) 
+	    versions, features, or implementation-defined behaviors, 
+	    of XSD.</p>
+
+	  <p>The <tt>known-token</tt> type is a union of several other
+	    types, each with an enumeration of values.  Each sub-type
+	    defines keywords for a set of mutually exclusive versions,
+	    features, or behaviors, such that in any given schema
+	    validation episode, at most one keyword in any subtype
+	    will apply.  For examples, see the various subtypes
+	    defined immediately below.
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:union memberTypes="
+      ts:known-xsd-version
+      ts:xsd-1.0-editions
+      ts:xml-substrate
+      ts:unicode-versions
+      ts:runtime-schema-error
+      ts:xpath-in-CTA
+      ts:XDM-filtering
+      ">
+    </xsd:union>
+  </xsd:simpleType>
+
+
+  <xsd:simpleType name="known-xsd-version">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    Tokens to denote specific known versions of XSD.
+	  </p>
+	  <p>
+	    Each token denotes the version of the XSD language
+	    identified by the <tt>ts:standard-version-id</tt>
+	    attribute on the <tt>xsd:enumeration</tt> element.
+	    That is, "<tt>1.0</tt>" denotes XSD 1.0 (without reference
+	    to a particular edition), and "<tt>1.1</tt>" denotes XSD 1.1
+	    (without referece to a particular edition).
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="1.0"
+	ts:standard-version-id = "http://www.w3.org/XML/XMLSchema/v1.0" >
+      </xsd:enumeration>
+      <xsd:enumeration value="1.1"
+	ts:standard-version-id = "http://www.w3.org/XML/XMLSchema/v1.1" >
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <xsd:attribute name="standard-version-id" type="xsd:anyURI">
+    <xsd:annotation>
+      <xsd:documentation source="http://www.w3.org/TR/xmlschema11-1/#nonnormative-language-ids">
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>An attribute for use in schema documents, on enumerations,
+	    to indicate the correspondence between the token 
+	    being enumerated and the standard identifier for 
+	    a particular XSD language version.
+	  </p>
+	  <p>The values should be taken from the tabulation of standard language
+	    identifiers in <a href="http://www.w3.org/TR/xmlschema11-1/#nonnormative-language-ids"
+	    >appendix K of the XSD 1.1 specification</a>.
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    
+  </xsd:attribute>
+
+
+  <xsd:simpleType name="xsd-1.0-editions">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    Tokens to denote specific editions of XSD 1.0.
+	  </p>
+	  <p>
+	    Each token denotes the version of the XSD language
+	    identified by the <tt>ts:standard-version-id</tt>
+	    attribute on the <tt>xsd:enumeration</tt> element.
+	    That is, 
+	    "<tt>1.0-1e</tt>" and "<tt>1.0-2e</tt>" represent
+	    1.0 First Edition and 1.0 Second Edition, 
+	    respectively.
+	  </p>
+	  <p>Outside the context of XSD 1.0, these edition
+	    identifiers have no meaning or applicability.
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="1.0-1e"
+	ts:standard-version-id = "http://www.w3.org/XML/XMLSchema/v1.0/1e" >
+      </xsd:enumeration>
+      <xsd:enumeration value="1.0-2e"
+	ts:standard-version-id = "http://www.w3.org/XML/XMLSchema/v1.0/2e" >
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <xsd:simpleType name="xml-substrate">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    Tokens to denote different versions of XML-dependent
+	    datatypes.  Conforming XSD 1.1 processors may support
+	    XML 1.0-based datatypes, XML 1.1-based datatypes,
+	    or both.  There is dispute in the working group over 
+	    whether conforming XSD 1.0 processors are allowed to 
+	    suport XML 1.1-based datatypes or not.
+	  </p>
+	  <p>	  
+	    The value "<tt>XML-1.0</tt>" denotes processor support
+	    for, or test applicability to, XSD datatypes based on XML
+	    1.0, without specifying a particular edition.  (This value
+            is retained for backward compatibility of this schema, but
+            it should be avoided unless there is no difference, for a
+            given test or test result, between editions 1-4 and
+            edition 5 of XML 1.0. Where there is a difference, the
+            values "<tt>XML-1.0-1e-4e</tt>" and "<tt>XML-1.0-5e</tt>"
+            should be used in preference.
+	    (XSD 1.1 describes XML 1.0 Fifth Edition as the base
+	    version in its normative reference, so in theory the
+	    distinction between "<tt>XML-1.0-1e-4e</tt>" and 
+	    "<tt>XML-1.0-5e</tt>" is only relevant to XSD 1.0 
+	    processors.  In practice, it may also be relevant for some
+	    XSD 1.1 processors.
+	  </p>
+	  <p>	  
+	    The value "<tt>XML-1.0-1e-4e</tt>" denotes processor support
+	    for, or test applicability to, XSD datatypes based on XML
+	    1.0 First Edition through Fourth Edition.
+	  </p>
+	  <p>	  
+	    The value "<tt>XML-1.0-5e</tt>" denotes processor support
+	    for, or test applicability to, XSD datatypes based on XML
+	    1.0 Fifth Edition. 
+	  </p>
+	  <p>
+	    The value "<tt>XML-1.1</tt>" denotes processor support
+	    for, or test applicability to, XSD datatypes based on XML
+	    1.1 (for which at the moment there is only one edition).
+	  </p>
+	  <p>
+	    In most cases, of course, "<tt>XML-1.0-5e</tt>" and 
+	    "<tt>XML-1.1</tt>" will describe the same behaviors.
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="XML-1.0"/>
+      <xsd:enumeration value="XML-1.0-1e-4e"/>
+      <xsd:enumeration value="XML-1.0-5e"/>
+      <xsd:enumeration value="XML-1.1"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+ 
+ 
+  <xsd:simpleType name="unicode-versions">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    Tokens to denote specific known versions of Unicode.
+	  </p>
+	  <p>
+	    Each token denotes the version of the Unicode specification. The list
+	    is not complete; in the only cases where results are known to vary
+	    between Unicode versions, results are published for version 4.0.0
+	    and 6.0.0. Implementors wishing to provide reference results for
+	    other versions of Unicode are welcome to submit such results.
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="Unicode_4.0.0"
+	ts:standard-version-id = "http://www.unicode.org/versions/Unicode6.0.0/" >
+      </xsd:enumeration>
+      <xsd:enumeration value="Unicode_6.0.0"
+	ts:standard-version-id = "http://www.unicode.org/versions/Unicode4.0.0/" >
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <xsd:simpleType name="runtime-schema-error">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    Tokens to denote different implementation-defined 
+	    behavior in the presence of faulty restriction in
+	    a complex-type definition.
+	  </p>
+	  <p>
+	    A full explanation of this token and its meaning 
+	    is needed, but not yet available. For the moment let it
+	    suffice to say that if an <tt>all</tt>-group
+	    in a restriction allows content not allowed by
+	    the base type, the processor is not required
+	    to detect the problem by inspection of the schema
+	    in isolation.  Three behaviors are allowed; the choice
+	    among them is implementation-defined.  The values
+	    denoting the three behaviors are these.
+	  </p>
+	 
+	  <dl>
+
+	    <dt><tt>CTR-all-compile</tt></dt>
+
+	    <dd>Compile-time detection:  the processor always
+	      detects the problem by examining the schema in
+	      isolation; it warrants that no non-conforming
+	      schema will ever be used in validation.
+	    </dd>
+
+	    <dt><tt>CTR-all-runtime</tt></dt>
+
+	    <dd>Run-time detection:  the processor never
+	      detects the problem by examining the schema in
+	      isolation; it detects it always and only when 
+	      an instance of the type is valid against the
+	      restriction but not against the base type.
+	      If no instance of the type forces the recognition
+	      of the fault, then a non-conforming schema will 
+	      have been used in validation. The results, however,
+	      will always be the same as for a schema in 
+	      which the error had been corrected.
+	      (Processors that don't always check the declaration
+	      in isolation will need to validate each instance
+	      both against its governing type and against the
+	      base type.)
+	    </dd>
+
+	    <dt><tt>CTR-all-idep</tt></dt>
+
+	    <dd>Implementation-dependent detection:  the processor
+	      sometimes detects the problem by examining the schema in
+	      isolation, sometimes when examining an instance.
+	      No guarantees.  
+	    </dd>
+	  </dl>
+
+	  <p>Note, 20 January 2012.  Is this distinction still required,
+	  or has it been overtaken by the change made to resolve 
+	  <a href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=12185"
+	     >bug 12185 Conditional Type Assignment and substitutability</a>
+	  (or other late changes)?</p>
+	  
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="CTR-all-compile"/>
+      <xsd:enumeration value="CTR-all-runtime"/>
+      <xsd:enumeration value="CTR-all-idep"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+	
+  <xsd:simpleType name="xpath-in-CTA">
+    <xsd:annotation>
+      <xsd:documentation source="http://www.w3.org/TR/xmlschema11-1/#coss-ta">
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    Tokens to distinguish tests which use only the "required
+	    subset" of XPath in conditional type assignment
+	    from tests which use full XPath (or: any XPath outside
+	    the subset) in conditional type assignment.
+	    See "3.12.6 Constraints on Type Alternative Schema Components"
+	    of the Structures spec, which reads in part
+	  </p>
+	  <blockquote>
+	    <p>A conforming processor must accept and process any XPath 
+	    expression conforming to the "required subset" of [XPath 2.0] 
+	    defined by the following grammar.</p>
+	    <p style="margin-left: 2em;">
+	      Note: Any XPath expression containing no static errors as 
+	      defined in [XPath 2.0] may appear in a conforming schema. 
+	      Conforming processors may but are not required to support 
+	      XPath expressions not belonging to the required subset of 
+	    XPath.</p>
+	  </blockquote>
+	  <p>	  
+	    The value "<tt>restricted-xpath-in-CTA</tt>" denotes processor support
+	    for, or test applicability to, the minimal subset of XPath
+	    required of all conforming 1.1 processors.  All 1.1 processors
+	    should support this feature and run tests marked with it.
+	  </p>
+	  <p>
+	    The value "<tt>full-xpath-in-CTA</tt>" denotes processor support
+	    for, or test applicability to, full XPath in conditional type
+	    assignment expressions.
+	  </p>
+	  <p>
+	    (These token values were added 29 July 2011 to address bug
+	    <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13455">13455
+	    XPath subset causes problem</a>.)
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="restricted-xpath-in-CTA"/>
+      <xsd:enumeration value="full-xpath-in-CTA"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+	
+  <xsd:simpleType name="XDM-filtering">
+    <xsd:annotation>
+      <xsd:documentation source="http://www.w3.org/TR/xmlschema11-1/#sec-cvc-assertion">
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    Clause 1.2 of validation rule 
+	    <a href="http://www.w3.org/TR/xmlschema11-1/#sec-cvc-assertion"
+	    >Assertion satisifed</a> (in Structures sec. 3.13.4.1) says
+	  </p>
+	  <blockquote>
+	    <p>By default, comments and processing instructions are
+	    excluded from the partial post-schema-validation infoset,
+	    but at user option processors may retain comments and
+	    processing instructions instead of excluding them.</p>
+	  </blockquote>
+	  <p>	  
+	    The value "<tt>comments-and-PIs-excluded</tt>" denotes the default
+	    situation:  comments and processing instructions are suppressed
+	    before creating the XDM instance and thus cannot be examined
+	    by assertions.
+	  </p>
+	  <p>	  
+	    The value "<tt>comments-and-PIs-included</tt>" denotes the opposite: 
+	    comments and processing instructions are included in the XDM
+	    instance and thus can be examined by assertions.  (Since this is
+	    required to be "at user option", any processor that supports this
+	    token must also be available in a configuration that supports the
+            other token.)
+	  </p>
+	  <p>
+	    (The user option was added in November 2012 to address bug 
+	    <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=13935">13935
+	    xsd 1.1 assertions testing comment nodes</a>.
+	    These token values were added 20 January 2012 to allow both
+	    configurations to be tested.)
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NMTOKEN">
+      <xsd:enumeration value="comments-and-PIs-excluded"/>
+      <xsd:enumeration value="comments-and-PIs-included"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  
+  <xsd:element name="annotation">
+    <xsd:annotation>
+      <xsd:documentation>
+	<div xmlns="http://www.w3.org/1999/xhtml" >
+	  <p>
+	    This is an exact copy of the <tt>annotation</tt> element defined in the Schema
+	    Recommendation. It is duplicated here in order to replicate the 
+	    functionality of the <tt>xsd:annotation</tt> element and because the Schema for
+	    Schemas cannot be imported. 
+	  </p>
+	</div>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:choice maxOccurs="unbounded" minOccurs="0">
+        <xsd:element ref="ts:appinfo"/>
+        <xsd:element ref="ts:documentation"/>
+      </xsd:choice>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:element name="appinfo">
+    <xsd:complexType mixed="true">
+      <xsd:sequence maxOccurs="unbounded" minOccurs="0">
+        <xsd:any processContents="lax"/>
+      </xsd:sequence>
+      <xsd:attribute name="source" type="xsd:anyURI"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="documentation">
+    <xsd:complexType mixed="true">
+      <xsd:sequence maxOccurs="unbounded" minOccurs="0">
+        <xsd:any processContents="lax"/>
+      </xsd:sequence>
+      <xsd:attribute name="source" type="xsd:anyURI"/>
+      <xsd:attribute ref="xml:lang"/>
+      <xsd:anyAttribute namespace="##other" processContents="lax"/>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <xsd:annotation>
+    <xsd:documentation>
+      <div xmlns="http://www.w3.org/1999/xhtml" id="changelist">
+	<h2>Changes in this schema document</h2>  
+
+	<p>This version of this schema embodies (or will 
+	  embody, when finished) several changes
+	  to the original test suite schema.  
+	</p>
+	<p>Changes projected, planned, contemplated:</p>
+	<ul>
+	  <li>
+	    <p>
+	      The WG has discussed adding a mechanism for
+	      implementation-defined behaviors which have more than a
+	      small number of possibilities (e.g. "How many decimal
+	      digits are supported for <tt>xsd:decimal</tt> values?").
+	      Such a mechanism could be modeled loosely on the
+	      discretionary-option markup in the XSLT test suite.
+	    </p>
+	    <p>
+	      In the meantime, we have a keyword-based mechanism that
+	      involves enumerating all the possible alternatives.
+	    </p>
+	  </li>
+	  <li>Add explicit description of test suite assumptions.</li>
+	</ul>
+	<p>Changes completed:</p>
+	<ul>
+	  <li>[2012-01-20] Add edition-specific values to <tt><a 
+	  href="#type_xml-substrate">xml-substrate</a></tt>.
+	  Add type <tt><a href="#type_XDM-filtering">XDM-filtering</a></tt>
+	  to describe user-controlled inclusion of PIs and comments
+	  in the XDM instance created for assertion checking.
+	  </li>
+	  <li>[2011-10-24] Add 
+	    <a href="#type_unicode-versions"><tt>unicode-versions</tt></a>
+	    to describe dependency on specific versions of Unicode.</li>
+	  <li>[2011-08-12] Correct description of <tt>testResult</tt> 
+	    element's <tt>validity</tt> attribute.</li>
+	  <li>[2011-07-29, corr. 2011-08-12] Add type <tt>xpath-in-CTA</tt>
+	    with token values <tt>full-xpath-in-CTA</tt> and 
+	    <tt>restricted-xpath-in-CTA</tt>, include as member type of
+	    <tt>known-token</tt>, to allow labeling of CTA test cases
+	    that involve full XPath and thus aren't supported by all
+	    processors.
+	  </li>
+	  <li>[2010-06-21] allow <tt>version</tt> on <tt>testSuite</tt>.</li>
+	  <li>[2010-06-21] specify multiple sets of mutually contradictory
+	    keywords for use in <tt>version</tt> attributes:
+	    <ul>
+	      <li><tt>1.0</tt> and <tt>1.1</tt> (main XSD version)</li>
+	      <li><tt>1.0-1e</tt> and <tt>1.1-2e</tt> (edition-specific results
+		for 1.0 tests and processors)</li>
+	      <li><tt>CTR-all-*</tt> for complex-type restrictions involving
+		<tt>all</tt>-groups</li>
+	      <li><tt>XML-1.0</tt> and <tt>XML-1.1</tt> (version of XML
+		taken as basis for XML-dependent datatypes)</li>
+	    </ul>
+	  </li>
+	  <li>[2010-06-21] document "run if <em>any</em> of these are supported"
+	    semantics of <tt>version</tt> on <tt>testSuite</tt>,
+	    <tt>testSet</tt>,
+	    <tt>testGroup</tt>,
+	    <tt>schemaTest</tt>,
+	    <tt>instanceTest</tt>.  Also document "run if <em>all</em>
+	    are supported" semantics of <tt>version</tt> on 
+	    <tt>expected</tt>.
+	  </li>
+	  <li>
+	    A keyword-based mechanism for describing implementation-variant
+	    properties has been adopted. See
+	    <ul>
+	      <li>the discussions of the <tt>version</tt>
+		attribute on the 
+		<a href="#elem_testSuite"><tt>testSuite</tt></a>,
+		<a href="#elem_testSet"><tt>testSet</tt></a>,
+		<a href="#elem_testGroup"><tt>testGroup</tt></a>,
+		<a href="#elem_schemaTest"><tt>schemaTest</tt></a>,
+		and
+		<a href="#elem_instanceTest"><tt>instanceTest</tt></a>
+		elements (if any token in the attribute value applies,
+		the processor should run the tests)
+	      </li>
+	      <li>the discussion of the <tt>version</tt>
+		attribute on the 
+		<a href="#elem_expected"><tt>expected</tt></a>
+		element (if <em>all</em> tokens in the value apply,
+		then the prescribed outcome is as described)
+	      </li>
+	      <li>the description of the 
+		<a href="#type_version-info">version-info</a> type
+		and the types from which it is constructed
+	      </li>
+	    </ul>
+	  </li>
+	  <li>Tagged all <tt>documentation</tt> elements using XHTML,
+	    for better display.</li>
+	  <li>Allow multiple <tt>annotation</tt> elements in a
+	    <tt>testSuite</tt>, <tt>testSet</tt>, etc..</li>
+	  <li>Allow <tt>annotation</tt> elements in 
+	    <tt>testSetRef</tt> and other instances of type
+	    <tt>ts:ref</tt>.</li>
+	  <li>Correct usage of <em>schema</em> to <em>schema document</em>
+	    where appropriate.</li>
+	  <li>Allow <tt>annotation</tt> in elements of type 
+	    <tt>ts:ref</tt>, to allow description of individual tests
+	    and test sets.</li>
+	  <li>Correct the description of <tt>schemaTest</tt>:  it does
+	    not repeat.</li>
+	  <li>Allow <tt>expected</tt> to repeat.</li>
+	  <li>Add <code>implementation-defined</code>, 
+	    <code>implementation-dependent</code>, and
+	    <code>indeterminate</code> to enumerated values for
+	    <code>expected/@validity</code>.</li>
+	  <li>Removed the <tt>implDe</tt> attribute; the function it was
+	  designed to serve is now served by the <tt>version</tt> attribute
+	  on tests and by the values <tt>implementation-defined</tt>,
+	  <tt>implementation-dependent</tt>, and <tt>indeterminate</tt>
+	  on the <tt>validity</tt> attribute of the <tt>expected</tt> element.
+	 </li>
+	  <li>Split the type <tt>validityOutcome</tt> into 
+	    <tt>ts:test-outcome</tt> and <tt>ts:expected-outcome</tt>.
+	    Add values <tt>invalid-latent</tt> and <tt>runtime-schema-error</tt>
+	    to these types, to cover schema tests where a conforming processor
+	    may either detect the latent error or not, and instance
+	    tests where the procesor is required to discover the
+	    latent schema error.
+	  </li>
+
+	</ul>
+	<p>In progress:</p>
+	<ul>
+	  <li>Revise the <tt>documentation</tt> for clarity, 
+	    precision, and coherence.  Among the changes made:
+	    <ul>
+	      <li>
+		Clarify that the file extensions described in the
+		annotation are conventional, not required by the
+		definition of the vocabulary or test suite. (Existing
+		tests do not in fact all use the extensions
+		mentioned.)
+	      </li>
+	      <li>
+		Revise the description of <tt>expected/@validity</tt>
+		for greater precision.
+	      </li>
+	    </ul>
+	  </li>
+	</ul>
+
+      </div>
+    </xsd:documentation>
+  </xsd:annotation>
+
+</xsd:schema>

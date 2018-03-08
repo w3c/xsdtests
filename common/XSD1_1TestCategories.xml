@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<t1_1:xmlSchema1_1TSExtensions xmlns:t1_1="http://www.w3.org/XML/Group/Schemas/TestSuite1_1">
+	<t1_1:test-feature name="xsd1_1-AllGroups" description="All Groups">
+		<t1_1:feature-category name="xsd1_1-AllGroups-MaxOccurs">maxOccurs may now be &gt;1</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-AllGroups-WildcardsAllowed">wildcards are now allowed</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-AllGroups-DerivationByExtension">derivation by extension</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-AllGroups-DerivationByRestriction">derivation by restriction</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-AllGroups-NamedModelGroupRef">named model group references in xs:all</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-Assertions" description="Assertions">
+		<t1_1:feature-category name="xsd1_1-Assertions-ComplexTypes">on complex types</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Assertions-SimpleTypes">on simple types</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Assertions-DerivationByRestr">derivation by restriction (assertions of base type inherited)</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Assertions-DerivationByExt">derivation by extension (assertions of base type inherited)</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Assertions-RulesForXDMView">rules for whether the XDM view is typed or untyped</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Assertions-RulesForXPathContext">rules for the static and dynamic context of the XPath expression</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Assertions-StayInSubtree">inability to navigate outside the subtree</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Assertions-ErrorsInXPathEval">errors in XPath evaluation are treated as a false result</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Assertions-ImpactOfXPathDefaultNS">impact of xpathDefaultNamespace locally and at schema level</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-CTA" description="Conditional Type Assignment">
+		<t1_1:feature-category name="xsd1_1-CTA-Basic">basic</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-XSErrorType">xs:error type</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-DerivationByRestr">derivation by restriction</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-InheritableAttr">inheritable attributes</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-XPathExprAttrOnly">XPath expression can only access attributes</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-StaticDynamicContextOfXPathExpr">static and dynamic context of XPath expression</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-StaticErrorsInXPathExpr">static errors in XPath expression</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-DynamicErrInXPathEval">dynamic errors in evaluation of XPath expression</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-AltsSubstitable">all alternatives must be substitutable for the declared type</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-DefaultBranch">default branch</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-ImpactOfXPathDefaultNS">impact of xpathDefaultNamespace locally and at schema level</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-CTA-TypeTablesConsistentInEDC">consistency of type tables in Element Declarations Consistent</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-OpenContent" description="Open content">
+		<t1_1:feature-category name="xsd1_1-OpenContent-Suffix">suffix open content</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-Interleave">interleave open content</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-ElementOnly">with element-only content model</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-MixedContent">with mixed content model</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-DerivationByExt">derivation by extension</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-DerivationByRestr">derivation by restriction, including mode="none"</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-ComplexTypeSimpleContent">with complex type with simple content (ineffective)</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-IDAttr">&lt;openContent&gt; id attribute</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-AnnotationChild">&lt;openContent&gt; annotation child</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-DefaultOCTopLevel">defaultOpenContent as child of xs:schema</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-DefaultOCOverSchemaDocs">defaultOpenContent different across schema documents</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-DefaultOCAppliesToEmpty-True">defaultOpenContent appliesToEmpty = true</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-DefaultOCAppliesToEmpty-False">defaultOpenContent appliesToEmpty = false</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-DefaultOCAppliesToRedefine">defaultOpenContent applies to types within xs:redefine</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-OpenContent-DefaultOCAppliesToOverride">defaultOpenContent applies to types within xs:override</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-SubstitutionGroups" description="Substitution groups">
+		<t1_1:feature-category name="xsd1_1-SubstitutionGroups-ElemInMoreThanOne">Element in more than one subst group</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-SubstitutionGroups-AbstrElemAllowed">Abstract elements allowed in subst group</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-NewLocalDecl" description="New features for local declarations">
+		<t1_1:feature-category name="xsd1_1-NewLocalDecl-TargNSOnElemDecl">Target namespace on local element declarations</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-NewLocalDecl-TargNSOnAttrDecl">Target namespace on local attribute declarations</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl">Named identity constraints on local element declarations</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-ConditionalInclusion" description="vc: conditional inclusion">
+		<t1_1:feature-category name="xsd1_1-ConditionalInclusion-Version">The vc:minVersion and vc:maxVersion attributes can be used for testing processor version number</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-ConditionalInclusion-SupportedTypes">The vc:typeAvailable and vc:typeUnavailable attributes can be used to test supported types</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-ConditionalInclusion-SupportedFacets">The vc:facetAvailable and vc:facetUnavailable attributes can be used to test supported facets</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-ConditionalInclusion-UnrecognizedAttrInVCNS">Unrecognized attributes in vc: namespace are not an error (but a warning is encouraged)</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-Wildcards" description="Wildcards">
+		<t1_1:feature-category name="xsd1_1-Wildcards-NotNS">not namespace</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Wildcards-NotQName">not QName</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Wildcards-NotXDefined">not #defined</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Wildcards-NotXDefineSibling">not #definedSibling</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Wildcards-RelaxationOfUPA">Relaxation of UPA:  wildcard/element competition no longer violates UPA</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Wildcards-TighterMatchingRuleForEDC">tighter rule for EDC as regards the type of an element that matches a wildcard</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-DateTimeTypes" description="Date/time types">
+		<t1_1:feature-category name="xsd1_1-DateTimeTypes-ExplicitTZFacet">ExplicitTimezone facet</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-DateTimeTypes-DTStampDerivedType">dateTimeStamp derived type</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-DateTimeTypes-AllowYearZero">Allow year zero</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-DateTimeTypes-NoLeapSecs">Disallow leap seconds</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-DateTimeTypes-EqualityOfDurations">Equality of (for example) PT1D and PT24H</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT">Built in derived types xs:yearMonthDuration and xs:dayTimeDuration</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-PrecisionDecimal" description="PrecisionDecimal">
+		<t1_1:feature-category name="xsd1_1-PrecisionDecimal-Validation">Validation of precisionDecimal values</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-PrecisionDecimal-Facets">precisionDecimal facets</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-UnionTypes" description="Union types">
+		<t1_1:feature-category name="xsd1_1-UnionTypes-DerivedByRestrFrom">Types derived by restriction from a union type</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-UnionTypes-XSITypeUsedAsMember">xsi:type used to name a member of a restricted union type</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-UnionTypes-Cyclicity">Cyclicity of union types</t1_1:feature-category>
+	</t1_1:test-feature>
+
+	<t1_1:test-feature name="xsd1_1-xml1_1Support" description="XML 1.1 support">
+		<t1_1:feature-category name="xsd1_1-xml1_1Support-ValSpcOfXSNameEtc">xs:Name and related types may now contain XML 1.1 name characters (ID)</t1_1:feature-category>
+
+		<!--* Is the following a real, meaningful category?  XML 1.0 and XML 1.1 allow the same characters in content. *-->
+		<t1_1:feature-category name="xsd1_1-xml1_1Support-AddlCharsInContent">Support for additional Unicode characters in content</t1_1:feature-category>
+
+		<t1_1:feature-category name="xsd1_1-xml1_1Support-AddlCharsInNames">XML 1.1 name characters now allowed in names of components (e.g. types, model groups) (ID)</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-xml1_1Support-EffectInRegex">XML 1.1 name characters now match \i and \c in regular expressions (ID)</t1_1:feature-category>
+	</t1_1:test-feature>
+
+	<t1_1:test-feature name="xsd1_1-RestrictionComplexTypes" description="Restriction of complex types">
+		<t1_1:feature-category name="xsd1_1-RestrictionComplexTypes-IntensionalRestr">"Intensional restriction": allows some restrictions that 1.0 disallowed</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-RestrictionComplexTypes-RestrAllToSequence">Restrict xs:all to xs:sequence</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-RestrictionComplexTypes-RestrAllToChoice">Restrict xs:all to xs:choice</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-Misc" description="Miscellaneous">
+		<t1_1:feature-category name="xsd1_1-Misc-XSIDefault">Default/fixed values for xsi:type and xsi:nil permitted but have no effect</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-XSITypeMustResolve">xsi:type must resolve to a type definition</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-AnyAtomicType">xs:anyAtomicType</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-MixedInCTAndCC">complexType/@mixed and complexContent/@mixed must not conflict</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-EqualityOfAtomicValAndSingletonList">equality of an atomic value with a singleton list in ID/IDREF constraints</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-XPathDefaultNSKeyKeyref">impact of xpathDefaultNamespace locally and globally on key/keyref/unique selection expressions</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-LexicalRepForFloatAndDouble">lexical representation +INF for float and double, and handling of negative zero</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-HyphensAndBracketsInRegex">use of hyphens within square brackets in regular expressions</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-UnicodeBlockNames">Changes to rules for Unicode block names in regular expressions</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-AnyURIValueSpace">xs:anyURI now allows any sequence of characters</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-ListBounds">units of length for lists and other types</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-LeadingPlusInUnsignedTypes">Leading plus allowed in xs:unsignedInt etc</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-Misc-CollapseEmptyString">Effect of whitespace=collapse on all-white nodes</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-SchemaComposition" description="Schema composition">
+		<t1_1:feature-category name="xsd1_1-SchemaComposition-Override">xs:override</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-SchemaComposition-NSRefRequiresImport">Referring to a namespace requires an xs:import (probably already in 1.0 suite)</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-SchemaComposition-NSRefRequiresImportNotXSAndXSI">... except for the xs and xsi namespaces</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-SchemaComposition-CyclicDependenciesRedefineIncludeImportOverride">Cyclic dependencies redefine-include-import-override</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-SchemaComposition-ChameleonInclOnUnqualNamesInXPathExpr">Effect of chameleon include on unqualified names in XPath expressions</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-DefaultAttributeGroup" description="Default attribute group">
+		<t1_1:feature-category name="xsd1_1-DefaultAttributeGroup-DefaultAttrApply-True">with defaultAttributesApply=true or defaulted</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-DefaultAttributeGroup-DefaultAttrApply-False">with defaultAttributesApply=false</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-DefaultAttributeGroup-DifferentAcrossSchemaDocs">different across multiple schema documents</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-DefaultAttributeGroup-Redefine">applies to types within xs:redefine</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-DefaultAttributeGroup-Override">applies to types within xs:override</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xsd1_1-ID-IDREF" description="ID/IDREF">
+		<t1_1:feature-category name="xsd1_1-ID-IDREF-ListsOfID">Lists of ID</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-ID-IDREF-UnionsWithID">Unions involving ID</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-ID-IDREF-MultipleAttrsOfTypeID">Multiple attributes of type ID</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-ID-IDREF-DefaultValsOfTypesIDREF-ENTITY-ENTITIES">Default values of type IDREF, ENTITY, or ENTITIES</t1_1:feature-category>
+		<t1_1:feature-category name="xsd1_1-ID-IDREF-DefaultValsForElemOrAttrOfTypeID">Default values for elements or attributes of type ID</t1_1:feature-category>
+	</t1_1:test-feature>
+	<t1_1:test-feature name="xst1_1-PSVI-tests" description="PSVI output of validation episodes (PSVI output is not tested)">
+	    <t1_1:feature-category name="xsd1_1-PSVI-XSITypeFallback">xsi:type fallback to lax validation when type does not resolve</t1_1:feature-category>
+	</t1_1:test-feature>    
+</t1_1:xmlSchema1_1TSExtensions>
