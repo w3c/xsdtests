@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Test day value must be no more than 30 if month is one of 4, 6, 9, or 11 for xs:dateTime -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc">
+    <xs:simpleType>
+       <xs:restriction base="xs:dateTime">
+         <xs:maxInclusive value="2010-04-31T12:00:00"/>
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>
+

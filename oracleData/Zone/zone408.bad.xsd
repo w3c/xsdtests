@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Test explicitTimezone facet: cannot derive "required" from "prohibited" -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+    <xs:element name="doc" type="timeStampProhibited"/>
+  
+    <xs:simpleType name="timeStampProhibited">
+       <xs:restriction base="xs:time">     
+         <xs:explicitTimezone value="prohibited"/>
+       </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="timeStampRequired">
+       <xs:restriction base="timeStampProhibited">     
+         <xs:explicitTimezone value="required"/>
+       </xs:restriction>
+    </xs:simpleType>    
+      
+</xs:schema>

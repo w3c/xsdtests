@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Test new timezone facet explicitTimezone, value="prohibited" for datatype xs:dateTime -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc">
+    <xs:simpleType>
+       <xs:restriction base="xs:dateTime">     
+         <xs:explicitTimezone value="prohibited"/>
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>
+

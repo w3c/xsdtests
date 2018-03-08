@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- equality testing (enumeration) for dateTime values, use YEAR as ZERO -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc">
+    <xs:simpleType>
+       <xs:restriction base="xs:dateTime">
+         <xs:explicitTimezone value="required"/>
+         <xs:enumeration value="0000-09-20T00:00:00Z"/>
+         <xs:enumeration value="0000-09-20T12:00:00Z"/>
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>
+
