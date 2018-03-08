@@ -1,0 +1,18 @@
+<!--* xsts.plus.html:  an ad-hoc combination of the XML Test Suite
+    * vocabulary and some useful HTML modules.
+    * 
+    * This DTD has no particular status; it's just used in some test
+    * cases here to make the documentation easier to write and read.
+    *
+    * Revisions:
+    * 2010-06-16 : CMSMcQ : made file, so as to make the test cases
+    *                       more compact by a few lines.
+    *-->
+<!ENTITY % xsts.dtd SYSTEM "../ancillary/xsts.dtd">
+
+<!ENTITY % html-for-documentation SYSTEM
+  "../ancillary/xhtml-for-annotation.dtd">
+
+%html-for-documentation;
+%xsts.dtd;
+

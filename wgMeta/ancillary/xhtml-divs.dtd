@@ -1,0 +1,51 @@
+<!--
+   xhtml-divs.dtd, wraper for
+   Extensible HTML version 1.0 Strict DTD
+   (extracted by CMSMcQ for use in XML Schema
+   documents; I ought to use modularization but
+   I'm in a hurry)
+
+   Namespace = http://www.w3.org/1999/xhtml
+
+   For further information, see: http://www.w3.org/TR/xhtml1
+
+   Copyright (c) 1998-2000 W3C (MIT, INRIA, Keio),
+   All Rights Reserved. 
+
+-->
+
+<!--* We declare the attributes 'xmlns' and
+    * 'xmlns:h' for all the elements we think
+    * xsd:documentation should be able to 
+    * contain.
+    *-->
+<!ENTITY % URI "CDATA">
+<!ENTITY xhnsattrs "
+  xmlns %URI; #FIXED 'http://www.w3.org/1999/xhtml'">
+<!--* alt form: also define h: prefix.  No use
+    * here since I don't want to change content
+    * models and the DTD isn't namespace-hacked.
+    *-->
+<!ENTITY % xhnsattrs "
+  xmlns %URI; #FIXED 'http://www.w3.org/1999/xhtml'
+  xmlns:h %URI; #FIXED 'http://www.w3.org/1999/xhtml'" >
+
+<!ATTLIST html %xhnsattrs; >
+<!ATTLIST head %xhnsattrs; >
+<!ATTLIST body %xhnsattrs; >
+<!ATTLIST div  %xhnsattrs; >
+<!ATTLIST p    %xhnsattrs; >
+
+<!--* N.B. useful parameter entities defined
+    * in xhtml1-strict.dtd include:
+    * inline 
+    * Inline (#PCDATA|%inline;|%misc;)*
+    * block 
+    * Block (%block;|form|%misc;)
+    *       (Block is what blockquote uses)
+    * Flow (what div uses)
+    *-->
+
+<!ENTITY % xhtml-vanilla 
+  SYSTEM "xhtml1-strict.dtd" >
+%xhtml-vanilla;

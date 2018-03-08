@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.w3.org/2001/03/XMLSchema/TypeLibrary"
+  xmlns="http://www.w3.org/2001/03/XMLSchema/TypeLibrary">
+  <xs:include schemaLocation="TypeLibrary-URI-RFC3986.xsd"/>
+  <xs:include schemaLocation="TypeLibrary-IRI-RFC3987.xsd"/>
+</xs:schema>

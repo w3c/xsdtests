@@ -1,0 +1,238 @@
+<!--* xsts.dtd:  DTD formulation of the XML Schema Test Suite vocabulary,
+    * defined in namespace 
+    * 
+    *   http://www.w3.org/XML/2004/xml-schema-test-suite/
+    *
+    * Copyright &copy; 2010 World Wide Web Consortium,
+    * (Massachusetts Institute of Technology, European Research Consortium for
+    * Informatics and Mathematics, Keio University). All Rights Reserved. This
+    * work is distributed under the W3C&reg; Document License [1] in the hope that
+    * it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+    * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    *
+    * [1] http://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231
+    *
+    *-->
+
+<!--* Revisions:
+    * 2010-06-16 : MSM : revise to agree with proposals for revision
+    *   to the xsts schema document.  Delete most comments and refer
+    *   the reader to the schema document instead.
+    * 2007? : MSM : made first version of this DTD by translating
+    *   manually from the schema document.
+
+*-->
+
+<!--* The definition of this vocabulary most carefully maintained
+    * (and thus the one with the best documentation) is the schema
+    * document.  The official version of the namespace is at 
+    * http://www.w3.org/XML/2004/xml-schema-test-suite/AnnotatedTSSchema.xsd
+    *
+    * This DTD reflects proposed changes to the vocabulary along the
+    * lines given in 
+    * http://www.w3.org/XML/2008/xsdl-exx/ancillary/xsts-schema.sketch.xml
+    *
+    *-->
+
+<!--* We use parameter entity names to indicate when a particular 
+    * XSD type is intended, and provide a DTD-based approximation. *-->
+<!ENTITY % xs.Name    "NMTOKEN" >
+<!ENTITY % xs.date    "NMTOKEN" >
+<!ENTITY % xs.decimal "NMTOKEN" >
+<!ENTITY % xs.string  "CDATA" >
+<!ENTITY % xs.anyURI  "CDATA" >
+<!ENTITY % xs.language "NMTOKEN" >
+<!ENTITY % xs.boolean  "(0 | 1 | true | false)" >
+
+
+<!--* Some other common types aren't XSD built-ins. *-->
+
+<!--* version-info is a list of version tokens.  
+    * Well-known tokens are "1.0" "1.1" "1.0-1e" and "1.0-2e".
+    * Decimal numbers are also legal, as are NMTOKEN values.
+    *-->
+<!ENTITY % version-info "NMTOKENS">
+
+<!--* Bug URIs should be of type xs:anyURI, and should
+    * also match the pattern 
+    * "http://www\.w3\.org/Bugs/Public/show_bug\.cgi\?id=[0-9]*"
+    *-->
+<!ENTITY % bugURI "%xs.anyURI;">
+
+<!--* The 'name' attributes must be locally unique, but
+need not be globablly unique. So we can't really use ID,
+though it would have been nice. *-->
+<!ENTITY % ID "NMTOKEN" >
+
+<!--* The test suite namespace has been given in different forms 
+    * in different places.  At some point, though the test suite task 
+    * force managed to bite the bullet and settled on a name.  We'll 
+    * use that one.
+    *-->
+<!ENTITY TSNS "http://www.w3.org/XML/2004/xml-schema-test-suite/">
+<!ENTITY TSNS "TestSuite" >
+<!ENTITY TSNS "http://www.w3.org/2003/XMLSchema/TestSuite/v1" >
+<!ENTITY TSNS "http://www.w3.org/2003/XMLSchema/TestSuite/PLACEHOLDER" >
+
+<!--* The elements intended as top-level document elements will all
+    * need declarations of namespace attributes.
+    * Software sometimes wrongly ignores namespace declarations
+    * given default values in the DTD, so in practice it's best to
+    * give these attributes explicitly.
+    *-->
+<!ENTITY  % namespace_decls "
+          xmlns       CDATA '&TSNS;'
+          xmlns:ts    CDATA '&TSNS;'
+          xmlns:xs    CDATA 'http://www.w3.org/2001/XMLSchema'
+          xmlns:xlink CDATA 'http://www.w3.org/1999/xlink'
+">
+
+<!--* Several elements have the function of referring to other
+    * documents.  They share the ts.ref type.
+    *-->
+<!ENTITY  % m.ts.ref "(annotation*)">
+<!ENTITY  % a.ts.ref "
+          xlink:type CDATA 'locator'
+          xlink:href CDATA #IMPLIED
+">
+
+
+<!ELEMENT testSuite (annotation*, testSetRef*) >
+<!ATTLIST testSuite     %namespace_decls;
+          name          %xs.Name;   #REQUIRED
+          releaseDate   %xs.date;   #REQUIRED
+          schemaVersion %xs.string; #REQUIRED
+>
+
+
+<!ELEMENT testSetRef %m.ts.ref; >
+<!ATTLIST testSetRef %a.ts.ref; >
+
+
+<!ELEMENT testSet (annotation*, testGroup*) >
+<!ATTLIST testSet %namespace_decls;
+          contributor %xs.string; #REQUIRED
+          name        %xs.Name;   #REQUIRED >
+
+
+<!ELEMENT testGroup (annotation*, 
+                    documentationReference*,
+                    schemaTest?,
+                    instanceTest*) >
+<!ATTLIST testGroup 
+          name      %ID;    #REQUIRED 
+          version   %version-info; #IMPLIED
+>
+
+
+<!ELEMENT schemaTest (annotation*,
+                     schemaDocument*, 
+                     expected*, 
+                     current?, 
+                     prior*) >
+<!ATTLIST schemaTest
+          name      %ID;         #REQUIRED 
+          version   %version-info; #IMPLIED
+>
+
+
+<!ELEMENT instanceTest (annotation*, 
+                       instanceDocument, 
+                       expected*, 
+                       current?, 
+                       prior*) >
+<!ATTLIST instanceTest
+          name      %ID;         #REQUIRED 
+          version   %version-info; #IMPLIED
+>
+         
+
+<!ELEMENT schemaDocument %m.ts.ref; >
+<!ATTLIST schemaDocument %a.ts.ref; >
+
+
+<!ELEMENT instanceDocument %m.ts.ref; >
+<!ATTLIST instanceDocument %a.ts.ref; >
+
+
+<!ENTITY  % enum.status "(accepted 
+ | stable
+ | queried
+ | disputed-test
+ | disputed-spec)" >
+
+
+<!ENTITY  % m.statusEntry "(annotation*)" >
+<!ENTITY  % a.statusEntry "
+          status  %enum.status;  #REQUIRED
+          date    %xs.date;      #REQUIRED 
+          bugzilla %bugURI;      #IMPLIED
+" >
+
+
+<!ELEMENT current %m.statusEntry; >
+<!ATTLIST current %a.statusEntry; >
+
+
+<!ELEMENT prior %m.statusEntry; >
+<!ATTLIST prior %a.statusEntry; >
+
+
+<!--* 
+<!ENTITY  % enum.validityOutcome "(valid | invalid | notKnown)" >
+    *-->
+<!ENTITY  % enum.test-outcome "valid
+ | invalid
+ | notKnown
+ | runtime-schema-error
+" >
+<!ENTITY  % enum.expected-outcome "
+   %enum.test-outcome;
+ | implementation-defined
+ | implementation-dependent
+ | indeterminate
+ | invalid-latent" >
+
+
+<!ELEMENT expected EMPTY>
+<!ATTLIST expected
+          validity (%enum.expected-outcome;) #REQUIRED >
+
+
+<!ELEMENT testSuiteResults (annotation*, testResult*) >
+<!ATTLIST testSuiteResults 
+          %namespace_decls;
+          name       %xs.Name;   #REQUIRED
+          processor  %xs.string; #REQUIRED
+          submitDate %xs.date;   #REQUIRED
+          publicationPermission (W3Cmembers | public) #IMPLIED >
+<!--* N.B. the schema wants a blank in the value "W3C members" *-->
+
+
+<!ELEMENT testResult (annotation*) >
+<!ATTLIST testResult
+          validity  (%enum.test-outcome;) #REQUIRED
+          set       %xs.Name; #REQUIRED
+          group     %xs.Name; #REQUIRED
+          test      %xs.Name; #REQUIRED
+          normalizedLoad  %xs.decimal; #IMPLIED >
+
+
+<!ELEMENT documentationReference %m.ts.ref; >
+<!ATTLIST documentationReference %a.ts.ref; >
+
+
+<!ELEMENT annotation (appinfo | documentation)* >
+
+
+<!ELEMENT appinfo    ANY >
+<!ATTLIST appinfo
+          source     %xs.anyURI;  #IMPLIED >
+
+
+<!ELEMENT documentation    ANY >
+<!ATTLIST documentation
+          source     %xs.anyURI;   #IMPLIED 
+          xml:lang   %xs.language; #IMPLIED
+>
+

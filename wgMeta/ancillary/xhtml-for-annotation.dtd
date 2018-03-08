@@ -1,0 +1,127 @@
+<!-- ...................................................................... -->
+<!-- XHTML for XSDL documentation.......................................... -->
+<!-- URI: http://www.w3.org/XML/2008/xsdl-exx/ancillary/xhtml-for-annotation.dtd
+
+     This file embeds a number of XHTML modules useful in writing the
+     inline documentation in XSDL schema documents.  
+
+     Copyright (c)2008 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+
+     Permission to use, copy, modify and distribute this DTD and its 
+     accompanying documentation for any purpose and without fee is hereby 
+     granted in perpetuity, provided that the above copyright notice and 
+     this paragraph appear in all copies.  The copyright holders make no 
+     representation about the suitability of the DTD for any purpose.
+
+     It is provided "as is" without expressed or implied warranty.
+
+     This DTD module is identified by the PUBLIC and SYSTEM identifiers:
+
+     Revisions:
+     2008-01-02 : CMSMcQ : made first version of this driver file
+     ....................................................................... -->
+
+<!--* We declare the attributes 'xmlns' and
+    * 'xmlns:h' for all the elements we think
+    * xsd:documentation should be able to 
+    * contain.
+    *-->
+<!ENTITY % URI "CDATA">
+<!ENTITY xhnsattrs "
+  xmlns %URI; #FIXED 'http://www.w3.org/1999/xhtml'">
+<!--* alt form: also define h: prefix.  No use
+    * here since I don't want to change content
+    * models and the DTD isn't namespace-hacked.
+    *-->
+<!ENTITY % xhnsattrs "
+  xmlns %URI; #FIXED 'http://www.w3.org/1999/xhtml'
+  xmlns:h %URI; #FIXED 'http://www.w3.org/1999/xhtml'" >
+
+<!ATTLIST html %xhnsattrs; >
+<!ATTLIST head %xhnsattrs; >
+<!ATTLIST body %xhnsattrs; >
+<!ATTLIST div  %xhnsattrs; >
+<!ATTLIST p    %xhnsattrs; >
+
+
+<!--* include or ignore modules brought in by XHTML framework and 
+    * by xhtml-basic11 *-->
+<!ENTITY % xhtml-arch.module      "IGNORE" >
+<!ENTITY % xhtml-notations.module "INCLUDE" >
+<!ENTITY % xhtml-datatypes.module "INCLUDE" >
+<!ENTITY % xhtml-qname.module     "INCLUDE" >
+<!ENTITY % xhtml-events.module    "IGNORE" >
+<!ENTITY % xhtml-attribs.module   "INCLUDE" >
+<!ENTITY % xhtml-charent.module   "INCLUDE" >
+
+<!-- placeholder for content model redeclarations -->
+<!-- If you need to redeclare anything, do it here -->
+<!ENTITY % xhtml-model.redecl "" >
+%xhtml-model.redecl;
+
+<!ENTITY % NS.prefixed "IGNORE" >
+<!ENTITY % XHTML.prefix  "" >
+
+<!-- Bidirectional Text features
+     This feature-test entity is used to declare elements
+     and attributes used for bidirectional text support.
+-->
+<!ENTITY % XHTML.bidi  "INCLUDE" >
+
+<!-- Inline Style Module  ........................................ -->
+<!ENTITY % xhtml-inlstyle.module "INCLUDE" >
+
+<!-- Scripting Module  ........................................... -->
+<!ENTITY % xhtml-script.module "IGNORE" >
+
+<!-- Style Sheets Module  ......................................... -->
+<!ENTITY % xhtml-style.module "IGNORE" >
+
+<!-- Image Module  ............................................... -->
+<!ENTITY % xhtml-image.module "INCLUDE" >
+
+<!-- Tables Module ............................................... -->
+<!ENTITY % xhtml-table.module "INCLUDE" >
+
+<!-- Forms Module  ............................................... -->
+<!ENTITY % xhtml-form.module "IGNORE" >
+
+<!-- Presentation Module  ........................................ -->
+<!ENTITY % xhtml-pres.module "IGNORE" >
+
+<!-- Link Element Module  ........................................ -->
+<!ENTITY % xhtml-link.module "IGNORE" >
+
+<!-- Document Metainformation Module  ............................ -->
+<!ENTITY % xhtml-meta.module "IGNORE" >
+
+<!-- Base Element Module  ........................................ -->
+<!ENTITY % xhtml-base.module "IGNORE" >
+
+<!-- Param Element Module  ....................................... -->
+<!ENTITY % xhtml-param.module "INCLUDE" >
+
+<!-- Embedded Object Module  ..................................... -->
+<!ENTITY % xhtml-object.module "INCLUDE" >
+
+<!-- Inputmode Attribute Module  .................................. -->
+<!ENTITY % xhtml-inputmode.module "IGNORE" >
+
+<!-- Target Attribute Module  .................................... -->
+<!ENTITY % xhtml-target.module "IGNORE" >
+
+<!--* Having set up the parameter entities above to control what
+    * modules are included and what are excluded, we can now
+    * just call one of the XHTML driver files defined by the
+    * XHTML WG itself.  
+    *
+    * This version of this file uses XHTML Basic, instead of
+    * full XHTML, but not because I understand what the differences
+    * are. 
+    *-->
+
+<!ENTITY % xhtml-its-ownself
+           PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+                  "http://www.w3.org/MarkUp/DTD/xhtml-basic11.dtd" >
+%xhtml-its-ownself;
+

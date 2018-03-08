@@ -1,0 +1,31 @@
+
+<?xml-stylesheet href="./ancillary/xsts.xsl" type="text/xsl" ?>
+<testSuite name="WG tests for XSD 1.1" releaseDate="2010-06-16" 
+           schemaVersion="1.0 and 1.1"
+         xmlns:xlink = "http://www.w3.org/1999/xlink"
+         xmlns       = "http://www.w3.org/XML/2004/xml-schema-test-suite/"
+>
+ <annotation>
+  <documentation>
+   This isn't really a full test suite, so it's not clear that using a
+   testSuite element is correct.
+
+   This dummy document is provided in case anyone's existing test harness
+   requires it or benefits from having it.  For fuller information on this 
+   suite of tests, see the individualv test set document(s) listed below.
+  </documentation>
+ </annotation>
+ <testSetRef xlink:href="substitution-groups.testSet">
+  <annotation>
+    <documentation>
+    <div xmlns="http://www.w3.org/1999/xhtml" >
+     <p>
+      It's not much, but it's a start.  Checks interaction of
+      substitution groups with defined-sibling negative wildcards.
+     </p>
+    </div>
+   </documentation>
+  </annotation>
+ </testSetRef>
+ <testSetRef xlink:href="IRI.testSet"/>
+</testSuite>

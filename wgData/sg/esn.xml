@@ -1,0 +1,6 @@
+<sg:test xmlns:sg="http://www.w3.org/XML/2008/xsdl-exx/ns1" >
+  <sg:e>Test case for interaction of substitution groups and 
+   #definedSibling.</sg:e>
+  <sg:s/>
+  <sg:n/>
+</sg:test>

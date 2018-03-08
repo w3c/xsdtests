@@ -1,0 +1,50 @@
+<xsd:schema 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:tns="http://www.w3.org/XML/2008/xsdl-exx/ns1" 
+ targetNamespace="http://www.w3.org/XML/2008/xsdl-exx/ns1" 
+ elementFormDefault="qualified"
+ >
+ <xsd:annotation>
+  <xsd:documentation>
+   <div xmlns="http://www.w3.org/1999/xhtml" >
+    <p>Sample schema for testing interaction of substitution groups
+     and UPA constraint.  Modelled on the example given by Sandy Gao
+     in bug <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=4337">4337 
+       Substitution group and abstract</a>.
+    </p>
+    <p>If the processor pays attention to the fact that the top-level
+     <tt>e1</tt> element cannot appear in an instance, and thus cannot
+     be in the actual substitution group of <tt>e</tt>, it may
+     conclude that in type <tt>T</tt>, the particles for 
+     <tt>e</tt> and <tt>e1</tt> do not compete, and the content model
+     is legal. 
+     XSD 1.0 appears to require the judgement that the content model 
+     is legal, since it excludes <tt>e1</tt> from the <em>actual
+      substitution group</em> of <tt>e</tt>.  (In the bug report,
+     however, Sandy Gao argues that 1.0 is unclear, which suggests
+     that he believes 1.0 can also be read as allowing the other
+     judgement.)
+    </p>
+    <p>
+     XSD 1.1 makes clear that the top-level <tt>e1</tt>
+     element <em>is</em> in the substitution group of <tt>e</tt>
+     and therefore that the particles do compete.  So in 1.1
+     this schema is definitely non-conforming.
+    </p>
+    <p>CMSMcQ, 17 June 2010.</p>
+   </div>
+  </xsd:documentation>
+ </xsd:annotation>
+
+ <xsd:element name="e" type="xsd:string"/>
+ <xsd:element name="e1" substitutionGroup="tns:e" abstract="true"/>
+
+ <xsd:element name="test" type="tns:T"/>
+ <xsd:complexType name="T">
+  <xsd:choice>
+   <xsd:element ref="tns:e"/>
+   <xsd:element name="e1" type="xsd:string"/>   
+  </xsd:choice>
+ </xsd:complexType>
+
+</xsd:schema>

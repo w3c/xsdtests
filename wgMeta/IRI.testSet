@@ -1,0 +1,93 @@
+<?xml-stylesheet href="./ancillary/xsts.xsl" type="text/xsl" ?>
+
+<testSet name = "IRI"
+
+         contributor = "MichaelKay" 
+         xmlns       = "http://www.w3.org/XML/2004/xml-schema-test-suite/"
+         xmlns:xs    = "http://www.w3.org/2001/XMLSchema"
+         xmlns:xlink = "http://www.w3.org/1999/xlink"
+         version     = "1.1"
+
+>
+ <annotation>
+  <documentation>
+   <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>A set of tests for the proposed IRI/URI Type Library</p>
+    <p>Revisions:</p>
+    <ul>
+     <li>2012-02-06 Michael Kay
+      First version: incorporate the draft XML schema documents
+      defining the type library, and a couple of instance documents to test them.
+     </li>
+    </ul>
+   </div>
+  </documentation>
+ </annotation>
+
+ 
+
+ <testGroup name="iri-001">
+  <annotation>
+   <documentation>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+     <p>Tests for the URI/IRI Type Library</p>
+    </div>
+   </documentation>
+  </annotation>
+  <schemaTest name="iri-001">
+   <schemaDocument xlink:href="../wgData/iri/ElementDeclarations.xsd"/>
+   <expected validity="valid"/>
+  </schemaTest>  
+  <instanceTest name="URI-3986-valid-001">
+   <instanceDocument xlink:href="../wgData/iri/URI-3986-valid-001.xml"/>
+   <expected validity="valid"/>
+  </instanceTest>
+  <instanceTest name="URI-3986-valid-002">
+   <instanceDocument xlink:href="../wgData/iri/URI-3986-valid-002.xml"/>
+   <expected validity="valid"/>
+  </instanceTest>
+  <instanceTest name="URI-3986-valid-003">
+   <instanceDocument xlink:href="../wgData/iri/URI-3986-valid-003.xml"/>
+   <expected validity="valid"/>
+  </instanceTest>
+  <instanceTest name="URI-3986-invalid-001">
+   <instanceDocument xlink:href="../wgData/iri/URI-3986-invalid-001.xml"/>
+   <expected validity="invalid"/>
+  </instanceTest>
+  <instanceTest name="URI-3986-invalid-002">
+   <instanceDocument xlink:href="../wgData/iri/URI-3986-invalid-002.xml"/>
+   <expected validity="invalid"/>
+  </instanceTest>
+  <instanceTest name="URI-3986-invalid-003">
+   <instanceDocument xlink:href="../wgData/iri/URI-3986-invalid-003.xml"/>
+   <expected validity="invalid"/>
+  </instanceTest>
+  <instanceTest name="absolute-URI-3986-valid-001">
+   <instanceDocument xlink:href="../wgData/iri/absolute-URI-3986-valid-001.xml"/>
+   <expected validity="valid"/>
+  </instanceTest>
+  <instanceTest name="absolute-URI-3986-valid-002">
+   <instanceDocument xlink:href="../wgData/iri/absolute-URI-3986-valid-002.xml"/>
+   <expected validity="valid"/>
+  </instanceTest>
+  <instanceTest name="absolute-URI-3986-valid-003">
+   <instanceDocument xlink:href="../wgData/iri/absolute-URI-3986-valid-003.xml"/>
+   <expected validity="valid"/>
+  </instanceTest>
+  <instanceTest name="absolute-URI-3986-invalid-001">
+   <instanceDocument xlink:href="../wgData/iri/absolute-URI-3986-invalid-001.xml"/>
+   <expected validity="invalid"/>
+  </instanceTest>
+  <instanceTest name="absolute-URI-3986-invalid-002">
+   <instanceDocument xlink:href="../wgData/iri/absolute-URI-3986-invalid-002.xml"/>
+   <expected validity="invalid"/>
+  </instanceTest>
+  <instanceTest name="absolute-URI-3986-invalid-003">
+   <instanceDocument xlink:href="../wgData/iri/absolute-URI-3986-invalid-003.xml"/>
+   <expected validity="invalid"/>
+  </instanceTest>
+ </testGroup>
+
+
+
+</testSet>

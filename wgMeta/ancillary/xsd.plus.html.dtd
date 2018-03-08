@@ -1,0 +1,30 @@
+<!--* xsd.plus.html:  an ad-hoc combination of the XSD schema document
+    * vocabulary and some useful HTML modules.
+    * 
+    * This DTD has no particular status; it's just used in some test
+    * cases here to make the documentation easier to write and read.
+    *
+    * Revisions:
+    * 2010-06-10 : CMSMcQ : made file, so as to make the test cases
+    *                       more compact by a few lines.
+    *-->
+<!ENTITY % xsd.schema PUBLIC "-//W3C//DTD XMLSCHEMA 200105//EN"
+         "http://www.w3.org/2001/XMLSchema.dtd">
+
+<!ENTITY % schemaAttrs "
+  xmlns:tns CDATA #IMPLIED
+  xmlns:xsd  CDATA #IMPLIED"
+>
+<!ENTITY % p "xsd:">
+<!ENTITY % s ":xsd">
+<!ENTITY % html-for-documentation SYSTEM
+  "../ancillary/xhtml-for-annotation.dtd">
+
+<!--* Add some attributes for 1.1 tests *-->
+<!ATTLIST xsd:any
+  notNamespace CDATA #IMPLIED
+  notQName     CDATA #IMPLIED  
+>
+
+%html-for-documentation;
+%xsd.schema;

@@ -1,0 +1,124 @@
+/* xsts.css:  CSS styles for XML Schema test suite  and test set documents.
+ * 
+ * Copyright &copy; 2010 World Wide Web Consortium,
+ * (Massachusetts Institute of Technology, European Research Consortium for
+ * Informatics and Mathematics, Keio University). All Rights Reserved. This
+ * work is distributed under the W3C&reg; Document License [1] in the hope that
+ * it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *
+ * [1] http://www.w3.org/Consortium/Legal/2002/copyright-documents-20021231
+ */
+
+/* The red-green-blue colors here are a bit of a compromise:
+ * I asked a color picker for a three-color scheme and rotated the
+ * colors until the deuteranopy simulation showed three hues that looked
+ * relatively distinct, and which the normal-vision display showed as
+ * shades of green, red, and blue:  BBFF6D, FF6DBB, and 6DFBBFF.
+ * 
+ * I then used an HSL calculator to reduce the saturation to 50% for
+ * the red and green, and to 25% for the blue (on the grounds that 
+ * notKnown is naturally less assertive than valid/invalid, and might as
+ * well be less vivid).  Works OK for deuteronapy and protanopy, but
+ * the green and glue are too similar for tritanopy.  That's very rare,
+ * but let's try taking the brightnes of blue down to 90%.  No, 
+ * hard to distinguish from the red, for deuteranopes.  So take it
+ * back up to 95%, and reduce the saturation to 15%.  Now it's hard
+ * to distinguish the blue from the gray.  So take the gray back up to
+ * #EEEEEE from #DDD.  Seems to work, in the sense of providing
+ * more or less distinguishable tones for normal vision and (as far as
+ * I can tell from the simulations at vischeck.com [thanks, fellows!])
+ * for deuteranope, protanope, and tritanope vision.
+ *
+ * However, the green and pink were very intense, and attempts to 
+ * desaturate them failed (made it hard to distinguish other things).
+ * So I started over with the color picker from colorjack, choosing
+ * split-complentary set of three colors which worked reasonably well
+ * with all vision types.  This time, instead of assuming only hue 
+ * mattered, I pushed the selector points toward the center of the 
+ * color circle, where things desaturate to white, so as to get less
+ * intense and ugly colors.  (This experience also explained why the
+ * earlier choose-hue-then-desaturate approach did not work:  when
+ * you're that close in to the center, it's easy to get tones which are
+ * not distinct for all vision types.)
+ */
+
+/* v1:  by hand 
+.valid    { background-color: #DFD; }
+.invalid  { background-color: #FDD; }
+.notKnown { background-color: #DDF; }
+.indeterminate { background-color: #DDD; }
+*/
+
+/* v2:  find a good set of three hues, then manually adjust
+ * saturation, etc. 
+ * green hsl(90,50,100) 
+ * red   hsl(330,50,100) 
+ * blue  hsl(220,24,100) tried 90% value, too close to red for deut.
+
+.valid { background-color:  #C1FF7F; } 
+.invalid { background-color:  #FF7FC1; } 
+.notKnown { background-color:  #BFE0FF; }
+
+*/
+
+/* v3 reduce saturation to 20% (and find some distinctions 
+   that work find at other saturations now collapse again)
+
+.valid { background-color:  #EBFDCE; }
+.invalid { background-color:  #F4CFE6; }
+.notKnown { background-color:  #D2DBF0; }
+
+*/
+
+/* v4 try new color scheme:  valid is now a greenish yellow 
+.valid { background-color:  #F1FFCB; }
+.invalid { background-color:  #FFCBD9; }
+.notKnown { background-color:  #E9CBFF; }
+*/
+
+/* v5 yet another color scheme.  Abandon the green/red
+ * metaphor and just look for three colors that don't
+ * look too ugly together.
+ * Not bad, but ... not great, either.
+.valid { background-color:  #B3F7FF; }
+.invalid { background-color:  #CAD3FF; }
+.notKnown { background-color:  #FFE2B3; }
+.indeterminate { background-color:  #EEEEEE; }
+*/
+
+/* v6 Reuse color scheme from XSD type hierarchy diagram. */
+/* valid = other atomic types (light blue)
+ * invalid = list types (intense blue)
+ * notKnown = primitives (med blue)
+ * indeterminate = specials (dark steel blue)
+ */
+.valid { background-color:  #E6F4FF; }
+.invalid { background-color:  #80C9FF; }
+.notKnown { background-color:  #BFE4FF; }
+.indeterminate { background-color:  #6096BF; color: white; }
+.indeterminate a:link { color: #E6F4FF; }
+.indeterminate a:visited { color: #BFE4FF; }
+
+p.instanceTest, p.schemaTest { 
+  margin-bottom: 0;
+  padding: 0.2em 0.6em;
+}
+p.instanceTest + p.instanceTest { 
+  margin-top: 0;
+}
+
+.schema-name, .instance-test-name { 
+  font-style:  italic;
+}
+
+div.testlist { 
+  margin: 1em 2em;
+}
+
+p.docref { 
+  margin-bottom: 0; 
+}
+p.docref + p.docref { 
+  margin-top: 0; 
+}

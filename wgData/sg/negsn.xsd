@@ -1,0 +1,33 @@
+<xsd:schema 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:tns="http://www.w3.org/XML/2008/xsdl-exx/ns1" 
+ targetNamespace="http://www.w3.org/XML/2008/xsdl-exx/ns1" 
+ >
+ <xsd:annotation>
+  <xsd:documentation>
+   <div xmlns="http://www.w3.org/1999/xhtml" >
+    <p>Sample schema for testing interaction of substitution groups
+     and #definedSibling.</p>
+    <p>CMSMcQ, 10 June 2010.</p>
+   </div>
+  </xsd:documentation>
+ </xsd:annotation>
+
+ <xsd:complexType name="T">
+  <xsd:sequence>
+   <xsd:any notQName="##definedSibling" 
+    minOccurs="1" maxOccurs="1"/>
+   <xsd:element ref="tns:s"/>
+   <xsd:element ref="tns:n"/>
+  </xsd:sequence>
+ </xsd:complexType>
+
+ <xsd:element name="test" type="tns:T"/>
+ <xsd:element name="e" type="xsd:string"/>
+ <xsd:element name="n" type="xsd:string"/>
+ <xsd:element name="s" type="xsd:string"/>
+ <xsd:element name="n1" type="xsd:string"/>
+ <xsd:element name="s1" type="xsd:string" substitutionGroup="tns:s"/>
+
+</xsd:schema>
+

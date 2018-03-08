@@ -1,0 +1,393 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="../../../2008/09/xsd.xsl" type="text/xsl"?>
+<!--PUBLIC "-//W3C//DTD XMLSchema 200102//EN" 
+                           "http://www.w3.org/2001/XMLSchema.dtd"-->
+<!DOCTYPE xs:schema  [
+<!ATTLIST xs:documentation xmlns CDATA #IMPLIED>
+<!ELEMENT p (#PCDATA)>
+
+<!--* We build the regexes systematically by transforming the ABNF
+    * grammar of the RFC into entity declarations:  references to
+    * literals turn into literals, and references to non-terminals
+    * turn into entity references.  (Don't try this with a context-free
+    * grammar; you'll get circular entity references.)
+    *-->
+
+<!--* We give the entity declarations in a bottom-up order, because
+    * some XML parsers make the mistake of trying to expand the
+    * entities when reading the entity declaration, and want
+    * declaration before use.  (DV, listen to me when I am talking 
+    * to you.)
+    *
+    * When multiple entity declarations are given, the last one
+    * shown is the one created by the mechanical translation.
+    * The earlier ones are manual reformulations of the expression
+    * mostly for compactness and clarity, and occasionally to fix
+    * problems with character escaping.
+    *-->
+
+
+<!--* Character classes, groups, what have you *-->
+<!--* These are all unchanged from RFC 3986,
+    * except for ipchar and iunreserved, which are 
+    * internationalized versions of pchar and unreserved.
+    *-->
+
+<!ENTITY ALPHA "([A-Za-z])">
+<!ENTITY ALPHA "([A-Z]|[a-z])">
+
+<!ENTITY DIGIT "[0-9]">
+
+<!ENTITY HEXDIG "[0-9A-Fa-f]">
+<!ENTITY HEXDIG "(&DIGIT;|A|B|C|D|E|F)">
+
+<!--* pcg-sub-delims:  the 'positive character group' in sub-delims
+    * (give it a name to make it more easily reusable)
+    *-->
+<!ENTITY pcg-sub-delims "!$&amp;'()*+,;=">
+<!ENTITY sub-delims "[&pcg-sub-delims;]">
+<!ENTITY sub-delims "(!|$|&amp;|'|\(|\)|\*|\+|,|;|=)">
+
+<!ENTITY pcg-gen-delims ":/?#\[\]@">
+<!ENTITY gen-delims "[&pcg-gen-delims;]">
+<!ENTITY gen-delims "(:|/|\?|#|\[|\]|@)">
+
+<!ENTITY reserved "[&pcg-gen-delims;&pcg-sub-delims;]">
+<!ENTITY reserved "(&gen-delims;|&sub-delims;)">
+
+<!ENTITY pcg-unreserved "A-Za-z0-9\-\._~">
+<!ENTITY unreserved "[&pcg-unreserved;]">
+<!ENTITY unreserved "(&ALPHA;|&DIGIT;|-|\.|_|~)">
+
+<!ENTITY pct-encoded "(&#37;&HEXDIG;&HEXDIG;)">
+
+<!ENTITY ucs_01 "&#xA0;-&#xD7FF;" > 
+<!ENTITY ucs_02 "&#xF900;-&#xFDCF;" >
+<!ENTITY ucs_03 "&#xFDF0;-&#xFFEF;" >
+<!ENTITY ucs_10 "&#x10000;-&#x1FFFD;" >
+<!ENTITY ucs_20 "&#x20000;-&#x2FFFD;" >  
+<!ENTITY ucs_30 "&#x30000;-&#x3FFFD;" >
+<!ENTITY ucs_40 "&#x40000;-&#x4FFFD;" >  
+<!ENTITY ucs_50 "&#x50000;-&#x5FFFD;" >  
+<!ENTITY ucs_60 "&#x60000;-&#x6FFFD;" >
+<!ENTITY ucs_70 "&#x70000;-&#x7FFFD;" >  
+<!ENTITY ucs_80 "&#x80000;-&#x8FFFD;" >  
+<!ENTITY ucs_90 "&#x90000;-&#x9FFFD;" >
+<!ENTITY ucs_A0 "&#xA0000;-&#xAFFFD;" >  
+<!ENTITY ucs_B0 "&#xB0000;-&#xBFFFD;" >  
+<!ENTITY ucs_C0 "&#xC0000;-&#xCFFFD;" >
+<!ENTITY ucs_D0 "&#xD0000;-&#xDFFFD;" >  
+<!ENTITY ucs_E0 "&#xE1000;-&#xEFFFD;" >
+<!ENTITY UCS_0 "&ucs_01;&ucs_02;&ucs_03;&ucs_10;&ucs_20;&ucs_30;">
+<!ENTITY UCS_4 "&ucs_40;&ucs_50;&ucs_60;&ucs_70;">
+<!ENTITY UCS_8 "&ucs_80;&ucs_90;&ucs_A0;&ucs_B0;">
+<!ENTITY UCS_C "&ucs_C0;&ucs_D0;&ucs_E0;">
+<!ENTITY ucschar "[&UCS_0;&UCS_4;&UCS_8;&UCS_C;]">
+<!ENTITY ucschar "([ -퟿]|[豈-﷏]|[ﷰ-￯]|[𐀀-🿽]|[𠀀-𯿽]|[𰀀-𿿽]|[񀀀-񏿽]|[񐀀-񟿽]|[񠀀-񯿽]|[񰀀-񿿽]|[򀀀-򏿽]|[򐀀-򟿽]|[򠀀-򯿽]|[򰀀-򿿽]|[󀀀-󏿽]|[󐀀-󟿽]|[󡀀-󯿽])">
+
+
+<!ENTITY pcg-iunreserved "&pcg-unreserved;&UCS_0;&UCS_4;&UCS_8;&UCS_C;">
+<!ENTITY iunreserved "[&pcg-iunreserved;]">
+<!ENTITY iunreserved "(&ALPHA;|&DIGIT;|-|\.|_|~|&ucschar;)">
+
+<!ENTITY ipchar "(&iunreserved;|&pct-encoded;|[&pcg-sub-delims;:@])">
+<!ENTITY ipchar "(&iunreserved;|&pct-encoded;|&sub-delims;|:|@)">
+
+
+<!--* The URI (or rather IRI) scheme *-->
+<!--* Unchanged from RFC 3986 *-->
+
+<!ENTITY scheme "(&ALPHA;[A-Za-z0-9+\-\.]*)">
+<!ENTITY scheme "(&ALPHA;((&ALPHA;|&DIGIT;|\+|-|\.))*)">
+
+
+<!--* The hierarchical part of the IRI:  authority and path *-->
+<!--* Authority:  user info, host, port number *-->
+
+<!ENTITY iuserinfo "([&pcg-iunreserved;&pcg-sub-delims;:]|&pct-encoded;)*">
+<!ENTITY iuserinfo "((&iunreserved;|&pct-encoded;|&sub-delims;|:))*">
+
+
+<!--* Host:  the most elaborate part of the grammar.
+    * reg-name, IPv4, IPv6, and IPvFuture.
+    *-->
+
+<!ENTITY ireg-name "((&iunreserved;|&pct-encoded;|&sub-delims;))*">
+
+<!ENTITY dec-octet "(&DIGIT;|([1-9]&DIGIT;)|(1(&DIGIT;){2})|(2[0-4]&DIGIT;)|(25[0-5]))">
+
+<!ENTITY IPv4address "(&dec-octet;\.&dec-octet;\.&dec-octet;\.&dec-octet;)">
+
+<!ENTITY h16 "&HEXDIG;{0,4}">
+<!ENTITY h16 "(&HEXDIG;){0,4}">
+
+<!ENTITY ls32 "((&h16;:&h16;)|&IPv4address;)">
+
+<!ENTITY IPv6address "((((&h16;:)){6}&ls32;)|(::((&h16;:)){5}&ls32;)|((&h16;)?::((&h16;:)){4}&ls32;)|(((((&h16;:))?&h16;))?::((&h16;:)){3}&ls32;)|(((((&h16;:)){0,2}&h16;))?::((&h16;:)){2}&ls32;)|(((((&h16;:)){0,3}&h16;))?::&h16;:&ls32;)|(((((&h16;:)){0,4}&h16;))?::&ls32;)|(((((&h16;:)){0,5}&h16;))?::&h16;)|(((((&h16;:)){0,6}&h16;))?::))">
+
+<!ENTITY IPvFuture "(v&HEXDIG;+\.[&pcg-unreserved;&pcg-sub-delims;:]+)">
+<!ENTITY IPvFuture "(v(&HEXDIG;)+\.((&unreserved;|&sub-delims;|:))+)">
+
+<!ENTITY IP-literal "(\[(&IPv6address;|&IPvFuture;)\])">
+
+<!ENTITY ihost "(&IP-literal;|&IPv4address;|&ireg-name;)">
+
+<!ENTITY port "&DIGIT;*">
+<!ENTITY port "(&DIGIT;)*">
+
+<!ENTITY iauthority "(((&iuserinfo;@))?&ihost;((:&port;))?)">
+
+
+<!--* Path (second major part of hier-part):  first segments, then various kinds of path *-->
+
+<!ENTITY isegment "(&ipchar;)*">
+
+<!ENTITY isegment-nz "(&ipchar;)+">
+
+<!ENTITY isegment-nz-nc "([&pcg-iunreserved;&pcg-sub-delims;@]|&pct-encoded;)+">
+<!ENTITY isegment-nz-nc "((&iunreserved;|&pct-encoded;|&sub-delims;|@))+">
+
+<!ENTITY ipath-abempty "((/&isegment;))*">
+
+<!ENTITY ipath-absolute "(/((&isegment-nz;((/&isegment;))*))?)">
+
+<!ENTITY ipath-noscheme "(&isegment-nz-nc;((/&isegment;))*)">
+
+<!ENTITY ipath-rootless "(&isegment-nz;((/&isegment;))*)">
+
+<!ENTITY ipath-empty "">
+
+<!ENTITY ipath "(&ipath-abempty;|&ipath-absolute;|&ipath-noscheme;|&ipath-rootless;|&ipath-empty;)">
+
+<!ENTITY ihier-part "((//&iauthority;&ipath-abempty;)|&ipath-absolute;|&ipath-rootless;|&ipath-empty;)">
+
+<!--* end of hier-part *-->
+
+
+<!--* Query part *-->
+
+<!ENTITY pcg-iprivate "&#xE000;-&#xF8FF;&#xF0000;-&#xFFFFD;&#x100000;-&#x10FFFD;" >
+<!ENTITY iprivate "[&pcg-iprivate;]" >
+<!ENTITY iprivate "([-]|[󰀀-󿿽]|[􀀀-􏿽])">
+
+<!ENTITY iquery "(&ipchar;|[&pcg-iprivate;/?])*">
+<!ENTITY iquery "((&ipchar;|&iprivate;|/|\?))*">
+
+
+<!--* Fragment part *-->
+
+<!ENTITY ifragment "((&ipchar;|/|\?))*">
+
+
+<!--* Relative references *-->
+
+<!ENTITY irelative-part "((//&iauthority;&ipath-abempty;)|&ipath-absolute;|&ipath-noscheme;)?">
+
+<!--* Some regexp handlers turn out to have problems with the trailing empty branch, 
+* so delete it and make the entire expression optional instead. The bug has been
+* reported, but in the meantime let's work around it.  
+*-->
+<!ENTITY irelative-part "((//&iauthority;&ipath-abempty;)|&ipath-absolute;|&ipath-noscheme;|&ipath-empty;)">
+
+<!ENTITY irelative-ref "(&irelative-part;((\?&iquery;))?((#&ifragment;))?)">
+
+
+
+<!--* IRIs, relative references, IRI references *-->
+
+<!ENTITY IRI "(&scheme;:&ihier-part;((\?&iquery;))?((#&ifragment;))?)">
+
+<!ENTITY IRI-reference "(&IRI;|&irelative-ref;)">
+
+<!ENTITY absolute-IRI "(&scheme;:&ihier-part;((\?&iquery;))?)">
+
+]>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	   xmlns:lib="http://www.w3.org/2001/03/XMLSchema/TypeLibrary" 
+	   version="1.0" 
+	   elementFormDefault="qualified" 
+	   xml:lang="en" 
+	   targetNamespace="http://www.w3.org/2001/03/XMLSchema/TypeLibrary">
+
+ 
+  <xs:annotation>
+   <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+
+     <h3>Introduction</h3>
+
+     <p>This schema document describes a [draft] component of the XML
+     Schema type library: datatypes for IRIs as defined by RFC 3987.</p>
+    
+     <p>The types defined here check the conformance of literal
+     strings against the grammar given in section 2.2 of <a
+     href="http://www.ietf.org/rfc/rfc3987.txt">RFC 3987</a>,
+     translated into XSD notation.  See also the 
+     <a href="TypeLibrary-URI-RFC3986.xsd">schema document
+     for URIs</a> located in the same directory as this document.
+     </p>
+
+     <p>Please send suggestions for improvements to
+     www-xml-schema-comments@w3.org.  Mention the URI
+     of this document:  
+     <code><a href="">
+     http://www.w3.org/2011/04/XMLSchema/TypeLibrary-IRI-3987.xsd
+     </a></code>
+     </p>
+
+     <p>See below (at the bottom of this document) for information
+     about the revision and namespace-versioning policy governing this
+     schema document.</p>
+     
+   </xs:documentation>
+  </xs:annotation>
+
+  <xs:simpleType name="IRI-3987">
+    <xs:annotation>
+        <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+	  <p>
+            The IRI-3987 type checks the string against the regex
+            grammar for IRI in RFC 3987 Section 2.2.  
+	  </p>
+	  <p>
+	    Note that the grammar for IRI is essentially the same
+	    as that for absolute IRIs, with the addition of an 
+	    optional hash mark (#) and fragment identifier:
+	  </p>
+	  <pre>
+	    IRI = scheme ":" ihier-part [ "?" iquery ] [ "#" ifragment ]
+	  </pre>
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:anyURI">
+      <xs:pattern value="&IRI;"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="absolute-IRI-3987">
+    <xs:annotation>
+        <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+	  <p>
+            The <tt>absolute-IRI-3987</tt> type checks the
+            string against the regex grammar for absolute IRIs
+            in RFC 3987 Section 2.2.
+	  </p>
+	  <p>The grammar is very like that for IRI, but it does
+	  not allow a fragment identifier.</p>
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:anyURI">
+      <xs:pattern value="&absolute-IRI;"/>	  
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="relative-reference-3987">
+    <xs:annotation>
+        <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+	  <p>
+            The <tt>relative-reference-3987</tt> type checks the
+            string against the regex grammar for relative references
+            in RFC 3987 Section 2.2.
+	  </p>
+	  <p>The top-level rules in the grammar are:</p>
+	  <pre>
+            irelative-ref  = irelative-part [ "?" iquery ] [ "#" ifragment ]
+	    
+	    irelative-part = "//" iauthority ipath-abempty
+                           / ipath-absolute
+                           / ipath-noscheme
+                           / ipath-empty
+	  </pre>
+        </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:anyURI">
+      <xs:pattern value="&irelative-ref;"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="IRI-reference-3987">
+    <xs:annotation>
+      <xs:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          The <tt>IRI-reference-3987</tt> type checks the
+          string against the regex grammar for IRI references
+          in RFC 3987 Section 2.2.  This is the one most 
+          users are likely to want when they say they want
+          a generic URI or IRI type.
+        </p>
+        <p>The rule in the grammar is:</p>
+        <pre>
+          IRI-reference = IRI / irelative-ref
+        </pre>
+        <p>Rather than write this as a single pattern,
+        however, we will just take a union of the two
+        types already defined.</p>
+      </xs:documentation>  
+    </xs:annotation>
+    <xs:union memberTypes="lib:IRI-3987 lib:relative-reference-3987"></xs:union>
+  </xs:simpleType>
+
+  <xs:annotation>
+  <xs:documentation>
+
+     <h3>To-do list</h3>
+    
+     <ul>
+       <li>
+	 <p>Make similar types for the earlier versions of the 
+	 URI spec:  RFC 2396, 2732, 1808, 1738.  Use these to make
+	 a union type for all forms of URI references (for example)
+	 accepted by any RFC definition of IRI, URI, or URL.</p>
+       </li>
+       <li>
+	 <p>Make tighter patterns for at least some specific URI/IRI
+	 schemes that have tighter grammars, as an illustration.  The
+	 number of registered schemes is probably too high for it to
+	 be feasible or reasonable to cover more than a few of them,
+	 but there are certainly specific schemes it would be helpful
+	 to be able to validate more tightly: for example, mailto,
+	 doi, data, dict, dns, fax, file, imap, mid, news, nntp, pop,
+	 pres, im, sms, tag, some forms of URN, z39.50, feed, git,
+	 irc, jar, mvn, rsync, ssh, smb, svn.
+	 </p>
+       </li>
+     </ul>
+    
+   </xs:documentation>
+  </xs:annotation>
+
+  <xs:annotation>
+  <xs:documentation>
+
+     <h3>Versioning policy for this document</h3>
+
+     <p>$Id: TypeLibrary-IRI-RFC3987.xsd,v 1.5 2011/05/03 01:51:31 cmsmcq Exp $</p>
+    
+     <p>
+       In keeping with the XML Schema WG's standard versioning
+       policy, this schema document will persist at
+       http://www.w3.org/2011/04/TypeLibrary-URI-RFC3987.xsd.
+     </p>
+     <p>
+       At the date of issue it can also be found at
+       http://www.w3.org/2001/03/XMLSchema/URI-3987.xsd.  The schema
+       document at that URI may however change in the future, in order
+       to remain compatible with the latest version of XML Schema
+       itself.  In other words, if the XML Schema namespace changes,
+       the version of this document at
+       http://www.w3.org/2001/03/XMLSchema/TypeLibrary-URI-3987.xsd
+       will change accordingly; the version at
+       http://www.w3.org/2011/04/TypeLibrary-URI-3987.xsd will not
+       change.
+     </p>
+     <p>
+       Previous dated (and unchanging) versions of this schema
+       document include:
+     </p>
+     <ul>
+       <li>[None]</li>
+     </ul>
+    
+   </xs:documentation>
+  </xs:annotation>
+ 
+</xs:schema>

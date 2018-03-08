@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	   xmlns:lib="http://www.w3.org/2001/03/XMLSchema/TypeLibrary" 
+	   version="1.0" 
+	   elementFormDefault="qualified" 
+	   xml:lang="en">
+	  
+	  <xs:import namespace="http://www.w3.org/2001/03/XMLSchema/TypeLibrary" 
+	   		     schemaLocation="TypeLibrary-IRI-URI-driver.xsd"/>
+	   		     
+	  <xs:element name="URI-3986" type="lib:URI-3986"/>
+	  <xs:element name="absolute-URI-3986" type="lib:absolute-URI-3986"/>
+	  <xs:element name="relative-reference-3986" type="lib:relative-reference-3986"/>
+	  <xs:element name="URI-reference-3986" type="lib:URI-reference-3986"/>
+	  
+	  <xs:element name="IRI-3987" type="lib:IRI-3987"/>
+	  <xs:element name="absolute-IRI-3987" type="lib:absolute-IRI-3987"/>
+	  <xs:element name="relative-reference-3987" type="lib:relative-reference-3987"/>
+	  <xs:element name="IRI-reference-3987" type="lib:IRI-reference-3987"/>
+	  
+</xs:schema>
+	   
