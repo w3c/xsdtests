@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_28_v01"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_28_v01">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : Tests the simpleType dateTimeStamp and its facets and its use in elements
+-->
+
+<simpleType name="dTimeStampType">
+	<restriction base="dateTimeStamp"/>
+</simpleType>
+
+
+<simpleType name="dTimeStampEnumeration">
+
+	<restriction base="dateTimeStamp">
+		<enumeration value="1999-01-01T12:00:00Z"/>
+		<enumeration value="2000-01-01T12:00:00Z"/>
+		<enumeration value="2001-01-01T12:00:00.123-09:00"/>
+		<enumeration value="2002-01-01T12:00:00.123+09:00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampPattern">
+	<restriction base="dateTimeStamp">
+		<pattern value="[2][0][0][0-9][-][0-1][1-2][-][0-2][1-8][T]*.*"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampMinMaxInclusive">
+	<restriction base="dateTimeStamp">
+		<minInclusive value="2001-01-01T12:00:00.123+09:00"/>
+		<maxInclusive value="2002-01-01T12:00:00.123+09:00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampMinMaxExclusive">
+	<restriction base="dateTimeStamp">
+		<minExclusive value="1998-01-01T12:00:00.123+09:00"/>
+		<maxExclusive value="1999-01-01T12:00:00.123+09:00"/>
+	</restriction>
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<sequence>			
+			<element name="eldTimeStampType" type="sv:dTimeStampType" minOccurs="1" maxOccurs="unbounded"/>			
+			<element name="eldTimeStampEnumeration" type="sv:dTimeStampEnumeration" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="eldTimeStampPattern" type="sv:dTimeStampPattern" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="eldTimeStampMinMaxInclusive" type="sv:dTimeStampMinMaxInclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="eldTimeStampMinMaxExclusive" type="sv:dTimeStampMinMaxExclusive" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_9_v01"
+	xmlns:ii="http://xstest-tns/schema11_D3_3_9_v01">
+	
+<!-- 
+	Test Case Type: Valid test (Datatypes section 3.3.9) 
+	Base Type     : time
+	Description   : Valid schema
+-->
+
+
+<simpleType name="Time1">
+	<restriction  base="time">
+		<minInclusive value="08:00:00+10:00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="Time2">
+	<restriction  base="time">
+		<minInclusive value="00:00:00+01:00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="Time3">
+	<restriction  base="time">
+		<minInclusive value="10:00:00+13:00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="Time4">
+	<restriction  base="time">
+		<minInclusive value="03:00:00+04:00"/>
+	</restriction>
+</simpleType>
+
+
+
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elTime1" type="ii:Time1" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elTime2" type="ii:Time2" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elTime3" type="ii:Time3" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elTime4" type="ii:Time4" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

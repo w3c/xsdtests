@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="rf-whiteSpace" 
+  contributor="IBM">
+     
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-whiteSpace">collapse test for string.</ts:documentation>
+    </ts:annotation>
+     
+    <ts:testGroup name="d4_3_6v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>when the value is collapse, literals consisting solely of whitespace characters are reduced to the empty string.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-whiteSpace"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-CollapseEmptyString"/>        
+        <ts:schemaTest name="d4_3_6v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D4_3_6/d4_3_6v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_6v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D4_3_6/d4_3_6v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d4_3_6ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>when the value is collapse, literals consisting solely of whitespace characters are reduced to the empty string.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-whiteSpace"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-CollapseEmptyString"/>        
+        <ts:schemaTest name="d4_3_6ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D4_3_6/d4_3_6ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_6ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D4_3_6/d4_3_6ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+</ts:testSet>

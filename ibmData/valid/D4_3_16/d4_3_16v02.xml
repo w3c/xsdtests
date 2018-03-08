@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_F4_3_16_v02"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_F4_3_16_v02
+	d4_3_16v02.xsd"
+	
+	attrDTimeType="1999-10-23T11:59:59-06:00"
+	attrDTimeTypeET="2000-10-23T11:59:59Z"
+	attrDTETProhibited="2001-10-23T11:59:59"
+	attrDTETRequired="2002-10-23T11:59:59Z"	
+	attrDTETOptional="2008-10-23T11:59:59+05:00"/>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime - explicitTimezone
+	Description   : Tests the simpleType dateTime and its explicitTimezone facets and its use in attributes
+-->

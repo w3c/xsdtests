@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root xsi:noNamespaceSchemaLocation="s3_3_4ii03.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<multiple_ids id1="87123_" id2="_d8732d"/>
+</root>
+<!-- 
+	Test Case Type: instance invalid test (Structures 3.3.4)
+	facet Type 	  : ID/IDREF
+	Description   : Multiple attributes of type ID, invalid id value
+-->

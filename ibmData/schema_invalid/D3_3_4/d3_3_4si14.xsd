@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_si06"
+	xmlns:si="http://xstest-tns/schema11_D3_3_4_si06">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : It is an error if minInclusive < base.minInclusive
+-->
+
+<simpleType name="decMinInclusive_Base">
+	<restriction base="precisionDecimal">
+		<minInclusive value="20"/>
+	</restriction>	
+</simpleType>
+
+<simpleType name="decMinInclusive">
+	<restriction base="si:decMinInclusive_Base"/>
+</simpleType>
+
+<simpleType name="decMinInclusive_Derived">
+	<restriction base="si:decMinInclusive">
+		<minInclusive value="-30"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="decMinInclusive_Derived1">
+	<restriction base="si:decMinInclusive">
+		<minExclusive value="-30"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="decMinInclusive_Derived2">
+	<restriction base="si:decMinInclusive">
+		<maxInclusive value="-30"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="decMinInclusive_Derived3">
+	<restriction base="si:decMinInclusive">
+		<maxExclusive value="-30"/> 
+	</restriction>	
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elMinInclusive" type="si:decMinInclusive_Derived"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

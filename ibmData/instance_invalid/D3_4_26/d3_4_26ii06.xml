@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_26_ii06"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_26_ii06
+	d3_4_26ii06.xsd">
+	
+	<elyMDUnionA>Computer</elyMDUnionA>
+	<elyMDUnionA>P12Y34M13D</elyMDUnionA>
+
+	<elyMDUnionB>--P45Y23M</elyMDUnionB>
+	<elyMDUnionB>7</elyMDUnionB>
+	
+	<elyMDUnionC>P35Y3MT5H</elyMDUnionC>
+	<elyMDUnionC>1</elyMDUnionC>
+	<elyMDUnionC>once</elyMDUnionC>	
+
+</dv:root>
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.26) 
+	Base Type     : yearMonthDuration
+	Description   : Invalid yearMonthDuration values used in unions
+-->

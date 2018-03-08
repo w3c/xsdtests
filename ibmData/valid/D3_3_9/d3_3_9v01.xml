@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inii:root xmlns:inii="http://xstest-tns/schema11_D3_3_9_v01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_9_v01
+	d3_3_9v01.xsd">
+	
+	<elTime1>12:00:00+14:00</elTime1>
+
+
+</inii:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.9) 
+	Base Type     : time
+	Description   : Checking that a day is a calendar (or "local time") in
+			    each timezone.
+-->			

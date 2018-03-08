@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_27_ii03"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_27_ii03
+	d3_4_27ii03.xsd">
+	
+
+<elyMDMinMaxInclusive>-P2DT0.001S</elyMDMinMaxInclusive>
+<elyMDMinMaxInclusive>-PT49H</elyMDMinMaxInclusive>
+<elyMDMinMaxInclusive>P31D</elyMDMinMaxInclusive>
+
+
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : Invalid dayTimeDuration Min/Max Inclusive
+-->
+

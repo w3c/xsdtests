@@ -1,0 +1,66 @@
+<?xml version="1.1"?>
+<iv01:root xmlns:xsi         ="http://www.w3.org/2001/XMLSchema-instance"
+                     xmlns:iv01        ="http://xstest-tns/IBM3_11V01"
+                     xsi:schemaLocation="http://xstest-tns/IBM3_11V01
+                                         s2_2_4ii01.xsd">
+<iv01:heaterConsumer>
+
+<!--
+Instance invalid test
+attribute which is required as declared in key is abscent
+-->
+
+<unit attr3="false">
+	<internal code="58105">
+		<heater model="PF-900" quantity="10"/>
+		<heater model="C-4000" quantity="120"/>
+	</internal>
+	<internal code="58102">
+		<heater model="PF-875" quantity="10"/>
+		<heater model="C-2000" quantity="100"/>
+	</internal>
+</unit>
+
+<unit attr1="false" attr2="false" attr3="false">
+	<internal code="94089">
+		<heater model="PF-700" quantity="50"/>
+		<heater model="C-2000" quantity="193"/>
+	</internal>
+	<internal code="95014">
+		<heater model="C-2000" quantity="15"/>
+		<heater model="PF-700" quantity="5"/>
+	</internal>
+</unit>
+
+<!-- 
+	Tests for missing components in instance document
+	In heaterConsumer1, there is a key on unit.@attr1, and attr1 is missing.
+	In heaterConsumer2, there is a keyref on unit.@attr3 that refers to unit.@attr1 and none of heaterConsumer2.unit contains the same value as attr3.
+-->
+
+<iv01:heaters vendor="LAKEWOOD">
+	<heater model="PF-1000">portable heater, power=1000W</heater>
+	<heater model="PF-1200">portable heater, power=1200W</heater>
+</iv01:heaters>
+</iv01:heaterConsumer>
+
+<iv01:heaterConsumer2>
+<unit attr1="false" attr3="true">
+	<internal code="94089">
+		<heater model="PF-700" quantity="50"/>
+		<heater model="C-2000" quantity="193"/>
+	</internal>
+	<internal code="95014">
+		<heater model="C-2000" quantity="15"/>
+		<heater model="PF-700" quantity="5"/>
+	</internal>
+</unit>
+
+<iv01:heaters vendor="LAKEWOOD">
+	<heater model="C-2000">central heater, power=2000W</heater>
+	<heater model="C-4000">central heater, power=4000W</heater>
+</iv01:heaters>
+</iv01:heaterConsumer2>
+
+</iv01:root>
+

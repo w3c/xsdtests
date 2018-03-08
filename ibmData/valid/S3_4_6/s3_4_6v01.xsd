@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xstest-tns/schema11_S3_4_6"
+        xmlns:tns="http://xstest-tns/schema11_S3_4_6">
+        
+
+
+<complexType name="c">
+ <all>
+  <element name="a" type="integer"/>
+  <any maxOccurs="3" processContents="lax"/>
+ </all>
+</complexType>
+
+<element name="root" type="tns:c"/>
+</schema>
+
+<!-- 
+	Test Case Type: valid test (Structures 3.4.6) 
+	Base Type     : Restriction of complex types
+	Description   : Wildcards are now allowed in xs:all
+-->

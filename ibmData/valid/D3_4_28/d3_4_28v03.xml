@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_28_v03"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_28_v03
+	d3_4_28v03.xsd">
+	
+	<eldTimeStampPattern>2000-01-01T12:00:00.123-09:00</eldTimeStampPattern>
+	
+	<eldTimeStampListA>2001-01-01T12:00:00.123-09:00 2002-01-01T12:00:00Z</eldTimeStampListA>
+	
+	<eldTimeStampListB>2001-01-01T12:00:00.123-09:00 2004-01-01T12:00:00.123Z 2002-01-01T12:00:00.123+09:00</eldTimeStampListB>
+	
+	<dv:eldTimeStampListC>2002-01-01T12:00:00.123-09:00 2005-01-01T12:00:00.123-09:00 2006-01-01T12:00:00.123-09:00</dv:eldTimeStampListC>		
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : dateTimeStamp
+	Description   : Tests the simpleType dateTimeStamp and its facets pattern,
+			    used in lists
+-->

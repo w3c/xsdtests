@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root xsi:noNamespaceSchemaLocation="s3_3_4ii04.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<a>ads</a>
+	<b>ads_</b>
+</root>
+<!-- 
+	Test Case Type: instance invalid test (Structures 3.3.4) 
+	Base Type     : ID/IDREF
+	Description   : xs:ID/IDREF with fixed value on attribute
+-->

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<insi:root xmlns:insi="http://xstest-tns/schema11_D3_4_26_v06"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_26_v06
+	d3_4_26v06.xsd">
+	
+	<elDuration>P2001Y29M</elDuration>
+
+	
+</insi:root>
+
+<!-- 
+	Test Case Type: Valid test (Datatypes section 3.4.26) 
+	Base Type     : yearMonthDuration
+	Description   : Pattern is a valid facet for yearMonthDuration
+-->

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_3_4_v02"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_v02
+	d3_3_4v15.xsd">
+	<ele1 
+	scaleType="0.e-2"
+	attrdecMinMaxInclusive="0.1e-3"
+	attrdecMinMaxExclusive="1230.1e-4"
+	/>
+	
+	<ele1 
+	scaleType="123.0000e1"
+	attrdecMinMaxInclusive="0.000001e4"
+	attrdecMinMaxExclusive="123.1e-3"
+	/>
+	
+	<ele1 
+	scaleType="2.e-2"
+	attrdecMinMaxInclusive="0.e-3"
+	attrdecMinMaxExclusive="0.00012e3"
+	/>
+	
+	<ele2
+	scaleType="3.0e-2"
+	attrdecMinMaxInclusive="1.0e-3"
+	attrdecMinMaxExclusive=".00012e3"
+	/>
+		
+	<ele3
+	scaleType="3.32"
+	attrdecType="123456789123456789"
+	attrdecTotalDigits="1234"
+	attrdecEnumeration="-9.999"
+	attrdecPattern="137"
+	attrdecMinMaxInclusive="0.00000000001"
+	attrdecMinMaxExclusive="0"/>
+</dv:root>
+	
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the simpleType precisionDecimal and its facets and its use in attributes
+-->

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_v11"
+	xmlns:sv="http://xstest-tns/schema11_D3_3_4_v11">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Testing special values (+INF,INF,-INF,NaN) for precisionDecimal
+-->
+
+<simpleType name="decMinMaxScale">
+	<restriction base="precisionDecimal">
+		<minScale value="2"/>
+		<maxScale value="3"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="pSpecial" >
+	<restriction  base="precisionDecimal">
+		<enumeration value="INF"/>
+		<enumeration value="+INF"/>
+		<enumeration value="21.0e-1"/>		
+	</restriction>		
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="Special1" type="sv:pSpecial" minOccurs="1" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

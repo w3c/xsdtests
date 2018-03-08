@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns" xmlns:tns="http://xstest-tns"
+	elementFormDefault="unqualified">
+	
+<!-- 
+Test Case Type: Valid test
+Description   : Basic type alternatives. 
+		The alternative type extends the base element's type. 
+		More that one alternative type is present. One of the alternative types is the default type.
+-->
+
+	<xs:element name="root">
+		<xs:complexType>
+
+			<xs:sequence>
+				<xs:element name="title" maxOccurs="5">
+
+					<xs:alternative id="id1" test="@type='text'">
+						<xs:complexType mixed="true">
+							<xs:complexContent>
+								<xs:restriction base="tns:titleType">
+									<xs:attribute name="type" type="xs:string"></xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:alternative>
+
+					<xs:alternative id="id2" test="@type='number'">
+						<xs:complexType mixed="true">
+							<xs:complexContent>
+								<xs:restriction base="tns:titleType">
+									<xs:attribute name="type" type="xs:string"></xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:alternative>
+
+					<xs:alternative  id="id4">
+						<xs:complexType mixed="true" id="id3">
+							<xs:complexContent>
+								<xs:restriction base="tns:titleType">
+									<xs:attribute name="type" type="xs:anySimpleType"></xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:alternative>
+
+				</xs:element>
+			</xs:sequence>
+
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="titleType" mixed="true">
+		<xs:attribute name="type" type="xs:anySimpleType"></xs:attribute>
+	</xs:complexType>
+
+</xs:schema>

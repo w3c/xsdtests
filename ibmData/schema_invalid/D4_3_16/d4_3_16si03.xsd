@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_si03"
+	xmlns:si="http://xstest-tns/schema11_F4_3_16_si03">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : error if base = prohibited and child != prohibited
+							base = required and child != required
+-->
+
+<simpleType name="dTimeETzoneO_Base">
+	<restriction base="dateTime">
+		<explicitTimezone value="optional"/>   <!--valid-->
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeETzoneO_DerviedO">
+	<restriction base="si:dTimeETzoneO_Base">
+		<explicitTimezone value="optional"/> 	  <!--valid-->
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETzoneO_DerviedR">
+	<restriction base="si:dTimeETzoneO_Base">
+		<explicitTimezone value="required"/> 	  <!--valid-->
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeETzoneO_DerviedP">
+	<restriction base="si:dTimeETzoneO_Base">
+		<explicitTimezone value="prohibited"/>	  <!--valid-->
+	</restriction>
+</simpleType>
+
+
+
+<simpleType name="dTimeETzoneP_Base">
+	<restriction base="dateTime">
+		<explicitTimezone value="prohibited"/> 	  <!--valid-->
+	</restriction>	
+</simpleType>
+
+
+<simpleType name="dTimeETzoneP_DerviedP">
+	<restriction base="si:dTimeETzoneP_Base">
+		<explicitTimezone value="prohibited"/> 	  <!--valid-->
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeETzoneP_DerviedR">
+	<restriction base="si:dTimeETzoneP_Base">
+		<explicitTimezone value="required"/> 	  <!--invalid-->
+	</restriction>	
+</simpleType>
+
+
+<simpleType name="dTimeETzoneP_DerviedO">
+	<restriction base="si:dTimeETzoneP_Base">
+		<explicitTimezone value="optional"/> 	  <!--invalid-->
+	</restriction>	
+</simpleType>
+
+
+
+<simpleType name="dTimeETzoneR_Base">
+	<restriction base="dateTime">	
+		<explicitTimezone value="required"/>	 <!--valid-->
+	</restriction>	
+</simpleType>
+
+
+<simpleType name="dTimeETzoneR_DerviedR">
+	<restriction base="si:dTimeETzoneR_Base">
+		<explicitTimezone value="required"/> 	  <!--valid-->
+	</restriction>	
+</simpleType>
+
+
+<simpleType name="dTimeETzoneR_DerviedO">
+	<restriction base="si:dTimeETzoneR_Base">
+		<explicitTimezone value="optional"/> 	  <!--invalid-->
+	</restriction>	
+</simpleType>
+
+
+<simpleType name="dTimeETzoneR_DerviedP">
+	<restriction base="si:dTimeETzoneR_Base">
+		<explicitTimezone value="prohibited"/> 	  <!--invalid-->
+	</restriction>	
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="eldTimeETzoneR_DerviedP" type="si:dTimeETzoneR_DerviedP"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

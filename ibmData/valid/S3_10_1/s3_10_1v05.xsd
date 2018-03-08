@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a"
+        xmlns:b="b"
+        xmlns:c="c"
+        elementFormDefault="qualified">
+        
+<!-- 
+the keyword ##definedSibling can be used to exclude all elements explicitly mentioned in a content model
+-->
+
+<complexType name="t">
+ <sequence>
+  <element ref="a:b"/>
+  <any notQName="##definedSibling" processContents="lax" maxOccurs="unbounded"/>
+  <element ref="a:c"/>
+ </sequence>
+</complexType>
+
+<element name="a" type="integer"/>
+<element name="b" type="integer"/>
+<element name="c" type="integer"/>
+<element name="d" type="integer"/>
+
+<element name="root" type="a:t"/>
+</schema>

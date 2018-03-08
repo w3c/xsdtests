@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<insi:root xmlns:insi="http://xstest-tns/schema11"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11
+	d3_3_16v01.xsd">
+	
+<ele>123456</ele>
+</insi:root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : test Units of length for hexBinary datatype.
+-->

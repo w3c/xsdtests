@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_si01"
+	xmlns:si="http://xstest-tns/schema11_D3_3_4_si01">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : length is an invalid facet for the datatype precisionDecimal
+-->
+
+<simpleType name="decLength">
+	<restriction base="precisionDecimal">
+		<length value="2"/>
+	</restriction>	
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="eldecLength" type="si:decLength"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

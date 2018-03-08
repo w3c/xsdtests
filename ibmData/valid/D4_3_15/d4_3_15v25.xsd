@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="root">
+     <xs:complexType>
+        <xs:sequence>
+           <xs:element name="e1" type="xs:string" />
+        </xs:sequence>
+        <xs:assert test="e1 = 'present'" xpathDefaultNamespace="##defaultNamespace" />
+     </xs:complexType>
+   </xs:element>
+
+</xs:schema>
+
+
+<!-- 
+	Test Case Type: valid test (Datatypes section 4.3.15) 
+	Base Type     : Assertion
+	Description   : naive xpathDefaultNamespace(with value ##defaultNamespace) test case in complexType
+-->

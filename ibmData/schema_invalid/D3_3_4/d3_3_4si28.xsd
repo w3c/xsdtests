@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_si20"
+	xmlns:si="http://xstest-tns/schema11_D3_3_4_si20">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : It is an error if maxScale > base.maxScale
+-->
+
+<simpleType name="decmaxScale_Base">
+	<restriction base="precisionDecimal">
+		<maxScale value="2"/>
+	</restriction>	
+</simpleType>
+
+<simpleType name="decmaxScale">
+	<restriction base="si:decmaxScale_Base"/>
+</simpleType>
+
+<simpleType name="decmaxScale_Derived">
+	<restriction base="si:decmaxScale">
+		<maxScale value="10"/> 
+	</restriction>	
+</simpleType>
+
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elmaxScale" type="si:decmaxScale_Derived"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

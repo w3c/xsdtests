@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="explicitTimezone" 
+  contributor="IBM">
+     
+        <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"> explicitTimezone
+	 </ts:documentation>
+    </ts:annotation>
+  
+    <ts:testGroup name="d4_3_16v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its facets, explicitTimezone and its use in elements </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d4_3_16v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its facets, explicitTimezone and its use in elements </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v02.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+    <ts:testGroup name="d4_3_16v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType precisionDecimal and its facet, explicitTimezone, used in lists</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v03.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>   
+
+    <ts:testGroup name="d4_3_16v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            Tests the simpleType dateTime and its facet, explicitTimezone used with unions 
+            </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v04.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>   
+  
+    <ts:testGroup name="d4_3_16v05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its facets, explicitTimezone  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16v05s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v05.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16v05i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v05.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>   
+  
+     <ts:testGroup name="d4_3_16v06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its facet with explicitTimezone constraint checks in derivations of simpleTypes</ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16v06s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v06.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16v06i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v06.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+ 
+     <ts:testGroup name="d4_3_16v07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its facets with explicitTimezone constraint checks in derivations of simpleTypes </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16v07s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v07.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16v07i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D4_3_16/d4_3_16v07.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+  
+    <ts:testGroup name="d4_3_16ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid dateTime values </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>   
+ 
+    <ts:testGroup name="d4_3_16ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its explicitTimezone facets and its use in attributes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii02.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>  
+ 
+    <ts:testGroup name="d4_3_16ii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its facets explicitTimezone, used in lists</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii03.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>  
+ 
+    <ts:testGroup name="d4_3_16ii04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its facets explicitionTimezone, used with unions </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16ii04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16ii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii04.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+  
+     <ts:testGroup name="d4_3_16ii05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its facets, explicitTimezone </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16ii05s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii05.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16ii05i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii05.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d4_3_16ii06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its facet with explicitTimezone constraint checks in derivations of simpleTypes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16ii06s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii06.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16ii06i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii06.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d4_3_16ii07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTime and its facet with explicitTimezone constraint checks in derivations of simpleTypes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16ii07s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii07.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d4_3_16ii07i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D4_3_16/d4_3_16ii07.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+  
+    <ts:testGroup name="d4_3_16si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>explicitTimezone, schema invalid test cases </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D4_3_16/d4_3_16si01.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        	 
+    </ts:testGroup>   
+  
+    <ts:testGroup name="d4_3_16si02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>It is an error to specify more than one explicitTimezone for the same type definition </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D4_3_16/d4_3_16si02.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        	 
+    </ts:testGroup>    
+  
+    <ts:testGroup name="d4_3_16si03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>error if base = prohibited and child != prohibited
+          base = required and child != required  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16si03s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D4_3_16/d4_3_16si03.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        	 
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d4_3_16si04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>This test case tests the fixed attribute on facet, explicitTimezone </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#rf-explicitTimezone"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/> 
+        <ts:schemaTest name="d4_3_16si04s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D4_3_16/d4_3_16si04.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        	 
+    </ts:testGroup>   
+    
+</ts:testSet>

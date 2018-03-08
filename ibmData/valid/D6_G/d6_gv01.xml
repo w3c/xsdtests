@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="a"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="a d6_gv01.xsd">
+	<string>a</string>
+	<string>c</string>
+</root>
+<!-- 
+Test Case Type: Valid test
+Description   : use of hyphens within square brackets in regular expressions [a-c] 
+-->

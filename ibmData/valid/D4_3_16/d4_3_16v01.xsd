@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_v01"
+	xmlns:sv="http://xstest-tns/schema11_F4_3_16_v01">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets, explicitTimezone and its use in elements
+-->
+
+<simpleType name="dTimeType">
+	<restriction base="dateTime"/>
+</simpleType>
+
+<simpleType name="dTimeExplicitTimezoneProhibited">
+	<restriction base="dateTime">
+		<explicitTimezone value="prohibited"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeExplicitTimezoneRequired">
+	<restriction base="dateTime">
+		<explicitTimezone value="required"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeExplicitTimezoneOptional">
+	<restriction base="dateTime">
+		<explicitTimezone value="optional"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elDTimeType" type="sv:dTimeType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elDTimeETProhibited" type="sv:dTimeExplicitTimezoneProhibited" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elDTimeETRequired" type="sv:dTimeExplicitTimezoneRequired" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elDTimeETOptional" type="sv:dTimeExplicitTimezoneOptional" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

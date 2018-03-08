@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a"
+        xmlns:b="b">
+        
+<!-- 
+Test Case Type: Schema invalid test
+Description   : The namespace of each QName in disallowed is allowed by the namespace constraint
+-->
+
+<complexType name="c">
+  <anyAttribute notNamespace="b" notQName="b:asd"/>
+</complexType>
+
+<element name="root" type="integer"/>
+</schema>

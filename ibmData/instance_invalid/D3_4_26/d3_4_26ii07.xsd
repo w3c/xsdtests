@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_26_ii07"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_26_ii07">
+	
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.26) 
+	Base Type     : yearMonthDuration
+	Description   : Tests the simpleType yearMonthDuration and its facets with (min|max) (Inclusive|Exclusive) 
+			constraint checks in derivations of simpleTypes
+-->
+
+
+<simpleType name="yMDTypeMinInclusive">
+	<restriction  base="yearMonthDuration">
+		<minInclusive value="P1M"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="yMDMinInclusive_MinInclusive">
+	<restriction  base="sv:yMDTypeMinInclusive">
+		<minInclusive value="P2M"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="yMDMinInclusive_MinExclusive">
+	<restriction  base="sv:yMDTypeMinInclusive">
+		<minExclusive value="P2M"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="yMDMinInclusive_MaxInclusive">
+	<restriction  base="sv:yMDTypeMinInclusive">
+		<maxInclusive value="P3452Y2M"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="yMDMinInclusive_MaxExclusive">
+	<restriction  base="sv:yMDTypeMinInclusive">
+		<maxExclusive value="P23Y2M"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elyMDMinInclusive_MinInclusive" type="sv:yMDMinInclusive_MinInclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elyMDMinInclusive_MinExclusive" type="sv:yMDMinInclusive_MinExclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elyMDMinInclusive_MaxInclusive" type="sv:yMDMinInclusive_MaxInclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elyMDMinInclusive_MaxExclusive" type="sv:yMDMinInclusive_MaxExclusive" minOccurs="1" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

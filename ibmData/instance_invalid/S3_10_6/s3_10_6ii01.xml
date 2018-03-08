@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xmlns:a="a"
+        xmlns:b="b"
+        xsi:schemaLocation="a s3_10_6ii01.xsd">
+ <e1 b:notAllowed="1"/>
+ <e2 a:notAllowed="1"/>
+</root>
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   : Tests notQName on xs:anyAttribute
+-->

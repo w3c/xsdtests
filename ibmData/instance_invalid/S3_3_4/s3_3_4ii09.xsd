@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="list_of_ids" type="listOfIDs"/>
+				<xs:element name="idref" type="xs:IDREF"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="listOfIDs">
+		<xs:list itemType="xs:ID"/>
+	</xs:simpleType>
+</xs:schema>
+
+
+<!-- 
+	Test Case Type: instance invalid test (ID/IDREF) 	
+	facet Type 	  : ID/IDREF
+	Description   : lists of ID, invalid value on idref element
+-->

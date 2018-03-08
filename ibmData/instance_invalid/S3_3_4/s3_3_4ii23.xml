@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root xsi:noNamespaceSchemaLocation="s3_3_4ii23.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<idref_element>abc</idref_element>
+</root>
+<!-- 
+	Test Case Type: instance invalid test (Structures 3.3.4) 
+	Base Type     : ID/IDREF
+	Description   : xs:ID with default value on attribute, and xs:IDREF on element with invalid value
+-->

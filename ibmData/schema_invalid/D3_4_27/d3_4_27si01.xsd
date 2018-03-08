@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_27_si01"
+	xmlns:si="http://xstest-tns/schema11_D3_4_27_si01">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : length is an invalid facet for dayTimeDuration
+-->
+
+
+<simpleType name="durMinLength">
+	<restriction  base="dayTimeDuration">
+		<length value="5"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elDuration" type="dayTimeDuration" minOccurs="2" maxOccurs="5"/>
+			<element name="elLength" type="si:durMinLength" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

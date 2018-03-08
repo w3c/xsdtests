@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        
+<!--
+Test Case Type: Schema invalid test
+Description   : Alternatives not valid derivation of declared type
+-->
+
+<xs:element name="root" type="xs:integer">
+ <xs:alternative test="@kind='string'" type="xs:string"/>
+ <xs:alternative test="@kind='decimal'" type="xs:decimal"/>
+</xs:element>
+</xs:schema>

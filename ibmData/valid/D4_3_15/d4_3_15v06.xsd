@@ -1,0 +1,29 @@
+<?xml version="1.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">  
+	<xs:element name="root" type="derivedType"/>
+ 
+	<xs:complexType name="baseType">
+		<xs:sequence>
+			<xs:element name="baseEly" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="baseAttr" type="xs:string"/>
+		<xs:assert test="string-length(baseEly) eq 0" />
+	</xs:complexType>
+
+	<xs:complexType name="derivedType">
+		<xs:complexContent>
+			<xs:extension base="baseType">
+				<xs:attribute name="derivedAttr" type="xs:string"/>		
+				<xs:assert test="@derivedAttr" />
+				<xs:assert test="@baseAttr" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+ 
+</xs:schema> 
+<!-- 
+	Test Case Type: valid test (facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : assertions on a complex type definition, 
+					having complexContent, assertions from both derived and base type must succeed
+-->

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a"
+        xmlns:b="b"
+        elementFormDefault="qualified">
+        
+<!-- 
+	invalid element in instance document as it does not match ns of wildcard
+-->
+
+<complexType name="c">
+ <sequence>
+  <any namespace="c a" processContents="lax"/>
+ </sequence>
+</complexType>
+
+<element name="root" type="a:c"/>
+</schema>

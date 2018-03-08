@@ -1,0 +1,70 @@
+<?xml version="1.1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_ii02"
+	xmlns:sv="http://xstest-tns/schema11_F4_3_16_ii02">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets, explicitTimezone and its use in attributes
+-->
+
+<simpleType name="dTimeType">
+	<restriction base="dateTime"/>
+</simpleType>
+
+<simpleType name="dTimeET">
+	<restriction base="dateTime">
+		<explicitTimezone value="optional"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="bDTimeETProhibited">
+	<restriction base="dateTime">
+		<explicitTimezone value="prohibited"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decDTimeETProhibited">
+	<restriction base="sv:bDTimeETProhibited"/>		
+</simpleType>
+
+
+<simpleType name="bDTimeETRequired">
+	<restriction base="dateTime">
+		<explicitTimezone value="required"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decDTimeETRequired">
+	<restriction base="sv:bDTimeETRequired"/>		
+</simpleType>
+
+
+<simpleType name="bDTimeETOptional">
+	<restriction base="dateTime">
+		<explicitTimezone value="optional"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decDTimeETOptional">
+	<restriction base="sv:bDTimeETOptional"/>		
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<simpleContent>
+			<extension base="string">
+				<attribute name="attrDTimeType" type="sv:dTimeType"/>
+				<attribute name="attrDTimeTypeET" type="sv:dTimeET"/>
+				<attribute name="attrDTETProhibited" type="sv:decDTimeETProhibited"/>
+				<attribute name="attrDTETRequired" type="sv:decDTimeETRequired"/>
+				<attribute name="attrDTETOptional" type="sv:decDTimeETOptional"/>				
+			</extension>
+		</simpleContent>
+	</complexType>
+</element>    
+
+</schema>  

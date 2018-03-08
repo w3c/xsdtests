@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xmlns:b="b"
+        xsi:schemaLocation="a s4_2_6v01.xsd">			
+	<b:element>abc</b:element>
+</root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : Referring to a namespace requires an xs:import
+-->

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_28_v10"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_28_v10">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : 
+-->
+
+
+
+<simpleType name="dTimeStampPattern">
+	<restriction  base="dateTimeStamp">
+		<pattern value="[1-2][0][0][0-9][-][0-1][1-2][-][0-3][1-8][T]*.*"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="dTimeStampPattern" type="sv:dTimeStampPattern" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

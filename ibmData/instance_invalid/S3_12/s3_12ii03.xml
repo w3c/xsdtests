@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ns:shape xmlns:ns="tns" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	        xsi:schemaLocation="tns s3_12ii03.xsd">
+   <dimension length="1.0" width="1">lrectangle</dimension>
+   <dimension length="2.0" width="1.1">square</dimension>
+   <dimension length="1" width="2">other</dimension>
+</ns:shape>
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   : the type alternative is selects an invalid element using constructor functions and comparator operators.
+-->

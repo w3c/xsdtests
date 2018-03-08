@@ -1,0 +1,42 @@
+<?xml version="1.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="timer" type="TimerType" maxOccurs="3"/>
+				<xs:element name="parent" type="ParentType" maxOccurs="5" />		
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+  
+	<xs:complexType name="TimerType">
+		<xs:attribute name="time" type="xs:int" />
+		<xs:attribute name="iterations" type="xs:int" />	
+		<xs:assert test="count(@time | @iterations) = 1" />
+	</xs:complexType>
+  
+	<xs:complexType name="ParentType">
+		<xs:sequence>
+			<xs:element name="child" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="name" type="xs:string" />
+					<xs:attribute name="dob" type="xs:date" />
+				</xs:complexType>		
+			</xs:element>
+			<xs:element name="grandchild" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="name" type="xs:string" />
+					<xs:attribute name="dob" type="xs:date" />
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>	
+		<xs:assert test="count(child[@name and @dob] | grandchild[@name and @dob]) = 1" />
+	</xs:complexType>
+  
+</xs:schema>
+<!-- 
+	Test Case Type: Instance Invalid test (Datatype/facet section 4.3.15) 		
+	facet Type 	  : Assertions
+	Description   : assertions on a complex type definition. this schema has a 
+					bigger content model, with assertions at various levels.					
+-->

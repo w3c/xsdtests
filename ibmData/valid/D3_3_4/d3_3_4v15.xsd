@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_v02"
+	xmlns:sv="http://xstest-tns/schema11_D3_3_4_v02">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the simpleType precisionDecimal and its facets and its use in attributes
+-->
+
+<simpleType name="decType">
+	<restriction base="precisionDecimal"/>
+</simpleType>
+
+<simpleType name="decTotalDigits">
+	<restriction base="precisionDecimal">
+		<totalDigits value="5"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="bdecEnumeration">
+
+	<restriction base="precisionDecimal">
+		<enumeration value="-9"/>
+		<enumeration value="9"/>
+		<enumeration value="9.999"/>
+		<enumeration value="-9.999"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decEnumeration">
+	<restriction base="sv:bdecEnumeration">
+		<enumeration value="9"/>
+		<enumeration value="-9.999"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="bdecPattern">
+	<restriction base="precisionDecimal">
+		<pattern value="\d{0,10}"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decPattern">
+	<restriction base="sv:bdecPattern">
+		<pattern value="[0-7]{3}"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinMaxInclusive">
+	<restriction base="precisionDecimal">
+		<minInclusive value="0"/>
+		<maxInclusive value="0.1"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinMaxExclusive">
+	<restriction base="precisionDecimal">
+		<totalDigits value="5" fixed="true"/>
+		<minExclusive value="-1" fixed="0"/>
+		<maxExclusive value="1" fixed="false"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinMaxScale">
+	<restriction base="precisionDecimal">
+		<minScale value="2"/>
+		<maxScale value="3"/>
+	</restriction>
+</simpleType>
+
+
+<complexType name="rootType">
+	<sequence>
+		<element name="ele1" type="sv:elementType" minOccurs="0" maxOccurs="unbounded"/>
+		<element name="ele2" type="sv:elementType" minOccurs="1" maxOccurs="unbounded"/>		
+		<element name="ele3" type="sv:elementType" minOccurs="0"/>		
+	</sequence>
+</complexType>
+
+
+<complexType name="elementType">		
+	<simpleContent>
+		<extension base="string">
+			<attribute name="scaleType" type="sv:decMinMaxScale"/>
+			<attribute name="attrdecType" type="sv:decType"/>
+			<attribute name="attrdecTotalDigits" type="sv:decTotalDigits"/>
+			<attribute name="attrdecEnumeration" type="sv:decEnumeration"/>
+			<attribute name="attrdecPattern" type="sv:decPattern"/>
+			<attribute name="attrdecMinMaxInclusive" type="sv:decMinMaxInclusive"/>
+			<attribute name="attrdecMinMaxExclusive" type="sv:decMinMaxExclusive"/>
+		</extension>
+	</simpleContent>
+</complexType>
+
+<element name="root" type="sv:rootType"/>
+
+</schema>  

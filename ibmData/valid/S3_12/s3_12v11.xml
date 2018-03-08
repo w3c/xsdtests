@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<tns:root xmlns:tns="http://xstest-tns" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	        xsi:schemaLocation="http://xstest-tns s3_12v11.xsd">
+
+	<Meeting end-time="1">
+		<beverage>abc</beverage>
+	</Meeting>
+
+	<Meeting end-time="11">
+		<beverage>123</beverage>
+	</Meeting>
+
+</tns:root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : attribute declarations can now be marked {inheritable}
+-->

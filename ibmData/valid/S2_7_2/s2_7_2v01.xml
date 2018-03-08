@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a s2_7_2v01.xsd">
+ <b xsi:nil='true'></b>
+</root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : default values for xsi:nil
+-->

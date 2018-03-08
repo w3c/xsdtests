@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a">
+        
+<!-- 
+Test Case Type: Valid test
+Description   : Tests openContent in complexType derived by extension
+-->
+
+<defaultOpenContent mode="suffix">
+ <any processContents="lax"/>
+</defaultOpenContent>
+
+<complexType name="c">
+ <openContent mode="suffix">		<!-- Note that in order for the schema to be valid, 
+                                             the mode of the dervied type must be the same as base type's -->
+  <any processContents="lax"/>
+ </openContent>
+ <all>
+  <element name="x" type="integer"/>
+  <element name="y" type="integer"/>
+ </all>
+</complexType>
+
+<complexType name="d">			<!-- The derived type will take the defaultOpenContent's wildcard, not base type's -->
+ <complexContent>
+  <extension base="a:c">
+   <all>
+    <element name="z" type="integer"/>  
+   </all>
+  </extension>
+ </complexContent>
+</complexType>
+
+<element name="root">
+ <complexType>
+  <sequence>
+   <element name="p" type="a:d"/>	<!-- tests openContent -->
+  </sequence>
+ </complexType>
+</element>
+
+</schema>
+ 

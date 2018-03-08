@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/IBMd3_16v02"
+	xmlns:sv="http://xstest-tns/IBMd3_16v02">
+	
+<!-- 
+	Test Case Type: valid test
+	Description   : tests restriction facet in intervening union
+-->
+
+<simpleType name="fltminInclusive">
+	<restriction base="float">
+		<minInclusive value="-12"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="fltUnionD">
+	<restriction base="sv:fltminInclusive">
+		<maxInclusive value="12"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="fltUnionC">
+	<union memberTypes="sv:fltUnionD"/>
+</simpleType>
+
+<simpleType name="UnionDerived">
+	<restriction base="sv:fltUnionC"/>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>			
+			<element name="elfltUnionC" type="sv:UnionDerived"  maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>
+
+</schema>

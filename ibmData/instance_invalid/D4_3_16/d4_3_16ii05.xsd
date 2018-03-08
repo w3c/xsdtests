@@ -1,0 +1,71 @@
+<?xml version="1.1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_ii05"
+	xmlns:sv="http://xstest-tns/schema11_F4_3_16_ii05">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets, explicitTimezone
+-->
+
+<simpleType name="dTimeETOptional">
+	<restriction base="dateTime">
+		<explicitTimezone value="optional"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeETOptionalDerivedPro">
+	<restriction base="sv:dTimeETOptional">
+		<explicitTimezone value="prohibited"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETOptionalDerivedReg">
+	<restriction base="sv:dTimeETOptional">
+		<explicitTimezone value="required"/>
+	</restriction>
+</simpleType>
+
+<element name="elEnumerationA">
+	<simpleType>
+		<restriction  base="sv:dTimeETOptional">
+			<enumeration value="1999-01-01T01:01:00Z"/>
+			<enumeration value="2000-01-01T01:01:00-01:00"/>
+			<enumeration value="2001-01-01T01:01:00+01:00"/>
+			<enumeration value="2002-01-01T01:01:00"/>
+		</restriction>
+	</simpleType>
+</element>
+
+<element name="elEnumerationB">	
+	<simpleType>
+		<restriction  base="sv:dTimeETOptionalDerivedPro">
+			<enumeration value="2003-01-01T01:01:00"/>			
+		</restriction>
+	</simpleType>
+</element>	
+
+<element name="elEnumerationC">	
+	<simpleType>
+		<restriction  base="sv:dTimeETOptionalDerivedReg">
+			<enumeration value="1994-01-01T01:01:00Z"/>
+			<enumeration value="2005-01-01T01:01:00-01:00"/>
+			<enumeration value="2006-01-01T01:01:00+01:00"/>
+		</restriction>
+	</simpleType>
+</element>	
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element ref="sv:elEnumerationA" maxOccurs="4"/>		
+			<element ref="sv:elEnumerationB" maxOccurs="3"/>
+			<element ref="sv:elEnumerationC" maxOccurs="3"/>
+		</sequence>
+	</complexType>
+</element>
+
+</schema>

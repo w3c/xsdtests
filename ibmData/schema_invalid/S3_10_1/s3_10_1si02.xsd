@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a"
+        xmlns:b="b">
+        
+<!-- 
+  3.10.6.1.4 - The namespace of each QName in disallowed is allowed by the namespace constraint
+-->
+
+<complexType name="c">
+ <sequence>
+  <any notNamespace="b" notQName="b:asd"/>
+ </sequence>
+</complexType>
+
+<element name="root" type="integer"/>
+</schema>

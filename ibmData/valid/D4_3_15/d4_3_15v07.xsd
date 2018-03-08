@@ -1,0 +1,28 @@
+<?xml version="1.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ 
+ <xs:simpleType name="baseType">
+   <xs:restriction base="xs:string">
+     <xs:maxLength value="25"/>
+     <xs:assertion test="ends-with($value, 'xyz')"/>
+   </xs:restriction>
+ </xs:simpleType>
+
+ <xs:simpleType name="derivedType">
+   <xs:restriction base="baseType">
+     <xs:assertion test="string-length($value) gt 3 "/>
+   </xs:restriction>
+ </xs:simpleType>
+ 
+<xs:element name="root" type="derivedType" />
+ 
+</xs:schema> 
+
+
+
+<!-- 
+	Test Case Type: valid test (Datatype/facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : assertions on derived simple type definitions, 
+					all baseType and derivedType must evaluate to be true
+-->

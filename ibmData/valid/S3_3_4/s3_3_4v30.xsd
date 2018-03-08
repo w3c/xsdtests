@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+	
+<!-- 
+	Test Case Type: valid test (Structures 3.3.4) 
+	facet Type 	  : ID/IDREF
+	Description   : equality of an atomic value with a singleton list in ID/IDREF
+-->
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="list_of_ids_element" type="a:listOfIDs" maxOccurs="unbounded"/>
+				<element name="idref_element" type="IDREF"/>
+			</sequence>
+		</complexType>
+	</element>
+
+	<simpleType name="listOfIDs">
+		<list itemType="ID"/>
+	</simpleType>
+</schema>
+
+
+
+

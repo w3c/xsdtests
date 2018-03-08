@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_3_4_v08"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_v08
+	d3_3_4v21.xsd">
+	
+	<elMaxInclusive_MinInclusive>111.11</elMaxInclusive_MinInclusive>
+	<elMaxInclusive_MinInclusive>10.00</elMaxInclusive_MinInclusive>
+
+	<elMaxInclusive_MinExclusive>100.01</elMaxInclusive_MinExclusive>
+	<elMaxInclusive_MinExclusive>777.21</elMaxInclusive_MinExclusive>
+
+	<elMaxInclusive_MaxInclusive>99.99</elMaxInclusive_MaxInclusive>	
+	<elMaxInclusive_MaxInclusive>-10.01</elMaxInclusive_MaxInclusive>	
+		
+	<elMaxInclusive_MaxExclusive>-999.97</elMaxInclusive_MaxExclusive>	
+	<elMaxInclusive_MaxExclusive>101.22</elMaxInclusive_MaxExclusive>
+	
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3_3_4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the simpleType precisionDecimal and its facets with (min|max) (Inclusive|Exclusive) 
+			constraint checks in derivations of simpleTypes
+-->

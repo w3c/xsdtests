@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_v10"
+	xmlns:sv="http://xstest-tns/schema11_D3_3_4_v10">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Additional precisionDecimal tests, for attributes
+-->
+
+
+
+<simpleType name="decDigits">
+	<restriction  base="precisionDecimal">
+		<totalDigits value="5"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="decDigits" type="sv:decDigits" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="RegularExpression" 
+  contributor="IBM">
+     
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-2/#regexs">substitutionGroup </ts:documentation>
+    </ts:annotation>
+     
+    <ts:testGroup name="d6_gv01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>use of hyphens within square brackets in regular expressions [a-c] </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#regexs"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>        
+        <ts:schemaTest name="d6_gv01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D6_G/d6_gv01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d6_gv01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D6_G/d6_gv01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+     <ts:testGroup name="d6_gv02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>use of hyphens within square brackets in regular expressions [abc-[c]] </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#regexs"/>   
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>        
+        <ts:schemaTest name="d6_gv02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D6_G/d6_gv02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d6_gv02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D6_G/d6_gv02.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d6_gv03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>use of hyphens within square brackets in regular expressions [-abc] </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#regexs"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>        
+        <ts:schemaTest name="d6_gv03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D6_G/d6_gv03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d6_gv03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D6_G/d6_gv03.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d6_gv04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>use of hyphens within square brackets in regular expressions [bc-] </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#regexs"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>        
+        <ts:schemaTest name="d6_gv04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D6_G/d6_gv04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d6_gv04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D6_G/d6_gv04.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+  
+  
+  
+     <ts:testGroup name="d6_gii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid instance use of hyphens within square brackets in regular expressions [a-c] </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#regexs"/>   
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>        
+        <ts:schemaTest name="d6_gii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D6_G/d6_gii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d6_gii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D6_G/d6_gii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d6_gii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid instance use of hyphens within square brackets in regular expressions [abc-[c]] </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#regexs"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>       
+        <ts:schemaTest name="d6_gii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D6_G/d6_gii02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d6_gii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D6_G/d6_gii02.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>   
+     
+    <ts:testGroup name="d6_gii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation> invalid instance use of hyphens within square brackets in regular expressions [-abc] </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#regexs"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>        
+        <ts:schemaTest name="d6_gii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D6_G/d6_gii03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d6_gii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D6_G/d6_gii03.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>  
+  
+     <ts:testGroup name="d6_gii04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid instance use of hyphens within square brackets in regular expressions [bc-] </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#regexs"/>   
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>        
+        <ts:schemaTest name="d6_gii04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D6_G/d6_gii04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d6_gii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D6_G/d6_gii04.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>  
+   
+  
+</ts:testSet>

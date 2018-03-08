@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="b"
+	xmlns:b="b"
+	elementFormDefault="qualified">
+	
+<!-- 
+	
+Test Case Type: Valid test
+	
+Description   : any element instance which matches the wildcard is required to have a governing type definition compatible with the type assigned by the local element declarations matched by the element's expanded name. 
+-->
+
+
+<complexType name="t">
+ <sequence>
+  <element name="x" type="string" minOccurs="0"/>
+  <any namespace="b" processContents="lax" minOccurs="0"/>
+ </sequence>
+</complexType>
+
+<element name="x" type="integer"/>
+
+<element name="root" type="b:t"/>
+</schema>
+
+
+
+
+
+

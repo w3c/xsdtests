@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_v05"
+	xmlns:sv="http://xstest-tns/schema11_D3_3_4_v05">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the simpleType precisionDecimal and its facets totalDigits
+-->
+
+<simpleType name="decTFDigits">
+	<restriction base="precisionDecimal">
+		<totalDigits value="10"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decTFDigitsDerived">
+	<restriction base="sv:decTFDigits">
+		<totalDigits value="5"/>
+	</restriction>
+</simpleType>
+
+<element name="elEnumerationA">
+	<simpleType>
+		<restriction  base="sv:decTFDigits">
+			<enumeration value="123456.78"/>
+			<enumeration value="33345.67"/>
+		</restriction>
+	</simpleType>
+</element>
+<element name="elEnumerationB">	
+	<simpleType>
+		<restriction  base="sv:decTFDigitsDerived">
+			<enumeration value="123.45"/>
+			<enumeration value="1.01"/>
+		</restriction>
+	</simpleType>
+</element>	
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element ref="sv:elEnumerationA" maxOccurs="15"/>		
+			<element ref="sv:elEnumerationB" maxOccurs="15"/>
+		</sequence>
+	</complexType>
+</element>
+
+</schema>

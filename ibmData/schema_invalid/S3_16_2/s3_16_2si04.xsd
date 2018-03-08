@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/IBMs3_16si01"
+	xmlns:sv="http://xstest-tns/IBMs3_16si01">
+<!-- 
+	Test Case Type: Schema Invalid test
+	Description   : Union type a member of its own transitive membership 
+-->
+
+	<simpleType name="u1">
+		<restriction base="sv:u6"/>
+	</simpleType>
+
+	<simpleType name="u2">
+		<restriction base="sv:u1"/>
+	</simpleType>
+
+	<simpleType name="u3">
+		<union memberTypes="sv:u2"/>
+	</simpleType>
+
+	<simpleType name="u4">
+		<restriction base="sv:u3"/>
+	</simpleType>
+
+	<simpleType name="u5">
+		<union memberTypes="sv:u4"/>
+	</simpleType>
+	
+	<simpleType name="u6">
+		<restriction base="sv:u5"/>
+	</simpleType>
+
+
+
+	
+<element name="root" type="string"/>
+</schema>
+
+
+<!--
+	Test Case Type: Schema Invalid test
+	Description   : Cyclicity of union types, 	
+-->

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_26_v02"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_26_v02
+	d3_4_26v02.xsd"
+	
+	ayMDType="-P3Y348M"
+	ayMDEnumeration="-P34Y233M"
+	ayMDMinMaxInclusive="-P24M"
+	ayMDMinMaxExclusive="P23Y23M"/>
+
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.26) 
+	Base Type     : yearMonthDuration
+	Description   : Tests the simpleType decimal and its facets and its use in attributes
+-->
+

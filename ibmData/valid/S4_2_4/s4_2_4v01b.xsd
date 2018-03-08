@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        elementFormDefault="qualified"
+        attributeFormDefault="qualified"
+        xmlns:tns="a">
+     
+
+	<complexType name="c1">
+		<sequence>
+			<element name="element1" minOccurs="1"/>
+			<element name="element2" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<element name="root_1" type="tns:c1"/>
+
+</schema>
+
+<!--
+Test Case Type: Valid test
+Description   : If there are any element information items among the 
+[children] other than <annotation> then the 'actual value' of the 
+schemaLocation [attribute] must successfully resolve.
+-->

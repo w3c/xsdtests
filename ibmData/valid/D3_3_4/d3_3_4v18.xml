@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_3_4_v05"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_v05
+	d3_3_4v18.xsd">
+	
+	<dv:elEnumerationA>123456.78</dv:elEnumerationA>
+	<dv:elEnumerationA>12345678e-2</dv:elEnumerationA>
+	<dv:elEnumerationA>12345678.e-2</dv:elEnumerationA>
+	<dv:elEnumerationA>1234567800e-4</dv:elEnumerationA>
+	<dv:elEnumerationA>1234.5678e+2</dv:elEnumerationA>
+	<dv:elEnumerationA>0.12345678e6</dv:elEnumerationA>
+	<dv:elEnumerationA>.12345678e+6</dv:elEnumerationA>
+	<dv:elEnumerationA>123456.78e0</dv:elEnumerationA>
+	
+	<dv:elEnumerationA>12345678E-2</dv:elEnumerationA>
+	<dv:elEnumerationA>12345678.E-2</dv:elEnumerationA>
+	<dv:elEnumerationA>1234567800E-4</dv:elEnumerationA>
+	<dv:elEnumerationA>1234.5678E2</dv:elEnumerationA>
+	<dv:elEnumerationA>0.12345678E+6</dv:elEnumerationA>
+	<dv:elEnumerationA>.12345678E6</dv:elEnumerationA>
+	<dv:elEnumerationA>123456.78E+0</dv:elEnumerationA>
+	
+	
+	<dv:elEnumerationB>1.01</dv:elEnumerationB>
+
+</dv:root>
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the simpleType precisionDecimal and its facets totalDigits
+-->

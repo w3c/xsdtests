@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+	
+	<!-- key/keyref selection expressions_2 -->
+	
+   <complexType name="DeptType">
+            <sequence>
+                  <element name="Deptno" type="int"/>
+                  <element name="Dname" type="string"/>
+                  <element name="Loc" type="string"/>
+            </sequence>
+			<attribute name="id" type="int"> </attribute>
+    </complexType>
+	
+	<complexType name="EmployeeType">
+            <sequence>
+                  <element name="Empno" type="int"/>
+                  <element name="Ename" type="string"/>
+                  <element name="Sal" type="float"/>
+                  <element name="Deptno" type="int"/>
+				  <element name="ID" type="int"/>
+            </sequence>
+    </complexType>
+      
+	<element name="root">
+            <complexType>
+                  <sequence>
+                        <element name="dept" type="a:DeptType" maxOccurs="unbounded"/>
+                        <element name="Employee" type="a:EmployeeType" maxOccurs="unbounded"/>
+                  </sequence>
+            </complexType>
+            <key name="PK_Dept_Deptno">
+                  <selector xpath=".//a:dept"/>
+                  <field xpath="a:Deptno"/>
+            </key>
+            <key name="PK_Employee_Empno">
+                  <selector xpath=".//a:Employee"/>
+                  <field xpath="a:Empno"/>
+            </key>
+			<key name="PK_Dept_ID">
+                  <selector xpath=".//a:dept"/>
+                  <field xpath="@id"/>
+            </key>
+            <keyref name="FK_deptEmployee" refer="a:PK_Dept_Deptno">
+                  <selector xpath=".//a:Employee"/>
+                  <field xpath="a:Deptno"/>
+            </keyref>
+			<keyref name="FK_deptEmployee_ID" refer="a:PK_Dept_ID">
+                  <selector xpath=".//a:Employee"/>
+                  <field xpath="a:ID"/>
+            </keyref>
+      </element>
+
+</schema>
+<!--
+Test Case Type: Valid test
+Description   : key/keyref selection expressions_2
+-->
+

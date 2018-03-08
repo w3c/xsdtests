@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_si10"
+	xmlns:si="http://xstest-tns/schema11_D3_3_4_si10">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Invalid decimal values for (min|max)(Inclusive|Exclusive)
+-->
+
+<simpleType name="decTotalDigits">
+	<restriction base="precisionDecimal">
+		<totalDigits value="-3"/>
+	</restriction>	
+</simpleType>
+
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elTotalDigits" type="si:decTotalDigits"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

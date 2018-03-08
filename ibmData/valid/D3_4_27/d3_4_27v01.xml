@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_27_v01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_27_v01
+	d3_4_27v01.xsd">
+	
+
+<elyMDType>P343DT0H</elyMDType>
+<elyMDType>-PT48M</elyMDType>
+<elyMDType>P1DT4.00003S</elyMDType>
+
+<elyMDEnumeration>PT54H3M2.3S</elyMDEnumeration>
+<elyMDEnumeration>-P5DT3S</elyMDEnumeration>
+<elyMDEnumeration>-PT43M4.2S</elyMDEnumeration>
+
+<elyMDMinMaxInclusive>-P1D</elyMDMinMaxInclusive>
+<elyMDMinMaxInclusive>PT47H3M</elyMDMinMaxInclusive>
+<elyMDMinMaxInclusive>-PT46H59M3454.3S</elyMDMinMaxInclusive>
+
+<elyMDMinMaxExclusive>-P1D</elyMDMinMaxExclusive>
+<elyMDMinMaxExclusive>PT47H3M</elyMDMinMaxExclusive>
+<elyMDMinMaxExclusive>-PT46H59M3454.3S</elyMDMinMaxExclusive>
+
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : Tests the simpleType dayTimeDuration and its facets
+-->
+

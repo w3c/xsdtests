@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_26_ii02"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_26_ii02">
+	
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.26) 
+	Base Type     : yearMonthDuration
+	Description   : Tests the simpleType yearMonthDuration and its facets and its use in elements
+-->
+
+
+
+
+<simpleType name="yMDEnumeration">
+	<restriction base="yearMonthDuration">
+		<enumeration value="P1Y"/>
+		<enumeration value="P1Y3M"/>
+		<enumeration value="-P34Y233M"/>
+		<enumeration value="P45M"/>
+	</restriction>
+</simpleType>
+
+
+
+
+
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elyMDEnumeration" type="sv:yMDEnumeration" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

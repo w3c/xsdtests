@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a"
+        xmlns:b="b"
+        xmlns:c="c"
+        elementFormDefault="qualified">
+
+<import namespace="b" schemaLocation="s3_10_6ii02b.xsd"/>
+<import namespace="c" schemaLocation="s3_10_6ii02c.xsd"/>
+        
+<!-- 
+	Tests notQName and notNamespace list
+-->
+
+<complexType name="t">
+ <anyAttribute notNamespace="b a" notQName="c:a"/>
+</complexType>
+
+<attribute name="d" type="integer"/>
+
+<element name="root" type="a:t"/>
+</schema>
+<!-- 
+Test Case Type: Instance invalid test
+Description   : Tests notQName and notNamespace list in xs:anyAttribute 
+-->

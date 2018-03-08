@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_27_ii01"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_27_ii01">
+	
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : Tests the simpleType dayTimeDuration and its facets and its use in elements
+	                Invalid dayTimeDuration values
+-->
+
+<simpleType name="yMDType">
+	<restriction base="dayTimeDuration"/>
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elyMDType" type="sv:yMDType" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

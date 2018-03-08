@@ -1,0 +1,47 @@
+<?xml version="1.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root" type="rootType" />
+	<xs:complexType name="rootType">
+		<xs:sequence>
+			<xs:element name="eleBaseNotasserted1" type="elementBaseType1" minOccurs="0" maxOccurs="unbounded"/>						
+			<xs:element name="eleDerivedAsserted1" type="elementDerivedType1" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="eleDerivedAsserted2" type="elementDerivedType2" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>		
+	</xs:complexType>  
+	
+	<xs:complexType name="elementBaseType1">
+		<xs:sequence>			
+			<xs:element name="subElement1" type="rootType" minOccurs="0" maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType> 
+	
+	
+	<xs:complexType name="elementDerivedType1">
+		<xs:complexContent>
+			<xs:extension base="elementBaseType1">				
+				<xs:assert test="count(//eleBaseNotasserted1) eq 1"/>							
+			</xs:extension>			
+		</xs:complexContent>	
+	</xs:complexType> 
+	
+	
+	<xs:complexType name="elementBaseType2">
+		<xs:sequence>			
+			<xs:element name="subElement2" type="rootType" minOccurs="0" maxOccurs="unbounded"/>			
+		</xs:sequence>		
+		<xs:assert test="count(//eleDerivedAsserted1) eq 2"/>			
+	</xs:complexType>
+	
+	<xs:complexType name="elementDerivedType2">
+		<xs:complexContent>
+			<xs:extension base="elementBaseType2"/>
+		</xs:complexContent>	
+	</xs:complexType> 
+	
+</xs:schema>
+
+<!--
+	Test Case Type: Instance Invalid test (Datatype/facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : inability to navigate outside the subtree, assertion on elements with derivation by extension
+-->

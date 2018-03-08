@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="d4_3_15v01.xsd"
+	min="5" max="6">
+  <ele>1234567890</ele>
+</root>
+
+<!-- 
+	Test Case Type: valid test (Datatype/facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : Assertions on a complex type definition
+-->

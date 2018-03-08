@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a"
+        elementFormDefault="qualified"
+        attributeFormDefault="qualified">
+        
+<!-- 
+Test Case Type: Valid test
+Description   : Tests namespace attribute on xs:anyAttribute
+-->
+
+<complexType name="t">
+ <sequence>
+  <element name="e1">
+   <complexType>
+    <anyAttribute namespace="##other" processContents="lax"/>
+   </complexType>
+  </element>
+
+  <element name="e2">
+   <complexType>
+    <anyAttribute namespace="##targetNamespace" processContents="lax"/>
+   </complexType>
+  </element>
+  
+  <element name="e3">
+   <complexType>
+    <anyAttribute namespace="##local" processContents="lax"/>
+   </complexType>
+  </element>
+  
+  <element name="e4">
+   <complexType>
+    <anyAttribute namespace="##any" processContents="lax"/>
+   </complexType>
+  </element>
+ </sequence>
+</complexType>
+
+<attribute name="b" type="integer"/>
+
+<element name="root" type="a:t"/>
+</schema>

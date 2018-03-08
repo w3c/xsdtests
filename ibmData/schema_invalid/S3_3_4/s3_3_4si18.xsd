@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="union_of_ids" type="unionOfIDs" maxOccurs="unbounded" default="1id_a"/>
+				<xs:element name="idref" type="xs:IDREF" maxOccurs="unbounded"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="unionOfIDs">
+		<xs:union memberTypes="xs:integer xs:boolean unionTypeA"/>
+	</xs:simpleType>
+	
+	<xs:simpleType name="unionTypeA">
+		<xs:restriction base="xs:ID">
+			<xs:enumeration value="1id_a"/>
+		</xs:restriction>	
+	</xs:simpleType>
+
+</xs:schema>
+
+<!-- 
+	Test Case Type: schema invalid test (Structures 3.3.4)
+	facet Type 	  : ID/IDREF
+	Description   : Unions involving ID in elements, with invalid default value
+-->

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+	
+<!-- skip wildcards now excluded from EDC constraint -->
+
+
+<complexType name="t">
+ <sequence>
+  <any namespace="a" processContents="skip"/>
+ </sequence>
+</complexType>
+
+<element name="x" type="integer"/>
+
+<element name="root" type="a:t"/>
+</schema>
+
+
+

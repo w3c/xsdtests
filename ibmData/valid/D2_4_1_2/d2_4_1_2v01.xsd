@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D2_4_1_2"
+	xmlns:si="http://xstest-tns/schema11_D2_4_1_2">
+	
+<!-- 
+Test Case Type: Valid test
+Description   : test Units of length for list datatype.
+-->
+
+<simpleType name='myList'>
+	<list itemType='integer'/>
+</simpleType>
+
+<simpleType name='myRestrictedList'>
+	<restriction base='si:myList'>
+		<pattern value='123 (\d+\s)*456'/>
+		<maxLength value="6"/>
+		<minLength value="2"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="List" type="si:myRestrictedList" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

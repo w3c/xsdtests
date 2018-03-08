@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inii:root xmlns:inii="http://xstest-tns/schema11_D3_3_4_ii01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_ii01
+	d3_3_4ii01.xsd">
+	
+	<eldecMinMaxExclusive>1772</eldecMinMaxExclusive>
+	
+	<eldecMinMaxExclusive>-999.99</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-99999e-2</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-9.9999e+2</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-.99999e3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-0.99999e+3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-99999.e-2</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-99999.0e-2</eldecMinMaxExclusive>
+			
+	<eldecMinMaxExclusive>999.999</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>999999e-3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>9.99999e2</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>.999999e+3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>0.999999e3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>999999.e-3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>999999.0e-3</eldecMinMaxExclusive>
+		
+</inii:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : The elements contian data that is out of bounds with respect to
+			the values specified by (min|max)Exclusive
+-->

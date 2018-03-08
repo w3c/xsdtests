@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_F4_3_16_ii03"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_F4_3_16_ii03
+	d4_3_16ii03.xsd">
+	
+	<elDTimeET>1999-10-20T10:00:00-05:00</elDTimeET>
+	
+	<dv:elDTimeListRequired>2002-10-20T10:00:00 2003-10-20T10:00:00Z 2004-10-20T10:00:00</dv:elDTimeListRequired>		
+	<dv:elDTimeListProhibited>1999-10-20T10:00:00Z 2000-10-20T10:00:00-05:00 2001-10-20T10:00:00+05:00</dv:elDTimeListProhibited>		
+	
+	<dv:elDTimeListOptional>2005-10-20T10:00:00Z 2006-10-20T10:00:00-05:00 2007-10-20T10:00:00+05:00 2008-10-20T10:00:00</dv:elDTimeListOptional>		
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets explicitTimezone,
+			    used in lists, the 2nd and 3rd elements are invalid
+-->

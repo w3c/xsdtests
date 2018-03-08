@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+	
+<!-- 
+Test Case Type: Valid test
+Description   : use of hyphens within square brackets in regular expressions  [abc-[c]] 
+-->
+
+<simpleType name="type">
+	<restriction base="string">
+		<pattern value="[abc-[c]]"/>
+	</restriction>
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="string" type="a:type" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  
+
+

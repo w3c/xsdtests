@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        elementFormDefault="qualified"
+        attributeFormDefault="qualified"
+        xmlns:tns="a">	
+		<include schemaLocation="s4_2_3v02c.xsd"/>
+		<element name="element2">
+		<complexType>
+			<sequence>
+				<element ref="tns:element3" minOccurs="0"/>
+			</sequence>
+		</complexType>
+		</element>
+</schema>
+<!-- 
+Test Case Type: Valid test
+Description   : chameleon include on unqualified names in XPath expressions
+-->

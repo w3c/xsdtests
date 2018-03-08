@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_26_ii07"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_26_ii07
+	d3_4_26ii07.xsd">
+	
+	<yMDMinInclusive_MinInclusive>P1M</yMDMinInclusive_MinInclusive>
+	<yMDMinInclusive_MinInclusive>-P2M</yMDMinInclusive_MinInclusive>
+
+	<yMDMinInclusive_MinExclusive>P2M</yMDMinInclusive_MinExclusive>
+	<yMDMinInclusive_MinExclusive>P1M31D</yMDMinInclusive_MinExclusive>
+
+	<yMDMinInclusive_MaxInclusive>P3452Y3M</yMDMinInclusive_MaxInclusive>	
+	<yMDMinInclusive_MaxInclusive>P0M</yMDMinInclusive_MaxInclusive>	
+		
+	<yMDMinInclusive_MaxExclusive>P23Y2M</yMDMinInclusive_MaxExclusive>	
+	<yMDMinInclusive_MaxExclusive>-P1M</yMDMinInclusive_MaxExclusive>
+	
+</dv:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3_4_26)
+	Base Type     : yearMonthDuration
+	Description   : Invalid yearMonthDuration values used with (min|max) (Inclusive|Exclusive) 
+			   constraint checks in derivations of simpleTypes
+-->

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <xs:element name="root">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element name="a" type="restrict" fixed="ads"/>
+    <xs:element name="b" type="xs:IDREF"/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+ <xs:simpleType name="restrict">
+  <xs:restriction base="xs:ID">
+   <xs:enumeration value="ads"/>
+  </xs:restriction>
+ </xs:simpleType>
+
+</xs:schema>
+
+
+
+<!-- 
+	Test Case Type: instance invalid test (Structures 3.3.4) 
+	Base Type     : ID/IDREF
+	Description   : xs:ID/IDREF with fixed value on attribute
+-->

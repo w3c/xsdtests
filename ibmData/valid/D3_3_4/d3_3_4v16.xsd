@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_v03"
+	xmlns:sv="http://xstest-tns/schema11_D3_3_4_v03">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the simpleType precisionDecimal and its facets totalDigits,
+			used in lists
+-->
+
+<simpleType name="decTotalDigits">
+	<restriction base="precisionDecimal">
+		<totalDigits value="5"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="decListA">
+	<list itemType="precisionDecimal"/>
+</simpleType>
+
+<simpleType name="decListB">
+	<list>
+		<simpleType>
+			<restriction base="precisionDecimal"/>
+		</simpleType>	
+	</list>
+</simpleType>
+
+<element name="eldecListC">
+	<simpleType>
+		<list itemType="sv:decTotalDigits">
+			<annotation>
+				<documentation>
+					Tests the simpleType precisionDecimal used in a lists
+				</documentation>
+			</annotation>
+		</list>
+	</simpleType>
+</element>
+
+<complexType name="decRoot">
+	<sequence>
+		<element name="eldecTotalDigits" type="sv:decTotalDigits"/>
+		<element name="eldecListA" type="sv:decListA" minOccurs="1" maxOccurs="unbounded"/>		
+		<element name="eldecListB" type="sv:decListB"/>
+		<element ref="sv:eldecListC"/>
+	</sequence>
+</complexType>
+
+<element name="root" type="sv:decRoot"/>
+
+</schema>

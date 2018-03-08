@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        elementFormDefault="qualified"
+        xmlns:tns="a">        
+
+	<complexType name="c1">
+		<sequence>
+			<element name="element1" minOccurs="1"/>
+			<element name="element2" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+
+	<element name="root_a" type="tns:c1"/>
+
+</schema>
+<!-- 
+Test Case Type: Valid test
+Description   : The schema document identified by the schemaLocation  attribute of E
+-->
+

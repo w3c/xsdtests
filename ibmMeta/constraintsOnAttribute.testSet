@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="constraintsOnAttribute" 
+  contributor="IBM">
+
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl">Attribute constraints</ts:documentation>
+    </ts:annotation>
+
+     <ts:testGroup name="s3_2_3v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the targetNamespace attribute in locally declared element and attribute.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_2_3/s3_2_3v01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_2_3v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_2_3/s3_2_3v01.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the targetNamespace attribute in locally declared element and attribute. </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_2_3/s3_2_3v04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_2_3v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_2_3/s3_2_3v04.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the targetNamespace attribute in locally declared element and attribute.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_2_3/s3_2_3ii01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_2_3ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_2_3/s3_2_3ii01.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests for valid derivation of restriction of complexType in other namespace.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_2_3/s3_2_3ii02.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_2_3/s3_2_3ii02b.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_2_3ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_2_3/s3_2_3ii02.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3ii04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the targetNamespace attribute in locally declared element and attribute.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3ii04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_2_3/s3_2_3ii04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_2_3ii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_2_3/s3_2_3ii04.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3ii05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Named identity constraints on local element declarations </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnElemDecl"/>
+        <ts:schemaTest name="s3_2_3ii05s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_2_3/s3_2_3ii05.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_2_3ii05i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_2_3/s3_2_3ii05.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests for valid derivation of restriction of complexType</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_2_3/s3_2_3si01.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3si02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests for valid derivation of restriction of complexType.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_2_3/s3_2_3si02.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3si03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests for valid derivation of restriction of complexType</ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3si03s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_2_3/s3_2_3si03.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3si04" version="1.1">
+          <ts:annotation>
+            <ts:documentation>Attribute does not have complexType as an ancestor when the ancestor [schema] does not have a targetNamespace [attribute] or its actual value is different from the actual value of targetNamespace of [attribute]</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3si04s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_2_3/s3_2_3si04.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3si05">
+        <ts:annotation>
+            <ts:documentation>The actual value of the base [attribute] of [restriction] matches the name of xs:anyType when the ancestor [schema] does not have a targetNamespace [attribute] or its actual value is different from the actual value of targetNamespace of [attribute] </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3si05s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_2_3/s3_2_3si05.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3si06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The form attribute is present when targetAttribute attribute is present.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3si06s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_2_3/s3_2_3si06.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3si07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Element does not have complexType as an ancestor when the ancestor [schema] does not have a targetNamespace [attribute] or its actual value is different from the actual value of targetNamespace of [attribute]</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3si07s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_2_3/s3_2_3si07.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3si08" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The actual value of the base of [attribute][restriction] matches the name of xs:anyType when the ancestor [schema] does not have a targetNamespace [attribute] or its actual value is different from the actual value of  targetNamespace of [attribute]</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3si08s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_2_3/s3_2_3si08.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3si09" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests for valid derivation of extension of complexType in other namespace.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <ts:schemaTest name="s3_2_3si09s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_2_3/s3_2_3si09.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_2_3si10" version="1.1">
+        <ts:annotation>
+            <ts:documentation>identity constraints on local element declarations </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnElemDecl"/>
+        <ts:schemaTest name="s3_2_3si10s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_2_3/s3_2_3si10.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+</ts:testSet>

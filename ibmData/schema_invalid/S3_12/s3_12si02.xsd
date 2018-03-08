@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        
+<!--
+Test Case Type: Schema invalid test
+Description   : Tests the selection of type alternative when the element type definition is xs:anyType
+	and alternatives not valid derivation of declared type
+-->
+
+<xs:element name="root">
+ <xs:complexType> 
+  <xs:sequence>
+   <xs:element name="e1" type="xs:integer"/>
+   <xs:element name="e2" type="typenotexist"/>
+  </xs:sequence> 
+  <xs:attribute name="kind" type="xs:string"/>   
+ </xs:complexType>
+ <xs:alternative test="@kind='string'" type="xs:string"/>
+ <xs:alternative test="@kind='decimal'" type="xs:decimal"/>
+</xs:element>
+</xs:schema>

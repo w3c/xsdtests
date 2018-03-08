@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<insi:root xmlns:insi="http://xstest-tns/schema11"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11
+	d3_4_24v01.xsd">
+	
+	<ele>+11</ele>
+
+</insi:root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : The possibility of a leading sign is allowed for unsignedByte.
+-->

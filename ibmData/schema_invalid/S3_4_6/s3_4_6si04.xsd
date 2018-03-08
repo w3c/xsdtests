@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xstest-tns/schema11_S3_4_6"
+        xmlns:tns="http://xstest-tns/schema11_S3_4_6">
+        
+	<complexType name="cmplxBase">
+		<all>
+			<element name="element1" type="integer"/>
+			<element name="element2" type="integer" minOccurs="0"/>
+			<element name="element3" type="integer" minOccurs="1"/>
+		</all>
+	</complexType>
+
+	<complexType name="derived">
+		<complexContent>
+			<restriction base="tns:cmplxBase">
+				<sequence>
+					<element name="element2" type="integer" minOccurs="1" maxOccurs="0"/>
+					<element name="element1" type="integer"/>
+				</sequence>
+			</restriction>
+		</complexContent>
+	</complexType>
+
+	<element name="root" type="integer"/>
+</schema>
+
+
+<!-- 
+	Test Case Type: schema invalid test (Structures 3.4.6) 
+	Base Type     : Restriction of complex types
+	Description   : Restrict xs:all to xs:sequence
+-->

@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<inii:root xmlns:inii="http://xstest-tns/schema11_D3_4_28_ii01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_28_ii01
+	d3_4_28ii01.xsd">
+	
+	<eldTimeStampEnumeration>2000-02-01T00:00:00+09:00</eldTimeStampEnumeration>
+	<eldTimeStampEnumeration>2001-02-01T00:00:00-09:00</eldTimeStampEnumeration>
+	<eldTimeStampEnumeration>2003-02-01T00:00:00Z</eldTimeStampEnumeration>
+	<eldTimeStampEnumeration>2003-02-01T00:00:00.999-09:00</eldTimeStampEnumeration>
+
+</inii:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.3.4) 
+	Base Type     : dateTimeStamp
+	Description   : Invalid enumeration values, the 3rd element is invalid.
+-->

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<a:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:a="a"
+        xsi:schemaLocation="a s3_3_6ii01.xsd">
+ <a>1</a>	<!-- a has to appear at least 2 times -->
+</a:root>
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   : Instance document element has higher occurences than schema allows.
+-->

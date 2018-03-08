@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_v04"
+	xmlns:sv="http://xstest-tns/schema11_D3_3_4_v04">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the simpleType precisionDecimal and its facets 
+			used with unions
+-->
+
+<simpleType name="decMinScale">
+	<restriction base="precisionDecimal">
+		<minScale value="2"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="decUnionA">
+	<union memberTypes="precisionDecimal string"/>
+</simpleType>
+
+<simpleType name="decUnionB">
+	<union>
+		<simpleType>
+			<restriction base="precisionDecimal"/>
+		</simpleType>	
+		<simpleType>
+			<restriction base="integer"/>
+		</simpleType>			
+	</union>
+</simpleType>
+
+<simpleType name="decUnionC">
+	<union memberTypes="sv:decMinScale string integer">
+		<annotation>
+			<documentation>
+				Tests the simpleType precisionDecimal used in a unions
+			</documentation>
+		</annotation>
+	</union>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="eldecUnionA" type="sv:decUnionA"  maxOccurs="unbounded"/>		
+			<element name="eldecUnionB" type="sv:decUnionB" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="eldecUnionC" type="sv:decUnionC"  maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>
+
+</schema>

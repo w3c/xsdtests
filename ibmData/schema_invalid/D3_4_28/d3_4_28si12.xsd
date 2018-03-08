@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_28_si12"
+	xmlns:si="http://xstest-tns/schema11_D3_4_28_si12">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : This test case tests the fixed attribute on facets
+-->
+
+
+<simpleType name="bdTimeStampMinMaxInclusive">
+	<restriction base="dateTimeStamp">
+		<minInclusive value="2001-11-11T10:00:00Z" fixed="true"/>
+		<maxInclusive value="2003-11-11T10:00:00Z" fixed="0"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampMinMaxInclusive">
+	<restriction base="si:bdTimeStampMinMaxInclusive">
+		<minInclusive value="2001-11-10T10:00:00Z"/>		
+		<maxInclusive value="2003-11-10T10:00:00Z"/>		
+	</restriction>
+</simpleType>
+
+
+
+<simpleType name="bdTimeStampMinMaxExclusive">
+	<restriction base="dateTimeStamp">
+		<minExclusive value="2001-11-11T10:00:00Z" fixed="1"/>  
+		<maxExclusive value="2003-11-11T10:00:00Z" fixed="true"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeStampMinMaxExclusive">
+	<restriction base="si:bdTimeStampMinMaxExclusive">
+		<minExclusive value="2001-11-12T10:00:00Z" fixed="0"/>   
+		<maxExclusive value="2003-11-12T10:00:00Z" fixed="false"/>	
+	</restriction>
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elString" type="string"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

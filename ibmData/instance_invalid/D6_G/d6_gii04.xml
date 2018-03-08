@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="a"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="a d6_gii04.xsd">
+	<string>c</string>
+	<string>b</string>
+	<string>c</string>
+	<string>d</string> <!--invalid-->
+</root>
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   : invalid instance use of hyphens within square brackets in regular expressions  [bc-]
+-->

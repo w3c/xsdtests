@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+<!-- 
+Test Case Type: Valid test
+Description   : complexType/@mixed 
+-->
+	
+ <element name="root">
+	<complexType mixed="true">
+		<sequence minOccurs="0" maxOccurs="unbounded">
+			<element name="element" type="string"/>
+		</sequence>
+		<attribute name="version" type="decimal"/>
+	</complexType>
+ </element>
+	
+</schema>

@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_F4_3_16_v01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_F4_3_16_v01
+	d4_3_16v01.xsd">
+	
+
+	<elDTimeType>1999-11-23T12:00:00.123Z</elDTimeType>
+	
+
+
+	<elDTimeETProhibited>2000-11-23T12:00:00</elDTimeETProhibited>
+	
+			
+	<elDTimeETRequired>2001-11-23T12:00:00Z</elDTimeETRequired>
+	<elDTimeETRequired>2002-11-23T12:00:00-05:00</elDTimeETRequired>
+	<elDTimeETRequired>2003-11-23T12:00:00+05:00</elDTimeETRequired>
+	
+	<elDTimeETOptional>2004-11-23T12:00:00Z</elDTimeETOptional>
+	<elDTimeETOptional>2005-11-23T12:00:00-05:00</elDTimeETOptional>
+	<elDTimeETOptional>2006-11-23T12:00:00+05:00</elDTimeETOptional>	
+	<elDTimeETOptional>2007-11-23T12:00:00</elDTimeETOptional>
+	
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets, explicitTimezone
+-->
+

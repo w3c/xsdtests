@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_28_v04"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_28_v04
+	d3_4_28v04.xsd">
+	
+	<eldTimeStampUnionA>Computer</eldTimeStampUnionA>
+	<eldTimeStampUnionA>1999-02-02T02:00:00.123Z</eldTimeStampUnionA>
+
+	<eldTimeStampUnionB>1999-02-02T02:00:00.123Z</eldTimeStampUnionB>
+	<eldTimeStampUnionB>7</eldTimeStampUnionB>
+	
+	<eldTimeStampUnionC>2000-02-02T02:00:00.123Z</eldTimeStampUnionC>
+	<eldTimeStampUnionC>1</eldTimeStampUnionC>
+	<eldTimeStampUnionC>once</eldTimeStampUnionC>	
+
+</dv:root>
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.28) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType decimal and its facets,
+			used with unions
+-->

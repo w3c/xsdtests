@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:complexType name="ids">		
+		<xs:sequence>
+			<xs:element name="idref_element" type="idrefs" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id1" type="xs:ID"/>
+		<xs:attribute name="id2" type="xs:ID"/>		
+	</xs:complexType>
+	
+	<xs:complexType name="idrefs">
+		<xs:sequence>
+			<xs:element name="idref_subelement" type="xs:IDREF" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="idref1" type="xs:IDREF"/>
+		<xs:attribute name="idref2" type="xs:IDREF"/>
+	</xs:complexType>
+
+	<xs:element name="root" type="ids"/>
+</xs:schema>
+
+
+<!-- 
+	Test Case Type: valid test (Datatype/facet section 4.3.15) 	
+	facet Type 	  : ID/IDREF
+	Description   : Multiple attributes of type ID
+-->
+

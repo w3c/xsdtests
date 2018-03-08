@@ -1,0 +1,72 @@
+<?xml version="1.1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_ii07"
+	xmlns:sv="http://xstest-tns/schema11_F4_3_16_ii07">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets with explicitTimezone
+			constraint checks in derivations of simpleTypes
+-->
+
+<simpleType name="dTimePattern">
+	<restriction  base="dateTime">
+		<pattern value="[2][0][0][0-9][-][0-1][1-2][-][0-2][1-8][T]*.*"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETzoneOptionalF">
+	<restriction  base="sv:dTimePattern">
+		<explicitTimezone value="optional" fixed="false"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETzoneOptionalT">
+	<restriction  base="sv:dTimePattern">
+		<explicitTimezone value="optional" fixed="true"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeETzoneOptionalFDerivedOptional">
+	<restriction  base="sv:dTimeETzoneOptionalF">
+		<explicitTimezone value="optional" fixed="1"/>
+	</restriction>
+</simpleType>
+
+
+
+<simpleType name="dTimeETzoneOptionalFDerivedRequired">
+	<restriction  base="sv:dTimeETzoneOptionalF">
+		<explicitTimezone value="required" fixed="0"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeETzoneOptionalFDerivedProhibited">
+	<restriction  base="sv:dTimeETzoneOptionalF">
+		<explicitTimezone value="prohibited" fixed="1"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeETzoneOptionalTDerivedOptional">
+	<restriction  base="sv:dTimeETzoneOptionalT">
+		<explicitTimezone value="optional" fixed="1"/>
+	</restriction>
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="eldTimeETzoneOptionalFDerivedOptional" type="sv:dTimeETzoneOptionalFDerivedOptional" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="eldTimeETzoneOptionalFDerivedRequired" type="sv:dTimeETzoneOptionalFDerivedRequired" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="eldTimeETzoneOptionalFDerivedProhibited" type="sv:dTimeETzoneOptionalFDerivedProhibited" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="eldTimeETzoneOptionalTDerivedOptional" type="sv:dTimeETzoneOptionalTDerivedOptional" minOccurs="1" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

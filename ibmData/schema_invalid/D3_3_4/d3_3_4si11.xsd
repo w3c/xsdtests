@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_si03"
+	xmlns:si="http://xstest-tns/schema11_D3_3_4_si03">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : It is an error for minInclusive > maxInclusive and
+			minExclusive > maxExclusive
+-->
+
+<simpleType name="decInclusive">
+	<restriction base="precisionDecimal">
+		<minInclusive value="20"/>
+		<maxInclusive value="10"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="decExclusive">
+	<restriction base="precisionDecimal">
+		<minExclusive value="-20"/>
+		<maxExclusive value="-30"/> 
+	</restriction>	
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elInclusive" type="si:decInclusive"/>
+			<element name="elExclusive" type="si:decExclusive"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

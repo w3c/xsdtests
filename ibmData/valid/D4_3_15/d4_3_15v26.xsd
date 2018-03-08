@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:assertion test="$value = 'present'" xpathDefaultNamespace="##defaultNamespace" />
+			</xs:restriction>               
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>
+
+
+<!-- 
+	Test Case Type: valid test (Datatypes section 4.3.15) 
+	Base Type     : Assertion
+	Description   : naive xpathDefaultNamespace(with value ##defaultNamespace) test case in simpleType
+-->

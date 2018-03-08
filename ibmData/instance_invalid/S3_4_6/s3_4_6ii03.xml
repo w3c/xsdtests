@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<dv:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dv="http://xstest-tns/schema11_S3_4_6"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        xsi:schemaLocation="http://xstest-tns/schema11_S3_4_6 s3_4_6ii03.xsd">
+	<b>1</b>
+	<a>1</a>
+</dv:root>
+<!-- 
+	Test Case Type: instance invalid test (Structures 3.4.6) 
+	Base Type     : Restriction of complex types
+	Description   : Tests notQName
+-->

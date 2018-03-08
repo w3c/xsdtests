@@ -1,0 +1,19 @@
+<?xml version="1.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root" type="rootType" />  
+	<xs:complexType name="rootType">
+		<xs:complexContent>
+			<xs:extension base="xs:string">				
+				<xs:attribute name="attr" type="xs:string" />
+				<xs:assert test="invalid-XPath-expression() le @date"/>
+			</xs:extension>			
+		</xs:complexContent>	
+	</xs:complexType>  
+</xs:schema>
+
+<!-- 
+
+	Test Case Type: schema Invalid test (Datatype/facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : errors in XPath evaluation are treated as a false result, assertion in complexContent in complexType
+-->

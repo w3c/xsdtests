@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/IBMd3_16v02"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/IBMd3_16v02
+	s3_16_2v02.xsd">
+
+	<elfltUnionC>12</elfltUnionC>
+  
+</dv:root>
+<!-- 
+	Test Case Type: valid test
+	Description   : Types derived by restriction from a union type
+-->

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+	
+<!--
+Test Case Type: Instance invalid test
+Description   : invalid instance key/keyref selection expressions_1
+-->
+	
+   <complexType name="DeptType">
+            <sequence>
+                  <element name="Deptno" type="int"/>
+                  <element name="Dname" type="string"/>
+                  <element name="Loc" type="string"/>
+            </sequence>
+    </complexType>
+	
+	<complexType name="EmployeeType">
+            <sequence>
+                  <element name="Empno" type="int"/>
+                  <element name="Ename" type="string"/>
+                  <element name="Sal" type="float"/>
+                  <element name="Deptno" type="int"/>
+            </sequence>
+    </complexType>
+      
+	<element name="root">
+            <complexType>
+                  <sequence>
+                        <element name="dept" type="a:DeptType" maxOccurs="unbounded"/>
+                        <element name="Employee" type="a:EmployeeType" maxOccurs="unbounded"/>
+                  </sequence>
+            </complexType>
+            <key name="PK_Dept_Deptno">
+                  <selector xpath=".//a:dept"/>
+                  <field xpath="a:Deptno"/>
+            </key>
+            <key name="PK_Employee_Empno">
+                  <selector xpath=".//a:Employee"/>
+                  <field xpath="a:Empno"/>
+            </key>
+            <keyref name="FK_deptEmployee" refer="a:PK_Dept_Deptno">
+                  <selector xpath=".//a:Employee"/>
+                  <field xpath="a:Deptno"/>
+            </keyref>
+      </element>
+
+
+
+
+</schema>
+
+

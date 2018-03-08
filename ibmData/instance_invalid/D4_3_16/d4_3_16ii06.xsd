@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_ii06"
+	xmlns:sv="http://xstest-tns/schema11_F4_3_16_ii06">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets with explicitTimezone
+			constraint checks in derivations of simpleTypes
+-->
+
+<simpleType name="dTimePattern">
+	<restriction  base="dateTime">
+		<pattern value="[2][0][0][0-9][-][0-1][1-2][-][0-2][1-8][T]*.*"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETRequired">
+	<restriction  base="sv:dTimePattern">
+		<explicitTimezone value="required"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETOptional">
+	<restriction  base="sv:dTimePattern">
+		<explicitTimezone value="optional"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETProhibited">
+	<restriction  base="sv:dTimePattern">
+		<explicitTimezone value="prohibited"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETOptionalDerReq">
+	<restriction  base="sv:dTimeETOptional">
+		<explicitTimezone value="required"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETOptionalDerPro">
+	<restriction  base="sv:dTimeETOptional">
+		<explicitTimezone value="prohibited"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="eldTimePattern" type="sv:dTimePattern" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="eldTimeETRequired" type="sv:dTimeETRequired" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="eldTimeETOptional" type="sv:dTimeETOptional" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="eldTimeETProhibited" type="sv:dTimeETProhibited" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="dTimeETOptionalDerReq" type="sv:dTimeETOptionalDerReq" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="dTimeETOptionalDerPro" type="sv:dTimeETOptionalDerPro" minOccurs="1" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

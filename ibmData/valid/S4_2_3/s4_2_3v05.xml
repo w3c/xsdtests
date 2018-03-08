@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a s4_2_3v05.xsd">		
+	<element3>
+	  <element2>
+	   <element_added></element_added>
+	   <element_added></element_added>
+	   <element_added></element_added>
+	  </element2>
+	</element3>
+	<element1></element1>
+	<element2/>
+	<element2/>
+</root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : chameleon include on unqualified names in XPath expressions The handling of "chameleon" inclusion and redefinition in schema documents has been simplified"
+-->

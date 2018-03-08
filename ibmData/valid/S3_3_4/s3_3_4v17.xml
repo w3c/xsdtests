@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root xsi:noNamespaceSchemaLocation="s3_3_4v17.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<union_of_ids>123</union_of_ids>	
+	<union_of_ids>true</union_of_ids>
+	<union_of_ids>abc</union_of_ids>
+	<union_of_ids>false</union_of_ids>	
+	<idref>abc</idref>
+</root>
+<!-- 
+	Test Case Type: valid test (Structures 3.3.4)
+	facet Type 	  : ID/IDREF
+	Description   : Unions involving ID in elements
+-->

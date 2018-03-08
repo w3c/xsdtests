@@ -1,0 +1,58 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+   <xs:element name="test">
+      <xs:complexType>
+	     <xs:sequence>
+		    <xs:element name="x" type="X" />
+			<xs:element name="y" type="Y" />
+		 </xs:sequence>
+	  </xs:complexType>
+   </xs:element>
+   
+   <xs:complexType name="X">
+      <xs:group ref="List1" />
+	  <xs:assert test="a and b and d">
+	     <xs:annotation>
+            <xs:documentation>
+		       Elements a, b and d are mandatory.
+		    </xs:documentation>
+         </xs:annotation>
+	  </xs:assert>
+   </xs:complexType>
+   
+   <xs:complexType name="Y">
+      <xs:group ref="List1" />
+	  <xs:assert test="a and b and c and d">
+	     <xs:annotation>
+            <xs:documentation>
+		       Elements a, b, c and d are mandatory.
+		    </xs:documentation>
+         </xs:annotation>
+	  </xs:assert>
+   </xs:complexType>
+   
+   <xs:group name="List1">
+      <xs:sequence>
+        <xs:element name="a" minOccurs="0">
+		  <xs:complexType>
+		    <xs:sequence>
+			   <xs:element name="a1" type="xs:string" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute name="aCount" type="xs:nonNegativeInteger" />
+			<xs:assert test="count(a1) eq @aCount">
+			   <xs:annotation>
+                 <xs:documentation>
+		            An assertion here enforces that, numeric value of attribute "aCount" is equal to number
+					of "a1" children. 
+		         </xs:documentation>
+               </xs:annotation>
+			</xs:assert>
+		  </xs:complexType>
+		</xs:element>
+	    <xs:element name="b" type="xs:string" minOccurs="0"/>
+	    <xs:element name="c" type="xs:string" minOccurs="0"/>
+	    <xs:element name="d" type="xs:string" minOccurs="0"/>
+	  </xs:sequence>
+   </xs:group>
+           
+</xs:schema>

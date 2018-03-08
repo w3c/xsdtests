@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="listOfIDs">
+					<xs:attribute name="idref_attr" type="xs:IDREF"/>
+				</xs:extension>					
+			</xs:simpleContent>			
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="listOfIDs">
+		<xs:list itemType="xs:ID"/>
+	</xs:simpleType>
+</xs:schema>
+
+
+<!-- 
+	Test Case Type: valid test (Structures 3.3.4)
+	facet Type 	  : ID/IDREF
+	Description   : lists of ID, simpleContent
+-->

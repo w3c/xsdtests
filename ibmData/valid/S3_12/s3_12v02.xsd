@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns" xmlns:tns="http://xstest-tns"
+	elementFormDefault="unqualified">
+	
+<!-- 	
+Test Case Type: Valid test
+Description   : Basic type alternatives.
+          alternative element with a complexType child that is derived from the base element type and no type attribute More that one alternative type is present. One of the alternative types is the default type.
+-->
+
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title" type="tns:titleType" maxOccurs="5">
+
+          <xs:alternative test="@type='text'">
+            <xs:complexType>
+              <xs:simpleContent>
+                <xs:restriction base="tns:titleType">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:string" />
+                  </xs:simpleType>
+                </xs:restriction>
+              </xs:simpleContent>
+            </xs:complexType>
+          </xs:alternative>
+
+          <xs:alternative test="@type='number'">
+            <xs:complexType>
+              <xs:simpleContent>
+                <xs:restriction base="tns:titleType">
+                  <xs:simpleType>
+                    <xs:restriction base="xs:integer" />
+                  </xs:simpleType>
+                </xs:restriction>
+              </xs:simpleContent>
+            </xs:complexType>
+          </xs:alternative>
+
+          <xs:alternative test="@type='mixed'" type="tns:mixedTitleType" />
+
+          <xs:alternative type="tns:titleType" />
+
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="titleType" mixed="true">
+    <xs:attribute name="type" type="xs:anySimpleType"></xs:attribute>
+  </xs:complexType>
+
+
+  <xs:complexType name="mixedTitleType">
+    <xs:simpleContent>
+      <xs:restriction base="tns:titleType">
+        <xs:simpleType>
+          <xs:union memberTypes="xs:integer xs:string" />
+        </xs:simpleType>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="IdentityConstraint" 
+  contributor="IBM">
+
+   <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary">
+        Identity-constraint tests
+	      </ts:documentation>
+    </ts:annotation>
+
+    <ts:testGroup name="s2_2_4v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Valid test for identity constraint referrals with annotation  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S2_2_4/s2_2_4v01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_2_4v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S2_2_4/s2_2_4v01.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s2_2_4v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Valid test for identity constraint referrals  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S2_2_4/s2_2_4v02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_2_4v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S2_2_4/s2_2_4v02.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s2_2_4v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests unresolvable xpath </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S2_2_4/s2_2_4v03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_2_4v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S2_2_4/s2_2_4v03.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s2_2_4ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test attribute which is required as declared in key is abscent </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S2_2_4/s2_2_4ii01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_2_4ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S2_2_4/s2_2_4ii01.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+     <ts:testGroup name="s2_2_4ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests for duplication on components with identity constraints Checks that ic referrals works when nested</ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S2_2_4/s2_2_4ii02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_2_4ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S2_2_4/s2_2_4ii02.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+     <ts:testGroup name="s2_2_4ii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests for duplication on components with keys and uniques</ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S2_2_4/s2_2_4ii03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_2_4ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S2_2_4/s2_2_4ii03.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s2_2_4si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>3.11.3.4 - If ref is present, then only id and [annotation] are allowed to appear together with ref.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S2_2_4/s2_2_4si01.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s2_2_4si02">
+        <ts:annotation>
+            <ts:documentation>3.11.3.5 - If ref is present, then the {identity-constraint category} of the identity-constraint definition resolved to by the actual value of the ref [attribute] matches the name of the element information item.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S2_2_4/s2_2_4si02.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s2_2_4si04">
+        <ts:annotation>
+            <ts:documentation>identity constraints contains no name and no ref attribute </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4si04s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S2_2_4/s2_2_4si04.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s2_2_4si05">
+        <ts:annotation>
+            <ts:documentation>key refers to nonexisting key </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4si05s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S2_2_4/s2_2_4si05.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s2_2_4si06">
+        <ts:annotation>
+            <ts:documentation>[key] cannot have both ref and name attributes</ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4si06s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S2_2_4/s2_2_4si06.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s2_2_4si07">
+        <ts:annotation>
+            <ts:documentation>[key] cannot have both ref and name attributes</ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Constraint_Summary"/>
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <ts:schemaTest name="s2_2_4si07s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S2_2_4/s2_2_4si07.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+</ts:testSet>

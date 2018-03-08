@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a s4_2_3v02.xsd">		
+	<element2/>
+	<element3/>
+	<root/>
+</root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : chameleon include on unqualified names in XPath expressions
+-->

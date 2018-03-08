@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="b"
+        elementFormDefault="qualified">
+
+<attribute name="a" type="integer"/>
+
+</schema>
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   : Tests notQName and notNamespace list in xs:anyAttribute 
+-->

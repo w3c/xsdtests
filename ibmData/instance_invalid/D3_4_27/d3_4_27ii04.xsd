@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_27_ii04"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_27_ii04">
+	
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : Tests the simpleType dayTimeDuration and its facets and its use in elements
+-->
+
+
+<simpleType name="yMDMinMaxExclusive">
+	<restriction base="dayTimeDuration">
+		<minExclusive value="-P2D"/>
+		<maxExclusive value="P30DT23H"/>
+	</restriction>
+</simpleType>
+
+
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elyMDMinMaxExclusive" type="sv:yMDMinMaxExclusive" minOccurs="1" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

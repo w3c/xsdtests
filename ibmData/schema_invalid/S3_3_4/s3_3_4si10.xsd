@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:attribute name="list_of_ids" type="listOfIDs" default="aka"/>    
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="listOfIDs">
+		<xs:list itemType="listTypeA"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="listTypeA">
+		<xs:restriction base="xs:ID">
+			<xs:enumeration value="ala"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
+
+<!--
+	Test Case Type: schema invalid test(Structures 3.3.4) 
+	facet Type 	  : ID/IDREF
+	Description   : invalid default value on a list of type id
+-->

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a">
+        
+<!-- 
+Test Case Type: Schema invalid test
+Description   : 3.4.3 Schema Representation Constraint: ComplexType Definition Representation OK
+     <openContent> has mode not 'none' AND no <any> in its children
+     <openContent> has mode 'none' AND <any> in its children (which is ok)
+-->
+
+<complexType name="c1">
+ <openContent> <!-- default value for mode is interleave -->
+ </openContent>
+</complexType>
+
+<complexType name="c2">
+ <openContent mode="suffix">
+ </openContent>
+</complexType>
+
+<complexType name="c3">
+ <openContent mode="interleave">
+ </openContent>
+</complexType>
+
+<complexType name="c4">
+ <openContent mode="none">
+  <any/>			
+ </openContent>
+</complexType>
+
+<element name="root" type="string"/>
+
+</schema>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root_1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a s4_2_4v01.xsd">		
+    <element1/>
+	<element2/>
+<!--	<element_added/>-->
+</root_1>
+<!--
+Test Case Type: Valid test
+Description   : If there are any element information items among the 
+[children] other than <annotation> then the 'actual value' of the 
+schemaLocation [attribute] must successfully resolve.
+-->

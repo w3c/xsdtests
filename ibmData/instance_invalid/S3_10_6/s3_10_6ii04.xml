@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+	xmlns:a="a"
+        xmlns:b="b"
+        xmlns:c="c"
+        xsi:schemaLocation="a s3_10_6ii04.xsd">
+ <e1 asd="asd"/>
+ <e2 a:asd="asd"/></root>
+ 
+ <!-- 
+Test Case Type: Instance invalid test
+Description   : Tests namespace attribute on xs:anyAttribute 
+-->

@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="union" 
+  contributor="IBM">
+
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype">unions</ts:documentation>
+    </ts:annotation>
+
+    <ts:testGroup name="s3_16_2v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>tests restriction facet in intervening union </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <ts:schemaTest name="s3_16_2v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v01.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Types derived by restriction from a union type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <ts:schemaTest name="s3_16_2v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v02.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>tests restriction facet in intervening union </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <ts:schemaTest name="s3_16_2v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v03.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Types derived by restriction from a union type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <ts:schemaTest name="s3_16_2v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v04.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2v05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>xsi:type used to name a member of a restricted union type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-XSITypeUsedAsMember"/>
+        <ts:schemaTest name="s3_16_2v05s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v05.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2v05i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v05.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2v06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Union of unions</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes"/>
+        <ts:schemaTest name="s3_16_2v06s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v06.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2v06i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v06.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2v07">
+        <ts:annotation>
+            <ts:documentation>xsi:type used to name a member of a restricted union type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-XSITypeUsedAsMember"/>
+        <ts:schemaTest name="s3_16_2v07s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v07.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2v07i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_16_2/s3_16_2v07.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>tests restriction facet in intervening union </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <ts:schemaTest name="s3_16_2ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii01.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>tests restriction facet in intervening union </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <ts:schemaTest name="s3_16_2ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii02.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2ii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>tests restriction facet in intervening union </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <ts:schemaTest name="s3_16_2ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii03.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2ii04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Types derived by restriction from a union type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="hhttp://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <ts:schemaTest name="s3_16_2ii04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2ii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii04.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2ii05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>xsi:type used to name a member of a restricted union type  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-XSITypeUsedAsMember"/>
+        <ts:schemaTest name="s3_16_2ii05s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii05.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2ii05i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii05.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2ii06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>xsi:type used to name a member of a restricted union type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <ts:schemaTest name="s3_16_2ii06s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii06.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2ii06i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii06.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2ii07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>xsi:type used to name a member of a restricted union type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-XSITypeUsedAsMember"/>
+        <ts:schemaTest name="s3_16_2ii07s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii07.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_16_2ii07i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_16_2/s3_16_2ii07.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Union type a member of its own transitive membership  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-Cyclicity"/>
+        <ts:schemaTest name="s3_16_2si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_16_2/s3_16_2si01.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2si02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Cyclicity of union types  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-Cyclicity"/>
+        <ts:schemaTest name="s3_16_2si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_16_2/s3_16_2si02.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2si03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Cyclicity of union types</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-Cyclicity"/>
+        <ts:schemaTest name="s3_16_2si03s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_16_2/s3_16_2si03.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2si04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Cyclicity of union types  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-Cyclicity"/>
+        <ts:schemaTest name="s3_16_2si04s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_16_2/s3_16_2si04.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_16_2si05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Cyclicity of union types </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-datatype"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-Cyclicity"/>
+        <ts:schemaTest name="s3_16_2si05s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_16_2/s3_16_2si05.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+</ts:testSet>

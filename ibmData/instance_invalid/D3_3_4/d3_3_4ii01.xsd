@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_ii01"
+	xmlns:sv="http://xstest-tns/schema11_D3_3_4_ii01">
+	
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : A valid schema for instance invalid tests
+-->
+
+<simpleType name="decType">
+	<restriction base="precisionDecimal"/>
+</simpleType>
+
+<simpleType name="decTotalDigits">
+	<restriction base="precisionDecimal">
+		<totalDigits value="5"/>
+	</restriction>
+</simpleType>
+
+
+
+<simpleType name="decEnumeration">
+	<restriction base="precisionDecimal">
+		<enumeration value="10"/>
+		<enumeration value="10.11"/>
+		<enumeration value="-1230.1211"/>
+		<enumeration value="+1000.00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decPattern">
+	<restriction base="precisionDecimal">
+		<pattern value="[1-5]{2}[5-9]{1}[0-1]{1}[^8-9]"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinMaxInclusive">
+	<restriction base="precisionDecimal">
+		<minInclusive value="-1771"/>
+		<maxInclusive value="+1771"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinMaxExclusive">
+	<restriction base="precisionDecimal">
+		<minExclusive value="-999.99"/>
+		<maxExclusive value="999.999"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinMaxScale">
+	<restriction base="precisionDecimal">
+		<minScale value="2"/>
+		<maxScale value="3"/>
+	</restriction>
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="eldecType" type="sv:decType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elMinMaxScale" type="sv:decMinMaxScale" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="eldecTotalDigits" type="sv:decTotalDigits" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="eldecEnumeration" type="sv:decEnumeration" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="eldecPattern" type="sv:decPattern" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="eldecMinMaxInclusive" type="sv:decMinMaxInclusive" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="eldecMinMaxExclusive" type="sv:decMinMaxExclusive" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

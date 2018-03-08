@@ -1,0 +1,94 @@
+<?xml version="1.1"?>
+<schema xmlns          ="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xstest-tns/IBM3_11V01"
+        xmlns:v01      ="http://xstest-tns/IBM3_11V01">
+
+<!--
+	Tests for duplication on components with identity constraints
+	Checks that ic referrals works when nested
+-->
+
+<simpleType name="internalCode">
+	<restriction base="string">
+		<pattern value="\d{5}"/>
+	</restriction>
+</simpleType>
+
+<complexType name="heaterType">
+	<simpleContent>
+		<extension base="string">
+			<attribute name="model" type="string"/>
+		</extension>
+	</simpleContent>
+</complexType>
+
+<complexType name="unitType">
+	<sequence>
+		<element name="internal" minOccurs="0" maxOccurs="unbounded">
+			<complexType>
+				<sequence>
+					<element name="heater" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<attribute name="model" type="string"/>
+							<attribute name="quantity" type="positiveInteger"/>
+						</complexType>
+					</element>
+				</sequence>
+				<attribute name="code" type="v01:internalCode"/>
+			</complexType>
+		</element>
+	</sequence>
+	<attribute name="attr1" type="boolean"/>
+	<attribute name="attr2" type="boolean"/>
+</complexType>
+
+<element name="heaterConsumer">
+
+	<complexType>
+		<sequence>
+			<element name="heaterConsumer2">
+				<complexType>
+					<sequence>
+						<element name="unit" type="v01:unitType" maxOccurs="unbounded"/>
+						<element ref="v01:heaters"/>			
+					</sequence>
+				</complexType>
+				<key ref="v01:key">
+					<annotation>
+						<documentation>hi</documentation>
+					</annotation>
+				</key>
+				<keyref name="keyref" refer="v01:key">
+					<selector xpath="unit"/>
+					<field xpath="@attr2"/>
+				</keyref>
+			</element>
+			<element name="unit" type="v01:unitType" maxOccurs="unbounded"/>
+			<element ref="v01:heaters"/>
+		</sequence>
+	</complexType>
+		<key name="key">
+		<selector xpath="unit"/>
+		<field xpath="@attr1"/>
+	</key>
+	<keyref ref="v01:keyref"/>
+</element>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element ref="v01:heaterConsumer"/>
+		</sequence>
+	</complexType>
+</element>
+
+<element name="heaters">
+	<complexType>
+		<sequence>
+			<element name="heater" type="v01:heaterType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="vendor" type="string"/>
+	</complexType>
+</element>
+
+</schema>

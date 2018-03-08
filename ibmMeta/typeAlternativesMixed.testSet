@@ -1,0 +1,147 @@
+<?xml version='1.0'?>
+<testSet name="CTA"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="IBM"
+      version="1.1">
+	  
+    <testGroup name="typeAlternatives_001" version="1.1">
+      <annotation>
+         <documentation>
+		    Demonstrates XML Schema 1.1 type-alternatives.
+		 </documentation>
+      </annotation>
+       <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>   
+       <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA"/>
+      <schemaTest name="typeAlternatives_001_1">
+         <schemaDocument xlink:href="../ibmData/mixed/type-alternatives/test1.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="typeAlternatives_001_2">
+         <instanceDocument xlink:href="../ibmData/mixed/type-alternatives/test1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+    </testGroup>
+	
+	<testGroup name="typeAlternatives_002" version="1.1">
+      <annotation>
+         <documentation>
+		    Demonstrates XML Schema 1.1 type-alternatives.
+		 </documentation>
+      </annotation>
+	   <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>   
+	   <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA"/>
+      <schemaTest name="typeAlternatives_002_1">
+         <schemaDocument xlink:href="../ibmData/mixed/type-alternatives/test2.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="typeAlternatives_002_2">
+         <instanceDocument xlink:href="../ibmData/mixed/type-alternatives/test2.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+    </testGroup>
+	
+    <testGroup name="typeAlternatives_003" version="1.1">
+      <annotation>
+         <documentation>
+		    Demonstrates XML Schema 1.1 type-alternatives. In this example, schema type definition's are provided
+			as children of xs:alternative instructions.
+		 </documentation>
+      </annotation>
+       <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>   
+       <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA"/>
+      <schemaTest name="typeAlternatives_003_1">
+         <schemaDocument xlink:href="../ibmData/mixed/type-alternatives/test2_1.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="typeAlternatives_003_2">
+         <instanceDocument xlink:href="../ibmData/mixed/type-alternatives/test2.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+    </testGroup>
+	
+	<testGroup name="typeAlternatives_004" version="1.1">
+      <annotation>
+         <documentation>
+		    Demonstrates XML Schema 1.1 type-alternatives. Using inheritable attributes and assertions along
+			with type-alternatives.
+		 </documentation>
+      </annotation>
+	   <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>   
+	   <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA"/>
+      <schemaTest name="typeAlternatives_004_1">
+         <schemaDocument xlink:href="../ibmData/mixed/type-alternatives/test3.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="typeAlternatives_004_2">
+         <instanceDocument xlink:href="../ibmData/mixed/type-alternatives/test3_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="typeAlternatives_004_3">
+         <instanceDocument xlink:href="../ibmData/mixed/type-alternatives/test3_2.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+    </testGroup>
+	
+	<testGroup name="typeAlternatives_005" version="1.1">
+      <annotation>
+         <documentation>
+		    Demonstrates XML Schema 1.1 type-alternatives. Using inheritable attributes in this example.
+		 </documentation>
+      </annotation>
+	   <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>   
+	   <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA"/>
+      <schemaTest name="typeAlternatives_005_1">
+         <schemaDocument xlink:href="../ibmData/mixed/type-alternatives/test4.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="typeAlternatives_005_2">
+         <instanceDocument xlink:href="../ibmData/mixed/type-alternatives/test4_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="typeAlternatives_005_3">
+         <instanceDocument xlink:href="../ibmData/mixed/type-alternatives/test4_2.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+    </testGroup>
+	
+    <testGroup name="typeAlternatives_006" version="1.1">
+      <annotation>
+         <documentation>
+		    Demonstrates XML Schema 1.1 type-alternatives.
+		 </documentation>
+      </annotation>
+       <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>   
+       <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA"/>
+      <schemaTest name="typeAlternatives_006_1">
+         <schemaDocument xlink:href="../ibmData/mixed/type-alternatives/test5.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="typeAlternatives_006_2">
+         <instanceDocument xlink:href="../ibmData/mixed/type-alternatives/test5_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="typeAlternatives_006_3">
+         <instanceDocument xlink:href="../ibmData/mixed/type-alternatives/test5_2.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+    </testGroup>
+   
+</testSet>

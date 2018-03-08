@@ -1,0 +1,5 @@
+<Example>
+  <x kind="quantity">10</x>
+  <x kind="price">10.5</x>
+  <x kind="mesg">hello world</x>
+</Example>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/IBMd3_16v07"
+	xmlns:sv="http://xstest-tns/IBMd3_16v07">
+	
+<!-- 
+	Test Case Type: valid test
+	Description   : xsi:type used to name a member of a restricted union type
+-->
+		
+	<simpleType name="u1_string">
+		<restriction base="string">
+			<pattern value="[1-9][1-9]"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="u1_integer">
+		<restriction base="positiveInteger">
+			<pattern value="[3-4][3-4]"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="u1_ncname">
+		<restriction base="NCName">
+			<pattern value="[a-z][x-z]"/>
+		</restriction>
+	</simpleType>	
+	
+	<simpleType name="union1All">
+		<union memberTypes="sv:u1_ncname sv:u1_integer sv:u1_string"/>
+	</simpleType>
+
+		
+	<simpleType name="u2_date">
+		<restriction base="date"/>					
+	</simpleType>
+	
+	<simpleType name="u2_negativeInteger">
+		<restriction base="negativeInteger">			
+		</restriction>
+	</simpleType>	
+	
+	
+	<simpleType name="union2All">
+		<union memberTypes="sv:u2_date sv:u2_negativeInteger"/>
+	</simpleType>
+
+	<simpleType name="unionAll">
+		<union memberTypes="sv:union2All sv:union1All"/>
+	</simpleType>
+
+	
+	<element name="root">
+		<complexType>
+			<sequence>			
+				<element name="union_element" type="sv:unionAll"  maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>

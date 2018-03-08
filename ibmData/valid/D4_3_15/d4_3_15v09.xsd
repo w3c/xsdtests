@@ -1,0 +1,20 @@
+<?xml version="1.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="mySimpleType">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="25"/>
+      <xs:assertion test="ends-with($value, 'xyz')"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="root" type="mySimpleType" />
+ 
+</xs:schema> 
+
+
+<!-- 
+	Test Case Type: valid test (Datatype/facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : assertions on simple type, using variable $value
+-->

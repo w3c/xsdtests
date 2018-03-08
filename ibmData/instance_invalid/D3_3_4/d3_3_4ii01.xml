@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inii:root xmlns:inii="http://xstest-tns/schema11_D3_3_4_ii01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_ii01
+	d3_3_4ii01.xsd">
+	
+	<eldecType>111</eldecType>
+	<eldecType>+222.12</eldecType>
+	<eldecType>-8.9999</eldecType>
+	<eldecType>-1.23E-2</eldecType>
+	<eldecType>&#x660;&#x661;&#x663;</eldecType>
+</inii:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : The last element has an invalid precisionDecimal value
+-->

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_3_4_v03"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_v03
+	d3_3_4v16.xsd">
+	
+	<eldecTotalDigits>123.5e1</eldecTotalDigits>
+	
+	<eldecListA>+222.12 -8.9999</eldecListA>
+	
+	<eldecListB>+222.12 -8.9999 0 123456789.987654321</eldecListB>
+	
+	<dv:eldecListC>123.01 12.001 1.0001</dv:eldecListC>		
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the precisionDecimal decimal and its facets totalDigits,
+			    used in lists
+-->

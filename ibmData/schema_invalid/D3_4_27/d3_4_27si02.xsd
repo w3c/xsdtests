@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_27_si02"
+	xmlns:si="http://xstest-tns/schema11_D3_4_27_si02">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : (min|max)? (Inclusive|Exclusive) are not of the base type specification
+-->
+
+
+<simpleType name="durMinMaxInclusive">
+	<restriction  base="dayTimeDuration">
+		<minInclusive value="P1Y4D"/>
+		<maxInclusive value="P-1DT3H"/>		
+	</restriction>
+</simpleType>
+
+<simpleType name="durMinMaxExclusive">
+	<restriction  base="dayTimeDuration">
+		<minExclusive value="P4dt45H"/>
+		<maxExclusive value="PT5H5634.3M"/>		
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elMinMaxInclusive" type="si:durMinMaxInclusive"/>
+			<element name="elMinMaxExclusive" type="si:durMinMaxExclusive"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

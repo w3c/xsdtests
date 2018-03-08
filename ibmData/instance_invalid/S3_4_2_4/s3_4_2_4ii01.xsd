@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        elementFormDefault="qualified"
+        attributeFormDefault="qualified"
+        xmlns:a="a"
+        defaultAttributes="a:defaultAttrGroup">
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   : Check that defaultAttributesApply works  
+-->
+
+<attributeGroup name="defaultAttrGroup">
+ <attribute name="defaultAttr" type="boolean"/>
+</attributeGroup>
+
+<element name="root">
+ <complexType>
+  <sequence>
+
+   <element name="e1">
+    <complexType>    
+    </complexType>
+   </element>
+
+   <element name="e2">
+    <complexType defaultAttributesApply="false">
+    </complexType>
+   </element>
+
+  </sequence>
+ </complexType>
+ </element>
+</schema>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a">
+        
+<!-- 
+Test Case Type: Valid test
+Description   : Tests derivation by restriction with openContent mode interleave in base type
+-->
+
+<complexType name="c">
+ <openContent mode="interleave">
+  <any processContents="lax"/>
+ </openContent>
+ <all>
+  <element name="x" type="integer"/>
+  <element name="y" type="integer"/>
+ </all>
+</complexType>
+
+<complexType name="d">
+ <complexContent>
+  <restriction base="a:c">
+   <all>
+    <element name="x" type="integer"/> 
+    <element name="y" type="integer"/>
+   </all>
+  </restriction>
+ </complexContent>
+</complexType>
+
+<element name="root">
+ <complexType>
+  <sequence>
+   <element name="p" type="a:d"/>	<!-- tests openContent -->
+  </sequence>
+ </complexType>
+</element>
+
+</schema>
+ 

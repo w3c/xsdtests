@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a">
+        
+<!-- 
+Test Case Type: Schema invalid test
+Description   : not wildcard inside openContent
+-->
+
+<element name="root">
+ <complexType>
+ <openContent>
+  <element name="a" type="integer"/>
+ </openContent>
+</complexType>
+</element>
+
+</schema>

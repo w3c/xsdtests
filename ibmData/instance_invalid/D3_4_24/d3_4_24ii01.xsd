@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11"
+	xmlns:si="http://xstest-tns/schema11">
+	
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="ele" type="unsignedByte"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema> 
+<!-- 
+Test Case Type: Instance invalid test
+Description   : The possibility of a leading sign is allowed for unsignedByte. 
+--> 

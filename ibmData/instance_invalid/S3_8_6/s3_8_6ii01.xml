@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="b"
+	xmlns:b="b"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="a s3_8_6ii01.xsd">
+  <x>a</x> 
+  <x>v</x>
+</root>
+<!-- 
+	
+Test Case Type: Instance invalid test
+Description   : any element instance which matches the wildcard is required to have a governing type definition compatible with the type assigned by the local element declarations matched by the element's expanded name. 
+-->

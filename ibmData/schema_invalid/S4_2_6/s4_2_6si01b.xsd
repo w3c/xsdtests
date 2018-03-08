@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="b"
+        elementFormDefault="qualified">        
+			<element name="element" type="string"/>
+</schema>
+
+<!-- 
+Test Case Type: Schema Valid test
+Description   : invalid schema for referring to a namespace requires an xs:import
+-->

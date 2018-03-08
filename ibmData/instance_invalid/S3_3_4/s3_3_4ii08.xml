@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root xsi:noNamespaceSchemaLocation="S3_3_4ii08.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<list_of_ids>asd 123 u123</list_of_ids>
+	<idref>u123</idref>
+</root>
+<!-- 
+	Test Case Type: instance invalid test (ID/IDREF) 	
+	facet Type 	  : ID/IDREF
+	Description   : lists of ID, invalid ID value on list of ids
+-->

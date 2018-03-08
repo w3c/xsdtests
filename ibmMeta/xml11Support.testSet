@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="XML11Support"
+  contributor="IBM">
+
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-2/#sec-chother">
+        Value space of xs:Name and related types
+        Use of newly allowed name characters in names of schema components
+        Effect of \i and \c in regular expressions
+        </ts:documentation>
+    </ts:annotation>
+
+    <ts:testGroup name="d3_4_6v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>value space of xs:Name and related types (test Name) </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#Name"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-ValSpcOfXSNameEtc"/>
+        <ts:schemaTest name="d3_4_6v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v01.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_6v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>value space of xs:Name and related types (test NCName) </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#NCName"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-ValSpcOfXSNameEtc"/>
+        <ts:schemaTest name="d3_4_6v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v02.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_6v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>effect of \i in regular expressions  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dt-regex"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <ts:schemaTest name="d3_4_6v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v03.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_6v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>effect of \i in regular expressions  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dt-regex"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <ts:schemaTest name="d3_4_6v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v04.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_6v05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Use of newly allowed name characters in names of schema components "sequence" </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#Name"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-AddlCharsInNames"/>
+        <ts:schemaTest name="d3_4_6v05s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v05.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6v05i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v05.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_6v06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Use of newly allowed name characters in names of schema components "choice" </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#Name"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-AddlCharsInNames"/>
+        <ts:schemaTest name="d3_4_6v06s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v06.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6v06i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v06.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_6v07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Use of newly allowed name characters in names of schema components "all" </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#Name"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-AddlCharsInNames"/>
+        <ts:schemaTest name="d3_4_6v07s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v07.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6v07i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_6/d3_4_6v07.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_6ii01">
+        <ts:annotation>
+            <ts:documentation>invalid instance for value space of xs:Name </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#Name"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-ValSpcOfXSNameEtc"/>
+        <ts:schemaTest name="d3_4_6ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_6/d3_4_6ii01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_6/d3_4_6ii01.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_6ii02">
+        <ts:annotation>
+            <ts:documentation>invalid instance for value space of xs:NCName </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#Name"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-ValSpcOfXSNameEtc"/>
+        <ts:schemaTest name="d3_4_6ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_6/d3_4_6ii02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_6/d3_4_6ii02.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_6ii03">
+        <ts:annotation>
+            <ts:documentation>invalid instance for effect of \i in regular expressions </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#Name"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <ts:schemaTest name="d3_4_6ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_6/d3_4_6ii03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_6/d3_4_6ii03.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_6ii04">
+        <ts:annotation>
+            <ts:documentation>invalid instance for effect of \c in regular expressions </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#Name"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <ts:schemaTest name="d3_4_6ii04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_6/d3_4_6ii04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_6ii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_6/d3_4_6ii04.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+</ts:testSet>

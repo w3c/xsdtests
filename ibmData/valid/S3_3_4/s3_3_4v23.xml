@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root xsi:noNamespaceSchemaLocation="s3_3_4v23.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	id1="asd87123_" id2="_d8732d">
+	<idref>asd87123_</idref>
+	<idref>_d8732d</idref>	
+</root>
+<!-- 
+	Test Case Type: valid test (Structures 3.3.4)
+	facet Type 	  : ID/IDREF
+	Description   : Multiple attributes of type ID
+-->

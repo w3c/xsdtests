@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_si09"
+	xmlns:si="http://xstest-tns/schema11_D3_3_4_si09">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : It is an error if maxExclusive > base.maxExclusive
+-->
+
+<simpleType name="decMaxExclusive">
+	<restriction base="precisionDecimal">
+		<maxExclusive value="20"/>
+	</restriction>	
+</simpleType>
+
+<simpleType name="decMaxExclusive_Derived">
+	<restriction base="si:decMaxExclusive">
+		<maxExclusive value="30"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="decMaxExclusive_Derived1">
+	<restriction base="si:decMaxExclusive">
+		<minInclusive value="30"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="decMaxExclusive_Derived2">
+	<restriction base="si:decMaxExclusive">
+		<minExclusive value="30"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="decMaxExclusive_Derived3">
+	<restriction base="si:decMaxExclusive">
+		<maxInclusive value="30"/> 
+	</restriction>	
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elMaxExclusive" type="si:decMaxExclusive_Derived"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

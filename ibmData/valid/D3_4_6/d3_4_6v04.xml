@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a d3_4_6v04.xsd">		
+	<ele>aa</ele>
+	<ele>a:</ele>
+	<ele>a_</ele>
+	<ele>aZ</ele>
+	<ele>a0</ele>
+	<ele>a.</ele>
+	<ele>a-</ele>
+</root>
+<!-- 
+Test Case Type: Valid test
+Description   : effect of \c in regular expressions
+-->

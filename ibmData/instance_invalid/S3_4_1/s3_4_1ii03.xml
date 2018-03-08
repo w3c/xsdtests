@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<a:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:a="a"
+        xsi:schemaLocation="a s3_4_1ii03.xsd">
+ <p>
+  <a>1</a>
+  <c>asd</c>	<!-- wildcard elem c would be valid is located after <b> -->
+  <b>1</b>
+ </p>
+</a:root>
+
+<!-- 
+Test Case Type: Instance invalid test	
+Description   : Tests defaultOpenContent: when openContent is present in CT, defaultOpenContent should not be used
+-->

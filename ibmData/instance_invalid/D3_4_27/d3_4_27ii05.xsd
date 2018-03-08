@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_27_ii05"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_27_ii05">
+	
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : Tests the simpleType dayTimeDuration and its facets and its use in attributes
+-->
+
+<simpleType name="yMDType">
+	<restriction base="dayTimeDuration"/>
+</simpleType>
+
+
+<simpleType name="yMDEnumeration">
+	<restriction base="dayTimeDuration">
+		<enumeration value="P1D"/>
+		<enumeration value="P1DT3H"/>
+		<enumeration value="-P34DT233M"/>
+		<enumeration value="PT45M"/>
+	</restriction>
+</simpleType>
+
+
+
+<simpleType name="yMDMinMaxInclusive">
+	<restriction base="dayTimeDuration">
+		<minInclusive value="-P2D"/>
+		<maxInclusive value="P30DT23M"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="yMDMinMaxExclusive">
+	<restriction base="dayTimeDuration">
+		<minExclusive value="-P2D"/>
+		<maxExclusive value="P30DT23M"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<simpleContent>
+			<extension base="string">
+				<attribute name="ayMDType" type="sv:yMDType"/>
+				<attribute name="ayMDEnumeration" type="sv:yMDEnumeration"/>
+				<attribute name="ayMDMinMaxInclusive" type="sv:yMDMinMaxInclusive"/>
+				<attribute name="ayMDMinMaxExclusive" type="sv:yMDMinMaxExclusive"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+</element>    
+
+</schema>  

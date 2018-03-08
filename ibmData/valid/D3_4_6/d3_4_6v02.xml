@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a d3_4_6v02.xsd">		
+     <ele>abb</ele>
+	 <ele>abb</ele>
+	 <ele>_abb</ele>
+	 <ele>_-</ele>
+	 <ele>_.</ele>
+	 <ele>_9-0</ele>
+	 <ele>_.....</ele>
+	 <ele>_______</ele>
+	 <ele>a.a</ele>
+	 <ele>a_a</ele>
+</root>
+<!-- 
+Test Case Type: Valid test
+Description   : value space of xs:Name and related types NCName
+-->

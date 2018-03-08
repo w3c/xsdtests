@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns" xmlns:tns="http://xstest-tns"
+	elementFormDefault="unqualified">
+
+<!-- 
+Test Case Type: Valid test
+Description   : Basic type alternatives.
+          Selection of the alternative type is dertermined by evaluating a path And expression with a comparator operator with an attribute's value
+-->
+
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="person" type="tns:ctBase" maxOccurs="unbounded">
+					<xs:alternative test="@numberOfChildren &lt; 5 and @numberOfChildren &gt; 0" type="tns:ctAlt1" />
+					<xs:alternative test="@numberOfChildren = 0" type="tns:ctAlt2" />
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="ctBase">
+	    <xs:sequence>
+           <xs:element name="child" minOccurs="0" maxOccurs="unbounded" type="tns:childTypeBase"/>
+	    </xs:sequence>
+	    <xs:attribute name="numberOfChildren" type="xs:int" />
+	</xs:complexType>
+	
+
+	<xs:complexType name="ctAlt1">
+	    <xs:complexContent>
+	      <xs:restriction base="tns:ctBase">
+	      	    <xs:sequence>
+                    <xs:element name="child" maxOccurs="unbounded" type="tns:childTypeDerived"/>	    
+	            </xs:sequence>
+	            <xs:attribute name="numberOfChildren" type="xs:int" />
+	      </xs:restriction>
+	    </xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="ctAlt2">
+	    <xs:complexContent>
+	      <xs:restriction base="tns:ctBase">
+	            <xs:attribute name="numberOfChildren" type="xs:int" />
+	      </xs:restriction>
+	    </xs:complexContent>
+	</xs:complexType>
+
+   <xs:complexType name="childTypeBase">
+       <xs:attribute name="name" type="xs:string" />
+	   <xs:attribute name="DOB" type="xs:anySimpleType" />
+   </xs:complexType>
+   
+   <xs:complexType name="childTypeDerived">
+       <xs:complexContent>
+       <xs:restriction base="tns:childTypeBase">
+          <xs:attribute name="name" type="xs:string" />
+	      <xs:attribute name="DOB" type="xs:date" />
+       </xs:restriction>
+       </xs:complexContent>
+   </xs:complexType>
+                    	
+</xs:schema>

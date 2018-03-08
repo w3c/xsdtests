@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+	Test Case Type: Valid (Datatypes section 3.3.6) 
+	Base Type     : double
+	Description   : lexical representation +INF for double
+-->	
+<root xmlns="a"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="a d3_3_6v02.xsd">
+	<Number1>+INF</Number1>
+	<Number2>2</Number2>
+</root>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>				
+				<xs:element name="idref_element" type="xs:IDREF" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="union_of_ids_attr1" type="unionOfIDs"/>
+			<xs:attribute name="union_of_ids_attr2" type="unionOfIDs"/>
+			<xs:attribute name="union_of_ids_attr3" type="unionOfIDs"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:simpleType name="unionOfIDs">
+		<xs:union memberTypes="xs:integer xs:boolean xs:ID"/>
+	</xs:simpleType>
+
+</xs:schema>
+
+<!-- 
+	Test Case Type: intance invalid test (Structures 3.3.4)
+	facet Type 	  : ID/IDREF
+	Description   : Unions involving ID in elements, invalid idref value on element
+-->

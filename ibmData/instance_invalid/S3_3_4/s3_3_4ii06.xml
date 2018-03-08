@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root xsi:noNamespaceSchemaLocation="s3_3_4ii06.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <a id="asd_"/>
+ <b idref="asd"/>
+</root>
+<!-- 
+	Test Case Type: instance invalid test (Structures 3.3.4) 
+	Base Type     : ID/IDREF
+	Description   : xs:ID/IDREF with default value on attribute
+-->

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_3_4_v04"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_v04
+	d3_3_4v17.xsd">
+	
+	<eldecUnionA>Computer</eldecUnionA>
+	<eldecUnionA>101.4</eldecUnionA>
+
+	<eldecUnionB>1.11111</eldecUnionB>
+	<eldecUnionB>7</eldecUnionB>
+	
+	<eldecUnionC>1.141</eldecUnionC>
+	<eldecUnionC>1</eldecUnionC>
+	<eldecUnionC>once</eldecUnionC>	
+
+</dv:root>
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the simpleType precisionDecimal and its facets fractionDigits,
+			used with unions
+-->

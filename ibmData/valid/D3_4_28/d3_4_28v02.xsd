@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_28_v02"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_28_v02">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : Tests the simpleType dateTimeStamp and its facets and its use in attributes
+-->
+
+<simpleType name="dTimeStampType">
+	<restriction base="dateTimeStamp"/>
+</simpleType>
+
+
+<simpleType name="bdTimeStampEnumeration">
+
+	<restriction base="dateTimeStamp">
+		<enumeration value="1998-01-01T12:00:00Z"/>
+		<enumeration value="2000-01-01T12:00:00.123Z"/>
+		<enumeration value="2001-01-01T12:00:00+08:00"/>
+		<enumeration value="2002-01-01T12:00:00.990-08:00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampEnumeration">
+	<restriction base="sv:bdTimeStampEnumeration">
+		<enumeration value="1998-01-01T12:00:00Z"/>
+		<enumeration value="2002-01-01T12:00:00.990-08:00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="bdTimeStampPattern">
+	<restriction base="dateTimeStamp">
+		<pattern value="[2][0][0][0-9][-][0-1][1-2][-][0-2][1-8][T]*.*"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampPattern">
+	<restriction base="sv:bdTimeStampPattern">
+		<pattern value="[2][0][0][0-9][-][0-1][1-2][-][0-2][1-8][T][0]*.*"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampMinMaxInclusive">
+	<restriction base="dateTimeStamp">
+		<minInclusive value="2003-01-01T12:00:00.990-08:00"/>
+		<maxInclusive value="2004-01-01T12:00:00.990-08:00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampMinMaxExclusive">
+	<restriction base="dateTimeStamp">		
+		<minExclusive value="1998-01-01T12:00:00Z" fixed="0"/>
+		<maxExclusive value="1999-01-01T12:00:00Z" fixed="false"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<simpleContent>
+			<extension base="string">				
+				<attribute name="attrdTimeStampType" type="sv:dTimeStampType"/>				
+				<attribute name="attrdTimeStampEnumeration" type="sv:dTimeStampEnumeration"/>
+				<attribute name="attrdTimeStampPattern" type="sv:dTimeStampPattern"/>
+				<attribute name="attrdTimeStampMinMaxInclusive" type="sv:dTimeStampMinMaxInclusive"/>
+				<attribute name="attrdTimeStampMinMaxExclusive" type="sv:dTimeStampMinMaxExclusive"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+</element>    
+
+</schema>  

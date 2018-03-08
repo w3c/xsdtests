@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_26_ii01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_26_ii01
+	d3_4_26ii01.xsd">
+	
+
+<elyMDType>P-124Y</elyMDType>
+<elyMDType>P3Y348M1D</elyMDType>
+<elyMDType>P1Y-2M</elyMDType>
+
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.26) 
+	Base Type     : yearMonthDuration
+	Description   : Invalid yearMonthDuration values
+-->
+

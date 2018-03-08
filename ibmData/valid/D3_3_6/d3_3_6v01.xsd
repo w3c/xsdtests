@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_6_v01"
+	xmlns:sv="http://xstest-tns/schema11_D3_3_6_v01">
+	
+<!-- 
+	Test Case Type: Valid (Datatypes section 3.3.6) 
+	Base Type     : double
+	Description   : Valid test for +0 and -0 bound checking
+-->
+
+<element name="root" type="sv:DoubleTest2"/>
+
+
+<simpleType name="DoubleTest1">	
+	<restriction base="double">
+		<minInclusive value="-0"/>
+		<maxInclusive value="5"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="DoubleTest2">	
+	<restriction base="sv:DoubleTest1">
+		<minInclusive value="+0"/>
+		<maxInclusive value="5"/>
+	</restriction>
+</simpleType>
+
+
+</schema>  

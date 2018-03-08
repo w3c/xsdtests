@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_28_si15"
+	xmlns:si="http://xstest-tns/schema11_D3_4_28_si15">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : The pattern contains an invalid regular expression
+-->
+
+<simpleType name="dTimeStampPattern">
+	<restriction base="dateTimeStamp">
+		<pattern value="{^5%\[]"/>
+	</restriction>	
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elPattern" type="si:dTimeStampPattern"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

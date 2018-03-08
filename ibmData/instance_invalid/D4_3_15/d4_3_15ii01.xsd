@@ -1,0 +1,19 @@
+<?xml version="1.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root" type="rootType" />  
+	<xs:complexType name="rootType">
+		<xs:sequence>
+			<xs:element name="ele" type="xs:string" />
+		</xs:sequence>
+		<xs:attribute name="min" type="xs:int"/>
+		<xs:attribute name="max" type="xs:int"/>	
+		<xs:assert test="@min le @max"/>
+		<xs:assert test="string-length(ele) le 10"/>
+	</xs:complexType>  
+</xs:schema>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatype/facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : Assertions on a complex type definition
+-->

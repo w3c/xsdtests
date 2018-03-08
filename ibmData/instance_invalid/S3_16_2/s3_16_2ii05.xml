@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/IBMd3_16ii05"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/IBMd3_16ii05
+	s3_16_2ii05.xsd">
+
+	<union_element xsi:type="dv:u_ncname">28</union_element>	
+	<union_element xsi:type="dv:u_string">33</union_element>
+	<union_element xsi:type="dv:u_integer">az</union_element>
+  
+</dv:root>
+
+<!-- 
+	Test Case Type: instance invalid test
+	Description   : xsi:type used to name a member of a restricted union type
+-->

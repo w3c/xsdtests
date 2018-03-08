@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="XSImportReference" 
+  contributor="IBM">
+     
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#composition-schemaImport">Referring to a namespace requires an xs:import</ts:documentation>
+    </ts:annotation>
+   
+  
+    <ts:testGroup name="s4_2_6si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid schema for referring to a namespace requires an xs:import</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#composition-schemaImport"/> 
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImport"/>        
+        <ts:schemaTest name="s4_2_6si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S4_2_6/s4_2_6si01.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S4_2_6/s4_2_6si01b.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>   
+  
+</ts:testSet>

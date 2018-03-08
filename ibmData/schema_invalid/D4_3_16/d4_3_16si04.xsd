@@ -1,0 +1,72 @@
+<?xml version="1.1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_si04"
+	xmlns:si="http://xstest-tns/schema11_F4_3_16_si04">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : This test case tests the fixed attribute on facet, explicitTimezone
+-->
+
+<simpleType name="dTimeETzoneOF_base">
+	<restriction base="dateTime">
+		<explicitTimezone value="optional" fixed="false"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeETzoneOF_derivedO">
+	<restriction base="si:dTimeETzoneOF_base">
+		<explicitTimezone value="optional" fixed="true"/>  <!-- valid -->
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETzoneOF_derivedO1">
+	<restriction base="si:dTimeETzoneOF_derivedO">
+		<explicitTimezone value="required" fixed="true"/>  <!-- invalid -->
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETzoneOF_derivedO2">
+	<restriction base="si:dTimeETzoneOF_derivedO">
+		<explicitTimezone value="prohibited" fixed="true"/>  <!-- invalid -->
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeETzoneOF_derivedR">
+	<restriction base="si:dTimeETzoneOF_base">
+		<explicitTimezone value="required" fixed="true"/>  <!-- valid -->
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETzoneOF_derivedR1">
+	<restriction base="si:dTimeETzoneOF_derivedR">
+		<explicitTimezone value="optional" fixed="true"/>  <!-- invalid -->
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeETzoneOF_derivedP">
+	<restriction base="si:dTimeETzoneOF_base">
+		<explicitTimezone value="prohibited" fixed="true"/>  <!-- valid -->
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeETzoneOF_derivedP1">
+	<restriction base="si:dTimeETzoneOF_derivedP">
+		<explicitTimezone value="optional" fixed="true"/>  <!-- invalid -->
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elString" type="string"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a">
+<!-- 
+Test Case Type: Valid test
+Description   : Tests defaultOpenContent for CT not empty
+-->
+
+<defaultOpenContent mode="interleave">
+ <any processContents="lax"/>
+</defaultOpenContent>
+
+<complexType name="c">
+ <sequence>
+  <element name="x" type="integer"/>
+ </sequence>
+</complexType>
+
+<complexType name="d">
+ <choice>
+  <element name="z" type="integer"/>
+ </choice>
+</complexType>
+
+<complexType name="e">
+ <all>
+  <element name="y" type="integer"/>
+ </all>
+</complexType>
+
+<element name="root">
+ <complexType>
+  <sequence>
+   <element name="p" type="a:c"/>	<!-- tests openContent for CT is not empty -->
+   <element name="q" type="a:d"/>
+   <element name="r" type="a:e"/>
+  </sequence>
+ </complexType>
+</element>
+
+</schema>

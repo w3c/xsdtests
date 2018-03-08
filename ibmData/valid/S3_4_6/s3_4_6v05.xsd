@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xstest-tns/schema11_S3_4_6"
+        xmlns:tns="http://xstest-tns/schema11_S3_4_6">
+   
+<complexType name="c">
+ <all>
+  <element name="a" type="integer" maxOccurs="2"/>
+  <element name="b" type="integer" maxOccurs="2"/>
+ </all>
+</complexType>
+
+<element name="root" type="tns:c"/>
+</schema>
+
+
+<!-- 
+	Test Case Type: valid test (Structures 3.4.6) 
+	Base Type     : Restriction of complex types
+	Description   : Tests maxOccurs > 1 for elements within all group
+-->

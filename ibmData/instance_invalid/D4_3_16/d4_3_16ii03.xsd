@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_ii03"
+	xmlns:sv="http://xstest-tns/schema11_F4_3_16_ii03">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets explicitTimezone,
+			    used in lists, the 2nd and 3rd elements are invalid
+-->
+
+<simpleType name="dTimeETRequired">
+	<restriction base="dateTime">
+		<explicitTimezone value="required"/>
+	</restriction>
+</simpleType>
+
+<element name="elDTimeListRequired">
+	<simpleType>
+		<list itemType="sv:dTimeETRequired">
+			<annotation>
+				<documentation>
+					Required - Tests the dateTime with explicitTimezone used in a lists
+				</documentation>
+			</annotation>
+		</list>
+	</simpleType>
+</element>
+
+
+<simpleType name="dTimeETProhibited">
+	<restriction base="dateTime">
+		<explicitTimezone value="prohibited"/>
+	</restriction>
+</simpleType>
+
+<element name="elDTimeListProhibited">
+	<simpleType>
+		<list itemType="sv:dTimeETProhibited">
+			<annotation>
+				<documentation>
+					Prohibited - Tests the dateTime with explicitTimezone used in a lists
+				</documentation>
+			</annotation>
+		</list>
+	</simpleType>
+</element>
+
+
+<simpleType name="dTimeETOptional">
+	<restriction base="dateTime">
+		<explicitTimezone value="optional"/>
+	</restriction>
+</simpleType>
+
+<element name="elDTimeListOptional">
+	<simpleType>
+		<list itemType="sv:dTimeETOptional">
+			<annotation>
+				<documentation>
+					Optional - Tests the dateTime with explicitTimezone used in a lists
+				</documentation>
+			</annotation>
+		</list>
+	</simpleType>
+</element>
+
+
+<complexType name="dTimeRoot">
+	<sequence>
+		<element name="elDTimeET" type="sv:dTimeETRequired"/>
+		<element ref="sv:elDTimeListRequired"/>
+		<element ref="sv:elDTimeListProhibited"/>
+		<element ref="sv:elDTimeListOptional"/>
+	</sequence>
+</complexType>
+
+<element name="root" type="sv:dTimeRoot"/>
+
+</schema>

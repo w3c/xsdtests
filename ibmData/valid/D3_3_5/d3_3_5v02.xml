@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root xmlns="a"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="a d3_3_5v02.xsd">
+	<Number1>+INF</Number1>
+	<Number2>2</Number2>
+</root>
+<!-- 
+	Test Case Type: Valid (Datatypes section 3.3.5) 
+	Base Type     : float
+	Description   : lexical representation +INF for float
+-->	

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:complexType name="ids">
+		<xs:attribute name="id1" type="xs:ID"/>
+		<xs:attribute name="id2" type="xs:ID"/>
+	</xs:complexType>
+
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="multiple_ids">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="ids">
+								<xs:sequence>
+									<xs:element name="idref_element" type="xs:IDREF" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>					
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
+
+
+<!-- 
+	Test Case Type: instance invalid test (Structures 3.3.4)
+	facet Type 	  : ID/IDREF
+	Description   : Multiple attributes of type ID, complexContent, with invalid idref value on element
+-->
+

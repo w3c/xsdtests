@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_3_4_v10"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_v10
+	d3_3_4v23.xsd">
+	
+	<decDigits>111.00</decDigits>
+	<decDigits>1.10</decDigits>
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3_3_4) 
+	Base Type     : precisionDecimal
+	Description   : Additional precisionDecimal tests, for attributes
+-->

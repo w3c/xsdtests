@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a s2_7_1ii02.xsd">
+ <b>1</b>
+ <d xsi:type="test" >1</d>
+</root>
+
+<!--
+Test Case Type: Instance invalid test
+Description   : When an xsi:type attribute appears on an element, and has a QName as its value,
+ but the QName does not resolve to a known type definition, processors are now 
+ required to "fall back" to lax validation, using the declared {type definition}  
+ of the governing element declaration as the governing type definition.
+-->

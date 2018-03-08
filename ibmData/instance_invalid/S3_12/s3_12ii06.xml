@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="s3_12ii06.xsd"
+        kind="badstring">0
+</root>
+<!--
+Test Case Type: Schema invalid test
+Description   : Tests an invalid XPath cast expression. The cast expression casts to a complex type defined in the schema 
+	for the attributes type. Since we do not report validation errors for this, the instance was modified
+	to contain an invalid value for the attribute.
+-->

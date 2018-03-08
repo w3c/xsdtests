@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_27_ii05"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_27_ii05
+	d3_4_27ii05.xsd"
+	
+	ayMDType="P3Y348M1D"
+	ayMDEnumeration="-PT45M"
+	ayMDMinMaxInclusive="-P2DT1S"
+	ayMDMinMaxExclusive="P30DT23M"/>
+
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : Invalid values of dayTimeDuration and invalid instance of its facets used in attributes
+-->
+

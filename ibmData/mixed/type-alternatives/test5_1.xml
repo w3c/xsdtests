@@ -1,0 +1,4 @@
+<test minimal="true">
+  <a>hello</a>
+  <b>world</b>
+</test>

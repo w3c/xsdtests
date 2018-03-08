@@ -1,0 +1,15 @@
+<?xml version="1.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">	
+	<xs:element name="root" type="rootType" />
+	<xs:simpleType name="rootType">
+	   <xs:restriction base="xs:string">		 
+		 <xs:assertion test="ends-with($value, 'xyz')"/>
+	   </xs:restriction>
+	</xs:simpleType>	
+</xs:schema>
+
+<!-- 
+	Test Case Type: instance invalid test (facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : assertions on a simple type definition
+-->

@@ -1,0 +1,67 @@
+<?xml version="1.1"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_v04"
+	xmlns:sv="http://xstest-tns/schema11_F4_3_16_v04">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facet,explicitTimezone 
+			used with unions
+-->
+
+<simpleType name="dTimeETRequired">
+	<restriction base="dateTime">
+		<explicitTimezone value="required"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETProhibited">
+	<restriction base="dateTime">
+		<explicitTimezone value="prohibited"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeETOptional">
+	<restriction base="dateTime">
+		<explicitTimezone value="optional"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeUnionA">
+	<union memberTypes="sv:dTimeETRequired string"/>
+</simpleType>
+
+
+<simpleType name="dTimeUnionB">
+	<union>
+		<simpleType>
+			<restriction base="sv:dTimeETProhibited"/>
+		</simpleType>	
+		<simpleType>
+			<restriction base="integer"/>
+		</simpleType>			
+	</union>
+</simpleType>
+
+<simpleType name="dTimeUnionC">
+	<union memberTypes="string integer sv:dTimeETOptional">
+		<annotation>
+			<documentation>
+				Tests the simpleType dateTime, explicitTimezone used in a unions
+			</documentation>
+		</annotation>
+	</union>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>						
+			<element name="eldTimeUnionA" type="sv:dTimeUnionA" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="eldTimeUnionB" type="sv:dTimeUnionB" minOccurs="0" maxOccurs="unbounded"/>			
+			<element name="eldTimeUnionC" type="sv:dTimeUnionC" minOccurs="0" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>
+
+</schema>

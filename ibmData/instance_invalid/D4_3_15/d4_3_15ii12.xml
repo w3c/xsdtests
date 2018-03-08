@@ -1,0 +1,30 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="d4_3_15ii12.xsd"
+	>
+	<eleBaseNotasserted1>		
+		<subElement1>	
+			<eleDerivedAsserted1>
+				<subElement1>
+					<eleBaseNotasserted1/>		
+				</subElement1>
+			</eleDerivedAsserted1>
+			<eleDerivedAsserted2>			
+				<subElement2>
+					<eleDerivedAsserted1>
+						<subElement1>
+							<eleBaseNotasserted1/>		
+						</subElement1>
+					</eleDerivedAsserted1>  
+				</subElement2>
+			</eleDerivedAsserted2>
+		</subElement1>
+	</eleBaseNotasserted1>
+	
+</root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatype/facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : inability to navigate outside the subtree, assertion on elements with derivation by extension
+-->

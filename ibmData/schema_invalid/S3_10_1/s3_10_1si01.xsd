@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a">
+        
+<!-- 
+  3.10.3 Constraints on XML Representations of Wildcards
+  Schema Representation Constraint: Wildcard Representation OK
+	namespace and notNamepsace attributes are not allowed to be both present in a wildcard
+-->
+
+<complexType name="c">
+ <sequence>
+  <any namespace="##targetNamespace" notNamespace="a"/>
+  <element name="a" type="integer"/>
+ </sequence>
+</complexType>
+
+<element name="root" type="a:c"/>
+</schema>

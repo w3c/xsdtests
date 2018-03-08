@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<a:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:a="a"
+        xsi:schemaLocation="a s3_3_6v05.xsd">
+ <a>1</a>
+ <b>1</b>
+ <b>1</b>
+ <a>1</a>
+</a:root>
+
+<!--
+Test Case Type: Valid test
+Description   : Tests maxOccurs > 1 for elements within all group
+-->

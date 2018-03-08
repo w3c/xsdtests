@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/IBMd3_16v05"
+	xmlns:sv="http://xstest-tns/IBMd3_16v05">
+	
+<!-- 
+	Test Case Type: valid test
+	Description   : xsi:type used to name a member of a restricted union type
+-->
+		
+	<simpleType name="u_string">
+		<restriction base="string">
+			<pattern value="[1-9][1-9]"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="u_integer">
+		<restriction base="integer">
+			<pattern value="[3-4][3-4]"/>
+		</restriction>
+	</simpleType>
+	
+	<simpleType name="u_ncname">
+		<restriction base="NCName">
+			<pattern value="[a-z][x-z]"/>
+		</restriction>
+	</simpleType>	
+	
+	<simpleType name="unionAll">
+		<union memberTypes="sv:u_ncname sv:u_integer sv:u_string"/>
+	</simpleType>
+				
+	<element name="root">
+		<complexType>
+			<sequence>			
+				<element name="union_element" type="sv:unionAll"  maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>

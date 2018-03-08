@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/IBMd3_16v07"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/IBMd3_16v07
+	s3_16_2v07.xsd">
+
+	<union_element xsi:type="dv:u1_string">28</union_element>	
+	<union_element xsi:type="dv:u1_integer">33</union_element>
+	<union_element xsi:type="dv:u1_ncname">az</union_element>
+	<union_element xsi:type="dv:u2_negativeInteger">-123</union_element>
+	<union_element xsi:type="dv:u2_date">1999-12-31</union_element>
+</dv:root>
+<!-- 
+	Test Case Type: valid test
+	Description   : xsi:type used to name a member of a restricted union type
+-->

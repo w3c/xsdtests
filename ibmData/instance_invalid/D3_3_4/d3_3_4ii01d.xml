@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inii:root xmlns:inii="http://xstest-tns/schema11_D3_3_4_ii01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_ii01
+	d3_3_4ii01.xsd">
+	
+	<eldecPattern>11505</eldecPattern>
+	<eldecPattern>32614</eldecPattern>
+	<eldecPattern>32618</eldecPattern>
+
+</inii:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Data of third element does not match the regular expression 
+			    specified by pattern
+-->

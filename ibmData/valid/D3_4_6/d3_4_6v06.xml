@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a d3_4_6v06.xsd">
+	<_->_-</_->
+</root>
+<!-- 
+Test Case Type: Valid test
+Description   : Use of newly allowed name characters in names of schema components <choice>
+-->

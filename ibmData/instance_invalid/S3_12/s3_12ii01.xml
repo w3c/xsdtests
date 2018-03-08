@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tns:root xmlns:tns="http://xstest-tns" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	        xsi:schemaLocation="http://xstest-tns s3_12v04.xsd">
+
+	<!-- Invalid content in the type alternative selected: xs:float -->
+	<elem1 type="float">INVALID</elem1>
+
+</tns:root>
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   : The alternative type's value is an invalid float
+-->

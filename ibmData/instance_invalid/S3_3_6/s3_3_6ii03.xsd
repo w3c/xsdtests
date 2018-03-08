@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a">
+        
+<!-- 	
+Test Case Type: Instance invalid test
+Description   : Tests notQName
+-->
+
+<complexType name="c">
+ <all>
+  <any notQName="a:a a:b" minOccurs="1" processContents="lax" maxOccurs="unbounded"/>
+ </all>
+</complexType>
+
+<element name="root" type="a:c"/>
+</schema>

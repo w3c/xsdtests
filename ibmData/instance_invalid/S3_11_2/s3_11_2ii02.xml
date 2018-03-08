@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+		xmlns:b="a"
+        xsi:schemaLocation="a s3_11_2ii02.xsd">
+	<Number id_1="1" id_2="a"></Number>	
+	<Number id_1="1" id_2="a"></Number> <!--invalid-->
+</root>
+
+<!--
+Test Case Type: Instance invalid test
+Description   : invalid instance unique selection expressions_2
+-->

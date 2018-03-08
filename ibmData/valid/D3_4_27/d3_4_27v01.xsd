@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_27_v01"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_27_v01">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : Tests the simpleType dayTimeDuration and its facets and its use in elements
+-->
+
+<simpleType name="yMDType">
+	<restriction base="dayTimeDuration"/>
+</simpleType>
+
+
+<simpleType name="yMDEnumeration">
+	<restriction base="dayTimeDuration">
+		<enumeration value="P2D"/>
+		<enumeration value="PT54H3M2.3S"/>
+		<enumeration value="-P5DT3S"/>
+		<enumeration value="-PT43M4.2S"/>
+	</restriction>
+</simpleType>
+
+
+
+<simpleType name="yMDMinMaxInclusive">
+	<restriction base="dayTimeDuration">
+		<minInclusive value="-P2D"/>
+		<maxInclusive value="P2D"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="yMDMinMaxExclusive">
+	<restriction base="dayTimeDuration">
+		<minExclusive value="-P2D"/>
+		<maxExclusive value="P2D"/>
+	</restriction>
+</simpleType>
+
+
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elyMDType" type="sv:yMDType" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elyMDEnumeration" type="sv:yMDEnumeration" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elyMDMinMaxInclusive" type="sv:yMDMinMaxInclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elyMDMinMaxExclusive" type="sv:yMDMinMaxExclusive" minOccurs="1" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

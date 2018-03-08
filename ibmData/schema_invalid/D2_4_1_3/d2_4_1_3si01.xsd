@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11"
+	xmlns:si="http://xstest-tns/schema11">
+		
+<simpleType name="fltUnion">
+	<union memberTypes=""/>
+</simpleType>
+
+
+<element name="root">
+<complexType>
+		<sequence>
+			<element name="elfltUnion" type="si:fltUnion"  maxOccurs="unbounded"/>
+		</sequence>
+</complexType>
+</element>    
+</schema>  
+
+<!-- 
+Test Case Type: Schema invalid test
+Description   : Unions with no member types (and thus with empty value space 
+and lexical space) are now explicitly allowed.
+-->

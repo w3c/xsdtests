@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inii:root xmlns:inii="http://xstest-tns/schema11_D3_4_28_ii01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_28_ii01
+	d3_4_28ii01.xsd">
+	
+	<eldTimeStampMinMaxExclusive>1990-01-01T00:00:00-05:00</eldTimeStampMinMaxExclusive>
+	<eldTimeStampMinMaxExclusive>1999-01-01T00:00:00.999+05:00</eldTimeStampMinMaxExclusive>
+	<eldTimeStampMinMaxExclusive>1999-01-01T00:00:00.998+05:00</eldTimeStampMinMaxExclusive>
+	<eldTimeStampMinMaxExclusive>1990-01-01T00:00:00.001-05:00</eldTimeStampMinMaxExclusive>
+</inii:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : The elements contian data that is out of bounds with respect to
+			the values specified by (min|max)Exclusive, the 1st and 2nd elements are invalid.
+-->

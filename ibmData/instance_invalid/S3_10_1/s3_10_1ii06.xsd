@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a"
+        elementFormDefault="qualified">
+        
+<!-- 
+	invalid element in instance document as it matches the namespace in notNamespace list in wildcard
+-->
+
+<complexType name="t">
+ <sequence>
+  <any notNamespace="a b" maxOccurs="unbounded"/>
+  <element ref="a:c"/>
+ </sequence>
+</complexType>
+
+<element name="a" type="integer"/>
+<element name="c" type="integer"/>
+
+<element name="root" type="a:t"/>
+</schema>

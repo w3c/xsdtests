@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="RestrictionOfComplexTypes" 
+  contributor="IBM">
+
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct">
+        Restriction of complex types
+	      </ts:documentation>
+    </ts:annotation>
+
+    <ts:testGroup name="s3_4_6v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Wildcards are now allowed in xs:all</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <ts:schemaTest name="s3_4_6v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_6/s3_4_6v01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_6v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_6/s3_4_6v01.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests restriction of all group</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <ts:schemaTest name="s3_4_6v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_6/s3_4_6v04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_6v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_6/s3_4_6v04.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6v05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests maxOccurs &gt; 1 for elements within all group</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-MaxOccurs"/>
+        <ts:schemaTest name="s3_4_6v05s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_6/s3_4_6v05.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_6v05i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_6/s3_4_6v05.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6v08" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Restrict xs:all to xs:sequence</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToSequence"/>
+        <ts:schemaTest name="s3_4_6v08s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_6/s3_4_6v08.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_6v08i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_6/s3_4_6v08.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Instance document element has higher occurences than schema allows </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <ts:schemaTest name="s3_4_6ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_6/s3_4_6ii01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_6ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_6/s3_4_6ii01.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6ii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests notQName  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <ts:schemaTest name="s3_4_6ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_6/s3_4_6ii03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_6ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_6/s3_4_6ii03.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests occurence validity </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <ts:schemaTest name="s3_4_6si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_6/s3_4_6si01.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6si02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests restriction of all modelgroup </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <ts:schemaTest name="s3_4_6si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_6/s3_4_6si02.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6si03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests restriction of all modelgroup </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <ts:schemaTest name="s3_4_6si03s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_6/s3_4_6si03.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6si04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Restrict xs:all to xs:sequence </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <ts:schemaTest name="s3_4_6si04s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_6/s3_4_6si04.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6si05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Restrict xs:all to xs:choice  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToChoice"/>
+        <ts:schemaTest name="s3_4_6si05s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_6/s3_4_6si05.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6si06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Restrict xs:all to xs:sequence  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToSequence"/>
+        <ts:schemaTest name="s3_4_6si06s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_6/s3_4_6si06.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_6si07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Restrict xs:all to xs:choice  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-ct"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToChoice"/>
+        <ts:schemaTest name="s3_4_6si07s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_6/s3_4_6si07.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+</ts:testSet>

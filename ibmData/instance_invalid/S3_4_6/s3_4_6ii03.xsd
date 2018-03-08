@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xstest-tns/schema11_S3_4_6"
+        xmlns:tns="http://xstest-tns/schema11_S3_4_6">
+        
+	<complexType name="c">
+		<all>
+			<any notQName="a b" minOccurs="1" processContents="lax" maxOccurs="unbounded"/>
+		</all>
+	</complexType>
+
+	<element name="root" type="tns:c"/>
+</schema>
+
+
+<!-- 
+	Test Case Type: instance invalid test (Structures 3.4.6) 
+	Base Type     : Restriction of complex types
+	Description   : Tests notQName
+-->

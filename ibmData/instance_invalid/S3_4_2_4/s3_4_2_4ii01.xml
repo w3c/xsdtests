@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xmlns:a="a"
+        xsi:schemaLocation="a s3_4_2_4ii01.xsd">
+ <e1 a:defaultAttr="true"/>
+ <e2 a:defaultAttr="false"/>	<!-- invalid -->
+</root>
+<!-- 
+Test Case Type: Instance invalid test
+Description   : Check that defaultAttributesApply works  
+-->

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_27_v05"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_27_v05">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : Additional tests for dayTimeDuration and its facets with (min|max)
+			   (Inclusive|Exclusive) constraint checks in derivations of simpleTypes
+-->
+
+
+
+<simpleType name="yMDDigitsMaxExclusive">
+	<restriction  base="dayTimeDuration">
+		<maxExclusive value="P28D" fixed="false"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="yMDMaxExclusive_MinInclusive">
+	<restriction  base="sv:yMDDigitsMaxExclusive">
+		<minInclusive value="-P39DT3M" fixed="0"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="yMDMaxExclusive_MinExclusive">
+	<restriction  base="sv:yMDDigitsMaxExclusive">
+		<minExclusive value="-P39DT2M" fixed="true"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="yMDMaxExclusive_MaxInclusive">
+	<restriction  base="sv:yMDDigitsMaxExclusive">
+		<maxInclusive value="P27DT3M" fixed="false"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="yMDMaxExclusive_MaxExclusive">
+	<restriction  base="sv:yMDDigitsMaxExclusive">
+		<maxExclusive value="P27D" fixed="1"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elMaxExclusive_MinInclusive" type="sv:yMDMaxExclusive_MinInclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elMaxExclusive_MinExclusive" type="sv:yMDMaxExclusive_MinExclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elMaxExclusive_MaxInclusive" type="sv:yMDMaxExclusive_MaxInclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elMaxExclusive_MaxExclusive" type="sv:yMDMaxExclusive_MaxExclusive" minOccurs="1" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

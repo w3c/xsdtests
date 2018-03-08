@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="d4_3_15ii03.xsd">
+	<timer time="30" iterations="15"/>  			<!-- invalid -->
+	<timer/>										<!-- invalid -->
+	<parent>
+		<child name="abc" dob="1997-01-01"/>
+		<grandchild name="abc" dob="2007-01-01"/> 	<!-- invalid -->
+	</parent>
+	<parent>  
+		<child name="abc" dob="1997-01-01"/>
+	</parent>
+	<parent>  
+		<child dob="1997-01-01"/>					<!-- invalid -->
+	</parent>
+	<parent>		
+		<grandchild name="abc"/> 					<!-- invalid -->
+	</parent>
+	
+	<parent/>										<!-- invalid -->
+</data>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatype/facet section 4.3.15) 		
+	facet Type 	  : Assertions
+	Description   : assertions on a complex type definition. this schema has a 
+					bigger content model, with assertions at various levels.					
+-->

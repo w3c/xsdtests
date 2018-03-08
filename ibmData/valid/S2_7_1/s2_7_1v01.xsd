@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+<!--
+Test Case Type: Valid test
+Description   : xsi:type must resolve to a type definition
+-->
+	
+	<simpleType name="t_string">
+		<restriction base="string">
+			<pattern value="[1-9][1-9]"/>
+		</restriction>
+	</simpleType>
+	
+	<element name="root">
+		<complexType>
+			<sequence>			
+				<element name="element" type="a:t_string"  maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>

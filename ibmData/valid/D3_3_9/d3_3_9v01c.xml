@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inii:root xmlns:inii="http://xstest-tns/schema11_D3_3_9_v01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_9_v01
+	d3_3_9v01.xsd">
+	
+	<elTime4>23:00:01Z</elTime4>
+
+
+</inii:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.9) 
+	Base Type     : time
+	Description   : A time in a timezone may convert to a UTC time on a
+			    different day.
+-->			

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<a:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:a="a"
+        xsi:schemaLocation="a s3_3_6v01.xsd">
+ <wildcard>1</wildcard>
+ <a>1</a>
+ <wildcard2>hi.123</wildcard2>
+ <wildcard3>
+  <hello>
+   moo
+  </hello>
+ </wildcard3>
+</a:root>
+
+<!--
+Test Case Type: Valid test
+Description   : Wildcards are now allowed in xs:all
+-->

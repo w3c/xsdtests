@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xmlns:b="b"
+        xsi:schemaLocation="a s3_10_1ii08.xsd">
+ <b>1</b>
+ <b>1</b>
+ <c>1</c>
+</root>

@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="TypeAlternativeTests" 
+  contributor="IBM">
+
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative">Type alternative test cases.</ts:documentation>
+    </ts:annotation>
+
+    <ts:testGroup name="s3_12v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            Basic type alternatives. The alternative type extends the base element's type. 
+            More that one alternative type is present. One of the alternative types is the default type.  
+            </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v01.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            Basic type alternatives. alternative element with a complexType child that is 
+		        derived from the base element  type and no type attribute More that one alternative 
+		        type is present. One of the alternative types is the default type.   
+		        </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-DerivationByRestr"/>
+        <ts:schemaTest name="s3_12v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v02.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            Basic type alternatives. 
+		        The alternative type extends the base element's type. 
+		        More that one alternative type is present. One of the alternative types is the default type.  
+		        </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-AltsSubstitable"/>
+        <ts:schemaTest name="s3_12v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v03.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            Basic type alternatives.
+            For the first alternative type, the attribute whose value is to be selected by the alternative type's {test} expression is of type string.
+            The attribute value in the XML document contains a trailing space and will not normalized and selected by the alternate type. 
+            For the second alternative type, the case of the attribute whose value is to be selected by the {test} expression is in a different case in the XML document.
+            In both cases, the alternative type should not be selected. 
+            </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v04.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12v05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            Basic type alternatives.
+            Selection of the alternative type is dertermined by evaluating a path And expression with a comparator operator with an attribute's value
+            </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12v05s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v05.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v05i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v05.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12v06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            Basic type alternatives.
+            Selection of the alternative type is dertermined by evaluating a path And and Or expressions with a comparator operator with an attribute's value  
+            </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12v06s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v06.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v06i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v06.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12v07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            Basic type alternatives.
+            Selection of the alternative type is dertermined by evaluating a Constructor function on attribute values
+            </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12v07s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v07.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v07i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v07.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12v08" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            Basic type alternatives.
+            Selection of the alternative type is dertermined by evaluating an And operation on the presence of attributes in an element  
+            </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12v08s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v08.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v08i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v08.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12v09" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Basic type alternatives.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12v09s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v09.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v09i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v09.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12v10" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            Basic type alternatives.
+            Selection of the alternative type is dertermined by evaluating a Constructor function and a Cast Expression on attribute values
+            </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12v10s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v10.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v11i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v10.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12v11" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Attribute declarations can now be marked {inheritable}. </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-InheritableAttr"/>
+        <ts:schemaTest name="s3_12v11s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_12/s3_12v11.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_12/s3_12v11.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The alternative type's value is an invalid float</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii01.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The type alternative is selects an invalid element using comparator operators.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii02.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12ii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The type alternative is selects an invalid element using constructor functions and comparator operators.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-DerivationByRestr"/>
+        <ts:schemaTest name="s3_12ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii03.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12ii04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Basic type alternatives selecting invalid content.</ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <ts:schemaTest name="s3_12ii04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12ii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii04.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12ii05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test xs:error as conditionally assigned type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-src-attdecl"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XSErrorType"/>
+        <ts:schemaTest name="s3_12ii05s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii05.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_12ii05i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii05.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12ii06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests an invalid XPath cast expression. The cast expression casts to a simple type defined in the schema.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticDynamicContextOfXPathExpr"/>
+        <ts:schemaTest name="s3_12ii06s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_12/s3_12ii06.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2011-07-29" status="accepted">
+              <ts:annotation>
+                    <ts:documentation>
+                        Changed the status to "invalid" and removed the instance test, in response to bug #12139
+                    </ts:documentation>
+              </ts:annotation>
+            </ts:current>
+            <ts:prior date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the selection of type alternative when the element type definition</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XSErrorType"/>
+        <ts:schemaTest name="s3_12si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_12/s3_12si01.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12si02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the selection of type alternative when the element type definition is xs:anyType and alternatives not valid derivation of declared type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XSErrorType"/>
+        <ts:schemaTest name="s3_12si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_12/s3_12si02.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12si03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Alternatives not valid derivation of declared type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-AltsSubstitable"/>
+        <ts:schemaTest name="s3_12si03s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_12/s3_12si03.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12si04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests invalid XPath expression</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticErrorsInXPathExpr"/>
+        <ts:schemaTest name="s3_12si04s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_12/s3_12si04.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12si05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests an invalid XPath expression. The letter case in the AND expression is incorrect.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticErrorsInXPathExpr"/>
+        <ts:schemaTest name="s3_12si05s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_12/s3_12si05.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_12si06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests an invalid XPath cast expression. The QName in the cast expression is incorrect.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-DynamicErrInXPathEval"/>
+        <ts:schemaTest name="s3_12si06s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_12/s3_12si06.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+</ts:testSet>

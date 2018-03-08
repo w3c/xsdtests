@@ -1,0 +1,21 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="d4_3_15v14.xsd"
+	>
+	<ele1>		
+		<subElement1>			
+			<ele2>			
+				<subElement2>
+					<ele1/>
+				</subElement2>
+			</ele2>
+		</subElement1>
+	</ele1>
+	
+</root>
+
+<!-- 
+	Test Case Type: valid test (Datatype/facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : inability to navigate outside the subtree, assertion on elements
+-->

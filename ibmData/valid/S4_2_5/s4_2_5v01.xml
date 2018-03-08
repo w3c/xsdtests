@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xmlns:dv="a"
+        xsi:schemaLocation="a s4_2_5v01.xsd">			
+	<element_added/>
+</root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : The schema document identified by the schemaLocation  attribute of E
+-->

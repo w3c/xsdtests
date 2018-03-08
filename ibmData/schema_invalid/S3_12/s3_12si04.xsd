@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        elementFormDefault="qualified"
+        attributeFormDefault="qualified"
+        xmlns:a="a">
+        
+<!--
+Test Case Type: Schema invalid test
+Description   : Tests invalid XPath expression
+-->
+
+ <complexType name="rootType"> 
+  <sequence>
+   <element name="q" type="integer"/>
+  </sequence>
+  <attribute name="kind" type="string"/>
+ </complexType>
+ 
+ <complexType name="altType1">
+  <complexContent>
+  <extension base="a:rootType">
+   <sequence>
+    <element name="w" type="integer"/>
+   </sequence>  
+  </extension>
+  </complexContent>
+ </complexType>
+ 
+ <complexType name="altType2">
+  <complexContent>
+  <restriction base="a:rootType">
+   <sequence>
+    <element name="q" type="positiveInteger"/>
+   </sequence>
+   <attribute name="kind" type="string"/>
+  </restriction>
+  </complexContent>
+ </complexType>
+
+<element name="root" type="a:rootType">
+ <alternative test="double('3' cast as float > 2)" type="a:altType1"/>
+ <alternative test='3 cast as "3" ?' type="a:altType1"/>
+ <alternative test="((7>=6)" type="a:altType1"/>
+ <alternative test="@6='hi'" type="a:altType1"/>
+ <alternative test="@a:kind 's' 'a'" type="a:altType1"/>
+ <alternative test="@a:kind 1 2" type="a:altType1"/>
+ <alternative test="@a:kind 1 &lt;" type="a:altType1"/>
+ <alternative test="12 's' 'u'" type="a:altType1"/>
+ <alternative test="12 5 2" type="a:altType1"/>
+ <alternative test="3 cast as 3" type="a:altType1"/>
+ <alternative test="string cast as string" type="a:altType1"/>
+ <alternative test="string cast as 'string'" type="a:altType1"/>
+ <alternative test="cast as decimal 3" type="a:altType1"/>
+ <alternative test="3 cast as @a:kind > 1" type="a:altType1"/>
+ <alternative test="6 > cast as decimal" type="a:altType1"/>
+ <alternative test="3 cast 'as' decimal" type="a:altType1"/>
+ <alternative test="()" type="a:altType1"/>
+ <alternative test=")(" type="a:altType1"/>
+ <alternative test=">" type="a:altType1"/>
+</element>
+</schema>

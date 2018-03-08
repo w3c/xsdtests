@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root	xmlns="http://xstest-tns/schema11_D4_3_15"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D4_3_15 d4_3_15ii23.xsd">
+  <e1>absent</e1>
+</root>
+<!-- 
+	Test Case Type: instance invalid test (Datatypes section 4.3.15) 
+	Base Type     : Assertion
+	Description   : naive xpathDefaultNamespace (exact uri of targetNamespace) test case in complexType
+-->

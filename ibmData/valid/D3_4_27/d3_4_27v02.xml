@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_27_v02"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_27_v02
+	d3_4_27v02.xsd"
+	
+	ayMDType="P334DT348M"
+	ayMDEnumeration="-P3DT44H2M5783.33S"
+	ayMDMinMaxInclusive="-PT48H"
+	ayMDMinMaxExclusive="P29DT423H"/>
+
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : Tests the simpleType dayTimeDuration and its facets and its use in attributes
+-->
+

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="root" type="ids"/>
+	
+	<xs:complexType name="ids">
+		<xs:attribute name="id1" type="idTypeA" default="id_b"/>
+		<xs:attribute name="id2" type="idTypeB" default="id_a"/>
+	</xs:complexType>
+	
+	<xs:simpleType name="idTypeA">
+		<xs:restriction base="xs:ID">
+			<xs:enumeration value="id_a"/>
+		</xs:restriction>	
+	</xs:simpleType>
+	
+	<xs:simpleType name="idTypeB">
+		<xs:restriction base="xs:ID">
+			<xs:enumeration value="id_b"/>
+		</xs:restriction>	
+	</xs:simpleType>
+
+</xs:schema>
+
+
+<!-- 
+	Test Case Type: schema invalid test (Structures 3.3.4)
+	facet Type 	  : ID/IDREF
+	Description   : Multiple attributes of type ID 
+-->

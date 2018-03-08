@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_27_ii07"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_27_ii07
+	d3_4_27ii07.xsd">
+	
+	<yMDMinInclusive_MinInclusive>P1D</yMDMinInclusive_MinInclusive>
+	<yMDMinInclusive_MinInclusive>-P2D</yMDMinInclusive_MinInclusive>
+
+	<yMDMinInclusive_MinExclusive>P2D</yMDMinInclusive_MinExclusive>
+	<yMDMinInclusive_MinExclusive>P1DT24H</yMDMinInclusive_MinExclusive>
+
+	<yMDMinInclusive_MaxInclusive>PT23H59M59S</yMDMinInclusive_MaxInclusive>	
+	<yMDMinInclusive_MaxInclusive>P3452DT2H0.000001S</yMDMinInclusive_MaxInclusive>	
+		
+	<yMDMinInclusive_MaxExclusive>P22DT26H</yMDMinInclusive_MaxExclusive>	
+	<yMDMinInclusive_MaxExclusive>P23DT2H</yMDMinInclusive_MaxExclusive>
+	
+</dv:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3_4_27)
+	Base Type     : dayTimeDuration
+	Description   : Invalid dayTimeDuration values used with (min|max) (Inclusive|Exclusive) 
+			   constraint checks in derivations of simpleTypes
+-->

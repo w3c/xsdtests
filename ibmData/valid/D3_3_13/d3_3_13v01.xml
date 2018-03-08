@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_3_13_v01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_13_v01
+	d3_3_13v01.xsd">
+	
+	<elDate>--12-12+11:00</elDate>
+	
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.13) 
+	Base Type     : gMonthDay
+	Description   : A day is a calendar (or "local time") day in each timezone, including the timezones
+			    outside of +12:00 through -11:59 inclusive.
+-->

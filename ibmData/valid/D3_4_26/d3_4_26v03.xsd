@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_26_v03"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_26_v03">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.26) 
+	Base Type     : yearMonthDuration
+	Description   : Tests yearMonthDuration used in unions
+-->
+
+<simpleType name="yMD">
+	<restriction base="yearMonthDuration"/>
+</simpleType>
+
+
+<simpleType name="yMDUnionA">
+	<union memberTypes="yearMonthDuration string"/>
+</simpleType>
+
+<simpleType name="yMDUnionB">
+	<union>
+		<simpleType>
+			<restriction base="yearMonthDuration"/>
+		</simpleType>	
+		<simpleType>
+			<restriction base="integer"/>
+		</simpleType>			
+	</union>
+</simpleType>
+
+<simpleType name="yMDUnionC">
+	<union memberTypes="sv:yMD string integer">
+		<annotation>
+			<documentation>
+				Tests the simpleType yearMonthDuration used in a unions
+			</documentation>
+		</annotation>
+	</union>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elyMDUnionA" type="sv:yMDUnionA"  maxOccurs="unbounded"/>		
+			<element name="elyMDUnionB" type="sv:yMDUnionB" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elyMDUnionC" type="sv:yMDUnionC"  maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>
+
+</schema>

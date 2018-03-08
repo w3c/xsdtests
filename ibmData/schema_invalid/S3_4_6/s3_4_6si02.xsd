@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xstest-tns/schema11_S3_4_6"
+        xmlns:tns="http://xstest-tns/schema11_S3_4_6">
+        
+	<complexType name="c">
+		<all>
+			<any notQName="hi" processContents="lax"/>
+		</all>
+	</complexType>
+
+	<complexType name="d">
+		<complexContent>
+			<restriction base="tns:c">
+				<all>
+					<any processContents="lax"/>		<!-- invalid restriction -->
+				</all>
+			</restriction>
+		</complexContent>
+	</complexType>
+
+	<complexType name="e">
+		<complexContent>
+			<restriction base="tns:c">
+				<all>
+					<any notQName="hi" processContents="lax" maxOccurs="2"/>	<!-- invalid restriction -->
+				</all>
+			</restriction>
+		</complexContent>
+	</complexType>
+
+	<complexType name="f">
+		<complexContent>
+			<restriction base="tns:c">
+				<all>
+					<any notQName="hi" processContents="lax" minOccurs="0"/>	<!-- invalid restriction -->
+				</all>
+			</restriction>
+		</complexContent>
+	</complexType>
+
+	<complexType name="g">
+		<complexContent>
+			<restriction base="tns:c">
+				<all>
+					<element name="hello" type="integer"/>
+				</all>
+			</restriction>
+		</complexContent>
+	</complexType>
+
+	<element name="root" type="integer"/>
+</schema>
+
+<!-- 
+	Test Case Type: schema invalid test (Structures 3.4.6) 
+	Base Type     : Restriction of complex types
+	Description   : Tests restriction of all modelgroup
+-->

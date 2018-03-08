@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_28_v05"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_28_v05
+	d3_4_28v05.xsd">
+	
+	<dv:elEnumerationA>2002-02-02T02:00:00+09:00</dv:elEnumerationA>
+	<dv:elEnumerationB>2006-02-02T01:00:00.123-09:00</dv:elEnumerationB>
+
+</dv:root>
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : Tests the simpleType decimal and its facets
+-->

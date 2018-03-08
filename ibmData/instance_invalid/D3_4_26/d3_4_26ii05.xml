@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_26_ii05"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_26_ii05
+	d3_4_26ii05.xsd"
+	
+	ayMDType="P3Y348M1D"
+	ayMDEnumeration="-P45M"
+	ayMDMinMaxInclusive="-P2Y1M"
+	ayMDMinMaxExclusive="P31Y11M"/>
+
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.26) 
+	Base Type     : yearMonthDuration
+	Description   : Invalid values of yearMonthDuration and invalid instance of its facets used in attributes
+-->
+

@@ -1,0 +1,18 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_F4_3_16_ii05"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_F4_3_16_ii05
+	d4_3_16ii05.xsd">
+	
+	<dv:elEnumerationA>1999-01-01T01:01:00</dv:elEnumerationA>	
+	<dv:elEnumerationB>2003-01-01T01:01:01</dv:elEnumerationB>
+	<dv:elEnumerationC>2006-01-01T01:01:00</dv:elEnumerationC>
+	
+
+</dv:root>
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets, explicitTimezone
+					all the elements are invalid
+-->

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+<!-- 
+Test Case Type: Valid test
+Description   : default values for xsi:nil
+-->	
+<complexType name="t">
+ <sequence>
+  <element ref="a:b"/>
+ </sequence>
+</complexType>
+
+<element name="b" type="integer" nillable="true"/>
+<element name="root" type="a:t"/>
+</schema>

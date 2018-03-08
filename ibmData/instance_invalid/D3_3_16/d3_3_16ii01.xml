@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<insi:root xmlns:insi="http://xstest-tns/schema11"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11
+	d3_3_16ii01.xsd">
+	
+<ele>12345</ele>
+</insi:root>
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   :  invalid instance for hexBinary datatype.
+-->

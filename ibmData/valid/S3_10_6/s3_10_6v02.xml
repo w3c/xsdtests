@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xmlns:a="a"
+        xmlns:b="b"
+        xsi:schemaLocation="a s3_10_6v02.xsd">
+ <e1 b:b="1"/>
+ <e2 a:b="1"/>
+ <e3 b="1"/>
+ <e4 b="1"/>
+</root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : Tests namespace attribute on xs:anyAttribute
+-->

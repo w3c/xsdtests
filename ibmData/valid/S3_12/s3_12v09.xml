@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<ns:invoice xmlns:ns="tns"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="tns s3_12v09.xsd">
+	
+	<item>
+		<address type="shipping" country="us">
+		    <state>Texas</state>
+		    <currency>USD</currency>
+			<zip>75244</zip>
+		</address>
+		<address type="billing" country="can">
+            <province>ON</province>  
+		    <currency>CDN</currency>
+			<postal>M1V4K9</postal>
+		</address>
+	</item>
+
+	<item>
+		<address type="shipping" country="can">
+		    <province>ON</province>
+		    <currency>CDN</currency>
+			<postal>L3S3H6</postal>
+		</address>
+		<address type="billing" country="can">
+		    <province>ON</province>
+		    <currency>CDN</currency>
+			<postal>M3F2W5</postal>
+		</address>
+	</item>
+
+</ns:invoice>
+
+<!-- 
+Test Case Type: Valid test
+Description   : Basic type alternatives.
+-->	

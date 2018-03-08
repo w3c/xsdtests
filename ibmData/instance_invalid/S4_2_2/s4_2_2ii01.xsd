@@ -1,0 +1,32 @@
+<xs:schema 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  targetNamespace="a"
+  elementFormDefault="qualified">
+
+  <!--invalid instance vc: conditional inclusion Testing version -->
+  
+  <xs:element name="root" vc:minVersion="3.2">
+    <!--* declaration suitable for 3.2 
+        * and later processors *-->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ele32"/>
+			</xs:sequence>
+		</xs:complexType>
+  </xs:element>
+  <xs:element name="root" 
+    vc:minVersion="1.1"
+    vc:maxVersion="3.2">
+    <!--* declaration suitable for processors
+        * supporting versions 1.1 through versions
+        * up to (but not including) 3.2
+        *-->
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ele11"/>
+			</xs:sequence>
+		</xs:complexType>
+  </xs:element>
+</xs:schema>

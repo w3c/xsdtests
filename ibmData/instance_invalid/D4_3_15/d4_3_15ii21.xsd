@@ -1,0 +1,20 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://xstest-tns/schema11_D4_3_15"
+           elementFormDefault="qualified">
+   <xs:element name="root">
+     <xs:complexType>
+        <xs:sequence>
+           <xs:element name="e1" type="xs:string" />
+        </xs:sequence>
+        <xs:assert test="e1 = 'present'" xpathDefaultNamespace="##targetNamespace" />
+     </xs:complexType>
+   </xs:element>
+
+</xs:schema>
+
+
+<!-- 
+	Test Case Type: instance invalid test (Datatypes section 4.3.15) 
+	Base Type     : Assertion
+	Description   : naive xpathDefaultNamespace(with value ##targetNamespace) test case in complexType
+-->

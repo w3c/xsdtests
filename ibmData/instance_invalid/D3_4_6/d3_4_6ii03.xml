@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a d3_4_6ii03.xsd">
+	<ele>3</ele>		<!--invalid which is valid for \c-->	
+	<ele>.</ele>		<!--invalid which is valid for \c-->	
+	<ele>-</ele>		<!--invalid which is valid for \c-->		
+	<ele>'</ele>		<!--invalid-->
+	<ele>,</ele>		<!--invalid-->
+	<ele>(</ele>		<!--invalid-->
+	<ele>*</ele>		<!--invalid-->
+	<ele>^</ele>		<!--invalid-->
+	<ele>%</ele>		<!--invalid-->
+	<ele>$</ele>		<!--invalid-->
+	<ele>#</ele>		<!--invalid-->
+	<ele>@</ele>		<!--invalid-->
+	<ele>!</ele>		<!--invalid-->
+	<ele>~</ele>	    <!--invalid-->
+</root>
+<!-- 
+Test Case Type: Instance invalid test
+Description   : invalid instance for effect of \i in regular expressions
+-->

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a s3_3_6ii03.xsd">
+ <b>1</b>
+ <a>1</a>
+</root>
+
+<!-- 	
+Test Case Type: Instance invalid test
+Description   : Tests notQName
+-->

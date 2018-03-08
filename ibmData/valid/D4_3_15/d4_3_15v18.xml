@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="d4_3_15v18.xsd"
+	attr="present"
+	>sdafas34234%23xyz</root>
+	<!-- 
+	Test Case Type: valid test (facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : assertions on a complex type definition, 
+					having complexContent, assertions from anySimpleType type.
+-->

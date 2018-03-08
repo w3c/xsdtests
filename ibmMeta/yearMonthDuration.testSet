@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="yearMonthDuration" 
+  contributor="IBM">
+     
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration">yearMonthDuration.</ts:documentation>
+    </ts:annotation>
+  
+    <ts:testGroup name="d3_4_26v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType yearMonthDuration and its facets and its use in elements </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType decimal and its facets and its use in attributes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v02.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+  
+    <ts:testGroup name="d3_4_26v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests yearMonthDuration used in unions </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v03.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType yearMonthDuration and its facets with (min|max) (Inclusive|Exclusive) constraint checks in derivations of simpleTypes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v04.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+  
+    <ts:testGroup name="d3_4_26v05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Additional tests for yearMonth Duration and its facets with (min|max) (Inclusive|Exclusive) constraint checks in derivations of simpleTypes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26v05s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v05.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26v05i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v05.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26v06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Pattern is a valid facet for yearMonthDuration </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26v06s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v06.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26v06i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_26/d3_4_26v06.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+     
+	 
+    <ts:testGroup name="d3_4_26ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid yearMonthDuration values </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+	 
+    <ts:testGroup name="d3_4_26ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid yearMonthDuration enumeration values  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii02.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+	 
+    <ts:testGroup name="d3_4_26ii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid yearMonthDuration Min/Max Inclusive </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii03.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+	 
+    <ts:testGroup name="d3_4_26ii04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid yearMonthDuration Min/Max Exclusive </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26ii04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26ii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii04.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+	 
+    <ts:testGroup name="d3_4_26ii05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid values of yearMonthDuration and invalid instance of its facets used in attributes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26ii05s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii05.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26ii05i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii05.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+	 
+    <ts:testGroup name="d3_4_26ii06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests yearMonthDuration used in unions </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26ii06s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii06.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26ii06i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii06.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26ii07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType yearMonthDuration and its facets with (min|max) (Inclusive|Exclusive) constraint checks in derivations of simpleTypes</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26ii07s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii07.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_26ii07i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_26/d3_4_26ii07.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+
+
+    <ts:testGroup name="d3_4_26si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>length is an invalid facet for yearMonthDuration </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si01.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26si02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>(min|max)? (Inclusive|Exclusive) are not of the base type specification  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si02.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26si03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>min(Inclusive|Exclusive) cannot be greater max(Inclusive|Exclusive) </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si03s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si03.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26si04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Both min(Inclusive|Exclusive) or max(Inclusive|Exclusive) cannot be specified for the same simpleType </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si04s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si04.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26si05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of minInclusive in base type is greater than the values of minInclusive, minExclusive, maxInclusive, maxExclusive in the base type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si05s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si05.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26si06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of minExclusive in base type is greater than the values of minInclusive, minExclusive, maxInclusive, maxExclusive in the base type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si06s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si06.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+  
+    <ts:testGroup name="d3_4_26si07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of maxInclusive in base type is lesser than the values of minInclusive, minExclusive, maxInclusive, maxExclusive in the base type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si07s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si07.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26si08" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of maxExclusive in base type is lesser than the values of minInclusive, minExclusive, maxInclusive, maxExclusive in the base type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si08s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si08.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+  
+    <ts:testGroup name="d3_4_26si09" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Enumeration values are incorrect yearMonthDuration values </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si09s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si09.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26si10" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of whiteSpace facet can only be collapse </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si10s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si10.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+  
+    <ts:testGroup name="d3_4_26si11" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests if fixed=true then the derived type cannot specify a value for the facet other than the base type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si11s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si11.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_26si12" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests negative boundary values and equality.
+ (min)(Inclusive|Exclusive) &gt; (max)(Inclusive|Exclusive) </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_26si12s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_26/d3_4_26si12.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+
+</ts:testSet>

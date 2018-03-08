@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root xsi:noNamespaceSchemaLocation="s3_3_4v26.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<idref_element>zxc</idref_element>
+</root>
+<!-- 
+	Test Case Type: valid test (Structures 3.3.4) 
+	Base Type     : ID/IDREF
+	Description   : xs:ID with default value on attribute, and xs:IDREF on element
+-->

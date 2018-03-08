@@ -1,0 +1,782 @@
+<?xml version='1.0'?>
+<testSet name="Assert"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="IBM"
+      version="1.1">
+	  
+    <testGroup name="assert_001" version="1.1">
+      <annotation>
+         <documentation>
+		     Assertions demonstrating co-occurence constraints, along with an assertion constraining
+			 element's simpleContent value.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_001_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test1.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_001_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+    </testGroup>
+   
+    <testGroup name="assert_002" version="1.1">
+      <annotation>
+         <documentation>
+		     Assertions demonstrating co-occurence constraints (constraints between an attribute value and elements). 
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_002_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test2.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_002_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test2_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="assert_002_3">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test2_2.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_003" version="1.1">
+      <annotation>
+         <documentation>
+		     Assertions on a complex type, with relatively bigger content model.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_003_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test3.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_003_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test3.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_004" version="1.1">
+      <annotation>
+         <documentation>
+		     Multiple assertions on a complex type, with a fictitious problem description.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_004_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test4.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_004_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test4.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_005" version="1.1">
+      <annotation>
+         <documentation>
+		    Multiple assertions on a sample 'simple type'.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_005_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test5.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_005_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test5.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_006" version="1.1">
+      <annotation>
+         <documentation>
+		     Assertions on complexType -&gt; complexContent, with inheritance relationship between schema types.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_006_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test6.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_006_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test6.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_007" version="1.1">
+      <annotation>
+         <documentation>
+		    Assertions on schema "simple type" definitions, with inheritance relationship.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_007_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test7.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_007_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test7.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_008" version="1.1">
+      <annotation>
+         <documentation>
+		     Assertions on schema "complex type" definitions, having attribute with simple content.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_008_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test8.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_008_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test8.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_009" version="1.1">
+      <annotation>
+         <documentation>
+		     Assertions on simple type, using assertions XPath 2.0 context variable $value.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_009_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test9.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_009_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test9.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_010" version="1.1">
+      <annotation>
+         <documentation>
+		     Assertions on complex type derivations.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-DerivationByRestr"/>
+      <schemaTest name="assert_010_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test10.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_010_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test10.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_011" version="1.1">
+      <annotation>
+         <documentation>
+		     Assertions on complex type, using xpathDefaultNamespace attribute on xs:assert.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-RulesForXPathContext"/>
+      <schemaTest name="assert_011_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test11.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_011_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test11.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_012" version="1.1">
+      <annotation>
+         <documentation>
+		     Multiple assertions on a complexType, with a fictitious problem description.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      
+      <schemaTest name="assert_012_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test12.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_012_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test12.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_013" version="1.1">
+      <annotation>
+         <documentation>
+		     Assertions on a fictitious numerical example.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypesr"/>      
+      <schemaTest name="assert_013_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test13.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_013_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test13.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_014" version="1.1">
+      <annotation>
+         <documentation>
+		    Assertion defined on attribute's schema type. Uses assertions XPath 2.0 context variable $value.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_014_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test14.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_014_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test14.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_015" version="1.1">
+      <annotation>
+         <documentation>
+		    Describing relatively involved assertions. Assertions are described in the data file
+			itself at xs:assert/xs:annotation. 
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_015_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test15.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_015_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test15.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_016" version="1.1">
+      <annotation>
+         <documentation>
+		    Describing both xs:assert &amp; xs:assertion on complexType -&gt; simpleContent -&gt; restriction. 
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#element-simpleContent"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_016_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test16.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_016_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test16.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_017" version="1.1">
+      <annotation>
+         <documentation>
+		    An assertions example, where an XML schema xs:group definition is reused in different schema types,
+			and cardinality of element particles in different types is controlled via schema assertions.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_017_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test17.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_017_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test17.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_018" version="1.1">
+      <annotation>
+         <documentation>
+		    This is similar to test 'assert_017', but element a's schema type in xs:group definition here has an
+			additional assertion.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_018_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/test18.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_018_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test18_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="assert_018_3">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/test18_2.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_019" version="1.1">
+      <annotation>
+         <documentation>
+		    A sample "purchase order" instance validation with an XML schema, using XSD 1.1 assertions.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ComplexTypes"/>
+      <schemaTest name="assert_019_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/po_sample/po.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_019_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/po_sample/po.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_020" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating assertions evaluation, with a numeric schema type when white-space normalization
+			must happen on the data.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimplexTypes"/>
+      <schemaTest name="assert_020_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/whitespace/test1.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_020_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/whitespace/test1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_021" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating assertions evaluation, with a xs:string schema type when white-space normalization
+			must not happen on the data.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_021_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/whitespace/test2.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_021_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/whitespace/test1.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_022" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating assertions evaluation, with a numeric schema type when white-space normalization
+			must happen on the data. The example demonstrates ignoring of comments within XML elements (which have simple schema values),
+			for findings value of assertions XPath 2.0 context variable $value.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_022_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/whitespace/test3.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_022_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/whitespace/test3.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_023" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating assertions evaluation, with xs:string schema type when white-space normalization must not happen
+			on the data. The example demonstrates ignoring of comments within XML elements (which have simple XML schema values), for 
+			findings value of assertions XPath 2.0 context variable $value. This test is similar to test "assert_022" but the validation
+			fails in this case, since the schema type of XML element is xs:string.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_023_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/whitespace/test4.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_023_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/whitespace/test3.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_024" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating assertions evaluation, with xs:string schema type when white-space normalization must not happen
+			on the data. The validation in this example would succeed, since an assertion normalizes the data value with "normalize-space"
+			XPath function before equality comparison.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_024_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/whitespace/test5.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_024_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/whitespace/test3.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_025" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating XSD 1.1 assertions evaluation using xs:assert instruction, when xs:assert has attribute
+			"xpathDefaultNamespace". 
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ImpactOfXPathDefaultNS"/>
+      <schemaTest name="assert_025_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/namespace/ns1.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_025_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/namespace/ns1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_026" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating XSD 1.1 assertions evaluation when outermost element in an XML document is in an namespace, while
+			inner ones are not, and there are few assertions defined on the schema type involved.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ImpactOfXPathDefaultNS"/>
+      <schemaTest name="assert_026_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/namespace/ns2.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_026_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/namespace/ns2.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_027" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating XSD 1.1 assertions evaluation when XML document is an namespace, and assertions perform
+			namespace URI comparisons on element nodes. 
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ImpactOfXPathDefaultNS"/>
+      <schemaTest name="assert_027_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/namespace/ns3.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_027_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/namespace/ns3.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_028" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating XSD 1.1 assertions evaluation, where an assertion checks for in-scope namespace prefixes
+			on XML element.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ImpactOfXPathDefaultNS"/>
+      <schemaTest name="assert_028_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/namespace/ns4.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_028_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/namespace/ns4.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_029" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating XSD 1.1 assertions evaluation, where XML schema document declares an XML attribute in a
+			namespace, using "targetNamespace" attribute on xs:attribute declaration, and an assertion XPath expression makes use
+			of namespace qualified attribute node reference.
+			There are two XML instance tests in this example (one passes and the other fails wrt XSD 1.1 assertions, due to varying
+			data in XML instance documents).
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-ImpactOfXPathDefaultNS"/>
+      <schemaTest name="assert_029_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/namespace/ns5.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_029_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/namespace/ns5_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="assert_029_3">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/namespace/ns5_2.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_030" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating XSD 1.1 assertions defined on itemType definition of xs:list schema component.
+			In this scenario assertions must evaluate on all-of list items, and every list item must pass the assertions
+			test for assertion to contribute to XML instance validation. 
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_030_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion1.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_030_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion1_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="assert_030_3">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion1_2.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_031" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating XSD 1.1 assertions evaluation on a simple type value, when the simpleType is a 
+			union type, and one of memberTypes of union specifies assertions.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_031_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion2.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_031_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion2_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="assert_031_3">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion2_2.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="assert_031_4">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion2_3.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="assert_031_5">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion2_4.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_032" version="1.1">
+      <annotation>
+         <documentation>
+		    This is similar to example "assert_031", but here both of memberTypes of union have assertions specified on them.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_032_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion3.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_032_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion3_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="assert_032_3">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion3_2.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_033" version="1.1">
+      <annotation>
+         <documentation>
+		    Demonstrating assertions on memberTypes of xs:union.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_033_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion4.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_033_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion3_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_034" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating assertion defined in simple schema type, which is itemType of xs:list schema component.
+			This example defines an schema simpleType for an XML attribute.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_034_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion5.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+	  <instanceTest name="assert_034_3">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion5_2.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+   <testGroup name="assert_035" version="1.1">
+      <annotation>
+         <documentation>
+		    An example demonstrating constraining the cardinality of schema xs:list, and defining assertion on items
+			of the schema xs:list.
+		 </documentation>
+      </annotation>
+      <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+      <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Assertions-SimpleTypes"/>
+      <schemaTest name="assert_035_1">
+         <schemaDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion6.xsd"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </schemaTest>
+      <instanceTest name="assert_035_2">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion6_1.xml"/>
+         <expected validity="valid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+	  <instanceTest name="assert_035_3">
+         <instanceDocument xlink:href="../ibmData/mixed/assertions/list_union/listunion6_2.xml"/>
+         <expected validity="invalid"/>
+         <current date="2010-10-12" status="accepted"/>
+      </instanceTest>
+   </testGroup>
+   
+</testSet>

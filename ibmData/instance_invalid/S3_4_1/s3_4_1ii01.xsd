@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a">
+        
+<!-- 
+Test Case Type: Instance invalid test
+Description   : 3.4.4.3 Element Sequence Locally valid (Complex Content) Validation rule
+     2. <openContent>.mode = suffix BUT wildcard inserted in front of and in between CT group particles 
+-->
+
+
+<defaultOpenContent mode="suffix">
+ <any processContents="lax"/>
+</defaultOpenContent>
+
+<complexType name="c">
+ <openContent mode="suffix">
+  <any/>
+ </openContent>
+ <sequence>
+  <element name="a" type="integer"/>
+  <element name="b" type="integer"/>
+ </sequence>
+</complexType>
+
+<complexType name="d">
+ <all>
+  <element name="m" type="integer"/>
+  <element name="n" type="integer"/>
+ </all>
+</complexType>
+
+<element name="root">
+ <complexType>
+  <sequence>
+   <element name="p" type="a:c"/>	<!-- tests openContent -->
+   <element name="o" type="a:c"/>
+   <element name="i" type="a:d"/>	<!-- tests defaultOpenContent -->
+   <element name="u" type="a:d"/>
+  </sequence>
+ </complexType>
+</element>
+
+</schema>

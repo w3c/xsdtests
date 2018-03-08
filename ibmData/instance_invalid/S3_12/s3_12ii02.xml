@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<tns:root xmlns:tns="http://xstest-tns" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	        xsi:schemaLocation="http://xstest-tns s3_12ii02.xsd">
+
+	<person numberOfChildren="2">
+	   <child name="C1" DOB="2007-10-10"/>
+	   <child name="C2" DOB="2003-01-02"/>
+	</person>
+
+	<person numberOfChildren="6">
+	   <child name="C1" DOB="01/01/2000"/>
+	</person>
+
+	<person numberOfChildren="0">
+	   <!--  INVALID: content must be empty -->
+	   <child name="C1" DOB="01/01/2000"/>
+	</person>
+	
+</tns:root>
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   : The type alternative is selects an invalid element using comparator operators.
+-->

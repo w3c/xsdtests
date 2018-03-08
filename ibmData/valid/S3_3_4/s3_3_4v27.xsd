@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:complexType name="ids">			
+		<xs:attribute name="id_attr" type="xs:ID" default="zxc"/>		
+		<xs:attribute name="idref_attr" type="xs:IDREF" default="zxc"/>			
+	</xs:complexType>
+
+	<xs:element name="root" type="ids"/>
+</xs:schema>
+
+
+<!-- 
+	Test Case Type: valid test (Structures 3.3.4) 
+	Base Type     : ID/IDREF
+	Description   : xs:ID/IDREF with default value on attribute
+-->

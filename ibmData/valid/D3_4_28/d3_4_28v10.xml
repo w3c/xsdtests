@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_28_v10"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_28_v10
+	d3_4_28v10.xsd">
+	
+	<dTimeStampPattern>2000-02-01T00:00:00+09:00</dTimeStampPattern>
+	<dTimeStampPattern>2009-02-01T00:00:00+09:00</dTimeStampPattern>
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : Additional dateTimeStamp tests, for attributes
+-->

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/IBMd3_16v04"
+	xmlns:sv="http://xstest-tns/IBMd3_16v04">
+	
+<!-- 
+	Test Case Type: valid test
+	Description   : Types derived by restriction from a union type
+-->
+		
+	<simpleType name="u1">
+		<union memberTypes="string"/>
+	</simpleType>
+
+	<simpleType name="u2">
+		<restriction base="sv:u1">		
+			<pattern value="[1-8][1-8]"/>	
+		</restriction>
+	</simpleType>
+
+	<simpleType name="u3">
+		<union memberTypes="sv:u2"/>
+	</simpleType>
+
+	<simpleType name="u4">
+		<restriction base="sv:u3">
+			<pattern value="[2-9][2-9]"/>	
+		</restriction>
+	</simpleType>
+
+	<simpleType name="u5">
+		<union memberTypes="sv:u4"/>
+	</simpleType>
+
+	<element name="root">
+		<complexType>
+			<sequence>			
+				<element name="union_element" type="sv:u5"  maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>

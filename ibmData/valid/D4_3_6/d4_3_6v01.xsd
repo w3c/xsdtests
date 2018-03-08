@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11"
+	xmlns:si="http://xstest-tns/schema11">
+<!-- 
+Test Case Type: Valid test
+Description   : when the value is collapse, literals consisting solely of whitespace
+                characters are reduced to the empty string
+-->
+<simpleType name="durWhiteSpace">
+	<restriction  base="string">
+		<whiteSpace value="collapse"/>
+		<enumeration value=""/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elWhiteSpace" type="si:durWhiteSpace"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

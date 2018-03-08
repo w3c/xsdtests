@@ -1,0 +1,51 @@
+<?xml version='1.0'?>
+<testSet name="TargetNS"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="IBM"
+      version="1.1">
+
+    <testGroup name="targetNamespace_004" version="1.1">
+        <annotation>
+            <documentation>
+		    Composition of XML schemas via xs:import to be able to achive hetrogeneous namespaced elements
+			in "one" XML document.
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImport"/>
+        <schemaTest name="targetNamespace_004_1">
+            <schemaDocument xlink:href="../ibmData/mixed/targetNamespace/tns4.xsd"/>
+            <expected validity="valid"/>
+            <current date="2010-10-12" status="accepted"/>
+        </schemaTest>
+        <instanceTest name="targetNamespace_004_2">
+            <instanceDocument xlink:href="../ibmData/mixed/targetNamespace/tns4.xml"/>
+            <expected validity="valid"/>
+            <current date="2010-10-12" status="accepted"/>
+        </instanceTest>
+    </testGroup>
+
+    <testGroup name="targetNamespace_005" version="1.1">
+        <annotation>
+            <documentation>
+		    This example demonstrates 'targetNamespace' attribute on xs:attribute schema component.
+		    </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-TargNSOnAttrDecl"/>
+        <schemaTest name="targetNamespace_005_1">
+            <schemaDocument xlink:href="../ibmData/mixed/targetNamespace/tns5.xsd"/>
+            <expected validity="valid"/>
+            <current date="2010-10-12" status="accepted"/>
+        </schemaTest>
+        <instanceTest name="targetNamespace_005_2">
+            <instanceDocument xlink:href="../ibmData/mixed/targetNamespace/tns5.xml"/>
+            <expected validity="valid"/>
+            <current date="2010-10-12" status="accepted"/>
+        </instanceTest>
+     </testGroup>
+
+</testSet>

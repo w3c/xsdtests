@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<a:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:a="a"
+        xsi:schemaLocation="a s3_3_6v04.xsd">
+1
+</a:root>
+
+<!--
+Test Case Type: Valid test
+Description   : Tests restriction of all group
+-->

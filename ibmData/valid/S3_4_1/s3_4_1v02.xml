@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<a:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:a="a"
+        xsi:schemaLocation="a s3_4_1v02.xsd">
+ <p>    <!-- sequence -->
+  <x>1</x>
+  <qwe>s</qwe>
+ </p>
+ <q>    <!-- choice -->
+  <wer><g>123</g></wer>
+  <z>2</z>
+ </q>
+ <r>    <!-- all -->
+  <lj>we</lj>
+  <y>1</y>
+ </r>
+</a:root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : Tests defaultOpenContent for CT not empty
+-->

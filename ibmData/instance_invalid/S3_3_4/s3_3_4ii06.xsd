@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <xs:complexType name="ids">
+  <xs:attribute name="id" type="xs:ID"/>
+ </xs:complexType>
+
+ <xs:complexType name="idrefs">
+  <xs:attribute name="idref" type="valueConstraint" default="asd"/>
+ </xs:complexType>
+
+ <xs:simpleType name="valueConstraint">
+  <xs:restriction base="xs:IDREF">
+   <xs:enumeration value="asd"/>
+  </xs:restriction>
+ </xs:simpleType>
+
+ <xs:element name="root">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element name="a" type="ids"/>
+    <xs:element name="b" type="idrefs"/>
+   </xs:sequence>
+  </xs:complexType>
+ </xs:element>
+
+</xs:schema>
+
+
+<!-- 
+	Test Case Type: instance invalid test (Structures 3.3.4) 
+	Base Type     : ID/IDREF
+	Description   : xs:ID/IDREF with default value on attribute
+-->

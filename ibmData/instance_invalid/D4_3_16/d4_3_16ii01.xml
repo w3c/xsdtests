@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inii:root xmlns:inii="http://xstest-tns/schema11_F4_3_16_ii01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_F4_3_16_ii01
+	d4_3_16ii01.xsd">
+	
+	<elDTimeType>2000-01-09T12:00:00</elDTimeType>
+	<elDTimeEnum>2005-11-12T23:00:00-05:00</elDTimeEnum>
+	<elDTimeProhibited>2002-11-12T23:00:00Z</elDTimeProhibited>
+	<elDTimeRequired>2003-01-09T12:00:00</elDTimeRequired>
+	<elDTimeOptional>2004-02-10T12:00:00Z</elDTimeOptional>
+	<elDTimeOptional>2005-01-09T12:00:00</elDTimeOptional>
+	<elDTimeOptional>9999-99-99t99:99:99</elDTimeOptional>
+</inii:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (facet section 4.3.16) 
+	Base Type     : dateTime
+	facet Type 	  : explicitTimezone
+	Description   : The 2nd,3rd,4th and last element have invalid dateTime values
+-->

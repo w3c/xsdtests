@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="anyAttribute" 
+  contributor="IBM">
+
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-wildcard">anyAttribute </ts:documentation>
+    </ts:annotation>
+
+    <ts:testGroup name="s3_10_6v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests notQName on xs:anyAttribute</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-wildcard"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <ts:schemaTest name="s3_10_6v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_10_6/s3_10_6v01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_10_6v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_10_6/s3_10_6v01.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_10_6v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests namespace attribute on xs:anyAttribute</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-wildcard"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <ts:schemaTest name="s3_10_6v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_10_6/s3_10_6v02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_10_6v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_10_6/s3_10_6v02.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_10_6v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests namespace attribute on xs:anyAttribute</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-wildcard"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <ts:schemaTest name="s3_10_6v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_10_6/s3_10_6v03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_10_6v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_10_6/s3_10_6v03.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_10_6ii01">
+        <ts:annotation>
+            <ts:documentation>Tests notQName on xs:anyAttribute</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-wildcard"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <ts:schemaTest name="s3_10_6v01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_10_6/s3_10_6ii01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_10_6v01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_10_6/s3_10_6ii01.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_10_6ii02">
+        <ts:annotation>
+            <ts:documentation>Tests notQName and notNamespace list in xs:anyAttribute</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-wildcard"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <ts:schemaTest name="s3_10_6v02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_10_6/s3_10_6ii02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_10_6v02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_10_6/s3_10_6ii02.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_10_6ii03">
+        <ts:annotation>
+            <ts:documentation>Tests namespace attribute on xs:anyAttribute</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-wildcard"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <ts:schemaTest name="s3_10_6v03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_10_6/s3_10_6ii03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_10_6v03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_10_6/s3_10_6ii03.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_10_6ii04">
+        <ts:annotation>
+            <ts:documentation>Tests namespace attribute on xs:anyAttribute</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-wildcard"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <ts:schemaTest name="s3_10_6v04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_10_6/s3_10_6ii04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_10_6v04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_10_6/s3_10_6ii04.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>	 
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_10_6si01">
+        <ts:annotation>
+            <ts:documentation>namespace and notNamespace attributes are not allowed to be both present in a wildcard </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-wildcard"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <ts:schemaTest name="s3_10_6si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_10_6/s3_10_6si01.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_10_6si02">
+        <ts:annotation>
+            <ts:documentation>The namespace of each QName in disallowed is allowed by the namespace constraint
+		</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#coss-wildcard"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <ts:schemaTest name="s3_10_6si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_10_6/s3_10_6si02.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+</ts:testSet>

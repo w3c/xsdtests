@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/IBMd3_16v05"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/IBMd3_16v05
+	s3_16_2v05.xsd">
+
+	<union_element xsi:type="dv:u_string">28</union_element>	
+	<union_element xsi:type="dv:u_integer">33</union_element>
+	<union_element xsi:type="dv:u_ncname">az</union_element>
+  
+</dv:root>
+
+<!-- 
+	Test Case Type: valid test
+	Description   : tests restriction facet in intervening union
+-->

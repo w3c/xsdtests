@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<insi:root xmlns:insi="http://xstest-tns/schema11"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11
+	d3_3_7ii01.xsd"
+	>
+	
+	<elDTimeType time="P2Y2M4D"></elDTimeType>
+</insi:root>
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   :  The account of the value space of duration has been changed to specify 
+ that values consist only of two numbers (the number of months and the number of seconds) 
+ rather than six (years, months, days, hours, minutes, seconds). This allows clearly 
+ equivalent durations like P2Y and P24M to have the same value.
+-->

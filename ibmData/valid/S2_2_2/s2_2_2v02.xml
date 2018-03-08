@@ -1,0 +1,12 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<v27:root xmlns:xsi         ="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:v27         ="http://xstest-tns/ibms3_3_6_v02"
+          xsi:schemaLocation="http://xstest-tns/ibms3_3_6_v02
+                              s2_2_2v02.xsd">
+<v27:elem2>Tests multiple substitution group heads</v27:elem2>
+<v27:elem2>hi</v27:elem2>
+</v27:root>
+<!-- 
+Test Case Type: Valid test	
+Description   : Tests multiple substitution group heads
+-->

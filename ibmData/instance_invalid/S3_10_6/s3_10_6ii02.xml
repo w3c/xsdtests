@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xmlns:b="b"
+        xmlns:c="c"
+        xsi:schemaLocation="a s3_10_6ii02.xsd"
+
+        d="1"
+        b:a="1" 
+        c:a="1"
+        c:b="1"
+	/>
+
+<!--
+d="1" - invalid namespace
+b:a="1" - invalid namespace
+c:a="1" - invalid qname
+c:b="1" - valid
+-->
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   : Tests notQName and notNamespace list in xs:anyAttribute 
+-->
+     

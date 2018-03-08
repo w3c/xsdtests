@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="PopenContent" 
+  contributor="IBM">
+
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details">openContent.</ts:documentation>
+    </ts:annotation>	 
+
+    <ts:testGroup name="s3_4_1v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests defaultOpenContent: appliesToEmpty="true" </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-DefaultOCTopLevel"/>
+        <ts:schemaTest name="s3_4_1v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v01.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests defaultOpenContent for CT not empty  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-DefaultOCAppliesToEmpty-True"/>
+        <ts:schemaTest name="s3_4_1v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v02.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+    <ts:testGroup name="s3_4_1v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests openContent for empty content model </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-DefaultOCAppliesToEmpty-False"/>
+        <ts:schemaTest name="s3_4_1v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v03.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests defaultOpenContent in suffix mode </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-Suffix"/>
+        <ts:schemaTest name="s3_4_1v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v04.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1v05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests openContent in complexType derived by restriction </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-Suffix"/>
+        <ts:schemaTest name="s3_4_1v05s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v05.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v05i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v05.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1v06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests openContent in complexType derived by extension </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-Suffix"/>
+        <ts:schemaTest name="s3_4_1v06s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v06.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v06i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v06.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1v07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests derivation by extension with openContent mode suffix in both type and its derived type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-Suffix"/>
+        <ts:schemaTest name="s3_4_1v07s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v07.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v07i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v07.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1v08" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests derivation by extension with openContent mode interleave in derived type and suffix in its base type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-DerivationByExt"/>
+        <ts:schemaTest name="s3_4_1v08s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v08.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v08i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v08.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1v09" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests derivation by restriction with openContent mode interleave in base type  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-Interleave"/>
+        <ts:schemaTest name="s3_4_1v09s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v09.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v09i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v09.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1v10" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests derivation by extension with openContent mode interleave in both type and its derived type  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-DerivationByExt"/>
+        <ts:schemaTest name="s3_4_1v10s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v10.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v10i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v10.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1v11" version="1.1">
+        <ts:annotation>
+            <ts:documentation>complexType/@mixed </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-ComplexTypeSimpleContent"/>
+        <ts:schemaTest name="s3_4_1v11s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v11.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1v11i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_1/s3_4_1v11.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>
+            3.4.4.3 Element Sequence Locally valid (Complex Content) Validation rule 2. (openContent)
+            mode = suffix BUT wildcard inserted in front of and in between CT group particles 
+            </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-Suffix"/>
+        <ts:schemaTest name="s3_4_1ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_1/s3_4_1ii01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_1/s3_4_1ii01.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests defaultOpenContent: appliesToEmpty="false" </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-DefaultOCAppliesToEmpty-False"/>
+        <ts:schemaTest name="s3_4_1ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_1/s3_4_1ii02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_1/s3_4_1ii02.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1ii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests defaultOpenContent: when openContent is present in CT, defaultOpenContent should not be used </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-DefaultOCAppliesToEmpty-False"/>
+        <ts:schemaTest name="s3_4_1ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_1/s3_4_1ii03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_1/s3_4_1ii03.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1ii04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests wildcard in opencontent with restrictions (notQName)  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-DerivationByRestr"/>
+        <ts:schemaTest name="s3_4_1ii04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_1/s3_4_1ii04.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1ii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_1/s3_4_1ii04.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1ii05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests derivation by restriction with openContent mode suffix in base type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#xsd1_1-OpenContent-Suffix"/>		
+        <ts:schemaTest name="s3_4_1ii05s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_1/s3_4_1ii05.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_1ii05i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_1/s3_4_1ii05.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>3.4.3 Schema Representation Constraint: ComplexType Definition Representation OK
+          [openContent] has mode not 'none' AND no [any] in its children
+          [openContent] has mode 'none' AND [any] in its children (which is ok) </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#xsd1_1-OpenContent-Interleave"/>
+        <ts:schemaTest name="s3_4_1si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_1/s3_4_1si01.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1si02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>defaultOpenContent in wrong place</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#xsd1_1-OpenContent-DefaultOCTopLevel"/>
+        <ts:schemaTest name="s3_4_1si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_1/s3_4_1si02.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1si03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>not wildcard inside openContent</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-Suffix"/>
+        <ts:schemaTest name="s3_4_1si03s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_1/s3_4_1si03.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1si04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests openContent in complexType derived by extension
+          Fails because the derived type takes the defaultOpenContent which has
+          mode of suffix while base type openContent has mode interleave. And their modes have to be the same.
+          According to the spec, for derived types, defaultOpenContent takes
+          predecence over base type's openContent. </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-ComplexTypeSimpleContent"/>		
+        <ts:schemaTest name="s3_4_1si04s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_1/s3_4_1si04.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1si05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests derivation by extension with openContent mode suffix in derived type and mode interleave in base type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-Interleave"/>
+        <ts:schemaTest name="s3_4_1si05s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_1/s3_4_1si05.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1si06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests 1.4.3.2.2.4 - baseType wildcard is not a subset of derived type's wildcard in extension </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-Interleave"/>
+        <ts:schemaTest name="s3_4_1si06s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_1/s3_4_1si06.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1si08" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The content type of a derived type and that of its base must both be mixed or both be element-only. Type '#AnonType_root' is mixed, but its base type is not.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-ComplexTypeSimpleContent"/>
+        <ts:schemaTest name="s3_4_1si08s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_1/s3_4_1si08.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_1si09" version="1.1">
+        <ts:annotation>
+            <ts:documentation>complexType/@mixed and complexContent/@mixed must not conflict</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Complex_Type_Definition_details"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-OpenContent-ComplexTypeSimpleContent"/>
+        <ts:schemaTest name="s3_4_1si09s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_1/s3_4_1si09.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+</ts:testSet>

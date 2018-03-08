@@ -1,0 +1,23 @@
+<?xml version="1.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="start" type="xs:string" maxOccurs="unbounded"/>
+				<xs:element name="end" type="xs:string" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="attr" type="xs:string" />
+			<xs:assert test="starts-with(@attr, 'subfix')" />
+			<xs:assert test="(start = 's1' and end = 'e1') or 
+						   (start = 's2' and end = 'e2') or 
+						   (start = 's3' and end = 'e3')" />
+		</xs:complexType>
+	</xs:element>
+  
+</xs:schema>
+
+<!-- 
+	Test Case Type: valid test (Datatype/facet section 4.3.15) 		
+	facet Type 	  : Assertions
+	Description   : assertions on a complex type definition. uses multiple asserts										
+-->

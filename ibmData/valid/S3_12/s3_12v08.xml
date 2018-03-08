@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ns:root xmlns:ns="tns" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	        xsi:schemaLocation="tns s3_12v08.xsd">
+   <child type1="true">true</child>
+   <child type2="true">1234</child>
+   <child>childType</child>
+   <child type1="true" type2="false">childType</child>
+</ns:root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : Basic type alternatives.
+          Selection of the alternative type is dertermined by evaluating an And operation on the presence of attributes in an element 
+-->

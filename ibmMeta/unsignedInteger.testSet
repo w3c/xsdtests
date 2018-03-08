@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="unsignedIntegers" 
+  contributor="IBM">
+     
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-2/#sec-chdtfacets">
+        The description of the lexical spaces of unsignedLong, unsignedInt, unsignedShort, and unsignedByte has been revised to agree with the schema for schemas by allowing for the possibility of a leading sign.
+        </ts:documentation>
+    </ts:annotation>
+     
+   <ts:testGroup name="d3_4_21v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test unsignedLong</ts:documentation>
+        </ts:annotation>
+       <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#unsignedLong"/>   
+       <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-LeadingPlusInUnsignedTypes"/>        
+        <ts:schemaTest name="d3_4_21v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_21/d3_4_21v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_21v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_21/d3_4_21v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+	 </ts:testGroup>
+
+    <ts:testGroup name="d3_4_22v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The possibility of a leading sign is allowed for unsignedInt. </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#unsignedInt"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-LeadingPlusInUnsignedTypes"/>        
+        <ts:schemaTest name="d3_4_22v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_22/d3_4_22v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_22v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_22/d3_4_22v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+  
+    <ts:testGroup name="d3_4_23v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The possibility of a leading sign is allowed for unsignedInt. </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#unsignedShort"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-LeadingPlusInUnsignedTypes"/>        
+        <ts:schemaTest name="d3_4_23v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_23/d3_4_23v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_23v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_23/d3_4_23v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_24v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The possibility of a leading sign is allowed for unsignedByte. </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#unsignedByte"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-LeadingPlusInUnsignedTypes"/>        
+        <ts:schemaTest name="d3_4_24v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_24/d3_4_24v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_24v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_24/d3_4_24v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+   
+    <ts:testGroup name="d3_4_21ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test unsignedLong invalid instance </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#unsignedLong"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-LeadingPlusInUnsignedTypes"/>        
+        <ts:schemaTest name="d3_4_21ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_21/d3_4_21ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_21ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_21/d3_4_21ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+   
+    <ts:testGroup name="d3_4_22ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The possibility of a leading sign is allowed for unsignedInt. </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#unsignedInt"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-LeadingPlusInUnsignedTypes"/>        
+        <ts:schemaTest name="d3_4_22ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_22/d3_4_22ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_22ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_22/d3_4_22ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_23ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The possibility of a leading sign is allowed for unsignedShort.  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#unsignedShort"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-LeadingPlusInUnsignedTypes"/>        
+        <ts:schemaTest name="d3_4_23ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_23/d3_4_23ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_23ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_23/d3_4_23ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_24ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The possibility of a leading sign is allowed for unsignedByte.   </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#unsignedByte"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-LeadingPlusInUnsignedTypes"/>        
+        <ts:schemaTest name="d3_4_24ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_24/d3_4_24ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_24ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_24/d3_4_24ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+  
+</ts:testSet>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ns:shape xmlns:ns="tns" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	        xsi:schemaLocation="tns s3_12v10.xsd">
+   <dimension length="1.0" width="1">square</dimension>
+   <dimension length="2.0" width="1.1">lrectangle</dimension>
+   <dimension length="1" width="2">other</dimension>
+</ns:shape>
+
+<!-- 
+Test Case Type: Valid test
+Description   : Basic type alternatives.
+          Selection of the alternative type is dertermined by evaluating a Constructor function and a Cast Expression on attribute values
+-->

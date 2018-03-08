@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a">
+        
+<!-- 
+Test Case Type: Schema invalid test
+Description   : namespace and notNamespace attributes are not allowed to be both present in a wildcard
+-->
+
+<complexType name="c">
+  <anyAttribute namespace="##targetNamespace" notNamespace="a"/>
+</complexType>
+
+<element name="root" type="integer"/>
+</schema>

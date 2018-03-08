@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_27_v03"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_27_v03
+	d3_4_27v03.xsd">
+	
+	<elyMDUnionA>Computer</elyMDUnionA>
+	<elyMDUnionA>P4DT4H</elyMDUnionA>
+
+	<elyMDUnionB>-PT32H4M3.4S</elyMDUnionB>
+	<elyMDUnionB>7</elyMDUnionB>
+	
+	<elyMDUnionC>PT34.3S</elyMDUnionC>
+	<elyMDUnionC>1</elyMDUnionC>
+	<elyMDUnionC>once</elyMDUnionC>	
+
+</dv:root>
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : Tests dayTimeDuration used in unions
+-->

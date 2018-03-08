@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_si19"
+	xmlns:si="http://xstest-tns/schema11_D3_3_4_si19">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : It is an error if minScale < base.minScale
+-->
+
+<simpleType name="decMinScale_Base">
+	<restriction base="precisionDecimal">
+		<minScale value="2"/>
+	</restriction>	
+</simpleType>
+
+<simpleType name="decMinScale">
+	<restriction base="si:decMinScale_Base"/>
+</simpleType>
+
+<simpleType name="decMinScale_Derived">
+	<restriction base="si:decMinScale">
+		<minScale value="-30"/> 
+	</restriction>	
+</simpleType>
+
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elMinScale" type="si:decMinScale_Derived"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

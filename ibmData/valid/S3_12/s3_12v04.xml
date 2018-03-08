@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<tns:root xmlns:tns="http://xstest-tns" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	        xsi:schemaLocation="http://xstest-tns s3_12v04.xsd">
+
+	<!-- 1st type alternative selected: xs:float -->
+	<elem1 type="float">1E104</elem1>
+
+	<!-- 2nd type alternative selected: xs:double -->
+	<elem1 type="double">1E971</elem1>
+
+</tns:root>
+
+<!-- 
+	
+Test Case Type: Valid test
+Description   : Basic type alternatives.
+          For the first alternative type, the attribute whose value is to be 
+selected by the alternative type's {test} expression is of type string.
+          The attribute value in the XML document contains a trailing space and 
+will not normalized and selected by the alternate type. 
+          For the second alternative type, the case of the attribute whose 
+value is to be selected by the {test} expression is in a different case in the 
+XML document.
+          In both cases, the alternative type should not be selected.
+-->

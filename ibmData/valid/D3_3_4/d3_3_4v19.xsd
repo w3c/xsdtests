@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_v06"
+	xmlns:sv="http://xstest-tns/schema11_D3_3_4_v06">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the simpleType precisionDecimal and its facets with (min|max) (Inclusive|Exclusive) 
+			constraint checks in derivations of simpleTypes
+-->
+
+<simpleType name="decDigits">
+	<restriction  base="precisionDecimal">
+		<totalDigits value="10"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decDigitsMinInclusive">
+	<restriction  base="sv:decDigits">
+		<minInclusive value="10.00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinInclusive_MinInclusive">
+	<restriction  base="sv:decDigitsMinInclusive">
+		<minInclusive value="100.00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinInclusive_MinExclusive">
+	<restriction  base="sv:decDigitsMinInclusive">
+		<minExclusive value="100.00"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinInclusive_MaxInclusive">
+	<restriction  base="sv:decDigitsMinInclusive">
+		<maxInclusive value="999.99"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinInclusive_MaxExclusive">
+	<restriction  base="sv:decDigitsMinInclusive">
+		<maxExclusive value="999.99"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elMinInclusive_MinInclusive" type="sv:decMinInclusive_MinInclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elMinInclusive_MinExclusive" type="sv:decMinInclusive_MinExclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elMinInclusive_MaxInclusive" type="sv:decMinInclusive_MaxInclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elMinInclusive_MaxExclusive" type="sv:decMinInclusive_MaxExclusive" minOccurs="1" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

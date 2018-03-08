@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="d4_3_15v05.xsd">1234567890</root>
+	
+<!-- 
+	Test Case Type: valid test (facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : assertions on a simple type definition					
+-->

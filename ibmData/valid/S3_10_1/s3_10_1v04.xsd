@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a"
+        elementFormDefault="qualified">
+        
+<!-- 
+	Tests weakened wildcard (tests whether error occurs on violation of UPA)
+-->
+
+<complexType name="t">
+ <sequence>
+  <element ref="a:z" minOccurs="0"/>
+  <any/>
+ </sequence>
+</complexType>
+
+<element name="z" type="integer"/>
+
+<element name="root" type="a:t"/>
+</schema>

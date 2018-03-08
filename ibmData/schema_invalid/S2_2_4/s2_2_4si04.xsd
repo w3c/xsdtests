@@ -1,0 +1,69 @@
+<?xml version="1.1"?>
+<schema xmlns          ="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xstest-tns/IBM3_11V01"
+        xmlns:v01      ="http://xstest-tns/IBM3_11V01">
+<!--
+Test Type  : 3.11.3 Schema representation constraint: identity-constraint definition representation ok
+Description: identity constraints contains no name and no ref attribute
+-->
+<annotation>
+	<documentation>
+	schema file for testing identity-constraint.
+	</documentation>
+</annotation>
+
+<simpleType name="internalCode">
+	<restriction base="string">
+		<pattern value="\d{5}"/>
+	</restriction>
+</simpleType>
+
+<complexType name="heaterType">
+	<simpleContent>
+		<extension base="string">
+			<attribute name="model" type="string"/>
+		</extension>
+	</simpleContent>
+</complexType>
+
+<complexType name="unitType">
+	<sequence>
+		<element name="internal" minOccurs="0" maxOccurs="unbounded">
+			<complexType>
+				<sequence>
+					<element name="heater" minOccurs="0" maxOccurs="unbounded">
+						<complexType>
+							<attribute name="model" type="string"/>
+							<attribute name="quantity" type="positiveInteger"/>
+						</complexType>
+					</element>
+				</sequence>
+				<attribute name="code" type="v01:internalCode"/>
+			</complexType>
+		</element>
+	</sequence>
+	<attribute name="name" type="boolean"/>
+</complexType>
+
+<element name="heaterConsumer">
+	<complexType>
+		<sequence>
+			<element name="unit" type="v01:unitType" maxOccurs="unbounded"/>
+			<element ref="v01:heaters"/>
+		</sequence>
+	</complexType>
+	<unique/>
+	<key/>
+	<keyref/>
+</element>
+
+<element name="heaters">
+	<complexType>
+		<sequence>
+			<element name="heater" type="v01:heaterType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+		<attribute name="vendor" type="string"/>
+	</complexType>
+</element>
+
+</schema>

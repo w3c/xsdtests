@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_3_4_v11"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_v11
+	d3_3_4v24.xsd">
+	
+	<Special1>INF</Special1>
+
+	<Special2>-INF</Special2>
+	<Special2>+INF</Special2>
+	<Special2>NaN</Special2>
+	<Special2>INF</Special2>
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3_3_4) 
+	Base Type     : precisionDecimal
+	Description   : Testing special values (+INF,INF,-INF,NaN) for precisionDecimal
+-->

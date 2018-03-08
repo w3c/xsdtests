@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_si16"
+	xmlns:si="http://xstest-tns/schema11_D3_3_4_si16">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : This test case tests the fixed attribute on facets
+-->
+
+<simpleType name="bdecTotalDigits">
+	<restriction base="precisionDecimal">
+		<totalDigits value="5" fixed="true"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decTotalDigits">
+	<restriction base="si:bdecTotalDigits">
+		<totalDigits value="4"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="bdecMinMaxInclusive">
+	<restriction base="precisionDecimal">
+		<minInclusive value="-1771" fixed="true"/>
+		<maxInclusive value="+1771" fixed="0"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinMaxInclusive">
+	<restriction base="si:bdecMinMaxInclusive">
+		<minInclusive value="-1770"/>
+		<maxInclusive value="+1770"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="decMinMaxExclusive">
+	<restriction base="precisionDecimal">
+		<minExclusive value="-999.99" fixed="0"/>
+		<maxExclusive value="999.999" fixed="false"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="bdecMinMaxExclusive">
+	<restriction base="precisionDecimal">
+		<minExclusive value="-999.90" fixed="1"/>
+		<maxExclusive value="999.990" fixed="true"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elString" type="string"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

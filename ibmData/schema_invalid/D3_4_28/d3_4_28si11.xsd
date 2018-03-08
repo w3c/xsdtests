@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_28_si11"
+	xmlns:si="http://xstest-tns/schema11_D3_4_28_si11">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : The value of explicitTimezone for dateTimeStamp can only be required
+-->
+
+<simpleType name="dTimeStampExplicitTimezone">
+	<restriction base="dateTimeStamp">
+		<explicitTimezone value="optional"/>
+	</restriction>	
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elExplicitTimezone" type="si:dTimeStampExplicitTimezone"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

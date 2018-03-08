@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root_a xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xmlns:dv="a"
+        xsi:schemaLocation="a s4_2_5v02.xsd">			
+	<element_added/>
+</root_a>
+
+<!-- 
+Test Case Type: Valid test
+Description   : The schema document identified by the schemaLocation  attribute of any <override> 
+                element information item in a schema document contained in the 'target set' of E
+-->

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+		xmlns:b="a"
+        xsi:schemaLocation="a s3_11_2ii07.xsd">
+	  <dept id="1">
+            <Deptno>10</Deptno>
+            <Dname>Accounting</Dname>
+            <Loc>Dallas</Loc>
+      </dept>
+      <dept id="2">
+            <Deptno>20</Deptno>
+            <Dname>Production</Dname>
+            <Loc>New York</Loc>
+      </dept>
+      <Employee>
+            <Empno>1001</Empno>
+            <Ename>Jag</Ename>
+            <Sal>2500</Sal>
+            <Deptno>10</Deptno>
+			<ID>1</ID>
+      </Employee>
+      <Employee>
+            <Empno>1002</Empno>
+            <Ename>Win</Ename>
+            <Sal>2600</Sal>
+            <Deptno>20</Deptno>
+			<ID>22</ID> <!--invalid-->
+      </Employee>
+</root>
+
+<!--
+Test Case Type: Instance invalid test
+Description   : invalid instance key/keyref selection expressions_2
+-->

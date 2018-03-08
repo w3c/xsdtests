@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inii:root xmlns:inii="http://xstest-tns/schema11_D3_3_4_ii01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_ii01
+	d3_3_4ii01.xsd">
+	
+	<eldecMinMaxInclusive>1772</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>1.772e+3</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>1772.e0</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>0.1772e4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>.1772e+4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>1772.0e0</eldecMinMaxInclusive>
+	
+	<eldecMinMaxInclusive>-1771.001</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-1.771001e3</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-1771.001e0</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-0.1771001e+4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-.1771001e4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-1771.001e0</eldecMinMaxInclusive>
+
+	
+	<eldecMinMaxInclusive>-8.9999</eldecMinMaxInclusive>
+
+</inii:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : The elements contian data that is out of bounds with respect to
+			the values specified by (min|max)Inclusive
+-->

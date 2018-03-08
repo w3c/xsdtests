@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_ii01"
+	xmlns:sv="http://xstest-tns/schema11_F4_3_16_ii01">
+	
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : A valid schema for instance invalid tests
+-->
+
+<simpleType name="dTimeType">
+	<restriction base="dateTime"/>
+</simpleType>
+
+<simpleType name="dTimeEnumeration">
+	<restriction base="dateTime">
+		<enumeration value="2001-01-09T12:00:00"/>
+		<enumeration value="2002-02-10T12:00:00Z"/>
+		<enumeration value="2007-11-12T23:00:00-05:00"/>
+		<enumeration value="2004-12-13T00:00:00+09:00"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeTypeProhibited">
+	<restriction base="dateTime">
+		<explicitTimezone value='prohibited'/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeTypeRequired">
+	<restriction base="dateTime">
+		<explicitTimezone value='required'/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeTypeOptional">
+	<restriction base="dateTime">
+		<explicitTimezone value='optional'/>
+	</restriction>
+</simpleType>
+
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elDTimeType" type="sv:dTimeType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elDTimeEnum" type="sv:dTimeEnumeration" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elDTimeProhibited" type="sv:dTimeTypeProhibited" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elDTimeRequired" type="sv:dTimeTypeRequired" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="elDTimeOptional" type="sv:dTimeTypeOptional" minOccurs="0" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_F4_3_16_ii04"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_F4_3_16_ii04
+	d4_3_16ii04.xsd">
+	<eldTimeUnionA>1999-10-12T12:00:00</eldTimeUnionA>
+	<eldTimeUnionB>2003-10-12T12:00:00Z</eldTimeUnionB>
+	<eldTimeUnionB>2003-10-12T12:00:00-5:00</eldTimeUnionB>
+	<eldTimeUnionB>2003-10-12T12:00:00+05:00</eldTimeUnionB>
+	<eldTimeUnionB>2003-10-12T12:00:00-05:00</eldTimeUnionB>
+	<eldTimeUnionB>2004</eldTimeUnionB>
+	<eldTimeUnionC>2005-10-12T12:00:00Z</eldTimeUnionC>
+	<eldTimeUnionC>2006-10-12T12:00:00+5:00</eldTimeUnionC>
+	<eldTimeUnionC>2007-10-12T12:00:00+05:00</eldTimeUnionC>
+	<eldTimeUnionC>2008-10-12T12:00:00-05:00</eldTimeUnionC>
+	<eldTimeUnionC>2009-10-12T12:00:00</eldTimeUnionC>
+	<eldTimeUnionC>12345</eldTimeUnionC>
+	
+</dv:root>
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets explicitionTimezone,
+			used with unions, the 2nd, 3rd, 4th and 5th element are invalid.
+-->

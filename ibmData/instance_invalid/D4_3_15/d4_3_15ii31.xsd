@@ -1,0 +1,30 @@
+<?xml version="1.1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root" type="rootType" />
+	<xs:complexType name="rootType">
+		<xs:sequence>
+			<xs:element name="ele1" type="elementType1" minOccurs="0" maxOccurs="unbounded"/>						
+			<xs:element name="ele2" type="elementType2" minOccurs="0" maxOccurs="unbounded"/>						
+		</xs:sequence>		
+	</xs:complexType>  
+	
+	<xs:complexType name="elementType1">
+		<xs:sequence>			
+			<xs:element name="subElement1" type="rootType" minOccurs="0" maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType> 
+	
+	<xs:complexType name="elementType2">
+		<xs:sequence>			
+			<xs:element name="subElement2" type="rootType" minOccurs="0" maxOccurs="unbounded"/>			
+		</xs:sequence>		
+		<xs:assert test="count(//ele1) eq 1"/>			
+	</xs:complexType>
+	
+</xs:schema>
+
+<!--
+	Test Case Type: valid test (Datatype/facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : inability to navigate outside the subtree, assertion on elements
+-->

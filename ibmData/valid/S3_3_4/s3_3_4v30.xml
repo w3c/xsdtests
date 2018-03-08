@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+		xmlns:b="a"
+        xsi:schemaLocation="a s3_3_4v30.xsd">
+	<list_of_ids_element>u123</list_of_ids_element>	
+	<idref_element>u123</idref_element>
+</root>
+<!-- 
+	Test Case Type: valid test (Structures 3.3.4) 
+	facet Type 	  : ID/IDREF
+	Description   : equality of an atomic value with a singleton list in ID/IDREF
+-->

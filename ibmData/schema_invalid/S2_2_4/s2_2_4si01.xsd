@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<schema xmlns          ="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xstest-tns/IBM3_11V18"
+        xmlns:v18      ="http://xstest-tns/IBM3_11V18">
+
+<simpleType name="myString">
+	<restriction base="string">
+		<minLength value="1"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="myDecimal">
+	<restriction base="decimal">
+		<minInclusive value="0"/>
+	</restriction>
+</simpleType>
+
+<complexType name="typHi">
+	<sequence>
+		<element name="elFirstChild" maxOccurs="unbounded">
+			<complexType>
+				<sequence>
+					<element name="elMyString" maxOccurs="unbounded">
+						<complexType>
+							<attribute name="attMyString" type="v18:myString"/>
+							<attribute name="attMyDecimal" type="v18:myDecimal"/>
+						</complexType>
+					</element>
+				</sequence>
+				<attribute name="attMyTime" type="integer"/>
+			</complexType>
+		</element>
+	</sequence>
+</complexType>		
+
+<complexType name="typRoot">
+	<sequence>
+		<element name="hi1" type="v18:typHi">
+			<key name="One" id="Check1">
+				<selector xpath="*/elMyString"/>
+				<field xpath="@attMyString"/>
+				<field xpath="@attMyDecimal"/>
+			</key>
+			<unique name="Two" id="Check2">
+				<selector xpath="./elFirstChild/elMyString"/>
+				<field xpath="@attMyDecimal"/>
+			</unique>
+			<keyref name="Three" refer="v18:One">
+				<selector xpath=".//elFirstChild/elMyString"/>
+				<field xpath="@attMyString"/>
+				<field xpath="@attMyDecimal"/>
+			</keyref>
+		</element>
+
+<!-- 
+	Tests: 3.11.3.4 - If ref is present, then only id and <annotation> are allowed to appear together with ref.
+-->
+
+		<element name="hi2" type="v18:typHi">
+			<key ref="v18:One">
+				<annotation>
+					<documentation>a</documentation>
+				</annotation>
+				<selector xpath="./a"/>
+			</key>
+			<unique ref="v18:Two" id="q">
+				<field xpath="@b"/>
+			</unique>
+			<keyref ref="v18:Three">
+				<element name="a"/>
+			</keyref>
+		</element>
+	</sequence>
+</complexType>
+<element name="Root" type="v18:typRoot"/>
+</schema>

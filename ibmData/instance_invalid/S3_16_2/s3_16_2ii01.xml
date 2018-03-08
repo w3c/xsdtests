@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/IBMd3_2_4v04"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/IBMd3_2_4v04
+	s3_16_2ii01.xsd">
+
+	<elfltUnionC>-12.5 12.5</elfltUnionC>
+  
+</dv:root>
+<!-- 
+	Test Case Type: Instance invalid test
+	Description   : tests restriction facet in intervening union
+-->

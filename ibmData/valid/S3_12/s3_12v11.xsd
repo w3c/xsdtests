@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns" 
+	xmlns:tns="http://xstest-tns"
+	elementFormDefault="unqualified">
+	
+<!-- 
+Test Case Type: Valid test
+Description   : attribute declarations can now be marked {inheritable}
+-->
+
+<xs:element name="root">
+     <xs:complexType>
+           <xs:sequence>
+                <xs:element name="Meeting" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="beverage" type="xs:anyType">
+                              <xs:alternative test="@end-time &lt;= 10" type="xs:string" />
+                              <xs:alternative test="@end-time > 10" type="xs:integer" />
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="end-time" type="xs:integer" inheritable="true" />
+                    </xs:complexType>
+                </xs:element>
+           </xs:sequence>
+     </xs:complexType>
+</xs:element>
+
+	
+	
+</xs:schema>
+

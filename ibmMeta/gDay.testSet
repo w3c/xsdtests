@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="gDay" 
+  contributor="IBM">
+
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-2/#gDay">gDay</ts:documentation>
+    </ts:annotation>
+
+    <ts:testGroup name="d3_3_14v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>A day is a calendar (or "local time") day in each timezone, including the timezones outside of +12:00 through -11:59 inclusive.</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#gDay"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes"/>
+        <ts:schemaTest name="d3_3_14v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_3_14/d3_3_14v01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_3_14v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_3_14/d3_3_14v01.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+</ts:testSet>

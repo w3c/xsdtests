@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="tns" xmlns:ns="tns" elementFormDefault="unqualified">
+	
+<!-- 
+Test Case Type: Instance invalid test
+Description   : the type alternative is selects an invalid element using constructor functions and comparator operators.
+-->
+
+	<xs:element name="shape">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dimension" maxOccurs="unbounded" type="ns:dimType">
+					<xs:alternative test="xs:float(@length) > xs:float(@width)" type="ns:rectType" />
+					<xs:alternative test="xs:float(@length) = xs:float(@width)" type="ns:squareType" />
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="dimType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="length" type="xs:anySimpleType" />
+				<xs:attribute name="width" type="xs:anySimpleType" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="squareType">
+		<xs:simpleContent>
+			<xs:restriction base="ns:dimType">
+				<xs:enumeration value="square"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="rectType">
+		<xs:simpleContent>
+			<xs:restriction base="ns:dimType">
+				<xs:enumeration value="lrectangle"/>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+
+</xs:schema>
+
+

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<a:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:a="a"
+        xsi:schemaLocation="a s3_4_1v08.xsd">
+ <p>
+  <x>1</x>
+  <asd>asd</asd>
+  <y>2</y>
+  <z>0</z>
+ </p>
+</a:root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : Tests derivation by extension with openContent mode interleave in derived type and suffix in its base type
+-->

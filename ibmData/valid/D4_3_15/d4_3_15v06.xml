@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="d4_3_15v06.xsd"
+	derivedAttr="present" baseAttr="present">
+	<baseEly/>
+</root>
+
+<!-- 
+	Test Case Type: valid test (facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : assertions on a complex type definition, 
+					having complexContent, assertions from both derived and base type must succeed
+-->

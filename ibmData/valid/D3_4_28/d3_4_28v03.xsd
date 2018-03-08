@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_28_v03"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_28_v03">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : Tests the simpleType dateTimeStamp and its facets pattern,
+			used in lists
+-->
+
+<simpleType name="dTimeStampPattern">
+	<restriction base="dateTimeStamp">
+		<pattern value="[2][0][0][0-9][-][0-1][1-2][-][0-2][1-8][T]*.*"/>
+	</restriction>
+</simpleType>
+
+
+<simpleType name="dTimeStampListA">
+	<list itemType="dateTimeStamp"/>
+</simpleType>
+
+<simpleType name="dTimeStampListB">
+	<list>
+		<simpleType>
+			<restriction base="dateTimeStamp"/>
+		</simpleType>	
+	</list>
+</simpleType>
+
+<element name="eldTimeStampListC">
+	<simpleType>
+		<list itemType="sv:dTimeStampPattern">
+			<annotation>
+				<documentation>
+					Tests the simpleType dateTimeStamp used in a lists
+				</documentation>
+			</annotation>
+		</list>
+	</simpleType>
+</element>
+
+<complexType name="dTimeStampRoot">
+	<sequence>
+		<element name="eldTimeStampPattern" type="sv:dTimeStampPattern"/>
+		<element name="eldTimeStampListA" type="sv:dTimeStampListA" minOccurs="1" maxOccurs="unbounded"/>		
+		<element name="eldTimeStampListB" type="sv:dTimeStampListB"/>
+		<element ref="sv:eldTimeStampListC"/>
+	</sequence>
+</complexType>
+
+<element name="root" type="sv:dTimeStampRoot"/>
+
+</schema>

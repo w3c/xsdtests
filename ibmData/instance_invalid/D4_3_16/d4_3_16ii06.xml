@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_F4_3_16_v06"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_F4_3_16_v06
+	d4_3_16ii06.xsd">
+	
+	<eldTimePattern>2000-03-28T12:00:00</eldTimePattern>
+	
+	<eldTimeETRequired>2001-04-28T12:00:00Z</eldTimeETRequired>
+	<eldTimeETRequired>2002-12-28T12:00:00</eldTimeETRequired>
+		
+	
+	<eldTimeETOptional>2003-05-28T12:00:00+02:00</eldTimeETOptional>
+		
+	<eldTimeETProhibited>2005-06-28T12:00:00</eldTimeETProhibited>
+	<eldTimeETProhibited>2005-12-28T12:00:00Z</eldTimeETProhibited>
+	<eldTimeETProhibited>2005-12-28T12:00:00+03:00</eldTimeETProhibited>
+	<eldTimeETProhibited>2005-12-28T12:00:00-03:00</eldTimeETProhibited>
+	
+	
+	<dTimeETOptionalDerReq>2000-07-28T12:00:00</dTimeETOptionalDerReq>	
+	<dTimeETOptionalDerReq>2001-12-28T12:00:00</dTimeETOptionalDerReq>	
+		
+	
+	<dTimeETOptionalDerPro>2003-08-28T12:00:00</dTimeETOptionalDerPro>		
+	<dTimeETOptionalDerPro>2003-12-28T12:00:00Z</dTimeETOptionalDerPro>
+	<dTimeETOptionalDerPro>2003-12-28T12:00:00-06:00</dTimeETOptionalDerPro>
+	<dTimeETOptionalDerPro>2003-12-28T12:00:00+06:00</dTimeETOptionalDerPro>
+	
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4_3_16)
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facet with explicitTimezone 
+					constraint checks in derivations of simpleTypes, all the elements are invalid
+-->

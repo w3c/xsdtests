@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_28_si06"
+	xmlns:si="http://xstest-tns/schema11_D3_4_28_si06">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : It is an error if minExclusive < base.minExclusive
+-->
+
+<simpleType name="dTimeStampMinExclusive">
+	<restriction base="dateTimeStamp">
+		<minExclusive value="2001-01-01T00:00:00+09:00"/>
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeStampMinExclusive_Derived">
+	<restriction base="si:dTimeStampMinExclusive">
+		<minExclusive value="2000-01-01T00:00:00+09:00"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeStampMinExclusive_Derived1">
+	<restriction base="si:dTimeStampMinExclusive">
+		<minInclusive value="2000-01-01T00:00:00+09:00"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeStampMinExclusive_Derived2">
+	<restriction base="si:dTimeStampMinExclusive">
+		<maxInclusive value="2000-01-01T00:00:00+09:00"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeStampMinExclusive_Derived3">
+	<restriction base="si:dTimeStampMinExclusive">
+		<maxExclusive value="2000-01-01T00:00:00+09:00"/> 
+	</restriction>	
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elMinExclusive" type="si:dTimeStampMinExclusive_Derived"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        elementFormDefault="qualified"
+		xmlns:a="a">
+		<!--effect of \c in regular expressions -->
+	
+	<complexType name="Nametest">
+		<sequence>
+			<element name="ele" type="a:Namea" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<simpleType name="Namea">
+		<restriction base="Name">
+			<pattern value="\i\c">
+			</pattern>
+		</restriction>
+    </simpleType>
+	
+	<element name="root" type="a:Nametest"/>
+</schema>
+<!-- 
+Test Case Type: Valid test
+Description   : effect of \c in regular expressions
+-->

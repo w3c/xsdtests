@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_26_ii04"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_26_ii04
+	d3_4_26ii04.xsd">
+	
+
+
+<elyMDMinMaxExclusive>-P2Y</elyMDMinMaxExclusive>
+<elyMDMinMaxExclusive>P42M</elyMDMinMaxExclusive>
+<elyMDMinMaxExclusive>P31Y11M</elyMDMinMaxExclusive>
+
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.26) 
+	Base Type     : yearMonthDuration
+	Description   : Invalid yearMonthDuration Min/Max Exclusive
+-->
+

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="XPathDefaultNSonKeyKeyRefUnique" 
+  contributor="IBM">
+     
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key">
+        Impact of xpathDefaultNamespace locally and globally on key/keyref/unique selection expressions 
+	      </ts:documentation>
+    </ts:annotation>
+     
+    <ts:testGroup name="s3_11_2v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>unique selection expressions  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+    <ts:testGroup name="s3_11_2v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>unique selection expressions 2 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v02.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+  
+    <ts:testGroup name="s3_11_2v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>key selection expressions_1 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v03.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+  
+    <ts:testGroup name="s3_11_2v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>key selection expressions_2 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v04.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+    <ts:testGroup name="s3_11_2v05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>key/keyref selection expressions_1 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2v05s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v05.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2v05i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v05.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+    <ts:testGroup name="s3_11_2v06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>key/keyref selection expressions_2  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2v06s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v06.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2v06i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_11_2/s3_11_2v06.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+  
+
+    <ts:testGroup name="s3_11_2ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid instance unique selection expressions_1 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+    <ts:testGroup name="s3_11_2ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid instance unique selection expressions_2 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii02.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+    <ts:testGroup name="s3_11_2ii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid instance unique selection expressions_3 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii03.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+    <ts:testGroup name="s3_11_2ii04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid instance key selection expressions_1 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2ii04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2ii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii04.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+    <ts:testGroup name="s3_11_2ii05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid instance key selection expressions_2 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2ii05s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii05.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2ii05i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii05.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+    <ts:testGroup name="s3_11_2ii06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid instance key/keyref selection expressions_1 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2ii06s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii06.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2ii06i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii06.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+
+    <ts:testGroup name="s3_11_2ii07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid instance key/keyref selection expressions_2 </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#declare-key"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>         
+        <ts:schemaTest name="s3_11_2ii07s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii07.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_11_2ii07i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_11_2/s3_11_2ii07.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+    
+</ts:testSet>

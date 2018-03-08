@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<dv:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:dv="http://xstest-tns/schema11_S3_4_6"
+        xsi:schemaLocation="http://xstest-tns/schema11_S3_4_6 s3_4_6v05.xsd">
+ <a>1</a>
+ <b>1</b>
+ <b>1</b>
+ <a>1</a>
+</dv:root>
+<!-- 
+	Test Case Type: valid test (Structures 3.4.6) 
+	Base Type     : Restriction of complex types
+	Description   : Tests maxOccurs > 1 for elements within all group
+-->

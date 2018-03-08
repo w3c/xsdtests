@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="UnitsLength" 
+  contributor="IBM">
+     
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-2/#dt-list"> test Units of length for list datatype
+	      </ts:documentation>
+    </ts:annotation>
+ 
+    <ts:testGroup name="d3_3_16v01">
+        <ts:annotation>
+            <ts:documentation> test Units of length for hexBinary datatype.  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#hexBinary"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-ListBounds"/> 
+        <ts:schemaTest name="d3_3_16v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_3_16/d3_3_16v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_3_16v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_3_16/d3_3_16v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>   
+  
+    <ts:testGroup name="d3_3_16ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation> test hexBinary datatype   </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#hexBinary"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-ListBounds"/> 
+        <ts:schemaTest name="d3_3_16ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_3_16/d3_3_16ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_3_16ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_3_16/d3_3_16ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>   
+  
+    <ts:testGroup name="d3_3_16ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation> test Units of length for hexBinary datatype   </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#hexBinary"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-ListBounds"/> 
+        <ts:schemaTest name="d3_3_16ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_3_16/d3_3_16ii02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_3_16ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_3_16/d3_3_16ii02.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>   
+  
+    <ts:testGroup name="d3_3_17v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation> test Units of length for base64Binary datatype.  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#base64Binary"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-ListBounds"/> 
+        <ts:schemaTest name="d3_3_17v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_3_17/d3_3_17v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_3_17v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_3_17/d3_3_17v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d3_3_17ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation> test base64Binary datatype </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#base64Binary"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-ListBounds"/>         
+        <ts:schemaTest name="d3_3_17ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_3_17/d3_3_17ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_3_17ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_3_17/d3_3_17ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>   
+
+    
+    <ts:testGroup name="d2_4_1_2ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation> test Units of length for list datatype    </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#list-datatypes"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-ListBounds"/>        
+        <ts:schemaTest name="d2_4_1_2ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D2_4_1_2/d2_4_1_2ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d2_4_1_2ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D2_4_1_2/d2_4_1_2ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>	 
+    </ts:testGroup>  
+  
+     <ts:testGroup name="d2_4_1_3si01">
+        <ts:annotation>
+            <ts:documentation> Unions with no member types (and thus with empty value space and lexical space) are now explicitly allowed.    </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dt-union"/>   
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes"/> 
+        <ts:schemaTest name="d2_4_1_3si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D2_4_1_3/d2_4_1_3si01.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        	 
+    </ts:testGroup>
+  
+    
+    <ts:testGroup name="d3_1si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation> use of the namespace http://www.w3.org/2001/XMLSchema-datatypes has been deprecated.  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#changes"/> 
+        <ts:schemaTest name="d3_1si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_1/d3_1si01.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        	 
+    </ts:testGroup> 
+  
+</ts:testSet>

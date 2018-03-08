@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_4_28_v08"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_28_v08
+	d3_4_28v08.xsd">
+	
+	<elMaxInclusive_MinInclusive>2002-02-01T00:00:00+09:00</elMaxInclusive_MinInclusive>
+	<elMaxInclusive_MinInclusive>2000-02-01T02:00:00+09:00</elMaxInclusive_MinInclusive>
+
+	<elMaxInclusive_MinExclusive>2002-02-01T00:00:00+09:00</elMaxInclusive_MinExclusive>
+	<elMaxInclusive_MinExclusive>2000-02-01T00:00:01+09:00</elMaxInclusive_MinExclusive>
+
+	<elMaxInclusive_MaxInclusive>2002-01-01T00:00:00+09:00</elMaxInclusive_MaxInclusive>	
+	<elMaxInclusive_MaxInclusive>1002-02-01T00:00:00+09:00</elMaxInclusive_MaxInclusive>	
+		
+	<elMaxInclusive_MaxExclusive>2002-01-01T00:00:00+09:00</elMaxInclusive_MaxExclusive>	
+	<elMaxInclusive_MaxExclusive>2002-01-31T23:59:58+09:00</elMaxInclusive_MaxExclusive>
+	
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : Tests the simpleType dateTimeStamp and its facets with (min|max) (Inclusive|Exclusive) 
+			constraint checks in derivations of simpleTypes
+-->

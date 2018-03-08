@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+	
+<!--
+Test Case Type: Valid test
+Description   : unique selection expressions 2
+-->
+	
+	<complexType name="numtype">
+	 <simpleContent>
+		<extension base="integer">
+		<attribute name="id_1" type="integer"/>
+		<attribute name="id_2" type="string"/>
+		</extension>
+	 </simpleContent>	
+	</complexType>
+	
+
+	
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="Number" type="a:numtype" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+		<unique name="uniqueNum">
+		<selector xpath="a:Number"/>
+		<field xpath="@id_1"/>
+		<field xpath="@id_2"/>
+		</unique>
+    </element>
+	
+	
+
+	
+
+
+</schema>
+
+

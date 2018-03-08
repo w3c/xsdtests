@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_27_si06"
+	xmlns:si="http://xstest-tns/schema11_D3_4_27_si06">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.4.27) 
+	Base Type     : dayTimeDuration
+	Description   : The value of minExclusive in base type is greater than the values of 
+			minInclusive, minExclusive, maxInclusive, maxExclusive in the base type
+-->
+
+
+<simpleType name="durMinExclusive">
+	<restriction  base="yearMonthDuration">
+		<minExclusive value="P1DT5H"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="durMinExclusive_MinExclusive">
+	<restriction  base="si:durMinExclusive">
+		<minExclusive value="P1DT3H"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="durMinExclusive_MinInclusive">
+	<restriction  base="si:durMinExclusive">
+		<minInclusive value="P1DT3H"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="durMinExclusive_MaxInclusive">
+	<restriction  base="si:durMinExclusive">
+		<maxInclusive value="P1DT3H"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="durMinExclusive_MaxExclusive">
+	<restriction  base="si:durMinExclusive">
+		<maxExclusive value="P1DT3H"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elMinExclusive_MinExclusive" type="si:durMinExclusive_MinExclusive"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

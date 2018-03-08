@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+	
+<!--
+Test Case Type: Valid test
+Description   : key selection expressions_1
+-->
+	
+	<complexType name="keyname">
+        <sequence>
+            <element name="Numid" type="integer" />
+            <element name="Numname" type="string" />
+        </sequence>
+    </complexType>
+	
+	<element name="root">
+		<complexType>
+			<sequence>
+				<element name="Number" type="a:keyname" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+		<key name="keyinname">
+		<selector xpath=".//a:Number"/>
+		<field xpath="a:Numid"/>
+		<field xpath="a:Numname"/>
+		</key>
+    </element>
+
+
+</schema>
+
+

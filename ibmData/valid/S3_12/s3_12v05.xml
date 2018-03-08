@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<tns:root xmlns:tns="http://xstest-tns" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	        xsi:schemaLocation="http://xstest-tns s3_12v05.xsd">
+
+	<person numberOfChildren="2">
+	   <child name="C1" DOB="2007-10-10"/>
+	   <child name="C2" DOB="2003-01-02"/>
+	</person>
+
+	<person numberOfChildren="6">
+	   <child name="C1" DOB="01/01/2000"/>
+	</person>
+
+	<person numberOfChildren="0"/>
+	
+</tns:root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : Basic type alternatives.
+          Selection of the alternative type is dertermined by evaluating a path And expression with a comparator operator with an attribute's value
+-->

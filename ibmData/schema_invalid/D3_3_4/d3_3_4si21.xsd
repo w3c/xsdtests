@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_3_4_si13"
+	xmlns:si="http://xstest-tns/schema11_D3_3_4_si13">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : The enumeration contains values that are not of the base type
+-->
+
+<simpleType name="decEnumeration">
+	<restriction base="precisionDecimal">
+		<enumeration value="5"/>
+		<enumeration value="strings"/>
+		<enumeration value="10.99"/>
+	</restriction>	
+</simpleType>
+
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elEnumeration" type="si:decEnumeration"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<xs:element name="root" type="num" />
+  
+	<xs:simpleType name="num">
+		<xs:restriction base="xs:string">	  
+			<xs:assertion test="not(ends-with($value, '1')) and (string-length($value) le 10)" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
+<!-- 
+	Test Case Type: valid test (facet section 4.3.15) 	
+	facet Type 	  : Assertions
+	Description   : assertions on a simple type definition					
+-->

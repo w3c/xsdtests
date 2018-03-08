@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inii:root xmlns:inii="http://xstest-tns/schema11_D3_4_28_ii01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_4_28_ii01
+	d3_4_28ii01.xsd">
+	
+	<eldTimeStampType>2001-02-01T00:00:00+09:00</eldTimeStampType>
+	<eldTimeStampType>2002-02-01T00:00:00Z</eldTimeStampType>
+	<eldTimeStampType>2003-02-01T00:00:00-09:00</eldTimeStampType>
+	<eldTimeStampType>2004-02-01T00:00:00.999-09:00</eldTimeStampType>
+	<eldTimeStampType>&#x660;&#x661;&#x663;</eldTimeStampType>
+	<eldTimeStampType>2004-02-01T00:00:00.999</eldTimeStampType>
+</inii:root>
+
+<!-- 
+	Test Case Type: Instance Invalid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : Tests the simpleType dateTimeStamp and its facets and its use in elements
+-->

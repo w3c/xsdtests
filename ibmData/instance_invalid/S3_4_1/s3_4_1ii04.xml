@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<a:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:a="a"
+        xsi:schemaLocation="a s3_4_1ii04.xsd">
+ <a:p>
+  <a:a>1</a:a>	<!-- QName a:a is not allowed for wildcard -->
+ </a:p>
+</a:root>
+
+<!-- 
+Test Case Type: Instance invalid test
+Description   : Tests wildcard in opencontent with restrictions (notQName)
+-->

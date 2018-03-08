@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root xsi:noNamespaceSchemaLocation="S3_3_4v16.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	list_of_ids_attr="b1 b2 b3">
+	<idref_element>b2
+	</idref_element>
+</root>
+<!-- 
+	Test Case Type: valid test (Structures 3.3.4)
+	facet Type 	  : ID/IDREF
+	Description   : lists of ID, simpleContent
+-->

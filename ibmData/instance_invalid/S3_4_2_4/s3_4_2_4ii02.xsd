@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://xstest-tns/schema11_S3_4_2_4"
+        elementFormDefault="qualified"
+        attributeFormDefault="qualified"
+        xmlns:tns="http://xstest-tns/schema11_S3_4_2_4"
+        defaultAttributes="tns:defaultAttrGroup">
+
+<attributeGroup name="defaultAttrGroup">
+ <attribute name="defaultAttr" type="boolean" use="required"/>
+</attributeGroup>
+
+<element name="root">    
+ <complexType defaultAttributesApply="false">
+  <sequence>
+
+   <element name="e1">
+    <complexType defaultAttributesApply="false">    
+    </complexType>
+   </element>
+
+  </sequence>
+ </complexType>
+ </element>
+</schema>
+
+
+<!-- 
+	Test Case Type: instance invalid test (Structures 3.4.2.4) 
+	Base Type     : attributeGroup
+	Description   : test defaultAttributesApply = false
+-->

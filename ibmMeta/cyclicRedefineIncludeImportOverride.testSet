@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="CyclicDependencies_Redefine_Include_Import_Override" 
+  contributor="IBM">
+     
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#modify-schema">CyclicRedefineIncludeImportOverride</ts:documentation>
+    </ts:annotation>
+  
+    <ts:testGroup name="s4_2_4si01">
+        <ts:annotation>
+            <ts:documentation>invalid schema for cyclic dependencies redefine</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#modify-schema"/>     
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-CyclicDependenciesRedefineIncludeImportOverride"/>        
+        <ts:schemaTest name="s4_2_4si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S4_2_4/s4_2_4si01.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+  
+    <ts:testGroup name="s4_2_4si01b">
+        <ts:annotation>
+            <ts:documentation>invalid schema for cyclic dependencies redefine</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#modify-schema"/>     
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-CyclicDependenciesRedefineIncludeImportOverride"/>        
+        <ts:schemaTest name="s4_2_4si01bs">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S4_2_4/s4_2_4si01b.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup> 
+  
+    <ts:testGroup name="s4_2_4si02">
+        <ts:annotation>
+            <ts:documentation>invalid schema for cyclic dependencies redefine_2</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#modify-schema"/>     
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-CyclicDependenciesRedefineIncludeImportOverride"/>        
+        <ts:schemaTest name="s4_2_4si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S4_2_4/s4_2_4si02.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+  
+    <ts:testGroup name="s4_2_4si02b">
+        <ts:annotation>
+            <ts:documentation>invalid schema for cyclic dependencies redefine_2</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#modify-schema"/>     
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-CyclicDependenciesRedefineIncludeImportOverride"/>        
+        <ts:schemaTest name="s4_2_4si02bs">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S4_2_4/s4_2_4si02b.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>   
+  
+    <ts:testGroup name="s4_2_4si02c" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid schema for cyclic dependencies redefine_2</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#modify-schema"/>     
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-CyclicDependenciesRedefineIncludeImportOverride"/>        
+        <ts:schemaTest name="s4_2_4si02cs">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S4_2_4/s4_2_4si02c.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>   
+  
+</ts:testSet>

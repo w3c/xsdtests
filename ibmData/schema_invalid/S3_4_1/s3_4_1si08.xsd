@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+	
+<!-- 
+Test Case Type: Schema invalid test
+Description   : The content type of a derived type and that of its base must both be mixed 
+or both be element-only. Type '#AnonType_root' is mixed, but its base type is not. 
+-->	
+ <element name="root">
+	<complexType mixed="true">
+     <complexContent>
+       <extension base="a:bele">
+        <sequence>
+          <element name="element2" minOccurs="0"/>
+        </sequence>
+       </extension>
+     </complexContent>
+	</complexType>
+ </element>
+	
+   <complexType name="bele"> <!-- must be mixed too-->
+	    <sequence>
+          <element name="element1" type="string" minOccurs="0"/>
+        </sequence>
+   </complexType>
+	 
+</schema>

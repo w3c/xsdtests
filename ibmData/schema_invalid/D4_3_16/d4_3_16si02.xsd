@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_F4_3_16_si02"
+	xmlns:si="http://xstest-tns/schema11_F4_3_16_si02">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : It is an error to specify more than one explicitTimezone for the same type definition
+-->
+
+<simpleType name="dTimeOP">
+	<restriction base="dateTime">
+		<explicitTimezone value="optional"/>
+		<explicitTimezone value="prohibited"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeRP">
+	<restriction base="dateTime">
+		<explicitTimezone value="required"/>
+		<explicitTimezone value="prohibited"/> 
+	</restriction>	
+</simpleType>
+
+
+<simpleType name="dTimOR">
+	<restriction base="dateTime">
+		<explicitTimezone value="optional"/>
+		<explicitTimezone value="required"/> 
+	</restriction>	
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="eldTimeOP" type="si:dTimeOP"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

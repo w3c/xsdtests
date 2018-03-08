@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="dateTimeStamp" 
+  contributor="IBM">
+     
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp">dateTimeStamp</ts:documentation>
+    </ts:annotation>
+ 
+ 
+    <ts:testGroup name="d3_4_28v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTimeStamp and its facets and its use in elements </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+
+    <ts:testGroup name="d3_4_28v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType decimal and its facets and its use in attributes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v02.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d3_4_28v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTimeStamp and its facets pattern, used in lists</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v03.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d3_4_28v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType decimal and its facets, used with unions </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v04.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d3_4_28v05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType decimal and its facets</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28v05s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v05.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28v05i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v05.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d3_4_28v06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTimeStamp and its facets with (min|max) (Inclusive|Exclusive) constraint checks in derivations of simpleTypes</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28v06s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v06.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28v06i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v06.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d3_4_28v07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType decimal and its facets with (min|max) (Inclusive|Exclusive) constraint checks in derivations of simpleTypes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28v07s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v07.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28v07i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v07.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d3_4_28v08" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTimeStamp and its facets with (min|max) (Inclusive|Exclusive) constraint checks in derivations of simpleTypes</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28v08s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v08.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28v08i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v08.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+     <ts:testGroup name="d3_4_28v09" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dateTimeStamp and its facets with (min|max) (Inclusive|Exclusive) constraint checks in derivations of simpleTypes  </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28v09s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v09.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28v09i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v09.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+   
+    <ts:testGroup name="d3_4_28v10" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Additional dateTimeStamp tests, for attributes  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28v10s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v10.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28v10i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_28/d3_4_28v10.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup> 
+  
+ 
+     
+    <ts:testGroup name="d3_4_28ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>invalid dateTimeStamp values;Invalid enumeration values</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_28/d3_4_28ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_28ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_28/d3_4_28ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+	      <ts:instanceTest name="d3_4_28ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_28/d3_4_28ii02.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+	      <ts:instanceTest name="d3_4_28ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_28/d3_4_28ii03.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+        <ts:instanceTest name="d3_4_28ii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_28/d3_4_28ii04.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+        <ts:instanceTest name="d3_4_28ii05i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_28/d3_4_28ii05.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+
+    </ts:testGroup>
+  
+
+    <ts:testGroup name="d3_4_28si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid decimal values for (min|max) (Inclusive|Exclusive) </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si01.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+      <ts:testGroup name="d3_4_28si02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>error: when minInclusive &gt; maxInclusive and minExclusive &gt; maxExclusive </ts:documentation>
+        </ts:annotation>
+          <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+          <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si02.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_28si03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>error: when minInclusive &gt; maxExclusive and minExclusive &gt; maxInclusive </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si03s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si03.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup> 
+  
+     <ts:testGroup name="d3_4_28si04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>It is an error to specify both minInclusive and minExclusive or maxExclusive and maxInclusive for the same type definition </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si04s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si04.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_28si05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>It is an error if minInclusive less than base.minInclusive </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si05s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si05.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_28si06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>It is an error if minExclusive less than base.minExclusive  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si06s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si06.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d3_4_28si07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>It is an error if maxInclusive &gt; base.maxInclusive </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si07s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si07.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_28si08" version="1.1">
+        <ts:annotation>
+            <ts:documentation>It is an error if maxInclusive &gt; base.maxInclusive) </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si08s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si08.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_28si09" version="1.1">
+        <ts:annotation>
+            <ts:documentation>It is an error if maxExclusive &gt; base.maxExclusive </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si09s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si09.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d3_4_28si10" version="1.1">
+        <ts:annotation>
+            <ts:documentation>It is an error if maxInclusive = base.maxExclusive or minInclusive = base.minExclusive</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si10s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si10.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+ 
+    <ts:testGroup name="d3_4_28si11" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of explicitTimezone for dateTimeStamp can only be required  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si11s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si11.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_28si12" version="1.1">
+        <ts:annotation>
+            <ts:documentation>This test case tests the fixed attribute on facets </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si12s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si12.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup> 
+  
+    <ts:testGroup name="d3_4_28si13" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The enumeration contains values that are not of the base type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si13s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si13.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_28si14" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of whiteSpace for precisionDecimal can only be collapse </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si14s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si14.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_28si15" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The pattern contains an invalid regular expression</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si15s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si15.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup> 
+
+    <ts:testGroup name="d3_4_28si16" version="1.1">
+        <ts:annotation>
+            <ts:documentation>This test case tests the fixed attribute on facets </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si16s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si16.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_28si17" version="1.1">
+        <ts:annotation>
+            <ts:documentation>This test case tests the fixed attribute on facets with multiple derivations  </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTimeStamp"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>        
+        <ts:schemaTest name="d3_4_28si17s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_28/d3_4_28si17.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>  
+  
+</ts:testSet>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a"
+	xmlns:b="b"
+        elementFormDefault="qualified"
+        attributeFormDefault="qualified">
+        
+<!-- 
+Test Case Type: Instance invalid test	
+Description   : Tests notQName on xs:anyAttribute
+-->
+
+<complexType name="t">
+ <sequence>
+
+  <element name="e1">
+   <complexType>
+    <anyAttribute notQName="b:notAllowed a:notAllowed a:notAllowed2" processContents="lax"/>
+   </complexType>
+  </element>
+
+  <element name="e2">
+   <complexType>
+    <anyAttribute notQName="##defined" processContents="lax"/>
+   </complexType>
+  </element>
+
+ </sequence>
+</complexType>
+
+<attribute name="notAllowed" type="integer"/>
+
+<element name="root" type="a:t"/>
+</schema>

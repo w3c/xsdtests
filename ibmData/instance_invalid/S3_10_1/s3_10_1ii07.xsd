@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="a"
+        xmlns:a="a"
+        elementFormDefault="qualified">
+        
+<!-- 
+	Tests namespace attribute in wildcard
+-->
+
+<complexType name="t">
+ <sequence>
+  <any namespace="w x z" processContents="lax"/>
+ </sequence>
+</complexType>
+
+<element name="root" type="a:t"/>
+</schema>

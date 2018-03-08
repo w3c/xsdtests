@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_28_v09"
+	xmlns:sv="http://xstest-tns/schema11_D3_4_28_v09">
+	
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.4.28) 
+	Base Type     : dateTimeStamp
+	Description   : Tests the simpleType dateTimeStamp and its facets with (min|max) (Inclusive|Exclusive) 
+			constraint checks in derivations of simpleTypes
+-->
+
+<simpleType name="dTimeStampPattern">
+	<restriction  base="dateTimeStamp">
+		<pattern value="[1-2][0][0][0-9][-][0-1][1-2][-][0-3][1-8][T]*.*"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampPatternMaxExclusive">
+	<restriction  base="sv:dTimeStampPattern">
+		<maxExclusive value="2002-02-01T00:00:00+09:00" fixed="false"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampMaxExclusive_MinInclusive">
+	<restriction  base="sv:dTimeStampPatternMaxExclusive">
+		<minInclusive value="2000-02-01T00:00:00+09:00" fixed="0"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampMaxExclusive_MinExclusive">
+	<restriction  base="sv:dTimeStampPatternMaxExclusive">
+		<minExclusive value="2000-02-01T00:00:00+09:00" fixed="true"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampMaxExclusive_MaxInclusive">
+	<restriction  base="sv:dTimeStampPatternMaxExclusive">
+		<maxInclusive value="2002-01-31T23:59:59+09:00" fixed="false"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="dTimeStampMaxExclusive_MaxExclusive">
+	<restriction  base="sv:dTimeStampPatternMaxExclusive">
+		<maxExclusive value="2002-02-01T00:00:00+09:00" fixed="1"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elMaxExclusive_MinInclusive" type="sv:dTimeStampMaxExclusive_MinInclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elMaxExclusive_MinExclusive" type="sv:dTimeStampMaxExclusive_MinExclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elMaxExclusive_MaxInclusive" type="sv:dTimeStampMaxExclusive_MaxInclusive" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="elMaxExclusive_MaxExclusive" type="sv:dTimeStampMaxExclusive_MaxExclusive" minOccurs="1" maxOccurs="unbounded"/>			
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

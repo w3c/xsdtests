@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<a:root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:a="a"
+        xsi:schemaLocation="a s3_4_1v06.xsd">
+ <p>
+  <x>1</x>
+  <y>2</y>
+  <z>1</z>
+  <as>km</as>
+ </p>
+</a:root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : Tests openContent in complexType derived by extension
+-->

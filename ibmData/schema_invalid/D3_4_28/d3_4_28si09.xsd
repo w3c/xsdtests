@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_28_si09"
+	xmlns:si="http://xstest-tns/schema11_D3_4_28_si09">
+	
+<!-- 
+	Test Case Type: Schema Invalid test (Datatypes section 3.3.4) 
+	Base Type     : dateTimeStamp
+	Description   : It is an error if maxExclusive > base.maxExclusive
+-->
+
+<simpleType name="dTimeStampMaxExclusive">
+	<restriction base="dateTimeStamp">
+		<maxExclusive value="2002-01-01T00:00:00+09:00"/>
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeStampMaxExclusive_Derived">
+	<restriction base="si:dTimeStampMaxExclusive">
+		<maxExclusive value="2003-01-01T00:00:00+09:00"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeStampMaxExclusive_Derived1">
+	<restriction base="si:dTimeStampMaxExclusive">
+		<minInclusive value="2003-01-01T00:00:00+09:00"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeStampMaxExclusive_Derived2">
+	<restriction base="si:dTimeStampMaxExclusive">
+		<minExclusive value="2003-01-01T00:00:00+09:00"/> 
+	</restriction>	
+</simpleType>
+
+<simpleType name="dTimeStampMaxExclusive_Derived3">
+	<restriction base="si:dTimeStampMaxExclusive">
+		<maxInclusive value="2003-01-01T00:00:00+09:00"/> 
+	</restriction>	
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elMaxExclusive" type="si:dTimeStampMaxExclusive_Derived"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

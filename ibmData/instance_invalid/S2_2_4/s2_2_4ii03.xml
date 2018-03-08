@@ -1,0 +1,93 @@
+<?xml version="1.1"?>
+<iv01:root xmlns:xsi         ="http://www.w3.org/2001/XMLSchema-instance"
+                     xmlns:iv01        ="http://xstest-tns/IBM3_11V01"
+                     xsi:schemaLocation="http://xstest-tns/IBM3_11V01
+                                         s2_2_4ii03.xsd">
+
+<!--
+	Tests for duplication on components with keys and uniques
+-->
+
+<iv01:heaterConsumer>
+<unit attr1="false" attr2="true">
+	<internal code="58105">
+		<heater model="PF-900" quantity="10"/>
+		<heater model="C-4000" quantity="120"/>
+		<heater model="PF-1200" quantity="5"/>
+	</internal>
+	<internal code="58102">
+		<heater model="PF-875" quantity="10"/>
+		<heater model="C-2000" quantity="100"/>
+		<heater model="PF-1200" quantity="5"/>
+		<heater model="PF-1000" quantity="2"/>
+	</internal>
+</unit>
+
+<unit attr1="false" attr2="true">
+	<internal code="94089">
+		<heater model="PF-700" quantity="50"/>
+		<heater model="C-2000" quantity="193"/>
+		<heater model="PF-1200" quantity="2"/>
+	</internal>
+	<internal code="95014">
+		<heater model="C-2000" quantity="15"/>
+		<heater model="PF-700" quantity="5"/>
+		<heater model="PF-400" quantity="2"/>
+	</internal>
+</unit>
+
+<iv01:heaters vendor="LAKEWOOD">
+	<heater model="C-2000">central heater, power=2000W</heater>
+	<heater model="C-4000">central heater, power=4000W</heater>
+	<heater model="PF-400">portable heater, power=400W</heater>
+	<heater model="PF-700">portable heater, power=700W</heater>
+	<heater model="PF-875">portable heater, power=875W</heater>
+	<heater model="PF-900">portable heater, power=900W</heater>
+	<heater model="PF-1000">portable heater, power=1000W</heater>
+	<heater model="PF-1200">portable heater, power=1200W</heater>
+</iv01:heaters>
+</iv01:heaterConsumer>
+
+<iv01:heaterConsumer2>
+<unit attr1="true" attr2="true">
+	<internal code="58105">
+		<heater model="PF-900" quantity="10"/>
+		<heater model="C-4000" quantity="120"/>
+		<heater model="PF-1200" quantity="5"/>
+	</internal>
+	<internal code="58102">
+		<heater model="PF-875" quantity="10"/>
+		<heater model="C-2000" quantity="100"/>
+		<heater model="PF-1200" quantity="5"/>
+		<heater model="PF-1000" quantity="2"/>
+	</internal>
+</unit>
+
+<unit attr1="true" attr2="true">
+	<internal code="94089">
+		<heater model="PF-700" quantity="50"/>
+		<heater model="C-2000" quantity="193"/>
+		<heater model="PF-1200" quantity="2"/>
+	</internal>
+	<internal code="95014">
+		<heater model="C-2000" quantity="15"/>
+		<heater model="PF-700" quantity="5"/>
+		<heater model="PF-400" quantity="2"/>
+	</internal>
+</unit>
+
+<iv01:heaters vendor="LAKEWOOD">
+	<heater model="C-2000">central heater, power=2000W</heater>
+	<heater model="C-4000">central heater, power=4000W</heater>
+	<heater model="PF-400">portable heater, power=400W</heater>
+	<heater model="PF-700">portable heater, power=700W</heater>
+	<heater model="PF-875">portable heater, power=875W</heater>
+	<heater model="PF-900">portable heater, power=900W</heater>
+	<heater model="PF-1000">portable heater, power=1000W</heater>
+	<heater model="PF-1200">portable heater, power=1200W</heater>
+</iv01:heaters>
+</iv01:heaterConsumer2>
+
+
+</iv01:root>
+

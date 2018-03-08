@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="a"
+        xsi:schemaLocation="a d3_4_6v03.xsd">		
+	<ele>a</ele>
+	<ele>:</ele>
+	<ele>_</ele>
+	<ele>Z</ele>
+</root>
+
+<!-- 
+Test Case Type: Valid test
+Description   : effect of \i in regular expressions
+-->

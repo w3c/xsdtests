@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<tns:root xmlns:tns="http://xstest-tns" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	        xsi:schemaLocation="http://xstest-tns s3_12v02.xsd">
+
+	<!-- 1st type alternative selected: xs:string -->
+	<title type="text">My News</title>
+
+	<!-- 3rd type alternative selected: xs:integer -->
+	<title type="number">122323</title>
+
+	<!-- 2rd type alternative selected: xs:anyType -->
+	<title type="mixed">D413</title>
+	
+	<!-- default type alternative selected: xs:string -->
+	<title>My News</title>
+
+</tns:root>
+
+<!-- 	
+Test Case Type: Valid test
+Description   : Basic type alternatives.
+          alternative element with a complexType child that is derived from the base element type and no type attribute More that one alternative type is present. One of the alternative types is the default type.
+-->

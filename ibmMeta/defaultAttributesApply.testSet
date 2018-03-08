@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="defaultAttributesApply" 
+  contributor="IBM">
+
+    <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses">defaultAttributesApply tests</ts:documentation>
+    </ts:annotation>
+
+    <ts:testGroup name="s3_4_2_4v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply is absent</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DefaultAttrApply-True"/>
+        <ts:schemaTest name="s3_4_2_4v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_2_4/s3_4_2_4v01.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_2_4/s3_4_2_4v01.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = false</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DefaultAttrApply-False"/>
+        <ts:schemaTest name="s3_4_2_4v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_2_4/s3_4_2_4v02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_2_4/s3_4_2_4v02.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = true</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DefaultAttrApply-True"/>
+        <ts:schemaTest name="s3_4_2_4v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_2_4/s3_4_2_4v03.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_2_4/s3_4_2_4v03.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4v13" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply is absent, and ref attribute in attributeGroup</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DefaultAttrApply-True"/>
+        <ts:schemaTest name="s3_4_2_4v13s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S3_4_2_4/s3_4_2_4v13.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4v13i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S3_4_2_4/s3_4_2_4v13.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = false, across multiple schema documents</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DefaultAttrApply-False"/>
+        <ts:schemaTest name="s3_4_2_4ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii01.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii01b.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii01.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = false</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DefaultAttrApply-False"/>
+        <ts:schemaTest name="s3_4_2_4ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii02.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii02.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4ii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = false and redefined as absent</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-Redefine"/>
+        <ts:schemaTest name="s3_4_2_4ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii03.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii03b.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii03.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4ii05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = false and redefined as true</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-Redefine"/>
+        <ts:schemaTest name="s3_4_2_4ii05s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii05.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii05b.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4ii05i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii05.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4ii06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = true and redefined as false</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-Redefine"/>
+        <ts:schemaTest name="s3_4_2_4ii06s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii06.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii06b.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4ii06i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii06.xml"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2011-07-29" status="accepted">
+              <ts:annotation>
+                    <ts:documentation>
+                        Changed the status to "valid" in response to bug #12129
+                    </ts:documentation>
+              </ts:annotation>
+            </ts:current>
+            <ts:prior date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4ii07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = false and redefined as absent</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-Redefine"/>
+        <ts:schemaTest name="s3_4_2_4ii07s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii07.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii07b.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4ii07i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii07.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4ii08" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = false and override as absent</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-Override"/>
+        <ts:schemaTest name="s3_4_2_4ii08s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii08.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii08b.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4ii08i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii08.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4ii09" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = false/true/absent across multiple schema documents</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DifferentAcrossSchemaDocs"/>
+        <ts:schemaTest name="s3_4_2_4ii09s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii09.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii09b.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4ii09i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii09.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4ii10" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply = false and override as false</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-Override"/>
+        <ts:schemaTest name="s3_4_2_4ii10s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii10.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii10b.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4ii10i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii10.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4ii11" version="1.1">
+        <ts:annotation>
+            <ts:documentation>test defaultAttributesApply is absent, and ref attribute in attributeGroup</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DifferentAcrossSchemaDocs"/>
+        <ts:schemaTest name="s3_4_2_4ii11s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii11.xsd"/>
+            <ts:expected validity="valid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        <ts:instanceTest name="s3_4_2_4ii11i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii11.xml"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:instanceTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Test defaultAttributesApply is absent and the attribute group defined by defaultAttributes does not exist</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DefaultAttrApply-True"/>
+        <ts:schemaTest name="s3_4_2_4si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_2_4/s3_4_2_4si01.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4si02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Test defaultAttributesApply=true and the attribute group defined by defaultAttributes exists and results in a duplicate attribute
+          definition</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DefaultAttrApply-True"/>
+        <ts:schemaTest name="s3_4_2_4si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_2_4/s3_4_2_4si02.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+    </ts:testGroup>
+
+    <ts:testGroup name="s3_4_2_4si03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Test defaultAttributesApply is absent and the attribute group defined by defaultAttributes which exists. This references another attributeGroup which references the defaultAttributes attributeGroup resulting in a circular definition</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#dcl.ctd.attuses"/>
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-DefaultAttrApply-True"/>
+        <ts:schemaTest name="s3_4_2_4si03s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/S3_4_2_4/s3_4_2_4si03.xsd"/>
+            <ts:expected validity="invalid"/>
+            <ts:current date="2010-12-01" status="accepted"/>
+        </ts:schemaTest>
+     </ts:testGroup>
+
+</ts:testSet>

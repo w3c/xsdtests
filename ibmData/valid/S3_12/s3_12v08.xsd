@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="tns" xmlns:ns="tns" elementFormDefault="unqualified">
+<!-- 
+Test Case Type: Valid test
+Description   : Basic type alternatives.
+          Selection of the alternative type is dertermined by evaluating an And operation on the presence of attributes in an element 
+-->
+	<xs:element name="root">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="child" maxOccurs="unbounded" type="ns:childType">
+					<xs:alternative test="@type1 and @type2" type="ns:childType" />
+					<xs:alternative test="@type1" type="ns:derivedType1" />
+					<xs:alternative test="@type2" type="ns:derivedType2" />
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="childType" mixed="true">
+		<xs:attribute name="type1" type="xs:boolean" />
+		<xs:attribute name="type2" type="xs:boolean" />
+	</xs:complexType>
+
+	<xs:complexType name="derivedType1">
+		<xs:simpleContent>
+			<xs:restriction base="ns:childType">
+				<xs:simpleType>
+					<xs:restriction base="xs:boolean" />
+				</xs:simpleType>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="derivedType2">
+		<xs:simpleContent>
+			<xs:restriction base="ns:childType">
+				<xs:simpleType>
+					<xs:restriction base="xs:int" />
+				</xs:simpleType>
+			</xs:restriction>
+		</xs:simpleContent>
+	</xs:complexType>
+
+</xs:schema>
+
+

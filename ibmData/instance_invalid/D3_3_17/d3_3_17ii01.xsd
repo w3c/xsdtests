@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11"
+	xmlns:si="http://xstest-tns/schema11">
+	
+
+
+<simpleType name='myRestrictedhex'>
+	<restriction base='base64Binary'>
+		<minLength value="4"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="ele" type="si:myRestrictedhex" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema> 
+<!-- 
+Test Case Type: Instance invalid test
+Description   :  invalid instance for base64Binary datatype.
+--> 

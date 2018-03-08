@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="tns" xmlns:ns="tns" elementFormDefault="unqualified">
+
+<!-- 
+Test Case Type: Valid test
+Description   : Basic type alternatives.
+-->	
+
+	<xs:element name="invoice">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="item" maxOccurs="unbounded" type="ns:itemType">
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="itemType">
+		<xs:sequence>
+			<xs:element name="address" type="ns:addressType" maxOccurs="unbounded">
+			   <xs:alternative test="@country = 'us'" type="ns:usaddressType"/>
+			   <xs:alternative test="@country = 'can'" type="ns:canaddressType"/>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="addressType" mixed="true">
+	    <xs:sequence>
+	       <xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"></xs:any>
+	    </xs:sequence>
+		<xs:attribute name="type">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="billing" />
+					<xs:enumeration value="shipping" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="country" type="ns:countryType"/>
+	</xs:complexType>
+
+	<xs:complexType name="usaddressType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="ns:addressType">
+				<xs:sequence>
+					<xs:element name="state" type="xs:string" />
+					<xs:element name="currency" type="xs:string" />
+					<xs:element name="zip" type="xs:int" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="canaddressType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="ns:addressType">
+				<xs:sequence>
+					<xs:element name="province" type="xs:string" />
+					<xs:element name="currency" type="xs:string" />
+					<xs:element name="postal">
+					  <xs:simpleType>
+					    <xs:restriction base="xs:string">
+					      <xs:pattern value="([A-Z]\d){3}"/>
+					    </xs:restriction>
+					  </xs:simpleType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:simpleType name="countryType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="us" />
+			<xs:enumeration value="can" />
+		</xs:restriction>
+	</xs:simpleType>
+    
+</xs:schema>
+
+

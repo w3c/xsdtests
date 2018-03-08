@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="DefaultFixed" 
+  contributor="IBM">
+     
+   <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-1/#xsi_nil">Default/fixed values for xsi:type and xsi:nil</ts:documentation>
+    </ts:annotation>
+  
+ 
+    <ts:testGroup name="s2_7_1v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>xsi:type must resolve to a type definition</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#xsi_nil"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSITypeMustResolve"/>        
+        <ts:schemaTest name="s2_7_1v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S2_7_1/s2_7_1v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_7_1v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S2_7_1/s2_7_1v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+ 
+    <ts:testGroup name="s2_7_1ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>xsi:type must resolve to a type definition </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#xsi_type"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSITypeMustResolve"/>        
+        <ts:schemaTest name="s2_7_1ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S2_7_1/s2_7_1ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_7_1ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S2_7_1/s2_7_1ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>  
+  
+    <ts:testGroup name="s2_7_1ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>When an xsi:type attribute appears on an element, and has a QName as its value,
+ but the QName does not resolve to a known type definition, processors are now 
+ required to "fall back" to lax validation, using the declared {type definition}  
+ of the governing element declaration as the governing type definition. </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#xsi_type"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSITypeMustResolve"/>        
+        <ts:schemaTest name="s2_7_1ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S2_7_1/s2_7_1ii02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_7_1ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S2_7_1/s2_7_1ii02.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>  
+  
+     
+     <ts:testGroup name="s2_7_2v01">
+        <ts:annotation>
+            <ts:documentation>Structures introduces a mechanism for signaling that an element 
+		must be accepted as 'valid'  when it has no content despite a content type which 
+		does not require or even necessarily allow empty content. An element can be 'valid'  
+		without content if it has the attribute xsi:nil  with the value true. An element 
+		so labeled must  be empty, but can carry attributes if permitted by the corresponding 
+		complex type. </ts:documentation>
+        </ts:annotation>
+         <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#xsi_nil"/>   
+         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSIDefault"/>        
+        <ts:schemaTest name="s2_7_2v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/S2_7_2/s2_7_2v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_7_2v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/S2_7_2/s2_7_2v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+  
+    <ts:testGroup name="s2_7_2ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>default values for xsi:nil</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#xsi_nil"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSIDefault"/>        
+        <ts:schemaTest name="s2_7_2ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S2_7_2/s2_7_2ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="s2_7_2ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/S2_7_2/s2_7_2ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+  
+  
+</ts:testSet>

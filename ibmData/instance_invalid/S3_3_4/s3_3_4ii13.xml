@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root xsi:noNamespaceSchemaLocation="S3_3_4ii13.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	idref_attr="b2_">b1 b2 b3</root>
+	<!-- 
+	Test Case Type: instance invalid test (Structures 3.3.4)
+	facet Type 	  : ID/IDREF
+	Description   : lists of ID, simpleContent, invalid idref value on attribute
+-->

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://xstest-tns/schema11_D3_4_26_v06"
+	xmlns:si="http://xstest-tns/schema11_D3_4_26_v06">
+	
+<!-- 
+	Test Case Type: Valid test (Datatypes section 3.4.26) 
+	Base Type     : yearMonthDuration
+	Description   : Pattern is a valid facet for yearMonthDuration
+-->
+
+
+<simpleType name="durMinLength">
+	<restriction  base="yearMonthDuration">
+		<pattern value="P\d{4}Y\d{2}M\d{2}D"/>
+	</restriction>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="elDuration" type="yearMonthDuration" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  

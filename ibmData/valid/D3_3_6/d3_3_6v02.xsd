@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="a"
+	xmlns:a="a"
+	elementFormDefault="qualified">
+	
+<!-- 
+	Test Case Type: Valid (Datatypes section 3.3.6) 
+	Base Type     : double
+	Description   : lexical representation +INF for double
+-->	
+
+<simpleType name="num1">
+	<restriction base="double">
+		<enumeration value="+INF"/>
+		<enumeration value="1.1"/>
+	</restriction>
+</simpleType>
+
+<simpleType name="num2">
+	<restriction base="double"/>
+</simpleType>
+
+<element name="root">
+	<complexType>
+		<sequence>
+			<element name="Number1" type="a:num1" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="Number2" type="a:num2" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</element>    
+
+</schema>  
+
+

@@ -1,0 +1,21 @@
+<!-- demonstrates assertions on schema "simple type" definitions, with inheritance relationship. -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ 
+  <!-- while validating an element, all asserts of it's schema type and of all base types
+       must be evaluated. -->
+  <xs:element name="message" type="derived" />
+ 
+  <xs:simpleType name="base">
+     <xs:restriction base="xs:string">
+        <xs:maxLength value="25"/>
+        <xs:assertion test="ends-with($value, 'xyz')"/>
+     </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="derived">
+     <xs:restriction base="base">
+        <xs:assertion test="string-length($value) gt 3 "/>
+     </xs:restriction>
+  </xs:simpleType>
+ 
+</xs:schema> 

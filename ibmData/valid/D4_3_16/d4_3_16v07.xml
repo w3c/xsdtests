@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_F4_3_16_v07"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_F4_3_16_v07
+	d4_3_16v07.xsd">
+	
+	<eldTimeETzoneOptionalFDerivedOptional>2000-01-28T12:00:00</eldTimeETzoneOptionalFDerivedOptional>
+	<eldTimeETzoneOptionalFDerivedOptional>2001-01-28T12:00:00Z</eldTimeETzoneOptionalFDerivedOptional>
+	<eldTimeETzoneOptionalFDerivedOptional>2002-01-28T12:00:00-05:00</eldTimeETzoneOptionalFDerivedOptional>
+	<eldTimeETzoneOptionalFDerivedOptional>2003-01-28T12:00:00+09:00</eldTimeETzoneOptionalFDerivedOptional>
+		
+	
+	<eldTimeETzoneOptionalFDerivedRequired>2004-01-28T12:00:00Z</eldTimeETzoneOptionalFDerivedRequired>
+	<eldTimeETzoneOptionalFDerivedRequired>2005-01-28T12:00:00+10:00</eldTimeETzoneOptionalFDerivedRequired>
+	<eldTimeETzoneOptionalFDerivedRequired>2006-01-28T12:00:00-10:00</eldTimeETzoneOptionalFDerivedRequired>
+	
+	
+	
+	<eldTimeETzoneOptionalFDerivedProhibited>2007-01-28T12:00:00</eldTimeETzoneOptionalFDerivedProhibited>
+	
+	
+	<eldTimeETzoneOptionalTDerivedOptional>2008-01-28T12:00:00</eldTimeETzoneOptionalTDerivedOptional>
+	<eldTimeETzoneOptionalTDerivedOptional>2009-01-28T12:00:00Z</eldTimeETzoneOptionalTDerivedOptional>
+	<eldTimeETzoneOptionalTDerivedOptional>2009-01-28T12:00:00-11:00</eldTimeETzoneOptionalTDerivedOptional>
+	<eldTimeETzoneOptionalTDerivedOptional>2009-01-28T12:00:00+11:00</eldTimeETzoneOptionalTDerivedOptional>
+
+	
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 4.3.16) 
+	Base Type     : dateTime
+	Description   : Tests the simpleType dateTime and its facets with explicitTimezone
+			constraint checks in derivations of simpleTypes
+-->

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ts:testSet
+  xmlns:ts="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+  name="dayTimeDuration" 
+  contributor="IBM">
+     
+   <ts:annotation>
+        <ts:documentation xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration">dayTimeDuration.</ts:documentation>
+    </ts:annotation>
+     
+    <ts:testGroup name="d3_4_27v01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dayTimeDuration and its facets</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27v01s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_27/d3_4_27v01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27v01i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_27/d3_4_27v01.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>  
+  
+    <ts:testGroup name="d3_4_27v02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dayTimeDuration and its facets and its use in attributes</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27v02s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_27/d3_4_27v02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27v02i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_27/d3_4_27v02.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>  
+
+    <ts:testGroup name="d3_4_27v03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests dayTimeDuration used in unions</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27v03s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_27/d3_4_27v03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27v03i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_27/d3_4_27v03.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>  
+
+    <ts:testGroup name="d3_4_27v04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests the simpleType dayTimeDuration and its facets with (min|max) (Inclusive|Exclusive) constraint checks in derivations of simpleTypes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27v04s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_27/d3_4_27v04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27v04i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_27/d3_4_27v04.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>  
+
+    <ts:testGroup name="d3_4_27v05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Additional tests for dayTimeDuration and its facets with (min|max) (Inclusive|Exclusive) constraint checks in derivations of simpleTypes</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27v05s">
+            <ts:schemaDocument xlink:href="../ibmData/valid/D3_4_27/d3_4_27v05.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27v05i">
+            <ts:instanceDocument xlink:href="../ibmData/valid/D3_4_27/d3_4_27v05.xml"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>  
+
+  
+   <ts:testGroup name="d3_4_27ii01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid dayTimeDuration values </ts:documentation>
+        </ts:annotation>
+       <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+       <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27ii01s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii01.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27ii01i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii01.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+ 
+	 
+    <ts:testGroup name="d3_4_27ii02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid dayTimeDuration enumeration values</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27ii02s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii02.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27ii02i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii02.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+ 
+ 	 
+    <ts:testGroup name="d3_4_27ii03" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid dayTimeDuration Min/Max Inclusive</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27ii03s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii03.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27ii03i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii03.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+ 
+ 
+ 	 
+    <ts:testGroup name="d3_4_27ii04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid dayTimeDuration Min/Max Exclusive</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27ii04s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii04.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27ii04i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii04.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+ 
+    <ts:testGroup name="d3_4_27ii05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid values of dayTimeDuration and invalid instance of its facets used in attributes </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27ii05s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii05.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27ii05i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii05.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+ 	 
+    <ts:testGroup name="d3_4_27ii06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid dayTimeDuration values used in unions</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27ii06s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii06.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27ii06i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii06.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+ 	 
+    <ts:testGroup name="d3_4_27ii07" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Invalid dayTimeDuration values used with (min|max) (Inclusive|Exclusive) constraint checks in derivations of simpleTypes</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27ii07s">
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii07.xsd"/>
+            <ts:expected validity="valid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        <ts:instanceTest name="d3_4_27ii07i">
+            <ts:instanceDocument xlink:href="../ibmData/instance_invalid/D3_4_27/d3_4_27ii07.xml"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:instanceTest>
+    </ts:testGroup>
+ 
+ 	 
+    <ts:testGroup name="d3_4_27si01" version="1.1">
+        <ts:annotation>
+            <ts:documentation>length is an invalid facet for dayTimeDuration</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si01s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si01.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+ 
+    <ts:testGroup name="d3_4_27si02" version="1.1">
+        <ts:annotation>
+            <ts:documentation>(min|max)? (Inclusive|Exclusive) are not of the base type specification</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si02s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si02.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+ 	 
+    <ts:testGroup name="d3_4_27si03" version="1.1">
+        <ts:annotation>
+            <ts:documentation> min(Inclusive|Exclusive) cannot be greater max(Inclusive|Exclusive)</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si03s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si03.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+ 
+    <ts:testGroup name="d3_4_27si04" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Both min(Inclusive|Exclusive) or max(Inclusive|Exclusive) cannot be specified for the same simpleType</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si04s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si04.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+ 	 
+    <ts:testGroup name="d3_4_27si05" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of minInclusive in base type is greater than the values of minInclusive, minExclusive, maxInclusive, maxExclusive in the base type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si05s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si05.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+ 
+    <ts:testGroup name="d3_4_27si06" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of minExclusive in base type is greater than the values of minInclusive, minExclusive, maxInclusive, maxExclusive in the base type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si06s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si06.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+ 	 
+    <ts:testGroup name="d3_4_27si07" version="1.1">
+        <ts:annotation>
+            <ts:documentation> The value of maxInclusive in base type is lesser than the values of minInclusive, minExclusive, maxInclusive, maxExclusive in the base type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si07s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si07.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+ 
+    <ts:testGroup name="d3_4_27si08" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of maxExclusive in base type is lesser than the values of minInclusive, minExclusive, maxInclusive, maxExclusive in the base type</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si08s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si08.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+    <ts:testGroup name="d3_4_27si09" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Enumeration values are incorrect dayTimeDuration values </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si09s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si09.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+ 
+    <ts:testGroup name="d3_4_27si10" version="1.1">
+        <ts:annotation>
+            <ts:documentation>The value of whiteSpace facet can only be collapse</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si10s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si10.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+ 	 
+    <ts:testGroup name="d3_4_27si11" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests if fixed=true then the derived type cannot specify a value for the facet other than the base type </ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si11s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si11.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+ 
+    <ts:testGroup name="d3_4_27si12" version="1.1">
+        <ts:annotation>
+            <ts:documentation>Tests negative boundary values and equality. (min)(Inclusive|Exclusive) &gt; (max)(Inclusive|Exclusive)</ts:documentation>
+        </ts:annotation>
+        <ts:documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>   
+        <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>        
+        <ts:schemaTest name="d3_4_27si12s">
+            <ts:schemaDocument xlink:href="../ibmData/schema_invalid/D3_4_27/d3_4_27si12.xsd"/>
+            <ts:expected validity="invalid"/> 
+            <ts:current date="2010-12-01" status="accepted"/> 
+        </ts:schemaTest>
+        
+    </ts:testGroup>
+
+
+</ts:testSet>

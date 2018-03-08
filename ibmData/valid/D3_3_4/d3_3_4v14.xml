@@ -1,0 +1,102 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<dv:root xmlns:dv="http://xstest-tns/schema11_D3_3_4_v01"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xstest-tns/schema11_D3_3_4_v01
+	d3_3_4v14.xsd">
+	
+	<eldecEnumeration>10</eldecEnumeration>
+	<eldecEnumeration>1.0e1</eldecEnumeration>
+	<eldecEnumeration>100e-1</eldecEnumeration>
+	<eldecEnumeration>10.e0</eldecEnumeration>
+	<eldecEnumeration>10.0e0</eldecEnumeration>
+	<eldecEnumeration>10e0</eldecEnumeration> 
+	<eldecEnumeration>.010e3</eldecEnumeration>
+	<eldecEnumeration>0.010e3</eldecEnumeration>
+	<eldecEnumeration>.01e3</eldecEnumeration>
+	<eldecEnumeration>0.01e3</eldecEnumeration>
+	<eldecEnumeration>1.001e3</eldecEnumeration>	
+	<eldecEnumeration>-1230.1211</eldecEnumeration>
+	<eldecEnumeration>101.1e-1</eldecEnumeration>
+	<eldecEnumeration>1.011e1</eldecEnumeration>
+	<eldecEnumeration>.01011e3</eldecEnumeration>
+	
+	<eldecPattern>34509</eldecPattern>
+	
+	<eldecMinMaxInclusive>-1771</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-1.771E3</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-0.1771E4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-.1771E4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-177100E-2</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-177100.E-2</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-1771.0E0</eldecMinMaxInclusive>
+	
+	<eldecMinMaxInclusive>-1.771e3</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-0.1771e4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-.1771e4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-177100e-2</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-177100.e-2</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>-1771.0e0</eldecMinMaxInclusive>
+	
+	<eldecMinMaxInclusive>1771</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>1.771E3</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>0.1771E4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>.1771E4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>177100E-2</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>177100.E-2</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>1771.0E0</eldecMinMaxInclusive>
+	
+	<eldecMinMaxInclusive>1.771e3</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>0.1771e4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>.1771e4</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>177100e-2</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>177100.e-2</eldecMinMaxInclusive>
+	<eldecMinMaxInclusive>1771.0e0</eldecMinMaxInclusive>
+	
+	
+	<eldecMinMaxInclusive>0</eldecMinMaxInclusive>		
+	<eldecMinMaxInclusive>0.0</eldecMinMaxInclusive>		
+	<eldecMinMaxInclusive>-0</eldecMinMaxInclusive>		
+	<eldecMinMaxInclusive>+0.0</eldecMinMaxInclusive>		
+	<eldecMinMaxInclusive>+0</eldecMinMaxInclusive>		
+	<eldecMinMaxInclusive>-0.0</eldecMinMaxInclusive>		
+	
+	<eldecMinMaxExclusive>-999.98</eldecMinMaxExclusive>	
+	<eldecMinMaxExclusive>-9.9998e2</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-99998e-2</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-99998.e-2</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-9999.8e-1</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-0.99998e3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-.99998e3</eldecMinMaxExclusive>
+	
+	<eldecMinMaxExclusive>-9.9998E2</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-99998E-2</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-99998.E-2</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-9999.8E-1</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-0.99998E3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>-.99998E3</eldecMinMaxExclusive>	
+	
+	<eldecMinMaxExclusive>999.998</eldecMinMaxExclusive>	
+	<eldecMinMaxExclusive>9.99998e2</eldecMinMaxExclusive>	
+	<eldecMinMaxExclusive>99999.8e-2</eldecMinMaxExclusive>	
+	<eldecMinMaxExclusive>999998e-3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>999998.e-3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>0.999998e3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>.999998e3</eldecMinMaxExclusive>
+	
+	<eldecMinMaxExclusive>9.99998E2</eldecMinMaxExclusive>	
+	<eldecMinMaxExclusive>99999.8E-2</eldecMinMaxExclusive>	
+	<eldecMinMaxExclusive>999998E-3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>999998.E-3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>0.999998E3</eldecMinMaxExclusive>
+	<eldecMinMaxExclusive>.999998E3</eldecMinMaxExclusive>
+	
+	<eldecMinMaxExclusive>0.01</eldecMinMaxExclusive>		
+
+</dv:root>
+
+<!-- 
+	Test Case Type: Schema Valid test (Datatypes section 3.3.4) 
+	Base Type     : precisionDecimal
+	Description   : Tests the simpleType precisionDecimal and its facets and its use in elements
+-->
+

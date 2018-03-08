@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tns:root xmlns:tns="http://xstest-tns" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	        xsi:schemaLocation="http://xstest-tns s3_12ii05.xsd">
+
+	<title type="text">My News</title>
+	<title type="number">122323</title>
+
+</tns:root>
+
+<!--
+Test Case Type: Schema Valid test/ Instance invalid test
+Description   : Test xs:error as conditionally assigned type 
+-->
