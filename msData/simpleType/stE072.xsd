@@ -1,0 +1,14 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="doc">
+    <xs:complexType>
+      <xs:sequence>
+         <xs:element ref="root"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+	<xs:element name="root" fixed="a">
+		<xs:simpleType>
+			<xs:union memberTypes="xs:gYearMonth xs:ID xs:long"/>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,6 @@
+<doc
+    xmlns="foo"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="foo test87395.xsd">
+<a>a</a>
+</doc>    
