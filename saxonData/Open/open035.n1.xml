@@ -1,0 +1,9 @@
+<BookStore id="bbb" xmlns="http://www.books.org">
+  <Book id="b1">
+    <Title>T</Title>
+    <Author>A</Author>
+    <Date>date</Date>
+    <ISBN>is</ISBN>
+    <Publisher>Pub</Publisher>
+  </Book>
+</BookStore>

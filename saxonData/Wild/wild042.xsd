@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Attribute wildcards allowing the xsi namespace are allowed -->
+
+<xs:complexType name="computer">
+  <xs:sequence/>
+  <xs:anyAttribute namespace="http://www.w3.org/2001/XMLSchema-instance" processContents="skip"/>
+</xs:complexType>
+
+
+<xs:element name="computer" type="computer"/>
+    
+</xs:schema>

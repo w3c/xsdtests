@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  defaultAttributes="x:da" xmlns:x="http://open205x.com/"
+  >
+<!-- default attribute group in another namespace -->
+
+<xs:import namespace="http://open205x.com/" schemaLocation="open205x.xsd"/>
+
+<xs:element name="doc">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="a" type="aType"/>
+      <xs:element name="b" type="x:bType"/>
+      <xs:element name="c" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:complexType name="aType"/>
+
+    
+</xs:schema>

@@ -1,0 +1,13 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="root" type="AvailableSizesType"/>
+
+<xs:simpleType name="AvailableSizesType">
+  <xs:restriction>
+    <xs:simpleType>
+      <xs:list itemType="SizeType"/>
+    </xs:simpleType>
+  </xs:restriction>
+</xs:simpleType>
+
+</xs:schema>

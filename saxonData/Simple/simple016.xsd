@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Member of a union is not substitutable if the union is derived by restriction from another union
+
+-->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://simple016.ly/"
+  elementFormDefault="qualified"
+  xmlns:s="http://simple016.ly/">
+  
+  <xs:element name="book">
+    <xs:complexType>
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element ref="s:doc"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="doc" type="s:doc-type"/>
+  
+  <xs:complexType name="doc-type">
+      <xs:sequence maxOccurs="unbounded">
+          <xs:element name="chap" type="s:chap"/>
+      </xs:sequence>
+  </xs:complexType>
+  
+   
+  <xs:simpleType name="chap">
+     <xs:union memberTypes="s:dt xs:time"/>
+  </xs:simpleType>
+  
+  <xs:simpleType name="dt">
+    <xs:restriction>
+      <xs:simpleType>
+        <xs:union memberTypes="xs:date xs:dateTime"/>
+      </xs:simpleType>
+      <xs:pattern value=".*Z"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+
+</xs:schema>

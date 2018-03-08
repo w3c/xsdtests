@@ -1,0 +1,7 @@
+<doc>
+  <e>-12</e>
+  <f>42</f>
+  <f xsi:type="xs:byte"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">3</f>
+</doc>

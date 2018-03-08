@@ -1,0 +1,10 @@
+<order xmlns="http://datypic.com/ord"
+       xmlns:spc="http://datypic.com/spc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://datypic.com/ord newsch3.xsd">
+  <product spc:points="100">
+    <spc:giftWrap>ADULT BDAY</spc:giftWrap>
+    <number>557</number>
+    <name>Short-Sleeved Linen Blouse</name>
+    <size>10</size>
+  </product>
+</order>

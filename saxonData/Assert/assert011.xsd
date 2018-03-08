@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- Had this working at one stage. But the current state of play (Saxon 9.2) is that doc() in an assertion is disallowed
+       both in the spec and in Saxon -->
+  <xs:element name="temp">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:restriction base="datedEvent">
+          <xs:assert test="./@event = doc('assert011-event-list.xml')//event/@name"/> 
+        </xs:restriction>  
+      </xs:simpleContent>       
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="temp" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="datedEvent">
+      <xs:simpleContent>
+        <xs:extension base="xs:date">
+          <xs:attribute name="event" use="required" type="xs:string"/>
+        </xs:extension>  
+      </xs:simpleContent>       
+  </xs:complexType>
+</xs:schema>

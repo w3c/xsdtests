@@ -1,0 +1,10 @@
+<doc>
+  <body>
+    <para>one</para>
+    <para>two</para>
+  </body>
+  <back>
+    <para>one</para>
+    <appendixContent>two</appendixContent>
+  </back>
+</doc>  

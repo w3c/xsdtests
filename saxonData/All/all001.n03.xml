@@ -1,0 +1,16 @@
+<!-- invalid document - too many b elements -->
+<doc>
+  <a/>
+  <b/>
+  <d/>
+  <a/>
+  <c/>
+  <a/>
+  <b/><b/><b/>
+  <a/>
+  <b/>
+  <c/>
+  <c/>
+  <b/>
+  <b/><b/><b/>
+</doc>

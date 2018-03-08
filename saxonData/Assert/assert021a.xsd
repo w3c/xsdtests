@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  
+>
+    
+  <!-- effect of chameleon include on XPath expressions -->
+  
+  
+  <xs:element name="temp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="temp" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+      <xs:assert xpathDefaultNamespace="##targetNamespace" test="empty(temp/temp/temp)"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

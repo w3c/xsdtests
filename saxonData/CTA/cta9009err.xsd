@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Element Declarations Consistent is violated because two particles in the content model have the same name and different type tables
+     See bug 11076 on comparing type tables -->
+
+
+<xs:element name="root" type="zing"/>
+
+<xs:complexType name="zing">
+  <xs:sequence>
+    <xs:element name="a" type="zz">
+        <xs:alternative test="@type='1'" type="zz-integer"/>
+        <xs:alternative test="@type='2'" type="zz-double"/>
+    </xs:element>
+    <xs:element name="a" type="zz">
+        <xs:alternative test="@type='1'" type="zz-integer"/>
+        <xs:alternative test="@type='2'" type="zz-double"/>
+        <xs:alternative test="@type='3'" type="zz-date"/>
+    </xs:element>
+  </xs:sequence>  
+</xs:complexType>
+
+<xs:complexType name="zz">
+    <xs:simpleContent>
+        <xs:extension base="xs:string">
+            <xs:attribute name="type" type="xs:integer"/>
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="zz-integer">
+    <xs:simpleContent>
+        <xs:restriction base="zz">
+            <xs:assertion test="$value castable as xs:integer"/>
+        </xs:restriction>
+    </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="zz-double">
+    <xs:simpleContent>
+        <xs:restriction base="zz">
+            <xs:assertion test="$value castable as xs:double"/>
+        </xs:restriction>
+    </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="zz-date">
+    <xs:simpleContent>
+        <xs:restriction base="zz">
+            <xs:assertion test="$value castable as xs:date"/>
+        </xs:restriction>
+    </xs:simpleContent>
+</xs:complexType>
+
+   
+</xs:schema>

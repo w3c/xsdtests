@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Names in notQName must be in namespaces that are allowed -->
+
+<xs:complexType name="computer">
+ <xs:all>
+  <xs:any processContents="lax"
+          namespace="##other"
+          notQName="memory"
+          minOccurs="0" maxOccurs="unbounded"/>
+ </xs:all>
+</xs:complexType>
+
+
+<xs:element name="computer" type="computer"/>
+    
+</xs:schema>

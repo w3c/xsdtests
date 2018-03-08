@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- basic test of attribute wildcard with ##defined -->
+
+<xs:complexType name="zing">
+  <xs:sequence/>
+  <xs:anyAttribute namespace="##any" notQName="##defined jang" processContents="skip"/>
+</xs:complexType>
+
+<xs:element name="zing" type="zing"/>
+
+<xs:attribute name="zang" type="xs:date"/>
+<xs:attribute name="zong" type="xs:time"/>
+    
+</xs:schema>

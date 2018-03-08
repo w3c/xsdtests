@@ -1,0 +1,84 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+  
+<!-- CTA with xs:error option -->  
+  
+<xs:complexType name="messageType">
+ <xs:sequence/>
+ <xs:attribute name="kind" type="xs:QName"/>
+ <xs:attribute name="value" type="unionType"/>
+</xs:complexType>
+
+<xs:complexType name="decimalMessageType">
+  <xs:complexContent>
+    <xs:restriction base="messageType">
+      <xs:attribute name="value" type="xs:decimal"/>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="intMessageType">
+  <xs:complexContent>
+    <xs:restriction base="messageType">
+      <xs:attribute name="value" type="xs:int"/>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="dateMessageType">
+  <xs:complexContent>
+    <xs:restriction base="messageType">
+      <xs:attribute name="value" type="xs:date"/>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="timeMessageType">
+  <xs:complexContent>
+    <xs:restriction base="messageType">
+      <xs:attribute name="value" type="xs:time"/>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="qNameMessageType">
+  <xs:complexContent>
+    <xs:restriction base="messageType">
+      <xs:attribute name="value" type="xs:QName"/>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="stringMessageType">
+  <xs:complexContent>
+    <xs:restriction base="messageType">
+      <xs:attribute name="value" type="xs:string"/>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:simpleType name="unionType">
+  <xs:union memberTypes="xs:decimal xs:int xs:date xs:time xs:QName xs:string"/>
+</xs:simpleType>
+
+
+<xs:element name="message" type="messageType">
+  <xs:alternative test="resolve-QName(@kind,.)=xs:QName('xs:decimal')" type="decimalMessageType"/>
+  <xs:alternative test="resolve-QName(@kind,.)=xs:QName('xs:int')" type="intMessageType"/>
+  <xs:alternative test="resolve-QName(@kind,.)=xs:QName('xs:date')" type="dateMessageType"/>
+  <xs:alternative test="resolve-QName(@kind,.)=xs:QName('xs:time')" type="timeMessageType"/>
+  <xs:alternative test="resolve-QName(@kind,.)=xs:QName('xs:QName')" type="qNameMessageType"/>  
+  <xs:alternative test="resolve-QName(@kind,.)=xs:QName('xs:string')"    type="stringMessageType"/>
+  <xs:alternative test="resolve-QName(@kind,.)=xs:QName('xs:anyURI')"    type="xs:error"/>
+</xs:element>
+
+<xs:element name="messages">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="message" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>
+  

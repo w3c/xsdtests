@@ -1,0 +1,3 @@
+<!-- invalid document - empty content -->
+<doc xmlns:a="http://a.ns/" xmlns:b="http://b.ns/">
+</doc>

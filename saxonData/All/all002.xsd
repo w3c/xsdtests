@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xs:all model group with relaxed minOccurs and maxOccurs using substitution groups -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:all>     
+         <xs:element name="a" minOccurs="0" maxOccurs="5"/>
+         <xs:element name="b" minOccurs="1" maxOccurs="5"/>
+         <xs:element ref="c" minOccurs="2" maxOccurs="unbounded"/>
+         <xs:element ref="d" minOccurs="1" maxOccurs="1"/>
+       </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="c"/>
+  <xs:element name="C" substitutionGroup="c"/>
+  <xs:element name="d"/>
+  <xs:element name="D" substitutionGroup="d"/>
+</xs:schema>

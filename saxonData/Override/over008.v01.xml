@@ -1,0 +1,9 @@
+<section nr="1" id="a">
+ <head>Intro</head>
+ <section nr="1.1" id="b">
+   <head>Bumph</head>
+ </section>
+ <section nr="1.2" id="c" xml:space="preserve" >
+   <head>More Bumph</head>
+ </section>
+</section>

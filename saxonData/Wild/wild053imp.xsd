@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   targetNamespace="http://wild053.org/"
+   xmlns:z="http://wild053.org/">
+<!-- basic test of element wildcard with ##defined and multiple namespaces -->
+
+
+<xs:complexType name="zing">
+  <xs:sequence>
+    <xs:element name="name" type="xs:string" form="unqualified"/>
+    <xs:any namespace="##local ##targetNamespace" notQName="##defined" processContents="skip"/>
+  </xs:sequence>  
+</xs:complexType>
+
+<xs:element name="zang"/>
+<xs:element name="zong"/>
+<xs:element name="zeng"/>
+    
+</xs:schema>

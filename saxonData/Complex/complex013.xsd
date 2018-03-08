@@ -1,0 +1,16 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance"/>
+    
+    <!-- Nillable element, complex type with element-only content -->
+    
+<xs:element name="root" nillable="true">
+    <xs:complexType mixed="false">
+            <xs:sequence>
+                <xs:element name="e" minOccurs="1" maxOccurs="2"/>
+            </xs:sequence>  
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>

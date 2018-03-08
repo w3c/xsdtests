@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<testSet name="VC"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      version="1.0 1.1"
+      contributor="Saxonica">
+
+    <testGroup name="vc001">
+        <annotation>
+            <documentation>
+                <Title>Simple assertion on an attribute value, ignored under XSD 1.0</Title>
+                <Description>Simple assertion on an attribute value, ignored under XSD 1.0</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc001.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc001.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the assertion.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc001.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+        <instanceTest name="vc001.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid under 1.1, does not satisfy the assertion.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc001.n1.xml"/>
+            <expected validity="valid" version="1.0"/>
+            <expected validity="invalid" version="1.1"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>
+    </testGroup>
+    
+
+    <testGroup name="vc002">
+        <annotation>
+            <documentation>
+                <Title>Equivalent schemas with different formulations under XSD 1.0 and XSD 1.1</Title>
+                <Description>Equivalent schemas with different formulations under XSD 1.0 and XSD 1.1</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc002.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc002.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the assertion and the pattern.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc002.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+        <instanceTest name="vc002.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, does not satisfy the assertion or the pattern.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc002.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>
+    </testGroup>    
+    
+        
+    <testGroup name="vc003" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Test a hypothetical 5.0 feature ignored under XSD 1.1</Title>
+                <Description>Test a hypothetical 5.0 feature ignored under XSD 1.1</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc003.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc003.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid (the 5.0 restriction is ignored)
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc003.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+    </testGroup>         
+    
+    <testGroup name="vc004" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Use of version conditionals in an included schema document</Title>
+                <Description>Use of version conditionals in an included schema document</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc004-11.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc004.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc004.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid (the 5.0 restriction is ignored)
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc003.v1.xml"/><!-- sic -->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+    </testGroup>       
+    
+    <testGroup name="vc005" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Use of version conditionals to ignore an (otherwise invalid) xs:include</Title>
+                <Description>Use of version conditionals to ignore an (otherwise invalid) xs:include</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc005.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc005.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc005.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid (the 5.0 restriction is ignored)
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc003.v1.xml"/><!-- sic -->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+    </testGroup>                       
+
+    <testGroup name="vc006" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Use of version conditionals to make a schema document empty</Title>
+                <Description>Use of version conditionals to make a schema document empty</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc006.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc006.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc006.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid (no element declaration present)
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc002.n1.xml"/><!-- sic -->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+    </testGroup>       
+    
+    <testGroup name="vc007" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Include a schema document made empty by version control attributes</Title>
+                <Description>Include a schema document made empty by version control attributes</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc007.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc007.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc007.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc002.v1.xml"/><!-- sic -->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+        <instanceTest name="vc007.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid (assert not satisfied)
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc002.n1.xml"/><!-- sic -->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+    </testGroup>  
+
+    <testGroup name="vc008" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Empty vc:xx[un]available attributes have no effect</Title>
+                <Description>Empty vc:xx[un]available attributes have no effect</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-SupportedTypes"/>
+        <schemaTest name="vc008.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc008.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc008.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the assertion.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc001.v1.xml"/><!-- sic -->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+        <instanceTest name="vc008.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, does not satisfy the assertion.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc001.n1.xml"/><!-- sic -->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>
+    </testGroup>    
+    
+    <testGroup name="vc009" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Misspelt vc: attribute has no effect</Title>
+                <Description>Misspelt vc: attribute has no effect</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-UnrecognizedAttrInVCNS"/>
+        <schemaTest name="vc009.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc009.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc009.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the assertion.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc001.v1.xml"/><!-- sic -->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+        <instanceTest name="vc009.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, does not satisfy the assertion.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc001.n1.xml"/><!-- sic -->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>
+    </testGroup>        
+    
+    <testGroup name="vc010" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>vc:typeAvailable with a known type</Title>
+                <Description>vc:typeAvailable with a known type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-SupportedTypes"/>
+        <schemaTest name="vc010.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc010.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc010.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute is allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc010.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+    </testGroup>           
+    
+    <testGroup name="vc011" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>vc:typeUnavailable with a known type</Title>
+                <Description>vc:typeUnavailable with a known type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-SupportedTypes"/>
+        <schemaTest name="vc011.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc011.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc011.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is not allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc010.v1.xml"/><!-- sic -->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+    </testGroup>                
+
+    <testGroup name="vc012" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>vc:typeAvailable with a mix of known and unknown types</Title>
+                <Description>vc:typeAvailable with a mix of known and unknown types</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-SupportedTypes"/>
+        <schemaTest name="vc012.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc012.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc012.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is not allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc010.v1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="vc013" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>vc:typeUnavailable with a mix of known and unknown types</Title>
+                <Description>vc:typeUnavailable with a mix of known and unknown types</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-SupportedTypes"/>
+        <schemaTest name="vc013.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc013.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>
+        <instanceTest name="vc013.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute is allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc010.v1.xml"/><!-- sic -->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="vc014" version="1.0 1.1">
+        <annotation>
+            <documentation>
+                <Title>Conditional use of xs:error controlled by vc:typeAvailable</Title>
+                <Description>Conditional use of xs:error controlled by vc:typeAvailable</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-SupportedTypes"/>
+        <schemaTest name="vc014.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc014.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </schemaTest>
+        <instanceTest name="vc014.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, the impossible attribute is absent.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc014.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </instanceTest>        
+        <instanceTest name="vc014.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, the impossible attribute is present
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc014.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </instanceTest>
+    </testGroup>                 
+    
+        
+    <testGroup name="vc020" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>vc:facetAvailable with a known facet</Title>
+                <Description>vc:facetAvailable with a known facet</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-SupportedFacets"/>
+        <schemaTest name="vc020.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc020.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </schemaTest>
+        <instanceTest name="vc020.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute is allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc010.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </instanceTest>        
+    </testGroup>           
+    
+    <testGroup name="vc021" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>vc:facetUnavailable with a known facet</Title>
+                <Description>vc:facetUnavailable with a known facet</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-SupportedFacets"/>
+        <schemaTest name="vc021.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc021.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </schemaTest>
+        <instanceTest name="vc021.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is not allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc010.v1.xml"/><!-- sic -->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </instanceTest>        
+    </testGroup>                
+
+    <testGroup name="vc022" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>vc:facetAvailable with a mix of known and unknown facets</Title>
+                <Description>vc:facetAvailable with a mix of known and unknown facets</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-SupportedFacets"/>
+        <schemaTest name="vc022.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc022.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </schemaTest>
+        <instanceTest name="vc022.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Inalid, attribute is not allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc010.v1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="vc023" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>vc:facetUnavailable with a mix of known and unknown facet</Title>
+                <Description>vc:facetUnavailable with a mix of known and unknown facets</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-SupportedFacets"/>
+        <schemaTest name="vc023.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc023.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </schemaTest>
+        <instanceTest name="vc023.v1.xml">
+		        <annotation>
+		            <documentation>
+		                valid, attribute is allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc010.v1.xml"/><!-- sic -->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </instanceTest>        
+    </testGroup>                            
+
+    <testGroup name="vc024-11" version="1.0 1.1">
+        <annotation>
+            <documentation>
+                <Title>Simple assertion on an attribute value, ignored under XSD 1.0</Title>
+                <Description>Simple assertion on an attribute value, ignored under XSD 1.0</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc024-11.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc024.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </schemaTest>
+        <instanceTest name="vc024.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the assertion.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc001.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </instanceTest>        
+        <instanceTest name="vc024.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, does not satisfy the assertion.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/VC/vc001.n1.xml"/>
+            <expected validity="invalid" version="1.1"/>
+            <expected validity="valid" version="1.0"/>
+            <current status="accepted" date="2008-07-30"/>
+        </instanceTest>
+    </testGroup>
+    
+        
+    <testGroup name="vc901" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Bad schema, invalid vc:minVersion</Title>
+                <Description>Bad schema, invalid vc:minVersion</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc901.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc901.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-29"/>
+        </schemaTest>                             
+    </testGroup>  
+    
+    <testGroup name="vc902" version="1.0">
+        <annotation>
+            <documentation>
+                <Title>Invalid vc:maxVersion, not detected in XSD 1.0</Title>
+                <Description>Invalid vc:maxVersion, not detected in XSD 1.0</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc902.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc902.bad.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-07">
+              <annotation>
+                <documentation>
+                  See bug 13906
+                </documentation>
+              </annotation>
+            </current>
+            <prior status="accepted" date="2008-07-29"/>
+        </schemaTest>                             
+    </testGroup>  
+    
+    <testGroup name="vc903" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Bad schema, invalid vc:maxVersion</Title>
+                <Description>Bad schema, invalid vc:maxVersion</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc902.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc902.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-10-07">
+              <annotation>
+                <documentation>
+                  See bug 13906. This test is a variant of the previous vc902.
+                </documentation>
+              </annotation>
+            </current>
+            <prior status="accepted" date="2008-07-29"/>
+        </schemaTest>                             
+    </testGroup>      
+    
+    <testGroup name="vc904" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Bad schema, invalid QName in vc:typeAvailable</Title>
+                <Description>Bad schema, invalid QName in vc:typeAvailable</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc904.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc904.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </schemaTest>                             
+    </testGroup>       
+    
+    <testGroup name="vc905" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Bad schema, invalid QName in vc:typeUnavailable</Title>
+                <Description>Bad schema, invalid QName in vc:typeUnavailable</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cip"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ConditionalInclusion-Version"/>
+        <schemaTest name="vc905.xsd">
+            <schemaDocument xlink:href="../saxonData/VC/vc905.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </schemaTest>                             
+    </testGroup>              
+    
+</testSet>    

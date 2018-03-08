@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:complexType name="B" abstract="true">
+         <xs:anyAttribute namespace="http://www.target004.com/" processContents="lax"/>
+    </xs:complexType>
+    <xs:complexType name="R">
+      <xs:complexContent>
+        <xs:extension base="B">
+           <xs:attribute name="att" targetNamespace="http://www.target004.com/" type="xs:integer"/>
+        </xs:extension>
+      </xs:complexContent>        
+    </xs:complexType>
+    <xs:element name="parent" type="R"/>    
+</xs:schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- this should not only report an error, but should identify all the offending "disallowed" elements -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:sequence>
+         <xs:any processContents="skip" maxOccurs="unbounded"/>
+       </xs:sequence>       
+       <xs:assert test="not(.//disallowed)"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

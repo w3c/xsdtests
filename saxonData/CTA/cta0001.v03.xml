@@ -1,0 +1,8 @@
+<!-- simple valid message, element used at lower level -->
+<messages>
+  <message kind="time">23:59:59</message>
+  <message kind="time">12:00:00</message> 
+  <message kind="date">2008-03-01</message>
+  <message kind="date">2008-02-29</message>
+  <message>bananas and custard</message>
+</messages>   

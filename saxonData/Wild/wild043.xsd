@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Attribute wildcard intersection with notQName -->
+
+<xs:complexType name="computer">
+  <xs:sequence/>
+  <xs:attributeGroup ref="a"/>
+  <xs:attributeGroup ref="b"/>
+</xs:complexType>
+
+<xs:attributeGroup name="a">
+  <xs:anyAttribute namespace="##local" processContents="skip" notQName="a b c"/>
+</xs:attributeGroup>
+
+<xs:attributeGroup name="b">
+  <xs:anyAttribute namespace="##local" processContents="skip" notQName="c d e"/>
+</xs:attributeGroup>
+
+
+<xs:element name="computer" type="computer"/>
+    
+</xs:schema>

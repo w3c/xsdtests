@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://eden.com/">
+<!-- Test of a notNamespace element wildcard with ##targetNamespace in a chameleon schema -->
+
+<xs:include schemaLocation="wild012inc.xsd"/>
+    
+</xs:schema>

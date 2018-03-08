@@ -1,0 +1,12 @@
+<!-- invalid document - too few d elements -->
+<doc>
+  <c/>
+  <a/>
+  <b/>
+  <a/>
+  <c/>
+  <c/>
+  <a/>
+  <a/>
+  <b/>
+</doc>

@@ -1,0 +1,43 @@
+Content-Type: multipart/related; start=<op.mhtml.1281688011401.8b4eff690f6ad58c@192.168.1.102>; boundary=----------pPSH9IA16oHz4Jfy2cp5XU
+Content-Location: http://lists.w3.org/Archives/Member/w3c-xml-schema-ig/2003Aug/att-0035/cscUnique.xsd
+MIME-Version: 1.0
+
+------------pPSH9IA16oHz4Jfy2cp5XU
+Content-Disposition: inline; filename=cscUnique.xml
+Content-Type: text/xml; name=cscUnique.xml
+Content-ID: <op.mhtml.1281688011401.8b4eff690f6ad58c@192.168.1.102>
+Content-Location: http://lists.w3.org/Archives/Member/w3c-xml-schema-ig/2003Aug/att-0035/cscUnique.xsd
+Content-Transfer-Encoding: 8bit
+
+<?xml version='1.0'?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+ <xs:element name="root">
+  <xs:complexType>
+   <xs:sequence>
+    <xs:element name="sub" minOccurs="0" maxOccurs="unbounded">
+     <xs:complexType>
+      <xs:sequence>
+       <xs:element name="idelt">
+        <xs:complexType>
+         <xs:simpleContent>
+          <xs:extension base="xs:integer">
+           <xs:attribute name="attr"/>
+          </xs:extension>
+         </xs:simpleContent>
+        </xs:complexType>
+       </xs:element>
+       <xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+     </xs:complexType>     
+    </xs:element>
+   </xs:sequence>
+  </xs:complexType>
+  <xs:unique name="test">
+   <xs:selector xpath="sub"/>
+   <xs:field xpath="idelt"/>
+  </xs:unique>
+ </xs:element>
+</xs:schema>
+
+
+------------pPSH9IA16oHz4Jfy2cp5XU--

@@ -1,0 +1,13 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <!-- Element declaration with missing substitution group head 
+    -->
+    
+<xs:element name="perfect" abstract="true"/>
+
+<xs:element name="good" type="xs:integer" substitutionGroup="perfect"/>
+
+<xs:element name="bad" substitutionGroup="rotten"/>
+
+</xs:schema>

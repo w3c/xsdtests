@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- valid restriction using a wildcard with ##defined -->
+
+<xs:complexType name="zing">
+  <xs:sequence/>
+  <xs:anyAttribute namespace="##any" notQName="##defined jang xml:space" processContents="skip"/>
+</xs:complexType>
+
+<xs:complexType name="restrictedZing">
+  <xs:complexContent>
+    <xs:restriction base="zing">
+      <xs:sequence/>
+      <xs:anyAttribute namespace="##local" notQName="##defined jang jing" processContents="skip"/>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:element name="doc" type="restrictedZing"/>
+
+<xs:attribute name="zang" type="xs:date"/>
+<xs:attribute name="zong" type="xs:time"/>
+
+<xs:attributeGroup name="a">
+  <xs:attribute name="ok" type="xs:boolean"/>
+</xs:attributeGroup>
+    
+</xs:schema>

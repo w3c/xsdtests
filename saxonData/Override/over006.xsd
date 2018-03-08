@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:override schemaLocation="over006a.xsd">
+      <xs:element name="section">
+        <xs:complexType>
+           <xs:sequence>
+              <xs:element name="head" type="xs:string"/>
+              <xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>
+           </xs:sequence>
+           <xs:attribute name="nr" type="xs:decimal" use="required"/>
+         </xs:complexType>
+      </xs:element>
+  </xs:override>
+</xs:schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  elementFormDefault="qualified">
+  
+  <xs:group name="g">
+    <xs:sequence maxOccurs="unbounded">
+      <xs:element name="a"/>
+      <xs:element name="b"/>
+    </xs:sequence>
+  </xs:group>
+  
+</xs:schema>

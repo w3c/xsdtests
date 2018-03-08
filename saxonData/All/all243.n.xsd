@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xs:all - UPA violation - two overlapping wildcards -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b">
+       <xs:all>     
+         <xs:any namespace="http://one.uri/ http://two.uri/"/>
+         <xs:any namespace="http://two.uri/ http://three.uri/"/>
+       </xs:all>
+    </xs:complexType>
+    
+
+</xs:schema>

@@ -1,0 +1,13 @@
+<!-- invalid document -->
+<doc>
+  <a/>
+  <b/>
+  <d/>
+  <c/>
+  <a/>
+  <c/>
+  <c/>
+  <a/>
+  <a/>
+  <b/>
+</doc>

@@ -1,0 +1,25 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- For the purpose of uniqueness constraints, NaN is effectively equal to NaN.
+         See bug 9196     
+    -->
+    
+<xs:element name="root">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="sub" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="idelt" type="xs:double"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="test">
+        <xs:selector xpath="sub"/>
+        <xs:field xpath="idelt"/>
+    </xs:unique>
+</xs:element>
+
+</xs:schema>

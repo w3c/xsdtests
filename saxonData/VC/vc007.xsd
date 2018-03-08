@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Include a schema document made empty by version control attributes -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           >
+  
+  <xs:include schemaLocation="vc006.xsd"/>
+            
+  <xs:element name="temp">
+    <xs:simpleType>
+       <xs:restriction base="xs:date">       
+         <xs:assertion test="year-from-date($value) eq 2008"/>
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

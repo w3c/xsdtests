@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Use @ref on a keyref constraint
+
+-->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://simple001.ly/"
+  elementFormDefault="qualified"
+  xmlns:s="http://simple001.ly/">
+
+  <xs:element name="doc">
+      <xs:complexType>
+          <xs:choice maxOccurs="unbounded">
+              <xs:element name="chap" type="s:chap"/>
+              <xs:element name="appx" type="s:chap"/>
+           </xs:choice>
+      </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="chap">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="section">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="nr" type="xs:double" default="+INF"/>
+                            <xs:attribute name="ref" type="xs:double" fixed="+INF"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

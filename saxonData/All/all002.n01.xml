@@ -1,0 +1,11 @@
+<!-- invalid document - too few c elements -->
+<doc>
+  <a/>
+  <b/>
+  <d/>
+  <a/>
+  <C/>
+  <a/>
+  <a/>
+  <b/>
+</doc>

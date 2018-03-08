@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- dynamic EDT check, element wildcard, single type, processContents=lax,
+     substitutability involves a union -->
+<!-- schema is valid -->
+
+<xs:complexType name="zing">
+  <xs:sequence>
+    <xs:element name="e">
+      <xs:simpleType>
+        <xs:union memberTypes="xs:date xs:time"/>
+      </xs:simpleType>
+    </xs:element>
+    <xs:element name="f" type="xs:integer"/>
+    <xs:any namespace="##local" processContents="lax"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="doc" type="zing"/>
+
+<xs:element name="e" type="xs:duration"/>
+
+    
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:x="http://extra.com/">
+<!-- basic test of element wildcard with ##defined -->
+
+<xs:complexType name="zing">
+  <xs:all>
+    <xs:element name="name" type="xs:string"/>
+    <xs:any namespace="##any" notQName="##defined" processContents="skip"/>
+  </xs:all>  
+</xs:complexType>
+
+<xs:element name="zing" type="zing"/>
+
+<xs:element name="zang"/>
+    
+</xs:schema>

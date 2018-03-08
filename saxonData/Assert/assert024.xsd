@@ -1,0 +1,16 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"> 
+    
+    <xsd:element name="Test">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Rule" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:attribute name="name" type="xsd:QName" use="required" />
+                        <xsd:assert test="@name eq xsd:QName('xsd:element')" />
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    
+</xsd:schema>

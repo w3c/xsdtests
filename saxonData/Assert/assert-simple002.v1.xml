@@ -1,0 +1,4 @@
+<outer>
+  <xpath>@price * @quantity lt 500</xpath>
+  <xpath>for $n in item return $n/(@price * @quantity)</xpath>
+</outer>   

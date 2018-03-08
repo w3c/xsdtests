@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xs:override schemaLocation="over003a.xsd">
+    <xs:element name="para" type="zonelessDate"/>
+    <xs:element name="para2" type="zonelessDate"/>
+  </xs:override>
+  
+  <xs:simpleType name="zonelessDate">
+       <xs:restriction base="xs:date">
+          <xs:pattern value="[0-9]+-[0-9]+-[0-9]+"/>
+       </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>
+
+
+

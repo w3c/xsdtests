@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:complexType name="B" abstract="true">
+       <xs:sequence>
+         <xs:any namespace="http://www.target001.com/" processContents="lax"/>
+       </xs:sequence>       
+    </xs:complexType>
+    <xs:complexType name="R">
+      <xs:complexContent>
+        <xs:restriction base="B">
+         <xs:sequence>
+           <xs:element name="child" targetNamespace="http://www.target001.com/" type="xs:integer"/>
+         </xs:sequence>
+       </xs:restriction>
+      </xs:complexContent>        
+    </xs:complexType>
+    <xs:element name="parent" type="R"/>    
+</xs:schema>

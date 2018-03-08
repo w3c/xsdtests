@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    targetNamespace="http://over025.one/"
+    xmlns:tres="http://over025.three">
+    
+    <!--can't reference components in namespace three: import is not transitive -->
+
+  <xs:import namespace="http://over025.two/" schemaLocation="over025.two.xsd"/>
+  
+  <xs:element name="eins">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="tres:drei"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+        
+</xs:schema>

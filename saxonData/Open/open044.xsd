@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    defaultAttributes="dag">
+<!-- default attribute group, applies to types declared within xs:redefine -->
+
+<xs:redefine schemaLocation="open044x.xsd">
+    
+    <xs:complexType name="beta">
+        <xs:complexContent>
+            <xs:restriction base="beta">
+                <xs:sequence/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>    
+    
+</xs:redefine>
+
+<xs:attributeGroup name="dag">
+    <xs:anyAttribute namespace="http://www.w3.org/XML/1998/namespace" processContents="lax"/>
+</xs:attributeGroup>
+    
+
+
+<xs:element name="doc">
+  <xs:complexType mixed=" 1 ">
+    <xs:sequence>
+        <xs:element name="a" type="alpha"/>
+        <xs:element name="b" type="beta"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+
+    
+</xs:schema>

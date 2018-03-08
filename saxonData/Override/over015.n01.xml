@@ -1,0 +1,4 @@
+<!-- invalid document -->
+<doc>
+    <para nota="baz"><year>2010</year><month>05</month><day>11</day></para>
+</doc>

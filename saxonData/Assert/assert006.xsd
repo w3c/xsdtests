@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xs:complexType name="base">
+    <xs:simpleContent>
+      <xs:extension base="xs:integer">
+        <xs:assert test=". = (1 to 10, 20, 30)"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="derived">
+    <xs:simpleContent>
+      <xs:restriction base="base">
+        <xs:assert test=". mod 2 = 0"/>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>    
+
+  <xs:element name="outer">
+    <xs:complexType>
+       <xs:sequence>
+         <xs:element name="inner" minOccurs="0" maxOccurs="4" type="derived"/>
+       </xs:sequence>       
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

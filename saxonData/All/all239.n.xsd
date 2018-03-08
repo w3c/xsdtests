@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xs:all to xs:all subsumption, invalid, element in restricted type is nillable -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b">
+       <xs:all>     
+         <xs:element name="a" type="xs:integer" minOccurs="10" maxOccurs="unbounded"/>
+         <xs:element name="z"/>
+       </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="r">
+      <xs:complexContent>
+        <xs:restriction base="b">
+          <xs:all>
+            <xs:element ref="a" minOccurs="12" maxOccurs="15"/>
+            <xs:element name="z"/> 
+          </xs:all>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType> 
+    
+    <xs:element name="a" type="xs:integer" nillable="true"/>
+          
+
+</xs:schema>

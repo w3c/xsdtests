@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- expressible attribute wildcard union with ##defined -->
+
+<xs:complexType name="zing">
+  <xs:sequence/>
+  <xs:attributeGroup ref="g"/>
+
+</xs:complexType>
+
+<xs:complexType name="extendedZing">
+  <xs:complexContent>
+    <xs:extension base="zing">
+      <xs:attributeGroup ref="h"/>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:element name="zing" type="extendedZing"/>
+
+<xs:attribute name="zang" type="xs:date"/>
+<xs:attribute name="zong" type="xs:time"/>
+
+<xs:attributeGroup name="g">
+  <xs:anyAttribute namespace="##any" notQName="##defined jang" processContents="skip"/>
+</xs:attributeGroup>
+
+<xs:attributeGroup name="h">
+  <xs:anyAttribute namespace="##local" notQName="##defined" processContents="skip"/>
+</xs:attributeGroup>
+    
+</xs:schema>

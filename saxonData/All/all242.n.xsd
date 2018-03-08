@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xs:all - UPA violation - one element in substitution group of two others -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b">
+       <xs:all>     
+         <xs:element ref="o"/>
+         <xs:element name="x" type="xs:boolean"/>
+         <xs:element ref="p"/>
+       </xs:all>
+    </xs:complexType>
+    
+    <xs:element name="o" type="xs:integer"/>
+    
+    <xs:element name="p" type="xs:integer"/>
+    
+    <xs:element name="q" substitutionGroup="o p"/>
+          
+
+</xs:schema>

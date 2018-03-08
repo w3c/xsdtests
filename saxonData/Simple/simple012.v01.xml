@@ -1,0 +1,10 @@
+<book xmlns="http://simple012.ly/">
+
+<doc><chap>2010-10-12</chap></doc>
+<doc><chap>2010-10-12T13:13:13</chap></doc>
+<doc><chap>18:18:18</chap></doc>
+
+<subdoc><chap>2010-10-12</chap></subdoc>
+<subdoc><chap>2010-11-05T12:12:12</chap></subdoc>
+
+</book>

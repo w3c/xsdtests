@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- Semantics of \c in regular expressions under XML 1.1 -->
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:sequence>
+         <xs:element name="item" maxOccurs="unbounded" type="c"/>     
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="c">
+    <xs:restriction base="xs:string">
+        <xs:pattern value="\c"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+    
+</xs:schema>

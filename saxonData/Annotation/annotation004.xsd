@@ -1,0 +1,14 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- The xs:attribute within the xs:annotation describes a perfectly respectable
+    schema component, which conflicts with a schema component outside the xs:annotation -->
+
+  <xs:annotation>
+    <xs:documentation>
+      <xs:attribute name="abc" type="xs:double"/>
+    </xs:documentation>
+  </xs:annotation>
+  
+  <xs:attribute name="abc" type="xs:string"/>
+
+</xs:schema>

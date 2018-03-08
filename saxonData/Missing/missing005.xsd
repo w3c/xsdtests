@@ -1,0 +1,18 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <!-- Simple type declaration with missing base type. In Saxon this is fatal, the schema is unusable.
+    -->
+    
+
+<xs:element name="good" type="xs:integer"/>
+
+<xs:element name="bad" type="dummy"/>
+
+<xs:complexType name="dummy">
+  <xs:complexContent>
+    <xs:restriction base="absent"/>
+  </xs:complexContent>
+</xs:complexType>  
+
+</xs:schema>

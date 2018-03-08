@@ -1,0 +1,6 @@
+<doc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <node><id>aaa</id><idref>ccc</idref></node>
+  <node><id>bbb</id><idref>aaa</idref></node> 
+  <node><id>ccc</id><idref>bbb</idref></node> 
+  <node><id xsi:nil="true"/><idref xsi:nil="true"/></node>     
+</doc>

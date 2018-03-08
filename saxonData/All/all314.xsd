@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="product" type="ExtendedProductType"/>
+
+<xs:complexType name="ProductType">
+  <xs:all minOccurs="0">
+    <xs:element name="child1"/>
+  </xs:all>
+</xs:complexType>
+
+<xs:complexType name="ExtendedProductType">
+  <xs:complexContent>
+    <xs:extension base="ProductType">
+      <xs:all minOccurs="0">
+        <xs:element name="child2"/>
+      </xs:all>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+</xs:schema>

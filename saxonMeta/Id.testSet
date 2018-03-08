@@ -1,0 +1,1427 @@
+<testSet name="Id"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+      version="1.1"
+      xmlns:saxon="http://saxon.sf.net/">
+
+    <testGroup name="id001" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Element with more than one ID attribute</Title>
+                <Description>Element with more than one ID attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-MultipleAttrsOfTypeID"/>
+        <schemaTest name="id001.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="id001.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, two IDs on the same element can have the same value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id001.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id001.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, same ID on two different elements.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id001.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id001.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, same ID on two different elements.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id001.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+ 
+    <testGroup name="id002" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Element with more than one ID attribute, one being a wildcard</Title>
+                <Description>Element with more than one ID attribute, one being a wildcard</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-MultipleAttrsOfTypeID"/>
+        <schemaTest name="id002.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="id002.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, two IDs on the same element can have the same value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id001.v01.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id002.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, same ID on two different elements.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id001.n01.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id002.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, same ID on two different elements.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id001.n02.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="id003" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Element with more than one ID attribute, one being a wildcard, plus ID children</Title>
+                <Description>Element with more than one ID attribute, one being a wildcard, plus ID children</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-MultipleAttrsOfTypeID"/>
+        <schemaTest name="id003.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="id003.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, two IDs on the same element can have the same value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id003.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id003.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, same ID on two different elements.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id003.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id003.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, same ID on two different elements.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id003.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>       
+    
+    <testGroup name="id004" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Element with list-of-ID attributes and list-of-ID children</Title>
+                <Description>Element with list-of-ID attributes and list-of-ID children</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-ListsOfID"/>
+        <schemaTest name="id004.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id004.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="id004.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, two IDs on the same element can have the same value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id004.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id004.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, same ID on two different elements.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id004.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id004.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, same ID on two different elements.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id004.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="id005" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Element with list-of-IDREF attributes and list-of-IDREF children</Title>
+                <Description>Element with list-of-IDREF attributes and list-of-IDREF children</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-ListsOfID"/>
+        <schemaTest name="id005.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id005.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="id005.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, two IDs on the same element can have the same value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id005.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id005.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unresolved IDREF value hhh.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id005.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id005.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unresolved IDREF value hhh.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id005.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="id006" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Element with list-of-maybe-IDREF attributes and list-of-maybe-IDREF children</Title>
+                <Description>Element with list-of-maybe-IDREF attributes and list-of-maybe-IDREF children</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-UnionsWithID"/>
+        <schemaTest name="id006.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id006.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="id006.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, two IDs on the same element can have the same value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id006.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id006.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unresolved IDREF value hhh.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id006.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id006.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unresolved IDREF value hhh.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id006.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="id007" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>A highly devious test in which we define a list type whose items may be either IDs or IDREFs</Title>
+                <Description>A highly devious test in which we define a list type whose items may be either IDs or IDREFs</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-UnionsWithID"/>
+        <schemaTest name="id007.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id007.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="id007.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, two IDs on the same element can have the same value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id007.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id007.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unresolved IDREF value hhh.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id007.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id007.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unresolved IDREF value hhh.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id007.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup> 
+    
+    <testGroup name="id008" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>A complex type with simple ID/IDREF content</Title>
+                <Description>A complex type with simple ID/IDREF content at one time imposed 
+                     no uniqueness or referential constraints, but this has been clarified.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF"/>
+        <schemaTest name="id008.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id008.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="id008.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id008.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id008.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid: a complex type with simple content now imposes ID constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id008.v02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-07-29">
+              <annotation>
+		            <documentation>
+		                Changed the status to "invalid" in response to bug #12014
+		            </documentation>
+		      </annotation>
+		    </current>
+            <prior status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+        <instanceTest name="id008.n03.xml">
+		        <annotation>
+		            <documentation>
+		               Invalid: a complex type with simple content now imposes ID constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id008.v03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-07-29">
+              <annotation>
+		            <documentation>
+		                Changed the status to "invalid" in response to bug #12014
+		            </documentation>
+		      </annotation>
+		    </current>
+            <prior status="accepted" date="2010-05-12"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="id009" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Nillable ID/IDREF elements</Title>
+                <Description>Nillable ID/IDREF elements</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF"/>
+        <schemaTest name="id009.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id009.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="id009.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id009.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="id010" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>ID attribute with default value</Title>
+                <Description>ID attribute with default value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsForElemOrAttrOfTypeID"/>
+        <schemaTest name="id010.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id010.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id010.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id010.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id010.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id010.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id010.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id010.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="id011" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>ID attribute with fixed value</Title>
+                <Description>ID attribute with fixed value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsForElemOrAttrOfTypeID"/>
+        <schemaTest name="id011.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id011.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id011.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id011.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id011.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id011.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id011.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id011.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="id012" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>ID attribute with default value</Title>
+                <Description>ID attribute with default value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsForElemOrAttrOfTypeID"/>
+        <schemaTest name="id012.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id012.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id012.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id010.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id012.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id010.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id012.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id010.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="id013" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>ID attribute with fixed value</Title>
+                <Description>ID attribute with fixed value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsForElemOrAttrOfTypeID"/>
+        <schemaTest name="id013.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id013.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id013.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id011.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id013.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id011.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id013.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id011.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="id014" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>ID element with default value</Title>
+                <Description>ID element with default value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsForElemOrAttrOfTypeID"/>
+        <schemaTest name="id014.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id014.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id014.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id014.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id014.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id014.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id014.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id014.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="id015" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>ID element with fixed value</Title>
+                <Description>ID element with fixed value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsForElemOrAttrOfTypeID"/>
+        <schemaTest name="id015.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id015.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id015.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id015.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id015.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id015.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id015.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id015.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>        
+    </testGroup> 
+    
+    <testGroup name="id016" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>IDREF attribute with default value</Title>
+                <Description>IDREF attribute with default value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsOfTypesIDREF-ENTITY-ENTITIES"/>
+        <schemaTest name="id016.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id016.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id016.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id016.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id016.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id016.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id016.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id016.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id016.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id016.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="id017" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>ENTITY attribute with default value</Title>
+                <Description>ENTITY attribute with default value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsOfTypesIDREF-ENTITY-ENTITIES"/>
+        <schemaTest name="id017.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id017.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id017.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id017.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id017.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id017.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id017.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id017.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="id018" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>ENTITIES attribute with default value</Title>
+                <Description>ENTITIES attribute with default value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsOfTypesIDREF-ENTITY-ENTITIES"/>
+        <schemaTest name="id018.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id018.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id018.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id018.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id018.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id018.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id018.v03.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id018.v03.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id018.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id018.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+         <instanceTest name="id018.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id018.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+    </testGroup>                      
+    
+    <testGroup name="id019" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Union of ENTITY and integer attribute with default value</Title>
+                <Description>Union of ENTITY and integer attribute with default value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsOfTypesIDREF-ENTITY-ENTITIES"/>
+        <schemaTest name="id019.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id019.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id019.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id019.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id019.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id019.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id019.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id019.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+         <instanceTest name="id019.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id019.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+    </testGroup>                      
+ 
+    <testGroup name="id020" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Element of type xs:ENTITY with default value</Title>
+                <Description>Element of type xs:ENTITY with default value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsOfTypesIDREF-ENTITY-ENTITIES"/>
+        <schemaTest name="id020.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id020.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id020.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id020.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id020.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id020.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id020.v03.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id020.v03.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id020.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id020.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+         <instanceTest name="id020.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id020.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+    </testGroup>  
+    
+    <testGroup name="id021" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Element of type xs:ENTITIES with default value</Title>
+                <Description>Element of type xs:ENTITIES with default value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-ID-IDREF-DefaultValsOfTypesIDREF-ENTITY-ENTITIES"/>
+        <schemaTest name="id021.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id021.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id021.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id021.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id021.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id021.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+        <instanceTest name="id021.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id021.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+         <instanceTest name="id021.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id021.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+    </testGroup>      
+    
+    <testGroup name="id022" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Atomic value equal to singleton list</Title>
+                <Description>Value of a key is atomic; value of keyref is a list; they can be equal</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-EqualityOfAtomicValAndSingletonList"/>
+        <schemaTest name="id022.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id022.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id022.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id022.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+         <instanceTest name="id022.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id022.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+    </testGroup>  
+    
+    <testGroup name="id040" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Unique constraint using ref attribute</Title>
+                <Description>Unique constraint refers to another unique constraint using ref attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <schemaTest name="id040.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id040.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </schemaTest>
+        <instanceTest name="id040.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id040.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+         <instanceTest name="id040.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id040.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+         <instanceTest name="id040.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id040.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-20"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="id041" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Unique constraint using ref attribute, points to wrong kind of constraint</Title>
+                <Description>Key constraint refers to a unique constraint using ref attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <schemaTest name="id041.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id041.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+    </testGroup>       
+    
+    <testGroup name="id042" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Unique constraint using ref attribute, points nowhere</Title>
+                <Description>Key constraint refers to a nonexistent constraint using ref attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <schemaTest name="id042.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id042.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="id043" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Key constraint using ref attribute</Title>
+                <Description>Key constraint refers to another key constraint using ref attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <schemaTest name="id043.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id043.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="id043.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id043.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+         <instanceTest name="id043.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id043.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+         <instanceTest name="id043.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id043.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="id044" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Keyref constraint using ref attribute</Title>
+                <Description>Keyref constraint refers to another keyref constraint using ref attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-NewLocalDecl-NamedIdContraintsOnElemDecl"/>
+        <schemaTest name="id044.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id044.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="id044.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id044.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+         <instanceTest name="id044.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id044.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+         <instanceTest name="id044.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id044.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+    </testGroup>    
+    
+    <testGroup name="id050" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Unique constraint using xpathDefaultNamespace</Title>
+                <Description>Use XPathDefaultNamespace on the selector and field elements</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>
+        <schemaTest name="id050.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id050.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="id050.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id050.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+         <instanceTest name="id050.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id050.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+    </testGroup>        
+    
+    <testGroup name="id051" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Key constraint using xpathDefaultNamespace</Title>
+                <Description>Use XPathDefaultNamespace on the xs:schema element</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>
+        <schemaTest name="id051.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id051.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="id051.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id050.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+         <instanceTest name="id051.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id050.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+    </testGroup>            
+    
+    <testGroup name="id052" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Key constraint using xpathDefaultNamespace</Title>
+                <Description>Use XPathDefaultNamespace on the xs:schema element</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>
+        <schemaTest name="id052.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id052.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="id052.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id050.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+         <instanceTest name="id052.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id050.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+    </testGroup>              
+    
+    <testGroup name="id053" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Key constraint using xpathDefaultNamespace</Title>
+                <Description>Use XPathDefaultNamespace=##targetNamespace on the local element</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>
+        <schemaTest name="id053.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id053.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="id053.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id050.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+         <instanceTest name="id053.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id050.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+    </testGroup>                    
+    
+    <testGroup name="id054" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Keyref constraint using xpathDefaultNamespace</Title>
+                <Description>Use XPathDefaultNamespace=##local on the local element and the xs:schema element</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cvc-id"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XPathDefaultNSKeyKeyref"/>
+        <schemaTest name="id054.xsd">
+            <schemaDocument xlink:href="../saxonData/Id/id054.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="id054.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id054.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+         <instanceTest name="id054.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, contains duplicate numbers
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Id/id054.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+    </testGroup>                        
+    
+</testSet>    

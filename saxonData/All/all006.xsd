@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- test that children of all group are validated against the right declaration -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:all>     
+         <xs:element name="a" type="xs:date" minOccurs="1" maxOccurs="1"/>
+         <xs:element ref="b"  minOccurs="1" maxOccurs="1"/>
+         <xs:any namespace="##targetNamespace" processContents="strict" minOccurs="1" maxOccurs="1"/>
+         <xs:any namespace="http://other.ns/" processContents="lax" minOccurs="1" maxOccurs="1"/>
+       </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="a" type="xs:time"/>
+  <xs:element name="b" type="xs:time"/>
+  <xs:element name="c" type="xs:time"/>
+  <xs:element name="C" substitutionGroup="c">
+    <xs:simpleType>
+      <xs:restriction base="xs:time">
+        <xs:pattern value=".*:00"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

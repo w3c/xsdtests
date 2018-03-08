@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+   <!-- xs:assert on a simple type restriction, with a call to an extension function -->
+
+  <xs:element name="xpath">
+    <xs:simpleType>
+       <xs:restriction base="xs:string">
+         <xs:assertion test="exists(saxon:expression($value))" xmlns:saxon="http://saxon.sf.net/"/>
+       </xs:restriction>   
+    </xs:simpleType>
+  </xs:element>
+  
+  <xs:element name="outer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="xpath" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>  
+  </xs:element>
+  
+</xs:schema>

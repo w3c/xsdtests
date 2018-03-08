@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  targetNamespace="http://chess/ns/" xmlns:chess="http://chess/ns/">
+  
+  <!-- complexType/@mixed must not conflict with complexContent/@mixed -->
+
+  <xs:complexType name="t1">
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="white" type="xs:string"/>
+        <xs:element name="black" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+      <xs:assert test="(every $w in white satisfies not($w/following-sibling::*[1][self::white])) and
+                       (every $b in black satisfies not($b/following-sibling::*[1][self::black]))"
+                 xpathDefaultNamespace="http://chess/ns/"/>  
+  </xs:complexType>
+  
+  <xs:complexType name="t2" mixed="false">
+    <xs:complexContent mixed="1">
+      <xs:restriction base="chess:t1">
+        <xs:sequence maxOccurs="unbounded">
+          <xs:element name="white" type="xs:string"/>
+          <xs:element name="black" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:assert test="count(white[. = 'oo']) lt 2"
+                   xpathDefaultNamespace="##targetNamespace"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>    
+  
+  <xs:complexType name="t3">
+    <xs:complexContent>
+      <xs:extension base="chess:t2">
+        <xs:sequence>
+          <xs:element name="result" type="xs:string"/>
+        </xs:sequence>  
+        <xs:assert test="chess:result = ('black wins', 'white wins', 'draw')"
+                   xpathDefaultNamespace="##local"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>      
+
+  <xs:element name="game" type="chess:t3"/>
+
+</xs:schema>

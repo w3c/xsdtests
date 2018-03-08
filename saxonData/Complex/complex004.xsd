@@ -1,0 +1,19 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance"/>
+    
+    <!-- Creates a type with a default value of xsi:type which is ignored      
+    -->
+    
+<xs:element name="root">
+    <xs:complexType>
+        <xs:simpleContent>
+            <xs:extension base="xs:decimal">
+             <xs:attribute ref="xsi:type" default="xs:integer"/>
+            </xs:extension>
+        </xs:simpleContent>        
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>

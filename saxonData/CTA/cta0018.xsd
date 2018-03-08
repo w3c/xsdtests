@@ -1,0 +1,36 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  attributeFormDefault="qualified">
+  
+  <!-- XPath expression in CTA sees untyped data -->
+  
+  <xs:element name="doc">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="event" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="type" inheritable="true"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="event">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="when"/>
+        </xs:sequence>
+        <xs:attribute name="type" inheritable="true"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="when" type="unionType">
+    <xs:alternative test=". instance of element(*, xs:untyped)" type="xs:date"/>
+    <xs:alternative type="xs:error"/>
+  </xs:element>
+  
+  <xs:simpleType name="unionType">
+    <xs:union memberTypes="xs:date xs:time xs:dateTime xs:gYearMonth"/>
+  </xs:simpleType>
+  
+
+</xs:schema>
+  

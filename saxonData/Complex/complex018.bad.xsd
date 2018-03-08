@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  elementFormDefault="qualified">
+  
+  <!-- See spec bug 16786 -->
+<xs:complexType name="ProductType">
+    <xs:openContent>
+      <xs:any namespace="##any"/>
+    </xs:openContent>
+    <xs:sequence>
+      <xs:element name="child1" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="RestrictedProductType">
+    <xs:complexContent>
+      <xs:restriction base="ProductType">
+        <xs:openContent>
+          <xs:any namespace="##other"/>
+        </xs:openContent>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

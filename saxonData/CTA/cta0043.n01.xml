@@ -1,0 +1,9 @@
+<!-- This instance should detect the type restriction problem in the schema -->
+<doc>
+   <chap><stamp type="date">2010-12-12</stamp><p/></chap>
+   <chap><stamp  type="dateTime">2010-10-10T12:30:00Z</stamp><p/></chap>
+   <chap><stamp  type="time">12:30:15Z</stamp><p/></chap>
+   <appendix><stamp  type="date">2010-12-12</stamp><p/></appendix>
+   <appendix><stamp  type="dateTime">2010-10-10T12:30:00</stamp><p/></appendix><!-- no timezone -->
+   <appendix><stamp  type="time">12:30:15Z</stamp><p/></appendix>
+</doc>

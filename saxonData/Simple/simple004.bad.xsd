@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Use simpleType/@final = extension. See spec bug 2074 et al. This is allowed in
+XSD 1.1; the fact that it isn't allowed in XSD 1.0 is considered a bug. 
+-->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://simple004.ly/"
+  elementFormDefault="qualified"
+  xmlns:s="http://simple004.ly/">
+
+  <xs:element name="doc">
+      <xs:complexType>
+          <xs:sequence>
+              <xs:element name="publication" type="s:pubType"/>
+              <xs:element name="chap" type="s:chap" minOccurs="0"/>
+              <xs:element name="appx" type="s:chap" minOccurs="0"/>
+           </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="pubDate" final="extension">
+    <xs:restriction base="xs:date">
+      <xs:pattern value="2012.*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="pubType">
+    <xs:simpleContent>
+      <xs:extension base="s:pubDate">
+        <xs:attribute name="country" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="chap">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="section">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="nr" type="xs:decimal"/>
+                            <xs:attribute name="ref" type="xs:decimal"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

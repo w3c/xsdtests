@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<testSet name="Complex"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+>
+
+     <testGroup name="complex001" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>complexType/@mixed must not conflict with complexContent/@mixed</Title>
+                <Description>The two attributes if both present must be the same</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-MixedInCTAndCC"/>
+        <schemaTest name="complex001.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex001.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-08-12"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="complex002" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>complexType/@mixed must not conflict with complexContent/@mixed</Title>
+                <Description>The two attributes if both present must be the same</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-MixedInCTAndCC"/>
+        <schemaTest name="complex002.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex002.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-08-12"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="complex003" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xsi:type default</Title>
+                <Description>Default value for xsi:type is allowed but ignored</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSIDefault"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImportNotXSAndXSI"/>
+        <schemaTest name="complex003.xsd">
+            <annotation>
+                <documentation>
+                    Supply default value for xsi:type that would be invalid if it were validated
+                    Note: no import of xsi namespace required, see 3.17.6.2 QName resolution (Schema Document) clause 4.2.4
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex003.v1.xml">
+            <annotation>
+                <documentation>
+                    Valid instance that ignores the xsi:type
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex003.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex003.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, satisfies the xsi:type but this should be ignored
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex003.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex004" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xsi:type default</Title>
+                <Description>Default value for xsi:type is allowed but ignored</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSIDefault"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImportNotXSAndXSI"/>
+        <schemaTest name="complex004.xsd">
+            <annotation>
+                <documentation>
+                    Supply default value for xsi:type that would be invalid if it were validated
+                    Note: import of xsi namespace is permitted, see 3.17.6.2 QName resolution (Schema Document) clause 4.2.4
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex004.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex004.v1.xml">
+            <annotation>
+                <documentation>
+                    Valid instance that ignores the xsi:type
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex004.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex004.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, satisfies the xsi:type but this should be ignored
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex004.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex004.v2.xml">
+            <annotation>
+                <documentation>
+                    Valid instance, the default value of xsi:type is not valid in the context where it is used
+                    (undeclared namespace prefix "xs"), but this does not matter because the default value
+                    has no effect. See bug 13457.
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex004.n2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-17"/>
+            <prior status="accepted" date="2011-02-07"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex005" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xsi:type fixed</Title>
+                <Description>Fixed value for xsi:type is allowed but ignored,
+                except that the instance must match</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSIDefault"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImportNotXSAndXSI"/>
+        <schemaTest name="complex005.xsd">
+            <annotation>
+                <documentation>
+                    Supply fixed value for xsi:type 
+                    Note: import of xsi namespace is permitted, see 3.17.6.2 QName resolution (Schema Document) clause 4.2.4
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex005.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex005.v2.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; xsi:type fixed in schema, absent in instance, has no effect 
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex005.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex005.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:type must conform to the fixed value if present
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex005.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex005.n2.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:type does conform to the fixed value but supplied value is invalid
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex005.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex005.n3.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance; xsi:type matches the fixed value and instance value satisfies the type, but xsi:type is not validly derived
+                    from the declared type (the declared type is complex, but the xsi:type is a simple type)
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex005.v1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-17"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex006" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xsi:nil default</Title>
+                <Description>Default value for xsi:nil is allowed but ignored</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSIDefault"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImportNotXSAndXSI"/>
+        <schemaTest name="complex006.xsd">
+            <annotation>
+                <documentation>
+                    Supply default value for xsi:nil 
+                    Note: import of xsi namespace is permitted, see 3.17.6.2 QName resolution (Schema Document) clause 4.2.4
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex006.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex006.v1.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; xsi:nil is ignored
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex006.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex006.v2.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; xsi:nil is ignored
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex006.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex006.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:nil in the instance is effective
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex006.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex006.n2.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:nil in the instance is effective
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex006.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex006.n3.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:nil in the instance does not default to the value in the schema
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex006.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex007" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xsi:nil fixed</Title>
+                <Description>Fixed value for xsi:nil is allowed but ignored,
+                except if present in the instance it must match and be obeyed</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSIDefault"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImportNotXSAndXSI"/>
+        <schemaTest name="complex007.xsd">
+            <annotation>
+                <documentation>
+                    Supply fixed value for xsi:nil 
+                    Note: import of xsi namespace is permitted, see 3.17.6.2 QName resolution (Schema Document) clause 4.2.4
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex007.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex007.v1.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; xsi:nil is ignored
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex006.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex007.v2.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; xsi:nil is ignored
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex006.v2.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex007.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:nil in the instance is effective
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex006.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex007.n2.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:nil in the instance is effective
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex006.n2.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex007.n3.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:nil in the instance does not default to the value in the schema
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex006.n3.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex008" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xsi:type doesn't resolve</Title>
+                <Description>xsi:type must resolve to a known type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSITypeMustResolve"/>
+        <schemaTest name="complex008.xsd">
+            <annotation>
+                <documentation>
+                    Valid schema, no particular features
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex008.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex008.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, unknown type in XSD namespace
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex008.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex008.n2.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, invalid QName (undeclared prefix)
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex008.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex008.n3.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:type is an unknown QName
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex008.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex008.n4.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:type is not lexically a QName
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex008.n4.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+ 
+    </testGroup>
+    
+    <testGroup name="complex009" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xsi:type use="required</Title>
+                <Description>Specifying use="required" for xsi:type is allowed and effective</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSIDefault"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImportNotXSAndXSI"/>
+        <schemaTest name="complex009.xsd">
+            <annotation>
+                <documentation>
+                    Make xsi:type mandatory
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex009.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex009.v1.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; xsi:type is present
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex009.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex009.v2.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; xsi:type is present
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex009.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex009.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:type is omitted
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex009.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex009.n2.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:type is present but instance doesn't conform to it
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex009.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex010" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xsi:noNamespaceSchemaLocation use="required</Title>
+                <Description>Specifying use="required" for xsi:noNamespaceSchemaLocation is allowed and effective</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSIDefault"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImportNotXSAndXSI"/>
+        <schemaTest name="complex010.xsd">
+            <annotation>
+                <documentation>
+                    Make xsi:noNamespaceSchemaLocation mandatory
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex010.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex010.v1.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; xsi:noNamespaceSchemaLocation is present
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex010.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex010.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:noNamespaceSchemaLocation is omitted
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex010.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex011">
+        <annotation>
+            <documentation>
+                <Title>xsi:nil on complex type with simple content (not specific to 1.1)</Title>
+                <Description>All combinations of xsi:nil with value present or absent</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <schemaTest name="complex011.xsd">
+            <annotation>
+                <documentation>
+                   Specifies element as nillable
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex011.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex011.v1.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; not nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex011.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex011.v2.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex011.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex011.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, value missing but not nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex011.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex011.n2.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance,value present but nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex011.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+       <instanceTest name="complex011.n3.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, child present but nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex011.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+    </testGroup>
+    
+     <testGroup name="complex012">
+        <annotation>
+            <documentation>
+                <Title>xsi:nil on complex type with mixede content (not specific to 1.1)</Title>
+                <Description>All combinations of xsi:nil with value present or absent</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <schemaTest name="complex012.xsd">
+            <annotation>
+                <documentation>
+                   Specifies element as nillable with mixed content
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex012.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex012.v1.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; not nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex012.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex012.v2.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex012.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex012.v3.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex012.v3.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex012.v4.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex012.v4.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex012.v5.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; nil element can contain a comment
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex012.v5.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex012.v6.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; nil element can contain a PI
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex012.v6.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex012.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, value missing but not nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex012.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex012.n2.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance,value present but nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex012.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+       <instanceTest name="complex012.n3.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, child present but nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex012.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex013">
+        <annotation>
+            <documentation>
+                <Title>xsi:nil on complex type with element-only content (not specific to 1.1)</Title>
+                <Description>All combinations of xsi:nil with value present or absent</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <schemaTest name="complex013.xsd">
+            <annotation>
+                <documentation>
+                   Specifies element as nillable, element-only content, not emptiable
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex013.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex013.v1.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; not nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex013.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex013.v2.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex013.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex013.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, value missing but not nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex013.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex013.n2.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance,value present but nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex013.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+    </testGroup>    
+    
+    <testGroup name="complex014">
+        <annotation>
+            <documentation>
+                <Title>xsi:nil on complex type with element-only content, xs:all compositor (not specific to 1.1)</Title>
+                <Description>All combinations of xsi:nil with value present or absent</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <schemaTest name="complex014.xsd">
+            <annotation>
+                <documentation>
+                   Specifies element as nillable, element-only content, not emptiable
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex014.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </schemaTest>
+        <instanceTest name="complex014.v1.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; not nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex013.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex014.v2.xml">
+            <annotation>
+                <documentation>
+                    Valid instance; nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex013.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex014.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, value missing but not nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex013.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+        <instanceTest name="complex014.n2.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance,value present but nil
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex013.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-04"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex015">
+        <annotation>
+            <documentation>
+                <Title>xsi:type on complex type must resolve</Title>
+                <Description>Instance is invalid if xsi:type not present in schema</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSITypeMustResolve"/>
+        <schemaTest name="complex015.xsd">
+            <annotation>
+                <documentation>
+                   Unremarkable schema
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Complex/complex015.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-17"/>
+        </schemaTest>
+         <instanceTest name="complex015.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, xsi:type doesn't resolve
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex015.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-17"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex016">
+        <annotation>
+            <documentation>
+                <Title>Redefine an attribute group</Title>
+                <Description>Redefine an attribute group to make one of the attributes required</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <schemaTest name="complex016.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex016.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="complex017">
+        <annotation>
+            <documentation>
+                <Title>Complex type derived by extension violating Element Declarations Consistent</Title>
+                <Description>Two children with the same name but different types. Test contributed
+                by Priscilla Walmsley.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-MixedInCTAndCC"/>
+        <schemaTest name="complex017.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex017.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="complex018">
+        <annotation>
+            <documentation>
+                <Title>See spec bug 16786 from Priscilla Walmsley</Title>
+                <Description>The XML representation summary appears to allow this but the S4S does not</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-MixedInCTAndCC"/>
+        <schemaTest name="complex018.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex018.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="complex019">
+        <annotation>
+            <documentation>
+                <Title>Disallow minOccurs on child of named xs:group</Title>
+                <Description>This is disallowed by the schema for schema documents, as mentioned in a Note in 3.7.2</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="complex019.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex019.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2014-01-09"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="complex020">
+        <annotation>
+            <documentation>
+                <Title>Disallow maxOccurs on child of named xs:group</Title>
+                <Description>This is disallowed by the schema for schema documents, as mentioned in a Note in 3.7.2</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="complex020.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex020.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2014-01-09"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="complex021">
+        <annotation>
+            <documentation>
+                <Title>Element declared with an abstract type</Title>
+                <Description>Instance is invalid because the type is abstract</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="complex021.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex021.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2014-07-03"/>
+        </schemaTest>
+         <instanceTest name="complex021.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, validation against an abstract type
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex021.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2014-07-03"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="complex022">
+        <annotation>
+            <documentation>
+                <Title>Empty choice should accept no instances</Title>
+                <Description>A content model defined as an empty choice should reject all instances,
+                because the instance needs to satisfy at least on branch of the choice, which is not
+                possible if there are no branches.</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="complex022.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex022.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2015-06-02"/>
+        </schemaTest>
+        <instanceTest name="complex022.n1.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, empty content does not satisfy empty choice
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex022.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2015-06-02"/>
+        </instanceTest>
+        <instanceTest name="complex022.n2.xml">
+            <annotation>
+                <documentation>
+                    Invalid instance, element content does not satisfy empty choice
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/complex022.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2015-06-02"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="unique001">
+        <annotation>
+            <documentation>
+                <Title>Test uniqueness constraint on a field having a complex type with simple content</Title>
+                <Description>See comment in the schema document, and bug 10236. In the XSD 1.0 spec, see clause 3
+                of "Identity Constraint Satisfied" in 3.11.4 Identity-constraint Definition Validation Rules.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <schemaTest name="unique001.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/unique001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-08-12"/>
+        </schemaTest>
+        <instanceTest name="unique001.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid (despite the 1.0 spec): the field has a complex type with simple content.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/unique001.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-08-12"/>
+        </instanceTest>
+        <instanceTest name="unique001.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid: two fields with the same value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/unique001.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-08-12"/>
+        </instanceTest>     
+    </testGroup>    
+    
+    <testGroup name="unique002">
+        <annotation>
+            <documentation>
+                <Title>Test uniqueness constraint on a field having a complex type with mixed content</Title>
+                <Description>In both XSD 1.0 and 1.1 the schema is valid, but all instances are invalid.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <schemaTest name="unique002.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/unique002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-08-12"/>
+        </schemaTest>
+        <instanceTest name="unique002.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid: the field has a complex type with mixed content.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/unique002.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-08-12"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="unique003">
+        <annotation>
+            <documentation>
+                <Title>For the purposes of uniqueness constraints, NaN is effectively equal to NaN</Title>
+                <Description>For the purposes of uniqueness constraints, NaN is effectively equal to NaN. 
+                (Uniqueness is violated if the values are "identical or equal"). See bug 9196.</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="unique003.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/unique003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-02-06"/>
+        </schemaTest>
+        <instanceTest name="unique003.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Value: values are distinct.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/unique003.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-02-06"/>
+        </instanceTest>
+        <instanceTest name="unique003.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Value: values are distinct.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/unique003.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-02-06"/>
+        </instanceTest>
+        <instanceTest name="unique003.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid: values are duplicates.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/unique003.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-06"/>
+        </instanceTest>
+        <instanceTest name="unique003.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid: values NaN and NaN are considered duplicates.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Complex/unique003.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-06"/>
+        </instanceTest>
+    </testGroup>        
+    
+
+         
+</testSet>

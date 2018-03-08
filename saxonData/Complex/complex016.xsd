@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  elementFormDefault="qualified">
+  <xs:redefine schemaLocation="complex016a.xsd">
+    <xs:attributeGroup name="image.attributes">
+      <xs:attribute name="href" type="xs:string" use="required"/>
+      <xs:attribute name="scalefit" type="yesno-att.class"/>
+    </xs:attributeGroup>
+  </xs:redefine>
+</xs:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- test that within an assert, nodes other than the assertion root are properly typed -->
+  
+  <xs:element name="temp">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:restriction base="datedEvent">
+           <xs:assert test="not(data(.) instance of xs:date)"/>  
+        </xs:restriction>  
+      </xs:simpleContent>       
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="temp" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="datedEvent">
+      <xs:simpleContent>
+        <xs:extension base="xs:date">
+          <xs:attribute name="event" use="required" type="xs:dateTime"/>
+        </xs:extension>  
+      </xs:simpleContent>       
+  </xs:complexType>
+</xs:schema>

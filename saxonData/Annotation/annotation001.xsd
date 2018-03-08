@@ -1,0 +1,11 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- This violates the schema for schema documents -->
+
+  <xs:annotation>
+    <xs:documentation>
+      <xs:element/>
+    </xs:documentation>
+  </xs:annotation>
+
+</xs:schema>

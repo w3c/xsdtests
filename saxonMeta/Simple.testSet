@@ -1,0 +1,1607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<testSet name="Simple"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+      version="1.1"
+>
+
+     <testGroup name="simple001">
+        <annotation>
+            <documentation>
+                <Title>+INF allowed in xs:double lexical space</Title>
+                <Description>+INF allowed in xs:double lexical space in XSD 1.1</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-LexicalRepForFloatAndDouble"/>
+        <schemaTest name="simple001.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="simple001.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, +INF used legitimately.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple001.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+        <instanceTest name="simple001.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, -INF conflicts with fixed value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple001.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+        <instanceTest name="simple001.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, NaN conflicts with fixed value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple001.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>               
+    </testGroup>
+    
+    <testGroup name="simple002">
+        <annotation>
+            <documentation>
+                <Title>+INF allowed in xs:float lexical space</Title>
+                <Description>+INF allowed in xs:float lexical space in XSD 1.1</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-LexicalRepForFloatAndDouble"/>
+        <schemaTest name="simple002.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="simple002.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, +INF used legitimately.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple001.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+        <instanceTest name="simple002.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, -INF conflicts with fixed value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple001.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+        <instanceTest name="simple002.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, NaN conflicts with fixed value.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple001.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>               
+    </testGroup>
+    
+    <testGroup name="simple003">
+        <annotation>
+            <documentation>
+                <Title>Test that simpleType/@final = extension is allowed</Title>
+                <Description>Depends on resolution of spec bug 2074</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=2074"/>
+        <schemaTest name="simple003.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-25"/>
+        </schemaTest>
+        <instanceTest name="simple003.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, the simpleType that prohibits extension is not extended.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple003.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-25"/>
+        </instanceTest>         
+    </testGroup>
+    
+    <testGroup name="simple004">
+        <annotation>
+            <documentation>
+                <Title>Test that simpleType/@final = extension is allowed, and works</Title>
+                <Description>Depends on resolution of spec bug 2074</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=2074"/>
+        <schemaTest name="simple004.xsd">
+                <annotation>
+		            <documentation>
+		                Invalid, the simpleType that prohibits extension gets extended.
+		            </documentation>
+		        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple004.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-25"/>
+        </schemaTest>  
+    </testGroup>
+    
+    <testGroup name="simple005">
+        <annotation>
+            <documentation>
+                <Title>Test simpleType/@final = extension defaulted from finalDefault, and works</Title>
+                <Description>Depends on resolution of spec bug 2074</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="https://www.w3.org/Bugs/Public/show_bug.cgi?id=2074"/>
+        <schemaTest name="simple005.xsd">
+                <annotation>
+		            <documentation>
+		                Invalid, the simpleType that prohibits extension gets extended.
+		            </documentation>
+		        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple005.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-25"/>
+        </schemaTest>  
+    </testGroup>
+    
+    <testGroup name="simple006">
+        <annotation>
+            <documentation>
+                <Title>List type with a missing item type</Title>
+                <Description>Marked invalid here, though one could argue for "valid" under
+                section 5.3, missing components</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <schemaTest name="simple006.xsd">
+                <annotation>
+		            <documentation>
+		                Invalid, the list type refers to a non-existent item type.
+		            </documentation>
+		        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple006.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-25"/>
+        </schemaTest>  
+    </testGroup>
+    
+    
+    <testGroup name="simple010">
+        <annotation>
+            <documentation>
+                <Title>Type X is substitutable for union(X,Y)</Title>
+                <Description>Union is substitutable by one of the member types</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <schemaTest name="simple010.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple010.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="simple010.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple010.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+        <instanceTest name="simple010.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple010.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+        <instanceTest name="simple010.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple010.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>               
+    </testGroup>    
+    
+    <testGroup name="simple011">
+        <annotation>
+            <documentation>
+                <Title>Union(X,Y) is not validly derived from Union(X,Y,Z)</Title>
+                <Description>Doesn't make much sense, but that's what the spec says.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <schemaTest name="simple011.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple011.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="simple012">
+        <annotation>
+            <documentation>
+                <Title>Type X is substitutable for union(X,Y) when X is itself a union type</Title>
+                <Description>Union is substitutable by one of the member types when that member type is a union</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <schemaTest name="simple012.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple012.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="simple012.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple012.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+        <instanceTest name="simple012.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid use of xsi:type here
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple012.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+        <instanceTest name="simple012.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple012.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+        <instanceTest name="simple012.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple012.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>               
+    </testGroup>        
+    
+    <testGroup name="simple013">
+        <annotation>
+            <documentation>
+                <Title>Type D is substitutable for union(X,DT) when DT is union (D,T)</Title>
+                <Description>Tests substitutability of transitive membership of the union</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <schemaTest name="simple013.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple013.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="simple013.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple013.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+        <instanceTest name="simple013.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple013.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+        <instanceTest name="simple013.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple013.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>               
+    </testGroup>
+    
+    <testGroup name="simple014">
+        <annotation>
+            <documentation>
+                <Title>Member of a union is not substitutable if the union is derived by restriction</Title>
+                <Description>Tests substitutability of transitive membership of the union</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <schemaTest name="simple014.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple014.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+    </testGroup>    
+    
+    <testGroup name="simple015">
+        <annotation>
+            <documentation>
+                <Title>Member of a union is not substitutable if the union is derived by restriction</Title>
+                <Description>Tests substitutability of transitive membership of the union</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-DerivedByRestrFrom"/>
+        <schemaTest name="simple015.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple015.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="simple016">
+        <annotation>
+            <documentation>
+                <Title>xsi:type OK to select a member of a union only if there are no restriction facets</Title>
+                <Description>xsi:type OK to select a member of a union only if there are no restriction facets</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-XSITypeUsedAsMember"/>
+        <schemaTest name="simple016.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple016.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </schemaTest>
+        <instanceTest name="simple016.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, xsi:type is OK here as the union is unrestricted
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple016.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+        <instanceTest name="simple016.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, xsi:type cannot be used here as the union is restricted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple016.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="simple017">
+        <annotation>
+            <documentation>
+                <Title>The transitive membership of a union type must not contain the union itself</Title>
+                <Description>The transitive membership of a union type must not contain the union itself</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-Cyclicity"/>
+        <schemaTest name="simple017.xsd">
+            <annotation>
+	            <documentation>
+	                invalid, cyclic union definition
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple017.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+    </testGroup>    
+    
+    <testGroup name="simple018">
+        <annotation>
+            <documentation>
+                <Title>The transitive membership of a union type must not contain a type derived from the union</Title>
+                <Description>The transitive membership of a union type must not contain a type derived from the union</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-Cyclicity"/>
+        <schemaTest name="simple018.xsd">
+            <annotation>
+	            <documentation>
+	                invalid, cyclic union definition
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple018.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup name="simple019">
+        <annotation>
+            <documentation>
+                <Title>The transitive membership of a union type must not contain a type constructed from the union</Title>
+                <Description>The transitive membership of a union type must not contain a type constructed from the union</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-Cyclicity"/>
+        <schemaTest name="simple019.xsd">
+            <annotation>
+	            <documentation>
+	                invalid, cyclic union definition
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple019.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup name="simple020">
+        <annotation>
+            <documentation>
+                <Title>The transitive membership of a union type must not contain a type constructed from the union</Title>
+                <Description>The transitive membership of a union type must not contain a type constructed from the union</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-UnionTypes-Cyclicity"/>
+        <schemaTest name="simple020.xsd">
+            <annotation>
+	            <documentation>
+	                invalid, cyclic union definition
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple020.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="simple021">
+        <annotation>
+            <documentation>
+                <Title>The string "[^]" is not a valid regex</Title>
+                <Description>The string "[^]" is not a valid regex</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#charcter-classes"/>
+        <schemaTest name="simple021.xsd">
+            <annotation>
+	            <documentation>
+	                invalid regular expression in pattern facet
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple021.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-01-25"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="simple022">
+        <annotation>
+            <documentation>
+                <Title>Enumeration value OK if "equal or identical", so NaN is accepted. See bug 9196</Title>
+                <Description>Enumeration value OK if "equal or identical", so NaN is accepted. See bug 9196</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-IdentityAndEquality"/>
+        <schemaTest name="simple022.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple022.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-02-06"/>
+        </schemaTest>
+        <instanceTest name="simple022.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, Enumeration value OK if "equal or identical"
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple022.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-02-06"/>
+        </instanceTest>
+        <instanceTest name="simple022.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, Enumeration value OK if "equal or identical"
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple022.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-02-06"/>
+        </instanceTest>
+        <instanceTest name="simple022.v03.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, Enumeration value OK if "equal or identical"
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple022.v03.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-02-06"/>
+        </instanceTest>
+        <instanceTest name="simple016.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, Enumeration value OK only if "equal or identical".
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple022.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-06"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="simple040">
+        <annotation>
+            <documentation>
+                <Title>Hyphens in regular expressions</Title>
+                <Description>Tests use of hyphens in regular expressions</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>
+        <schemaTest name="simple040.xsd">
+            <schemaDocument xlink:href="../saxonData/Simple/simple040.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+        <instanceTest name="simple040.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, 
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple040.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+        <instanceTest name="simple040.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, 
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple040.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>
+        <instanceTest name="simple040.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, 
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple040.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-08"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="simple041">
+        <annotation>
+            <documentation>
+                <Title>Hyphens in regular expressions</Title>
+                <Description>Tests use of hyphens in regular expressions</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>
+        <schemaTest name="simple041.bad.xsd">
+            <annotation>
+	            <documentation>
+	                invalid, cyclic union definition
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple041.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+    </testGroup>  
+    
+    <testGroup name="simple042">
+        <annotation>
+            <documentation>
+                <Title>Hyphens in regular expressions</Title>
+                <Description>Tests use of hyphens in regular expressions</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>
+        <schemaTest name="simple042.bad.xsd">
+            <annotation>
+	            <documentation>
+	                invalid, cyclic union definition
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple042.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+    </testGroup>    
+    
+    <testGroup name="simple043">
+        <annotation>
+            <documentation>
+                <Title>Hyphens in regular expressions</Title>
+                <Description>Tests use of hyphens in regular expressions</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>
+        <schemaTest name="simple043.xsd">
+            <annotation>
+	            <documentation>
+	                this regex becomes legal by a decision of the WG in Nov 2010. See bug 13922.
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple043.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-07"/>
+            <prior status="accepted" date="2010-10-11"/>
+        </schemaTest>
+    </testGroup>   
+    
+    <testGroup name="simple044">
+        <annotation>
+            <documentation>
+                <Title>Hyphens in regular expressions</Title>
+                <Description>Tests use of hyphens in regular expressions</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>
+        <schemaTest name="simple044.xsd">
+            <annotation>
+	            <documentation>
+	                valid regex
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple044.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+        <instanceTest name="simple044.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, 
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple044.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+        <instanceTest name="simple044.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, 
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple044.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="simple045">
+        <annotation>
+            <documentation>
+                <Title>Hyphens in regular expressions</Title>
+                <Description>Tests use of hyphens in regular expressions</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>
+        <schemaTest name="simple045.xsd">
+            <annotation>
+	            <documentation>
+	                valid regex
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple045.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+        <instanceTest name="simple045.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, 
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple045.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+        <instanceTest name="simple045.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, 
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple045.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="simple046">
+        <annotation>
+            <documentation>
+                <Title>Hyphens in regular expressions</Title>
+                <Description>Tests use of hyphens in regular expressions</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-HyphensAndBracketsInRegex"/>
+        <schemaTest name="simple046.xsd">
+            <annotation>
+	            <documentation>
+	                valid regex
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple046.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+        <instanceTest name="simple046.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, 
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple046.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+        <instanceTest name="simple046.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, 
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple046.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="simple050">
+        <annotation>
+            <documentation>
+                <Title>Use of xs:anyAtomicType</Title>
+                <Description>Tests use of xs:anyAtomicType as the type of an element declaration</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-AnyAtomicType"/>
+        <schemaTest name="simple050.xsd">
+            <annotation>
+	            <documentation>
+	                valid schema using anyAtomicType
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple050.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+        <instanceTest name="simple050.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, anyAtomicType allows anything
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple050.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+        <instanceTest name="simple050.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid xsi:type restricting to a date
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple050.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+        <instanceTest name="simple050.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, if restricting to a date the date must be valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple050.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+        <instanceTest name="simple050.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, restricting to an unknown type
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple050.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+        <instanceTest name="simple050.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, restricting to untypedAtomic
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple050.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="simple051">
+        <annotation>
+            <documentation>
+                <Title>Use of xs:anyAtomicType</Title>
+                <Description>Cannot use xs:anyAtomicType as the base type of a restriction</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-AnyAtomicType"/>
+        <schemaTest name="simple050.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema using anyAtomicType
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple051.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup name="simple052">
+        <annotation>
+            <documentation>
+                <Title>Use of xs:anyAtomicType</Title>
+                <Description>Tests use of xs:anyAtomicType as the item type of a list.
+                This has been disallowed in consequence of the resolution of bug 11103</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-AnyAtomicType"/>
+        <schemaTest name="simple052.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema using anyAtomicType as the item type of a list
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple052.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-07"/>
+        </schemaTest>
+        <!--<instanceTest name="simple052.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, list has 5 members
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple052.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>
+        <instanceTest name="simple052.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, list has 4 members
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple052.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>-->
+    </testGroup>       
+    
+    <testGroup name="simple053">
+        <annotation>
+            <documentation>
+                <Title>Use of xs:anyAtomicType</Title>
+                <Description>Tests use of xs:anyAtomicType as the member type of a union.
+                Union of xs:anyAtomicType is not allowed, as a consequence of the resolution of bug 11103</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-AnyAtomicType"/>
+        <schemaTest name="simple053.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema using anyAtomicType as a member type in a union
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple053.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-07"/>
+        </schemaTest>
+       <!-- <instanceTest name="simple053.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the assertion
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple053.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-11"/>
+        </instanceTest>-->
+     </testGroup>
+     
+     <testGroup name="simple054">
+        <annotation>
+            <documentation>
+                <Title>xsi:type must resolve</Title>
+                <Description>xsi:type isn't one of the member type of a union, in fact it doesn't exist</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Misc-XSITypeMustResolve"/>
+        <schemaTest name="simple054.xsd">
+            <annotation>
+	            <documentation>
+	                valid schema using a union
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple054.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-11-17"/>
+        </schemaTest>
+        <instanceTest name="simple053.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown xsi:type
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple054.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-17"/>
+        </instanceTest>
+     </testGroup>
+     
+     <testGroup name="simple055">
+        <annotation>
+            <documentation>
+                <Title>Selector in identity constraint mistakenly identifies an element with a simple type</Title>
+                <Description>Not an error in the schema, though Saxon gives a warning: it causes all instances to be invalid.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <schemaTest name="simple055.xsd">
+            <annotation>
+	            <documentation>
+	                schema is valid though not useful
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple055.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-27"/>
+        </schemaTest>
+        <instanceTest name="simple055.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, field of selector selects nothing
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple055.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-28"/>
+        </instanceTest>
+     </testGroup>
+     
+     <testGroup name="simple060">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple060.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple060.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple061">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple061.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple061.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+      </testGroup>
+        
+      <testGroup name="simple062">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple062.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple062.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple063">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple063.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple063.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple064">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple064.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple064.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple065">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple065.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple065.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple066">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple066.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple066.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple067">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple067.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple067.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple068">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple068.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple068.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple069">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple069.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple069.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple070">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple070.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple070.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple071">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple071.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple071.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple072">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple072.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple072.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple073">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple073.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple073.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple074">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple074.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple074.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple075">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple075.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple075.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple076">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple076.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple076.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple077">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple077.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple077.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple078">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple078.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple078.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple079">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple079.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple079.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple080">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple080.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple080.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple081">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple081.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple081.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple082">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple082.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple082.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple083">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple083.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple083.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple084">
+        <annotation>
+            <documentation>
+                <Title>Facet must not appear more than once</Title>
+                <Description>Facet must not appear more than once</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#st-props-correct"/>
+        <schemaTest name="simple084.xsd">
+            <annotation>
+	            <documentation>
+	                invalid schema, facet is repeated violating clause 1 of 
+	                Simple Type Definition Representation OK
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple084.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-21"/>
+        </schemaTest>
+     </testGroup>
+     
+     <testGroup name="simple085">
+        <annotation>
+            <documentation>
+                <Title>Union derived by restriction with a pattern facet</Title>
+                <Description>Pattern facet applies after doing whitespace processing defined
+                             in the member type against which validation succeeded
+                </Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <schemaTest name="simple085.xsd">
+            <annotation>
+	            <documentation>
+	                schema is valid
+	            </documentation>
+	        </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple085.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2014-12-05"/>
+        </schemaTest>
+        <instanceTest name="simple085.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid; pattern matches the input after whitespace normalization
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple085.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2014-12-05"/>
+        </instanceTest>
+     </testGroup>     
+                      
+
+ 
+
+         
+</testSet>

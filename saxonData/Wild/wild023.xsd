@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- wildcard intersection: allows anything but ##local or eve -->
+
+<xs:element name="eden" type="T"/>
+
+<xs:complexType name="T">
+    <xs:sequence/>
+    <xs:attributeGroup ref="a"/> 
+    <xs:attributeGroup ref="b"/>  
+</xs:complexType>
+
+
+<xs:attributeGroup name="a">
+  <xs:anyAttribute notNamespace="##local" processContents="lax"/>
+</xs:attributeGroup>
+
+<xs:attributeGroup name="b">
+  <xs:anyAttribute notNamespace="http://eve.com/" processContents="lax"/>
+</xs:attributeGroup>
+    
+</xs:schema>

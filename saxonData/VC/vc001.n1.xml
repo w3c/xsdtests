@@ -1,0 +1,2 @@
+<!-- Should be invalid under 1.1 but valid under 1.0 -->
+<temp x="204"/>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:z="http://wild053.org/">
+<!-- basic test of element wildcard with ##defined and multiple namespaces -->
+
+<xs:import namespace="http://wild053.org/" schemaLocation="wild053imp.xsd"/>
+
+<xs:element name="root" type="z:zing"/>
+
+<xs:element name="zang"/>
+    
+</xs:schema>

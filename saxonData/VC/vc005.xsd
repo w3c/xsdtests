@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Use of version conditionals to ignore an (otherwise invalid) xs:include -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           >
+  <xs:include schemaLocation="vc003.xsd"/>
+  <xs:include schemaLocation="doesNotExist.xsd" vc:maxVersion="0.9"/>
+</xs:schema>

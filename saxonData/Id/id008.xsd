@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- A complex type with simple content of type ID or IDREF was at one time not treated as an ID or IDREF value,
+         but this has changed (been clarified) -->
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:sequence>
+          <xs:element ref="node" maxOccurs="unbounded"/>
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="node">
+    <xs:complexType>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="node"/>
+            <xs:element name="id" type="pseudoID"/>
+            <xs:element name="idref" type="pseudoIDREF"/>
+         </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="pseudoID">
+    <xs:simpleContent>
+      <xs:extension base="xs:ID">
+        <xs:attribute name="a" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="pseudoIDREF">
+    <xs:simpleContent>
+      <xs:extension base="xs:IDREF">
+        <xs:attribute name="a" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+ 
+</xs:schema>

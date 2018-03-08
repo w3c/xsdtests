@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xs:all to xs:all subsumption, valid, with pathologically overlapping wildcards -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b">
+       <xs:all>     
+         <xs:any namespace="http://one.uri/ http://two.uri/" minOccurs="5" maxOccurs="unbounded"/>
+         <xs:any namespace="http://three.uri/" minOccurs="0" maxOccurs="2"/>
+       </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="r">
+      <xs:complexContent>
+        <xs:restriction base="b">
+         <xs:all>     
+           <xs:any namespace="http://one.uri/" minOccurs="3" maxOccurs="unbounded"/>
+           <xs:any namespace="http://two.uri/" minOccurs="2" maxOccurs="2"/>
+           <xs:any namespace="http://three.uri/" minOccurs="2" maxOccurs="2"/>
+         </xs:all>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType> 
+    
+          
+
+</xs:schema>

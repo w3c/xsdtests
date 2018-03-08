@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- test trivial restriction from dateTimeSpamp built in type -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc" type="boundedDateTimeStamp"/>
+  
+  <xs:simpleType name="boundedDateTimeStamp">
+    <xs:restriction base="xs:dateTimeStamp">
+      <xs:minInclusive value="2000-01-01T00:00:00Z"/>
+      <xs:maxInclusive value="2999-12-31T23:59:59Z"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

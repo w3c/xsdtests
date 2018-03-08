@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- element particle and wildcard match the same input elements -->
+
+  <xs:complexType name="T">
+    <xs:sequence>
+      <xs:element name="i" type="xs:integer"/>
+      <xs:element name="d" type="xs:date"/>
+      <xs:any namespace="##local" processContents="skip"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+<xs:element name="doc" type="T"/>
+
+    
+</xs:schema>

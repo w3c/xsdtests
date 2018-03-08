@@ -1,0 +1,16 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+    <xs:complexType name="t_abs" abstract="true">
+        <xs:sequence>
+            <xs:element name="el" type="xs:string"/>
+            <xs:element name="e2" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="t_con">
+        <xs:sequence>
+            <xs:element name="e_t_con_1" type="xs:string"/>
+            <xs:element name="e_t_abs" type="t_abs"/>
+            <xs:element name="e_t_con_2" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="e_con" type="t_con"/>
+</xs:schema>

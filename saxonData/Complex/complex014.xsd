@@ -1,0 +1,17 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance"/>
+    
+    <!-- Nillable element, complex type with element-only content, xs:all compositor -->
+    
+<xs:element name="root" nillable="true">
+    <xs:complexType mixed="false">
+            <xs:all>
+                <xs:element name="e" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="f" minOccurs="0" maxOccurs="1"/>
+            </xs:all>      
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>

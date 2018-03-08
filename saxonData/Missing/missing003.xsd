@@ -1,0 +1,12 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <!-- Element declaration with missing type and missing subst group head
+    -->
+    
+
+<xs:element name="good" type="xs:integer"/>
+
+<xs:element name="bad" type="absent" substitutionGroup="missing"/>
+
+</xs:schema>

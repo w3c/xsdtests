@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:override schemaLocation="over008a.xsd">
+      <xs:attributeGroup name="g">
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+        <xs:anyAttribute namespace="##other" processContents="lax"/>
+      </xs:attributeGroup> 
+  </xs:override>
+  
+  <xs:element name="section">
+    <xs:complexType>
+       <xs:sequence>
+         <xs:element name="head" type="xs:string"/>
+         <xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>
+       </xs:sequence> 
+       <xs:attributeGroup ref="g"/>
+       <xs:attribute name="nr" type="xs:decimal" use="required"/>
+     </xs:complexType>
+  </xs:element>  
+  
+</xs:schema>

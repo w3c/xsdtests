@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- default open content, applies to types declared within xs:override -->
+
+<xs:override schemaLocation="open043x.xsd">
+    
+    <xs:complexType name="beta">
+        <xs:sequence/>
+    </xs:complexType>    
+    
+</xs:override>
+
+<xs:defaultOpenContent mode="suffix"  appliesToEmpty="true">
+      <xs:any namespace="http://open.com/" processContents="lax"/>
+</xs:defaultOpenContent>    
+    
+
+
+<xs:element name="doc">
+  <xs:complexType mixed=" 1 ">
+    <xs:sequence>
+        <xs:element name="a" type="alpha"/>
+        <xs:element name="b" type="beta"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+
+    
+</xs:schema>

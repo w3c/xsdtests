@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+facet must not be repeated
+-->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+
+  <xs:element name="e" type="b"/>
+    
+  <xs:simpleType name="b">  
+      <xs:restriction base="xs:string">
+        <xs:length value="2"/>
+        <xs:length value="2"/>  
+      </xs:restriction> 
+  </xs:simpleType>
+
+  
+</xs:schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  defaultAttributes="da"
+  >
+<!-- basic test of default attributes with defaultAttributesApply = false -->
+
+<xs:element name="doc">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="a" type="aType"/>
+      <xs:element name="b" minOccurs="0"/>
+      <xs:element name="c" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:complexType name="aType" defaultAttributesApply="false"/>
+
+<xs:attributeGroup name="da">
+  <xs:attribute name="extra-number" type="xs:decimal" use="optional"/>
+  <xs:attribute name="extra-date" type="xs:date" use="optional"/>
+</xs:attributeGroup>
+    
+</xs:schema>

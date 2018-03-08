@@ -1,0 +1,27 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   
+<!-- xsi:type can be made mandatory -->
+    
+<xs:element name="root" type="B"/>
+
+    <xs:complexType name="B">
+        <xs:sequence>
+            <xs:element name="e" minOccurs="0" maxOccurs="5"/>
+            <xs:element name="f" minOccurs="0" maxOccurs="5"/>
+        </xs:sequence>
+        <xs:attribute ref="xsi:type" use="required"/> 
+    </xs:complexType>
+    
+    <xs:complexType name="R">
+        <xs:complexContent>
+            <xs:restriction base="B">
+                <xs:sequence>
+                    <xs:element name="e" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="f" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+    
+</xs:schema>

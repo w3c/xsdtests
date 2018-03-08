@@ -1,0 +1,18 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- This satisfies the schema for schema documents, but not the XML representation rules
+          for xs:element elements -->
+
+  <xs:annotation>
+    <xs:documentation>
+      <xs:element name="abc" type="xs:integer">
+         <xs:simpleType>
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+            </xs:restriction>
+         </xs:simpleType>
+      </xs:element>
+    </xs:documentation>
+  </xs:annotation>
+
+</xs:schema>

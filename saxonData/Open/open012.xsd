@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- open content, but it does not apply to an empty content model -->
+
+<xs:defaultOpenContent mode="suffix" appliesToEmpty="false">
+      <xs:any namespace="http://open.com/" processContents="lax"/>
+</xs:defaultOpenContent>
+
+<xs:element name="doc">
+  <xs:complexType>
+    <xs:sequence/>
+  </xs:complexType>
+</xs:element>
+    
+</xs:schema>

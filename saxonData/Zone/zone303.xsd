@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- equality testing for xs:dayTimeDuration values used in min/max constraints -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+  <xs:element name="doc">
+    <xs:simpleType>
+        <xs:restriction base="xs:dayTimeDuration">
+            <xs:minInclusive value="-P3D"/>
+            <xs:maxInclusive value="P3D"/>
+        </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+
+</xs:schema>

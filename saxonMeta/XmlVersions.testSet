@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<testSet name="XmlVersions"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+    >
+    
+    <!-- Note, many of these tests were written on the assumption that XML 1.1 allowed
+    more name characters than XML 1.0. However, these changes have been retrofitted to
+    XML 1.0 fifth edition, so there is no longer any dependency on XML 1.1 -->
+
+    <testGroup name="xv001">
+        <annotation>
+            <documentation>
+                <Title>Use newly-allowed name characters in element and attribute name</Title>
+                <Description>Dutch ligature ij is allowed in names in XML 1.1 and XML 1.0 5th ed but not earlier</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2006/WD-xmlschema11-1-20060831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-AddlCharsInNames"/>
+        <schemaTest name="xv001.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </schemaTest>
+        <instanceTest name="xv001.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv001.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv002">
+        <annotation>
+            <documentation>
+                <Title>Use newly-allowed name characters in NCName value</Title>
+                <Description>Dutch ligature ij is allowed in names in XML 1.1 and XML 1.0 5th ed but not earlier</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2006/WD-xmlschema11-1-20060831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-ValSpcOfXSNameEtc"/>
+        <schemaTest name="xv002.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </schemaTest>
+        <instanceTest name="xv002.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv002.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv003">
+        <annotation>
+            <documentation>
+                <Title>Use newly-allowed C0 characters in character content and in attribute values</Title>
+                <Description>C0 characters allowed in content in XML 1.1 but not earlier</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2006/WD-xmlschema11-1-20060831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-AddlCharsInContent"/>
+        <schemaTest name="xv003.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </schemaTest>
+        <instanceTest name="xv003.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv003.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv004">
+        <annotation>
+            <documentation>
+                <Title>Use newly-allowed name characters in schema component names</Title>
+                <Description>Non-BMP chars is allowed in names in XML 1.1 but not earlier</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2006/WD-xmlschema11-1-20060831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-AddlCharsInNames"/>
+        <schemaTest name="xv004.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv004.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </schemaTest>
+        <instanceTest name="xv004.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv004.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv005">
+        <annotation>
+            <documentation>
+                <Title>Test which characters match \i in a regex</Title>
+                <Description>Initial name characters in XML 1.1 were different from 1.0</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2006/WD-xmlschema11-1-20060831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <schemaTest name="xv005.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv005.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </schemaTest>
+        <instanceTest name="xv005.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv005.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv005.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv005.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv005.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv005.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv006">
+        <annotation>
+            <documentation>
+                <Title>Test which characters match \I in a regex</Title>
+                <Description>Initial name characters in XML 1.1 were different from 1.0</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2006/WD-xmlschema11-1-20060831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <schemaTest name="xv006.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv006.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </schemaTest>
+        <instanceTest name="xv006.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv006.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv006.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv006.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv006.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv006.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv006.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv006.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv007">
+        <annotation>
+            <documentation>
+                <Title>Test which characters match \c in a regex</Title>
+                <Description>Name characters in XML 1.1 were different from 1.0</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2007/WD-xmlschema11-1-20070831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <schemaTest name="xv007.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv007.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </schemaTest>
+        <instanceTest name="xv007.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv007.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv007.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv007.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv007.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv007.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv008">
+        <annotation>
+            <documentation>
+                <Title>Test which characters match \C in a regex</Title>
+                <Description>Name characters in XML 1.1 were different from 1.0</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2008/WD-xmlschema11-1-20080831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <schemaTest name="xv008.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv008.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </schemaTest>
+        <instanceTest name="xv008.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv008.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv008.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv008.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv008.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv008.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>  
+    
+    <testGroup name="xv009">
+        <annotation>
+            <documentation>
+                <Title>Test interpretation of NMTOKENS under XML 1.1</Title>
+                <Description>Name characters in XML 1.1 were different from 1.0</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20090831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-ValSpcOfXSNameEtc"/>
+        <schemaTest name="xv009.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv009.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </schemaTest>
+        <instanceTest name="xv009.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv009.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv009.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv009.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv009.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv009.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv009.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv009.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv009.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid against the schema.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv009.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv100i">
+        <annotation>
+            <documentation>
+                <Title>Test which characters match \i in a regex</Title>
+                <Description>Name characters in XML 1.1 are the same as 1.05e</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2008/WD-xmlschema11-1-20080831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <schemaTest name="xv100i.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv100.i.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-24"/>
+        </schemaTest>
+        <instanceTest name="xv100i.i.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.i.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100i.c.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.c.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100i.noti.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.noti.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100i.notc.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.notc.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv100c">
+        <annotation>
+            <documentation>
+                <Title>Test which characters match \c in a regex</Title>
+                <Description>Name characters in XML 1.1 are the same as 1.05e</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2008/WD-xmlschema11-1-20080831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <schemaTest name="xv100c.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv100.c.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-24"/>
+        </schemaTest>
+        <instanceTest name="xv100c.i.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.i.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100c.c.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.c.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100c.noti.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.noti.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100c.notc.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.notc.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv100noti">
+        <annotation>
+            <documentation>
+                <Title>Test which characters match \I in a regex</Title>
+                <Description>Name characters in XML 1.1 are the same as 1.05e</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2008/WD-xmlschema11-1-20080831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <schemaTest name="xv100noti.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv100.noti.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-24"/>
+        </schemaTest>
+        <instanceTest name="xv100noti.i.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.i.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100noti.c.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.c.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100noti.noti.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.noti.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100noti.notc.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.notc.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="xv100notc">
+        <annotation>
+            <documentation>
+                <Title>Test which characters match \C in a regex</Title>
+                <Description>Name characters in XML 1.1 are the same as 1.05e</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2008/WD-xmlschema11-1-20080831/"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-xml1_1Support-EffectInRegex"/>
+        <schemaTest name="xv100notc.xsd">
+            <schemaDocument xlink:href="../saxonData/XmlVersions/xv100.notc.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-24"/>
+        </schemaTest>
+        <instanceTest name="xv100notc.i.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.i.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100notc.c.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.c.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100notc.noti.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.noti.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+        <instanceTest name="xv100notc.notc.xml">
+            <instanceDocument xlink:href="../saxonData/XmlVersions/xv100.notc.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-21"/>
+        </instanceTest>
+    </testGroup>
+</testSet>        

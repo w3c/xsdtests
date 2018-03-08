@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- An explicit attribute in the xsi namespace is not allowed -->
+
+<xs:import namespace="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="wild041inc.xsd"/>
+
+<xs:complexType name="computer">
+ <xs:sequence/>
+  <xs:attribute ref="xsi:nonStandardAttribute"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+</xs:complexType>
+
+
+<xs:element name="computer" type="computer"/>
+    
+</xs:schema>

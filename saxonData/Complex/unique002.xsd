@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Valid schema; but no instance will be valid, 
+         because the uniqueness constraint attempts to use a field whose type has mixed content -->
+      
+<xs:element name="root">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="sub" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="idelt">
+                            <xs:complexType mixed="true">
+                                <xs:attribute name="attr"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="test">
+        <xs:selector xpath="sub"/>
+        <xs:field xpath="idelt"/>
+    </xs:unique>
+</xs:element>
+
+</xs:schema>

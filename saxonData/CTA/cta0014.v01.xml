@@ -1,0 +1,6 @@
+<doc>
+  <event type="date"><when>2010-10-16</when></event>
+  <event type="time"><when>12:12:12</when></event>
+  <event type="dateTime"><when>2010-10-16T13:13:00</when></event>
+  <event><when>2010-10</when></event>
+</doc>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://open205x.com/" attributeFormDefault="qualified"
+  >
+<!-- default attribute group in another namespace -->
+
+
+<xs:attributeGroup name="da">
+  <xs:attribute name="extra-number" type="xs:decimal" use="optional"/>
+  <xs:attribute name="extra-date" type="xs:date" use="optional"/>
+</xs:attributeGroup>
+
+<!-- no default attributes for this complex type -->
+
+<xs:complexType name="bType"/>
+    
+</xs:schema>

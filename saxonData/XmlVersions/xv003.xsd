@@ -1,0 +1,10 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- Use C0 characters in content of elements and attributes -->
+  <xs:element name="doc">
+    <xs:complexType mixed="1">
+       <xs:sequence/>     
+       <xs:attribute name="att" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,14 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- Parsing of NMTOKENS under XML 1.1, including defintition of whitespace -->
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:sequence>
+         <xs:element name="item" maxOccurs="unbounded" type="xs:NMTOKENS"/>     
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  
+    
+</xs:schema>

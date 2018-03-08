@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xs:all to singleton xs:sequence subsumption, valid -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b">
+       <xs:all>     
+         <xs:element name="a" minOccurs="0" maxOccurs="5"/>
+         <xs:element name="b" minOccurs="0" maxOccurs="5"/>
+         <xs:element name="c" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="d" minOccurs="1" maxOccurs="6"/>
+       </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="r">
+      <xs:complexContent>
+        <xs:restriction base="b">
+          <xs:sequence minOccurs="1" maxOccurs="1">
+            <xs:element name="d"/>
+          </xs:sequence>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType>  
+          
+
+</xs:schema>

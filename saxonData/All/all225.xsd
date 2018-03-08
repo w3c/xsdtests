@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xs:all to xs:all subsumption, valid, base element restricted to substitution group, maxOccurs OK -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b">
+       <xs:all>     
+         <xs:element ref="a" minOccurs="10" maxOccurs="unbounded"/>
+         <xs:element name="b" minOccurs="0" maxOccurs="5"/>
+         <xs:element name="c" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="d" minOccurs="0" maxOccurs="1"/>
+       </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="r">
+      <xs:complexContent>
+        <xs:restriction base="b">
+          <xs:all>
+            <xs:element ref="A1" minOccurs="6" maxOccurs="15"/>
+            <xs:element ref="A2" minOccurs="6" maxOccurs="15"/>
+            <xs:element name="c" minOccurs="21" maxOccurs="22"/>
+          </xs:all>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType> 
+    
+    <xs:element name="a"/>
+    
+    <xs:element name="A1" substitutionGroup="a"/> 
+    <xs:element name="A2" substitutionGroup="a"/> 
+          
+
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xs:element name="outer">
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element ref="inner"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="inner">
+    <xs:complexType>
+       <xs:sequence>
+         <xs:element name="a" minOccurs="0" maxOccurs="4">
+           <xs:complexType>
+               <xs:sequence minOccurs="0" maxOccurs="4">
+                 <xs:element name="b"/>
+               </xs:sequence>
+           </xs:complexType>
+         </xs:element>
+       </xs:sequence>       
+       <xs:attribute name="x" use="required"/>
+       <xs:attribute name="y" use="optional"/>      
+       <xs:assert test="count(.//b) le 4"/>
+       <xs:assert test="not(a[preceding::a[not(b)]])"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

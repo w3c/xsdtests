@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xs:all to xs:all subsumption, invalid, one wildcard in the base type covers two in the derived type,
+     but the maxOccurs total in the derived type exceeds that in the base -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b">
+       <xs:all>     
+         <xs:any namespace="http://one.uri/ http://two.uri/" maxOccurs="5"/>
+       </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="r">
+      <xs:complexContent>
+        <xs:restriction base="b">
+         <xs:all>     
+           <xs:any namespace="http://one.uri/" maxOccurs="3"/>
+           <xs:any namespace="http://two.uri/" maxOccurs="3"/>
+         </xs:all>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType> 
+    
+    <xs:element name="a"/>
+    
+    <xs:element name="A1" substitutionGroup="a"/> 
+    <xs:element name="A2" substitutionGroup="a"/> 
+          
+
+</xs:schema>

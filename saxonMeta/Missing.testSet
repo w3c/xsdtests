@@ -1,0 +1,177 @@
+<testSet name="Missing"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+      version="1.0"
+      xmlns:saxon="http://saxon.sf.net/">
+      
+      <!-- Tests using schemas with missing components. This should be an error only if the missing
+           component is actually required for validation -->
+
+    <testGroup name="missing001" version="1.0">
+        <annotation>
+            <documentation>
+                <Title>Element declaration with missing type</Title>
+                <Description>Error only if the element declaration is needed for validation</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="missing001.xsd">
+            <schemaDocument xlink:href="../saxonData/Missing/missing001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </schemaTest>
+        <instanceTest name="missing001.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, the offending element declaration is not used.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Missing/missing001.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </instanceTest>        
+        <instanceTest name="missing001.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, the offending element declaration is used.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Missing/missing001.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </instanceTest>                                 
+    </testGroup>
+    
+    <testGroup name="missing002" version="1.0">
+        <annotation>
+            <documentation>
+                <Title>Element declaration with missing substitution group head</Title>
+                <Description>Error only if the element declaration is needed for validation</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="missing001.xsd">
+            <schemaDocument xlink:href="../saxonData/Missing/missing002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </schemaTest>
+        <instanceTest name="missing001.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, the offending element declaration is not used.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Missing/missing001.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </instanceTest>        
+        <instanceTest name="missing001.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, the offending element declaration is used.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Missing/missing001.n1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </instanceTest>                                 
+    </testGroup>
+    
+    <testGroup name="missing003" version="1.0">
+        <annotation>
+            <documentation>
+                <Title>Element declaration with missing substitution group head</Title>
+                <Description>Error only if the element declaration is needed for validation</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="missing003.xsd">
+            <schemaDocument xlink:href="../saxonData/Missing/missing003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </schemaTest>
+        <instanceTest name="missing003.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, the offending element declaration is not used.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Missing/missing001.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </instanceTest>        
+        <instanceTest name="missing003.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, the offending element declaration is used.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Missing/missing001.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </instanceTest>                                 
+    </testGroup>
+    
+    <testGroup name="missing004" version="1.0">
+        <annotation>
+            <documentation>
+                <Title>Simple type definition with absent base type</Title>
+                <Description>Considered a fatal error in Saxon</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="missing004.xsd">
+            <schemaDocument xlink:href="../saxonData/Missing/missing004.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="missing005" version="1.0">
+        <annotation>
+            <documentation>
+                <Title>Complex type definition with absent base type</Title>
+                <Description>Considered a fatal error in Saxon</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="missing005.xsd">
+            <schemaDocument xlink:href="../saxonData/Missing/missing005.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="missing006" version="1.0">
+        <annotation>
+            <documentation>
+                <Title>List type with missing item type</Title>
+                <Description>Error only if the list type is needed for validation</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="missing006.xsd">
+            <schemaDocument xlink:href="../saxonData/Missing/missing006.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </schemaTest>
+        <instanceTest name="missing006.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, the offending type definition is not used.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Missing/missing001.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </instanceTest>        
+        <instanceTest name="missing006.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, the offending type definition is used.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Missing/missing001.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2015-06-01"/>
+        </instanceTest>                                 
+    </testGroup>
+    
+</testSet>    

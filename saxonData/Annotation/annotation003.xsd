@@ -1,0 +1,13 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- This satisfies both the schema for schema documents, and the XML representation rules
+          for xs:attribute elements, but describes a schema component that violates the constraints
+          on schema components -->
+
+  <xs:annotation>
+    <xs:documentation>
+      <xs:attribute name="abc" type="xs:double" default="qwerty"/>
+     </xs:documentation>
+  </xs:annotation>
+
+</xs:schema>

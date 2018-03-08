@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+   <!-- xs:assert on a restriction of a list type -->
+
+  <xs:element name="list">
+    <xs:simpleType>
+       <xs:restriction base="list-of-integer">
+         <xs:assertion test="count($value) eq count(distinct-values($value))" 
+              saxon:message="The list of values contains duplicates" xmlns:saxon="http://saxon.sf.net/"/>
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  <xs:simpleType name="list-of-integer">
+     <xs:list itemType="xs:integer"/>
+  </xs:simpleType>
+  
+  <xs:element name="outer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="list" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>  
+  </xs:element>
+  
+</xs:schema>

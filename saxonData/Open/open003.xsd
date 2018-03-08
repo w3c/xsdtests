@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Explicit open content takes precedence over defaultOpenContent -->
+
+<xs:defaultOpenContent mode="suffix">
+  <xs:annotation/>
+  <xs:any namespace="http://open.com/" processContents="lax"/>
+</xs:defaultOpenContent>
+
+<xs:element name="doc">
+  <xs:complexType>
+  <xs:openContent mode="suffix">
+    <xs:annotation/>
+    <xs:any namespace="http://local.com/" processContents="lax"/>
+  </xs:openContent>
+    <xs:sequence>
+      <xs:element name="a"/>
+      <xs:element name="b" minOccurs="0"/>
+      <xs:element name="c" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+    
+</xs:schema>

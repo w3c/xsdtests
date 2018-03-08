@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://open.com/">
+<!-- valid open content: it's not an error for open content to compete with ordinary wildcards -->
+
+  <xs:complexType name="T">
+    <xs:openContent mode="interleave">
+       <xs:any namespace="http://open.com/" processContents="lax"/>
+    </xs:openContent>
+    <xs:sequence>
+      <xs:element name="a" maxOccurs="unbounded"/>
+      <xs:element name="b" minOccurs="0"/>
+      <xs:element name="c" minOccurs="0"/>
+      <xs:element name="d" minOccurs="0"/>
+      <xs:any namespace="http://open.com/" processContents="lax"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+
+<xs:element name="doc" type="t:T" xmlns:t="http://open.com/"/>
+
+    
+</xs:schema>

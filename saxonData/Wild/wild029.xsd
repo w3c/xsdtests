@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- basic test of a notQName element wildcard in an xs:sequence model -->
+
+<xs:element name="eden">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="a" type="xs:string"/>
+      <xs:element name="a" type="xs:string"/>
+      <xs:element name="a" type="xs:string"/>
+      <xs:any notQName="a" processContents="skip" 
+              minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>  
+  </xs:complexType>
+</xs:element>
+    
+</xs:schema>

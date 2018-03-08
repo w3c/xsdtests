@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- open content, does not apply to a complex type with simple content ... -->
+
+<xs:defaultOpenContent mode="suffix" appliesToEmpty="false">
+      <xs:any namespace="http://open.com/" processContents="lax"/>
+</xs:defaultOpenContent>
+
+<xs:element name="doc">
+  <xs:complexType>
+    <xs:simpleContent>
+        <xs:extension base="xs:date">
+            <xs:attribute name="evidence"/>
+        </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:element>
+    
+</xs:schema>

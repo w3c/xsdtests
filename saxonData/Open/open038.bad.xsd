@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!--error, two openContents with the same id-->
+
+<xs:element name="doc">
+  <xs:complexType>
+    <xs:openContent mode="suffix" id="open001">
+      <xs:annotation><xs:documentation><p>Here be open content</p></xs:documentation></xs:annotation>
+      <xs:any namespace="http://open.com/" processContents="lax"/>
+    </xs:openContent>
+    <xs:sequence>
+      <xs:element name="a"/>
+      <xs:element name="b" minOccurs="0"/>
+      <xs:element name="c" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="doc2">
+  <xs:complexType>
+    <xs:openContent mode="suffix" id=" open001 ">
+      <xs:any namespace="http://open.com/" processContents="lax"/>
+    </xs:openContent>
+    <xs:sequence>
+      <xs:element name="a2"/>
+      <xs:element name="b2" minOccurs="0"/>
+      <xs:element name="c2" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+    
+</xs:schema>

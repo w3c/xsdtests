@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:override schemaLocation="over012a.xsd">
+  <xs:complexType name="structuredDate">
+    <xs:complexContent>
+    <xs:restriction base="structuredDate">
+     <xs:sequence>
+        <xs:element name="year" type="xs:int"/>
+        <xs:element name="month" type="xs:int"/>
+        <xs:element name="day" type="xs:int"/>
+     </xs:sequence>
+    </xs:restriction>
+    </xs:complexContent> 
+  </xs:complexType>
+  </xs:override>
+</xs:schema>

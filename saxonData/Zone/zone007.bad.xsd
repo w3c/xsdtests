@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- test explicitTimezone facet: used on non-dateTime type -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+    <xs:element name="doc" type="timeStamp"/>
+  
+    <xs:simpleType name="timeStamp">
+       <xs:restriction base="xs:string">     
+         <xs:explicitTimezone value="optional"/>
+       </xs:restriction>
+    </xs:simpleType>
+         
+</xs:schema>

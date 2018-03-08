@@ -1,0 +1,10 @@
+<!-- invalid document - c:c not allowed -->
+<doc xmlns:a="http://a.ns/" xmlns:b="http://b.ns/">
+  <a:wasp/>
+  <b:bee/>
+  <a:ant/>
+  <b:beetle/>
+  <c:c xmlns:c="http://c.ns/"/>
+  <a:earwig/>
+  <b:maybug/>
+</doc>

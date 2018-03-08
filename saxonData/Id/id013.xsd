@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- an ID attribute in XSD 1.1 can have a fixed value -->
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:sequence>
+          <xs:element ref="para" maxOccurs="unbounded"/>
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="para">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+            <xs:attribute ref="id" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:attribute name="id" type="xs:ID" fixed="para001"/>
+        
+
+</xs:schema>

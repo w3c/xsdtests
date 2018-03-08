@@ -1,0 +1,40 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Tests whether the field in a uniqueness constraint may have a complex type with
+         simple content. On the face of it, XSD 1.0 disallows this but XSD 1.1 allows it.
+         However, there seems to have been WG consensus that XSD 1.0 implementations allowed
+         it anyway so it wasn't a problem. See comment #1 in bug #10236 for analysis of the
+         history, including a reference to the email containing this test case:
+         
+         http://lists.w3.org/Archives/Member/w3c-xml-schema-ig/2003Aug/0035.html
+         
+         which was orginally crafted by Henry Thompson.        
+    -->
+    
+<xs:element name="root">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="sub" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="idelt">
+                            <xs:complexType>
+                                <xs:simpleContent>
+                                    <xs:extension base="xs:integer">
+                                        <xs:attribute name="attr"/>
+                                    </xs:extension>
+                                </xs:simpleContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="test">
+        <xs:selector xpath="sub"/>
+        <xs:field xpath="idelt"/>
+    </xs:unique>
+</xs:element>
+
+</xs:schema>

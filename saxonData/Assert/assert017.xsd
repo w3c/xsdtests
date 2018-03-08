@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- test that within an assert, nodes other than the assertion root are properly typed -->
+  
+  <xs:element name="temp">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:restriction base="datedEvent">
+           <xs:sequence>
+            <xs:element name="d" type="xs:date"/>
+           </xs:sequence>            
+           <xs:assert test="data(.) instance of xs:untypedAtomic"/>
+        </xs:restriction>  
+      </xs:complexContent>       
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="doc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="temp" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="datedEvent">
+      <xs:sequence>
+        <xs:element name="d" type="xs:date"/>
+      </xs:sequence>
+  </xs:complexType>
+</xs:schema>

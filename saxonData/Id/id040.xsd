@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Use @ref on a unique constraint
+
+-->
+
+<xs:schema
+  xmlns="IdConstrDefs/fields"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://id040.ly/"
+  elementFormDefault="qualified"
+  xmlns:s="http://id040.ly/">
+
+  <xs:element name="doc">
+      <xs:complexType>
+          <xs:choice maxOccurs="unbounded">
+              <xs:element name="chap" type="s:chap">
+                <xs:unique name="unique-clause">
+                    <xs:selector xpath="s:section"/>
+                    <xs:field xpath="@nr"/>
+                </xs:unique>
+              </xs:element>  
+              <xs:element name="appx" type="s:chap">
+                <xs:unique ref="s:unique-clause"/>
+              </xs:element>
+          </xs:choice>
+      </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="chap">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="section">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="nr" type="xs:decimal"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

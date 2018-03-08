@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- dynamic EDT check, element wildcard, single type -->
+<!-- schema is valid, though in 1.1 no document can satisfy it -->
+
+<xs:complexType name="zing">
+  <xs:sequence>
+    <xs:element name="e" type="xs:date"/>
+    <xs:element name="f" type="xs:string"/>
+    <xs:any namespace="##local" processContents="strict"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:element name="doc" type="zing"/>
+
+<xs:element name="e" type="xs:time"/>
+    
+</xs:schema>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Use @ref on a keyref constraint
+
+-->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://id044.ly/"
+  elementFormDefault="qualified"
+  xmlns:s="http://id044.ly/">
+
+  <xs:element name="doc">
+      <xs:complexType>
+          <xs:choice maxOccurs="unbounded">
+              <xs:element name="chap" type="s:chap">
+                <xs:key name="unique-clause">
+                    <xs:selector xpath="s:section"/>
+                    <xs:field xpath="@nr"/>
+                </xs:key>
+                <xs:keyref refer="s:unique-clause" name="unique-clause-ref">
+                    <xs:selector xpath="s:section"/>
+                    <xs:field xpath="@ref"/>
+                </xs:keyref>
+              </xs:element>  
+              <xs:element name="appx" type="s:chap">
+                <xs:key ref="s:unique-clause"/>
+                <xs:keyref ref="s:unique-clause-ref"/>
+              </xs:element>
+          </xs:choice>
+      </xs:complexType>
+  </xs:element>
+  
+  <xs:complexType name="chap">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="section">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="nr" type="xs:decimal" use="required"/>
+                            <xs:attribute name="ref" type="xs:decimal" use="optional"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

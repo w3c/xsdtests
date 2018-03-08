@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- wildcard union, two notNamespace wildcards. The union allows abel but not cain. -->
+
+<xs:element name="eden" type="E"/>
+
+<xs:complexType name="B">
+    <xs:sequence/>
+    <xs:anyAttribute notNamespace="http://cain.com/" processContents="lax"/>
+</xs:complexType>
+
+<xs:complexType name="E">
+  <xs:complexContent>
+    <xs:extension base="B">
+      <xs:sequence/>
+      <xs:anyAttribute notNamespace="http://abel.com/ http://cain.com/" processContents="lax"/>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+    
+</xs:schema>

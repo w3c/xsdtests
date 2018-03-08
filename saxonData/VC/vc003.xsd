@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Schema with a hypothetical 5.0 feature ignored under XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           >
+  <xs:element name="temp">
+    <xs:simpleType>
+       <xs:restriction base="xs:date">       
+         <xs:last-day-of-month value="true" vc:minVersion="5.0"/>
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

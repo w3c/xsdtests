@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- default open content, does not apply to types in a different schema document -->
+
+<xs:complexType name="alpha">
+    <xs:sequence/>
+</xs:complexType>
+
+
+
+<xs:complexType name="beta">
+    <xs:openContent>
+        <xs:any namespace="##other" processContents="lax"/>
+    </xs:openContent>
+    <xs:sequence>      
+    </xs:sequence>
+</xs:complexType>
+    
+</xs:schema>

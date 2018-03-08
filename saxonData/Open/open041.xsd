@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- default open content, does not apply to types in a different schema document -->
+
+<xs:include schemaLocation="open041x.xsd"/>
+
+
+<xs:element name="doc">
+  <xs:complexType mixed=" 1 ">
+    <xs:sequence>
+        <xs:element name="a" type="alpha"/>
+        <xs:element name="b" type="beta"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:complexType name="alpha">
+    <xs:sequence/>
+</xs:complexType>
+    
+</xs:schema>

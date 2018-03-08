@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+facet must not be repeated
+-->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+
+  <xs:element name="e" type="t"/>
+    
+  <xs:complexType name="b">  
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="att" type="xs:integer" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  
+  <xs:complexType name="t">
+    <xs:simpleContent>
+      <xs:restriction base="b">             
+        <xs:minLength value="2"/>
+        <xs:minLength value="2"/>  
+      </xs:restriction> 
+    </xs:simpleContent>
+  </xs:complexType>
+
+  
+</xs:schema>

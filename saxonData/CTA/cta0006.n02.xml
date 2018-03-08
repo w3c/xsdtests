@@ -1,0 +1,6 @@
+<messages xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <message kind="xsd:int" value="20"/>
+  <message kind="xsd:date" value="2007-12-31"/>
+  <message kind="xsd:decimal" value="93.7"/>
+  <message kind="xsd:QName" value="saxon:assign"/>
+</messages>  

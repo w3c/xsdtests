@@ -1,0 +1,53 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://cta9003/"
+  xmlns:c2="http://cta9003/"
+  elementFormDefault="qualified"
+  attributeFormDefault="qualified">
+  
+  <!-- A CTA test with complex types and namespaces -->
+  <!-- error: attempt to reference a user-defined type -->
+  
+<xs:complexType name="t">
+ <xs:sequence>
+  <xs:element name="e" minOccurs="0" maxOccurs="unbounded" type="xs:decimal"/>
+ </xs:sequence>
+ <xs:attribute name="min">
+  <xs:simpleType>
+     <xs:restriction base="xs:integer">
+      <xs:enumeration value="0"/>
+      <xs:enumeration value="1"/>
+     </xs:restriction>
+  </xs:simpleType>
+ </xs:attribute>
+</xs:complexType>
+
+<xs:complexType name="treq">
+ <xs:complexContent>
+  <xs:restriction base="c2:t">
+    <xs:sequence>
+      <xs:element name="e" minOccurs="1" maxOccurs="unbounded" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:restriction>
+ </xs:complexContent>
+</xs:complexType>
+
+<xs:element name="message" type="c2:t">
+  <xs:alternative test="@c2:min instance of c2:smallInteger" type="c2:treq"/>
+</xs:element>
+
+<xs:element name="messages">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="c2:message" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:simpleType name="smallInteger">
+  <xs:restriction base="xs:int">
+    <xs:maxInclusive value="1"/>
+  </xs:restriction>
+</xs:simpleType>
+
+</xs:schema>
+  

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- an element in XSD 1.1 can have a list-of-ID attribute, as well as list-of-ID children -->
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:sequence>
+          <xs:element ref="node" maxOccurs="unbounded"/>
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="node">
+    <xs:complexType>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="node"/>
+            <xs:element name="id" type="idList"/>
+         </xs:choice>
+         <xs:attribute name="id-one" type="idList"/>
+         <xs:anyAttribute processContents="lax"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attribute name="id-two" type="idList"/>
+  
+  <xs:simpleType name="idList">
+    <xs:list itemType="xs:ID"/>
+  </xs:simpleType>  
+        
+
+</xs:schema>

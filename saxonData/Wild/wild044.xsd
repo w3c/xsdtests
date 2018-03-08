@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:apple="http://apple.com/"
+   xmlns:orange="http://orange.com/">
+<!-- Attribute wildcard intersection with notQName -->
+
+<xs:complexType name="computer">
+  <xs:sequence/>
+  <xs:attributeGroup ref="a"/>
+  <xs:attributeGroup ref="b"/>
+</xs:complexType>
+
+<xs:attributeGroup name="a">
+  <xs:anyAttribute namespace="##local http://apple.com/" processContents="skip" notQName="a b c apple:core"/>
+</xs:attributeGroup>
+
+<xs:attributeGroup name="b">
+  <xs:anyAttribute namespace="##local http://orange.com/" processContents="skip" notQName="c d e orange:pip"/>
+</xs:attributeGroup>
+
+
+<xs:element name="computer" type="computer"/>
+    
+</xs:schema>

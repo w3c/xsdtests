@@ -1,0 +1,40 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+  targetNamespace="http://cta023.com/ns"
+  xmlns:t="http://cta023.com/ns"
+  xpathDefaultNamespace="http://cta023.com/ns">
+  
+  <!-- Static context of an XPath expression in CTA -->
+  
+  <xs:element name="doc">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="t:event" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="type" inheritable="true" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="event">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="t:when"/>
+        </xs:sequence>
+        <xs:attribute name="type" inheritable="true" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="when" type="t:unionType" xmlns:p="http://cta023.com/p" xmlns:fn="http://www.w3.org/2005/xpath-functions">
+    <xs:alternative test="fn:node-name(.) = node-name(.) (: tests default function namespace :)"          
+        type="xs:date"/>
+    <xs:alternative type="xs:error"/>
+  </xs:element>
+  
+  <xs:simpleType name="unionType">
+    <xs:union memberTypes="xs:date xs:time xs:dateTime xs:gYearMonth"/>
+  </xs:simpleType>
+  
+
+</xs:schema>
+  

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <!-- an atomic value can be equal to a singleton list -->
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:sequence>
+          <xs:element ref="para" maxOccurs="unbounded"/>
+       </xs:sequence>
+    </xs:complexType>
+    <xs:key name="k">
+        <xs:selector xpath="para"/>
+        <xs:field xpath="@key"/>
+    </xs:key>
+    <xs:keyref name="r" refer="k">
+        <xs:selector xpath="para"/>
+        <xs:field xpath="@ref"/>
+    </xs:keyref>
+  </xs:element>
+  <xs:element name="para">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+            <xs:attribute name="key" type="xs:Name" use="required"/>
+            <xs:attribute name="ref" type="list-of-tokens" use="optional"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="list-of-tokens">
+    <xs:list itemType="xs:Name"/>
+  </xs:simpleType>
+        
+
+</xs:schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- basic test of a notNamespace element wildcard with ##targetNamespace in a no-namespace schema -->
+
+<xs:element name="eden">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:any notNamespace=" ##targetNamespace " processContents="skip" minOccurs="0"/>
+    </xs:sequence>  
+  </xs:complexType>
+</xs:element>
+    
+</xs:schema>

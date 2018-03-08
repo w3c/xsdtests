@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Banning xsi:type is allowed but has no effect -->
+
+<xs:complexType name="computer">
+ <xs:sequence/>
+  <xs:anyAttribute processContents="skip"
+          notQName="xsi:type"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+</xs:complexType>
+
+
+<xs:element name="computer" type="computer"/>
+    
+</xs:schema>

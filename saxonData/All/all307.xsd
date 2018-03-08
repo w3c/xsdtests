@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xs:all to xs:all extension, valid, mixed content allowed only if the extension allows it -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b" mixed="false">
+       <xs:all>     
+         <xs:element name="a" minOccurs="0" maxOccurs="5"/>
+         <xs:element name="b" minOccurs="0" maxOccurs="5"/>
+         <xs:element name="c" minOccurs="0" maxOccurs="unbounded"/>
+       </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="ext">
+      <xs:complexContent mixed="false">
+        <xs:extension base="b">
+          <xs:all>
+            <xs:element name="d" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="e" minOccurs="0" maxOccurs="4"/>
+          </xs:all>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType> 
+    
+    <xs:element name="doc" type="ext"/> 
+          
+
+</xs:schema>

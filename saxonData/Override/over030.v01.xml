@@ -1,0 +1,4 @@
+<doc xmlns="http://example.org/ns/document">
+<title>Document Title</title>
+<p>This is some <emphasis>text</emphasis>.</p>
+</doc>

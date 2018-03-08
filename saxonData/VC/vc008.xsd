@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- empty vc:xxavailable attributes have no effect; empty facetUnavailable is an unconditional exclude -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+  <xs:element name="temp" vc:typeAvailable="">
+    <xs:complexType>
+       <xs:sequence vc:facetAvailable=""/>     
+       <xs:attribute name="x" use="required"/>
+       <xs:attribute name="y" use="optional"/>      
+       <xs:assert test="@x > 300" vc:minVersion="1.1" vc:facetAvailable=""/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

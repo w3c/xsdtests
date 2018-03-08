@@ -1,0 +1,7 @@
+<!-- invalid document - type of a -->
+<doc xmlns:d="http://other.ns/">
+  <c>12:00:00</c>
+  <b>12:00:00</b>
+  <a>13:30:02</a>
+  <d:d>banana</d:d>
+</doc>

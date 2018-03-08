@@ -1,0 +1,80 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+>
+  
+  <!-- Conditional Type Substitutable constraint -->
+  
+  <xs:element name="doc">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="chap" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="chap" type="chapType"/>
+  <xs:element name="appendix" type="appendixType" substitutionGroup="chap"/>
+  
+  <xs:complexType name="chapType">
+        <xs:sequence>
+            <xs:element name="stamp">
+                <xs:alternative test="@type='date'" type="dateWithTypeAttribute"/>
+                <xs:alternative test="@type='dateTime'" type="dateTimeStampWithTypeAttribute"/>
+                <xs:alternative test="@type='time'" type="timeWithTypeAttribute"/> 
+            </xs:element>
+            <xs:element name="p" minOccurs="0" maxOccurs="unbounded" type="xs:anyType"/>
+        </xs:sequence>
+  </xs:complexType>
+  
+   <xs:complexType name="appendixType">
+    <xs:complexContent>
+      <xs:restriction base="chapType">
+        <xs:sequence>
+            <xs:element name="stamp">
+                <xs:alternative test="@type='date'" type="dateWithTypeAttribute"/>
+                <xs:alternative test="@type='dateTime'" type="dateTimeWithTypeAttribute"/> <!-- **** Note the difference - no timezone required **** -->
+                <xs:alternative test="@type='time'" type="timeWithTypeAttribute"/> 
+            </xs:element>
+            <xs:element name="p" minOccurs="0" maxOccurs="unbounded" type="xs:anyType"/>
+        </xs:sequence>
+      </xs:restriction>  
+    </xs:complexContent>
+  </xs:complexType>               
+  
+  
+          <xs:complexType name="dateWithTypeAttribute">
+            <xs:simpleContent>
+                <xs:extension base="xs:date">
+                    <xs:attribute name="type" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+         </xs:complexType>
+         
+         <xs:complexType name="timeWithTypeAttribute">
+            <xs:simpleContent>
+                <xs:extension base="xs:time">
+                    <xs:attribute name="type" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+         </xs:complexType>
+         
+         <xs:complexType name="dateTimeStampWithTypeAttribute">
+            <xs:simpleContent>
+                <xs:extension base="xs:dateTimeStamp">
+                    <xs:attribute name="type" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+         </xs:complexType>
+         
+         <xs:complexType name="dateTimeWithTypeAttribute">
+            <xs:simpleContent>
+                <xs:extension base="xs:dateTime">
+                    <xs:attribute name="type" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+         </xs:complexType>
+  
+
+</xs:schema>
+  

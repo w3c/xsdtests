@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Invalid QName in notQName -->
+
+<xs:complexType name="computer">
+ <xs:sequence>
+  <xs:any processContents="lax"
+          notNamespace="http://www.w3.org/2001/XMLSchema-instance"
+          notQName=":stylesheet"/>
+</xs:sequence>          
+</xs:complexType>
+
+
+<xs:element name="computer" type="computer"/>
+    
+</xs:schema>

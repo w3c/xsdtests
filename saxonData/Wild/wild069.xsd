@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- (originally intended as dynamic EDT check), element wildcard, type hierarchy, processContents=lax, xs:all content model -->
+<!-- schema is invalid: zang allows <e/><f/> but zing doesn't, so invalid restriction. -->
+
+<xs:complexType name="zing">
+  <xs:all>
+    <xs:element name="e" minOccurs="0" maxOccurs="1">
+      <xs:simpleType>
+        <xs:union memberTypes="xs:date xs:time"/>
+      </xs:simpleType>
+    </xs:element>
+    <xs:element name="f" type="xs:integer"/>
+    <xs:any namespace="##local" processContents="lax"/>
+  </xs:all>
+</xs:complexType>
+
+<xs:complexType name="zang">
+  <xs:complexContent>
+    <xs:restriction base="zing">
+      <xs:all>
+        <xs:element name="f" type="xs:integer"/>
+        <xs:any namespace="##local" processContents="lax"/>
+      </xs:all>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:element name="doc" type="zang"/>
+
+<xs:element name="e" type="xs:duration"/>
+
+    
+</xs:schema>

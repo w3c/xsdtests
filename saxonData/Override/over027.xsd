@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<!-- this schema is legal, but validation of instance containing the @nota attribute will always fail
+     because a subtype of NOTATION is required. Was test over015. See bug 14388 -->
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:sequence>
+          <xs:element name="para" maxOccurs="unbounded" type="structuredDate"/>
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="structuredDate">
+     <xs:sequence>
+        <xs:element name="year"/>
+        <xs:element name="month"/>
+        <xs:element name="day"/>
+     </xs:sequence>
+     <xs:attribute name="nota" type="xs:NOTATION"/>
+  </xs:complexType>
+  <xs:notation name="foo" public="pubfoo"/>
+  <xs:notation name="bar" public="pubbar"/>
+</xs:schema>

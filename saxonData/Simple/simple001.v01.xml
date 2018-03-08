@@ -1,0 +1,15 @@
+<doc xmlns="http://simple001.ly/">
+  <chap>
+    <section nr="1" ref="INF"/>
+    <section nr="2" ref="+INF"/>
+    <section nr="INF" ref="INF"/>
+    <section nr="+INF" ref="+INF"/>
+  </chap>
+  <appx>
+    <section nr="1" ref="INF"/>
+    <section nr="2" ref="+INF"/>
+    <section nr="INF" ref="INF"/>
+    <section nr="+INF" ref="+INF"/>
+  </appx>
+</doc>
+  

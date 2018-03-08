@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- simple xs:all to xs:all extension, invalid, overlapping element particles -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b">
+       <xs:all>     
+         <xs:element name="a" minOccurs="0" maxOccurs="5"/>
+         <xs:element name="b" minOccurs="1" maxOccurs="5"/>
+         <xs:element name="c" minOccurs="2" maxOccurs="unbounded"/>
+         <xs:element name="d" minOccurs="1" maxOccurs="1"/>
+       </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="e">
+      <xs:complexContent>
+        <xs:extension base="b">
+          <xs:all>
+            <xs:element name="e" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="f" minOccurs="3" maxOccurs="4"/>
+            <xs:element name="c" minOccurs="2" maxOccurs="4"/>
+          </xs:all>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType> 
+    
+    <xs:element name="doc" type="e"/> 
+          
+
+</xs:schema>

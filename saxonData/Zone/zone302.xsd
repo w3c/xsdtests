@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- equality testing for xs:yearMonthDuration values used in referential integrity constraints -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+  <xs:element name="doc">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="target" type="xs:yearMonthDuration"/>
+            <xs:element name="equiv" type="xs:yearMonthDuration" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:key name="t">
+        <xs:selector xpath="target"/>
+        <xs:field xpath="."/>
+    </xs:key>
+    <xs:keyref name="r" refer="t">
+        <xs:selector xpath="equiv"/>
+        <xs:field xpath="."/>
+    </xs:keyref>        
+  </xs:element>
+</xs:schema>

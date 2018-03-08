@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- invalid attempt to override a simple type by restricting its former self -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:override schemaLocation="over010a.xsd">
+    <xs:simpleType name="futureDate">
+      <xs:restriction base="futureDate">
+        <xs:assertion test="xs:date($value) gt xs:date('2010-01-01')"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:override>
+</xs:schema>

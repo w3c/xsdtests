@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:sequence>
+          <xs:element name="para" maxOccurs="unbounded" type="futureDate"/>
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="futureDate">
+     <xs:restriction base="xs:date">
+        <xs:assertion test="xs:date($value) gt current-date()"/>
+     </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xs:all to xs:all subsumption, invalid, one wildcard in the base type covers two in the derived type,
+     but the minOccurs total in the derived type is less than that required by the base type -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b">
+       <xs:all>     
+         <xs:any namespace="http://one.uri/ http://two.uri/" minOccurs="5" maxOccurs="unbounded"/>
+       </xs:all>
+    </xs:complexType>
+    
+    <xs:complexType name="r">
+      <xs:complexContent>
+        <xs:restriction base="b">
+         <xs:all>     
+           <xs:any namespace="http://one.uri/" minOccurs="2" maxOccurs="unbounded"/>
+           <xs:any namespace="http://two.uri/" minOccurs="2" maxOccurs="unbounded"/>
+         </xs:all>
+        </xs:restriction>
+      </xs:complexContent>
+    </xs:complexType> 
+    
+          
+
+</xs:schema>

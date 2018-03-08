@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="abc"
+    xmlns:saxon="http://saxon.sf.net/" targetNamespace="abc" version="1.1"
+    xpathDefaultNamespace="abc" elementFormDefault="qualified">
+    
+    <!-- Test case submitted by Jesper Tverskov (which turned out not to be a Saxon bug,
+         but rather confusion about the fact that restricting attributes works entirely
+         differently to restricting elements.) -->
+
+    <xs:element name="top">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="a"/>
+            </xs:sequence>
+<!-- (works)           <xs:assert
+                test="if (a/@switch != 't') then if (a/@r) then false() else true() else true()"
+                saxon:message="-> if qa/@type is not 't', qa/a element must not have r attribute."/>-->
+
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="a" type="aType">
+        <xs:alternative type="aType_t" test="@switch = 't'"/>
+        <xs:alternative type="aType_f" test="@switch = 'f'"/>
+    </xs:element>
+
+    <xs:complexType name="aType">
+        <xs:sequence>
+            <xs:element name="t" type="xs:string" minOccurs="0"/>
+            <xs:element name="f" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="switch" type="xs:string"/>
+        <xs:attribute name="r" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="aType_t">
+        <xs:complexContent>
+            <xs:restriction base="aType">
+                <xs:sequence>
+                    <xs:element name="t" type="xs:string"/>
+                </xs:sequence>
+                <xs:attribute name="switch" type="xs:string"/>
+                <xs:attribute name="r" type="xs:string"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="aType_f">
+        <xs:complexContent>
+            <xs:restriction base="aType">
+                <xs:sequence>
+                    <xs:element name="f" type="xs:string"/>
+                </xs:sequence>
+                <xs:attribute name="switch" type="xs:string"/>
+                <xs:attribute name="r" use="prohibited"/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

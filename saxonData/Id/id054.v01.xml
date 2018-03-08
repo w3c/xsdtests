@@ -1,0 +1,16 @@
+<s:doc xmlns:s="http://id054.ly/">
+  <emp>
+    <name>John</name>
+    <nr>23</nr>
+  </emp>
+  <emp>
+    <name>Mary</name>
+    <nr>29</nr>
+  </emp>
+  <emp>
+    <name>Ahmed</name>
+    <nr>42</nr>
+    <manager>29</manager>
+  </emp>
+</s:doc>
+  

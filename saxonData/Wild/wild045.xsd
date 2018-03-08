@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:apple="http://apple.com/"
+   xmlns:orange="http://orange.com/">
+<!-- Attribute wildcard union with notQName -->
+
+<xs:complexType name="computer">
+  <xs:sequence/>
+  <xs:attributeGroup ref="a"/>
+</xs:complexType>
+
+<xs:complexType name="extendedComputer">
+  <xs:complexContent>
+    <xs:extension base="computer">
+      <xs:attributeGroup ref="b"/>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:attributeGroup name="a">
+  <xs:anyAttribute namespace="##local" notQName="a b c " processContents="skip"/>
+</xs:attributeGroup>
+
+<xs:attributeGroup name="b">
+  <xs:anyAttribute namespace="##local" notQName="c d e " processContents="skip"/>
+</xs:attributeGroup>
+
+
+<xs:element name="computer" type="extendedComputer"/>
+    
+</xs:schema>

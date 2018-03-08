@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- nillable mixed-content xs:all model group with relaxed minOccurs and maxOccurs -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc" nillable="1" >
+    <xs:complexType mixed="1">
+       <xs:all>     
+         <xs:element name="a" minOccurs="2" maxOccurs="5"/>
+         <xs:element name="b" minOccurs="2" maxOccurs="5"/>
+         <xs:element name="c" minOccurs="2" maxOccurs="unbounded"/>
+         <xs:element name="d" minOccurs="1" maxOccurs="1"/>
+       </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

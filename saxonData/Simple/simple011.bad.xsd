@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+union(x,y) is not validly derived from union(x,y,z)
+(for reasons known only to the spec authors, and possibly not even to them)
+-->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://simple011.ly/"
+  elementFormDefault="qualified"
+  xmlns:s="http://simple011.ly/">
+  
+  <xs:element name="book">
+    <xs:complexType>
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="doc"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="doc" type="s:doc-type"/>
+  
+  <xs:complexType name="doc-type">
+      <xs:sequence maxOccurs="unbounded">
+          <xs:element name="chap" type="s:chap"/>
+      </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="subdoc" substitutionGroup="s:doc" type="s:sub-doc-type"/>
+  
+  <xs:complexType name="sub-doc-type">
+    <xs:complexContent>
+        <xs:restriction base="s:doc-type">
+          <xs:sequence maxOccurs="unbounded">
+              <xs:element name="chap" type="s:sub-chap"/>
+          </xs:sequence>
+        </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  <xs:simpleType name="chap">
+     <xs:union memberTypes="xs:date xs:dateTime xs:time"/>
+  </xs:simpleType>
+  
+   <xs:simpleType name="sub-chap">
+       <xs:union memberTypes="xs:date xs:time"/>
+  </xs:simpleType>
+
+</xs:schema>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<testSet name="Subsgroup"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+      version="1.1"
+      xmlns:saxon="http://saxon.sf.net/">
+
+    <testGroup name="subsgroup001" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Tests to show an element declaration can be in multiple substitution groups</Title>
+                <Description>Tests to show an element declaration can be in multiple substitution groups</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-equiv-class"/>
+        <documentationReference xlink:href="../XSD1_1TestCategories.xml#xsd1_1-SubstitutionGroups-ElemInMoreThanOne"/>
+        
+        
+        <schemaTest name="subsgroup001.xsd">
+            <schemaDocument xlink:href="../saxonData/Subsgroup/subsgroup001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-31"/>
+        </schemaTest>
+        <instanceTest name="subsgroup001.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, element subsitutes for both abstract elements.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Subsgroup/subsgroup001.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-07-31"/>
+        </instanceTest>        
+        <instanceTest name="subsgroup001.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, abstract element present in instance.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Subsgroup/subsgroup001.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-31"/>
+        </instanceTest>                
+    </testGroup>
+    
+    <testGroup name="subsgroup002" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Tests to show an element declaration can be in multiple substitution groups</Title>
+                <Description>Element substitutable for another in more than one way, both valid</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-equiv-class"/>
+        <documentationReference xlink:href="../XSD1_1TestCategories.xml#xsd1_1-SubstitutionGroups-ElemInMoreThanOne"/>
+        
+        
+        <schemaTest name="subsgroup002.xsd">
+            <schemaDocument xlink:href="../saxonData/Subsgroup/subsgroup002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-06-10"/>
+        </schemaTest>
+        <instanceTest name="subsgroup002.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, element subsitutes for both abstract elements.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Subsgroup/subsgroup001.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-06-10"/>
+        </instanceTest>        
+        <instanceTest name="subsgroup002.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, abstract element present in instance.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Subsgroup/subsgroup001.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-06-10"/>
+        </instanceTest>                
+    </testGroup>
+    
+    <testGroup name="subsgroup003">
+        <annotation>
+            <documentation>
+                <Title>Tests to show an a substitution group with declarations in different namespaces</Title>
+                <Description>Substitution group has an abstract owner in one namespace, two concrete
+                members in different namespaces. Should work with XSD 1.0 or 1.1. Posted as a problem
+                on StackOverflow ref 9495098 on 29 Feb 2012.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-equiv-class"/>
+        <documentationReference xlink:href="../XSD1_1TestCategories.xml#xsd1_1-SubstitutionGroups-ElemInMoreThanOne"/>
+        
+        
+        <schemaTest name="subsgroup003a.xsd">
+            <schemaDocument xlink:href="../saxonData/Subsgroup/subsgroup003a.xsd"/>
+            <schemaDocument xlink:href="../saxonData/Subsgroup/subsgroup003b.xsd"/>
+            <schemaDocument xlink:href="../saxonData/Subsgroup/subsgroup003c.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-02-29"/>
+        </schemaTest>
+        <instanceTest name="subsgroup003.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, both elements in the content are in the substitution group.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Subsgroup/subsgroup003.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-02-29"/>
+        </instanceTest>                 
+    </testGroup>
+    
+    <testGroup name="subsgroup901">
+        <annotation>
+            <documentation>
+                <Title>Substitution group causes failure of Element Declarations Consistent</Title>
+                <Description>Element in substitution group, fails "element declarations consistent" because of a conflict
+     between a locally declared element and the substitution group of a globally declared element.
+     This is actually a 1.0 test, but it's a condition that appears to be untested in the 1.0
+     test suite</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-equiv-class"/>
+        <documentationReference xlink:href="../XSD1_1TestCategories.xml#xsd1_1-SubstitutionGroups"/>
+        
+        
+        <schemaTest name="subsgroup901.xsd">
+            <schemaDocument xlink:href="../saxonData/Subsgroup/subsgroup901.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-31"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="subsgroup902" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Element in more than one substitution group causes UPA violation in xs:sequence group</Title>
+                <Description>The UPA violation occurs because the para element could be ascribed to either particle
+                in the content model of the 'back' element</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-equiv-class"/>
+        <documentationReference xlink:href="../XSD1_1TestCategories.xml#xsd1_1-SubstitutionGroups-ElemInMoreThanOne"/>
+        
+        
+        <schemaTest name="subsgroup902.xsd">
+            <schemaDocument xlink:href="../saxonData/Subsgroup/subsgroup902.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-06-10"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="subsgroup903" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Element in more than one substitution group causes UPA violation in xs:all group</Title>
+                <Description>The UPA violation occurs because the para element could be ascribed to either particle
+                in the content model of the 'back' element</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-equiv-class"/>
+        <documentationReference xlink:href="../XSD1_1TestCategories.xml#xsd1_1-SubstitutionGroups-ElemInMoreThanOne"/>
+        
+        
+        <schemaTest name="subsgroup903.xsd">
+            <schemaDocument xlink:href="../saxonData/Subsgroup/subsgroup903.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-06-10"/>
+        </schemaTest>
+    </testGroup>    
+    
+    
+</testSet>                

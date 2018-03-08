@@ -1,0 +1,3132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Note, no tests yet for inexpressible unions, because I'm hoping to get the spec changed - see bug 6163 -->
+
+<testSet name="Wild"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      version="1.1"
+      xmlns:saxon="http://saxon.sf.net/"
+      contributor="Saxonica">
+      
+    <annotation>
+            <documentation>
+                <Title>Tests for XSD 1.1 wildcard extensions</Title>
+                <Description>A number of tests, both valid and invalid, demonstrating use of the new
+                XSD 1.1 features for wildcards, for example the notNamespace and notQName attributes.</Description>
+            </documentation>
+    </annotation>  
+
+    <testGroup version="1.1" name="wild001">
+        <annotation>
+            <documentation>
+                <Title>Basic test of xs:anyAttribute with notNamespace attribute</Title>
+                <Description>Allows any attribute except for two designated namespaces</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild001.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild001.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild001.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild001.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, permitted attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild001.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+        <instanceTest name="wild001.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild001.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>         
+        <instanceTest name="wild001.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild001.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                 
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild002">
+        <annotation>
+            <documentation>
+                <Title>Basic test of xs:anyAttribute with notNamespace attribute</Title>
+                <Description>Allows any attribute except for two designated namespaces</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild002.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild002.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild002.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild002.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, permitted children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild002.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+        <instanceTest name="wild002.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild002.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>         
+        <instanceTest name="wild002.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed atchildrentributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild002.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                 
+    </testGroup>    
+    
+    <testGroup version="1.1" name="wild003">
+        <annotation>
+            <documentation>
+                <Title>Basic test of xs:anyAttribute with notNamespace = ##local</Title>
+                <Description>Allows any attribute so long as it's in a namespace</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild003.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild003.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild003.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild003.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, permitted attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild003.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+        <instanceTest name="wild003.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed attribute present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild003.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>               
+    </testGroup>        
+    
+    <testGroup version="1.1" name="wild004">
+        <annotation>
+            <documentation>
+                <Title>Basic test of xs:any with notNamespace = ##local</Title>
+                <Description>Allows any child so long as it's in a namespace</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild004.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild004.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild004.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild004.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild004.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, permitted child present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild004.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+        <instanceTest name="wild004.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed child present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild004.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>               
+    </testGroup> 
+    
+    <testGroup version="1.1" name="wild005">
+        <annotation>
+            <documentation>
+                <Title>Basic test of xs:anyAttribute with notNamespace = ##targetNamespace in a no-namespace schema</Title>
+                <Description>Allows any attribute so long as it's in a namespace</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild005.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild005.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild005.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild003.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild005.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, permitted attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild003.v2.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+        <instanceTest name="wild005.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed attribute present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild003.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>               
+    </testGroup>  
+    
+    <testGroup version="1.1" name="wild006">
+        <annotation>
+            <documentation>
+                <Title>Basic test of xs:any with notNamespace = ##targetNamespace in a no-namespace schema</Title>
+                <Description>Allows any child so long as it's in a namespace</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild006.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild006.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild006.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild004.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild006.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, permitted child present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild004.v2.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+        <instanceTest name="wild006.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed child present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild004.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>               
+    </testGroup>                          
+    
+    <testGroup version="1.1" name="wild007">
+        <annotation>
+            <documentation>
+                <Title>Cannot mix namespace and notNamespace attributes within anyAttribute</Title>
+                <Description>Invalid schema</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild007.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild007.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+    </testGroup>    
+    
+    <testGroup version="1.1" name="wild008">
+        <annotation>
+            <documentation>
+                <Title>Cannot mix namespace and notNamespace attributes within xs:any</Title>
+                <Description>Invalid schema</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild008.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild008.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup version="1.1" name="wild009">
+        <annotation>
+            <documentation>
+                <Title>Test of xs:anyAttribute with notNamespace = ##targetNamespace in a namespaced schema</Title>
+                <Description>Allows any attribute so long as it's in a namespace other than target</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild009.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild009.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild009.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild009.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild009.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, permitted attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild009.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+        <instanceTest name="wild009.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed attribute present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild009.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>   
+        <instanceTest name="wild009.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed attribute present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild009.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                       
+    </testGroup>             
+    
+    <testGroup version="1.1" name="wild010">
+        <annotation>
+            <documentation>
+                <Title>Test of xs:any with notNamespace = ##targetNamespace in a namespaced schema</Title>
+                <Description>Allows any child so long as it's in a namespace other than target</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild010.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild010.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild010.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild010.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild010.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, permitted children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild010.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+        <instanceTest name="wild010.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild010.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>   
+        <instanceTest name="wild010.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild010.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                       
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild011">
+        <annotation>
+            <documentation>
+                <Title>Test of xs:anyAttribute with notNamespace = ##targetNamespace in a chameleon schema</Title>
+                <Description>Allows any attribute so long as it's in a namespace other than target</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild011.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild011.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild011.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild009.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild011.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, permitted attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild009.v2.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+        <instanceTest name="wild011.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed attribute present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild009.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>   
+        <instanceTest name="wild011.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed attribute present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild009.n2.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                       
+    </testGroup> 
+    
+    <testGroup version="1.1" name="wild012">
+        <annotation>
+            <documentation>
+                <Title>Test of xs:any with notNamespace = ##targetNamespace in a namespaced schema</Title>
+                <Description>Allows any child so long as it's in a namespace other than target</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild012.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild012.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild012.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild010.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild012.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, permitted children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild010.v2.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+        <instanceTest name="wild012.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild010.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>   
+        <instanceTest name="wild012.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed children present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild010.n2.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                       
+    </testGroup>  
+    
+    <testGroup version="1.1" name="wild013">
+        <annotation>
+            <documentation>
+                <Title>Union of two wildcards using notNamespace</Title>
+                <Description>The union allows anything</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild013.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild013.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild013.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, all attributes are permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild013.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+    </testGroup>                       
+    
+    <testGroup version="1.1" name="wild014">
+        <annotation>
+            <documentation>
+                <Title>Union of two wildcards using notNamespace</Title>
+                <Description>The union allows abel but not cain</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild014.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild014.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild014.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, abel is permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild014.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild014.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, cain is banished.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild014.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+    </testGroup>             
+    
+    <testGroup version="1.1" name="wild015">
+        <annotation>
+            <documentation>
+                <Title>Union of two wildcards using namespace and notNamespace respectively</Title>
+                <Description>The union allows adam, eve, and abel but not cain</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild015.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild015.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild015.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, all three attributes permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild015.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild015.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, cain is banished.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild015.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+    </testGroup>                     
+    
+    <testGroup version="1.1" name="wild016">
+        <annotation>
+            <documentation>
+                <Title>Union of two wildcards using namespace and notNamespace respectively</Title>
+                <Description>The union allows adam, eve, and abel but not cain.
+                             Inversion of wild015.xsd.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild016.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild016.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild016.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, all three attributes permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild015.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild016.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, cain is banished.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild015.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                
+    </testGroup>                     
+    
+    <testGroup version="1.1" name="wild017">
+        <annotation>
+            <documentation>
+                <Title>Valid restriction of wildcards</Title>
+                <Description>Restricted type disallows more namespaces than the base type disallows</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild017.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild017.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild017.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild017.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest> 
+        <instanceTest name="wild017.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>   
+        <instanceTest name="wild017.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                                  
+    </testGroup>              
+    
+    <testGroup version="1.1" name="wild018">
+        <annotation>
+            <documentation>
+                <Title>Valid restriction of wildcards</Title>
+                <Description>Restricted type disallows more namespaces than the base type disallows</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild018.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild018.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild018.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild018.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest> 
+        <instanceTest name="wild018.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.n2.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>   
+        <instanceTest name="wild018.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.n3.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                                  
+    </testGroup>                 
+    
+    <testGroup version="1.1" name="wild019">
+        <annotation>
+            <documentation>
+                <Title>Valid restriction of wildcards</Title>
+                <Description>Restricted type disallows more namespaces than the base type disallows</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild019.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild019.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild019.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild019.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest> 
+        <instanceTest name="wild019.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.n2.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>   
+        <instanceTest name="wild019.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild017.n3.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                                  
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild020">
+        <annotation>
+            <documentation>
+                <Title>Invalid restriction of wildcards</Title>
+                <Description>Restricted type allows more namespaces than base type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild020.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild020.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+    </testGroup>              
+    
+    <testGroup version="1.1" name="wild021">
+        <annotation>
+            <documentation>
+                <Title>Invalid restriction of wildcards</Title>
+                <Description>Restricted type allows more namespaces than base type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild021.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild021.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+    </testGroup>     
+    
+    <testGroup version="1.1" name="wild022">
+        <annotation>
+            <documentation>
+                <Title>Invalid restriction of wildcards</Title>
+                <Description>Restricted type allows more namespaces than base type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild022.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild022.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+    </testGroup>  
+    
+    <testGroup version="1.1" name="wild023">
+        <annotation>
+            <documentation>
+                <Title>Wildcard intersection</Title>
+                <Description>Type allows anything allowed by all the attribute wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild023.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild023.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild023.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild023.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>        
+        <instanceTest name="wild023.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild023.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest> 
+        <instanceTest name="wild023.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in no namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild023.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                          
+    </testGroup>                 
+    
+    <testGroup version="1.1" name="wild024">
+        <annotation>
+            <documentation>
+                <Title>Wildcard intersection</Title>
+                <Description>Type allows anything allowed by all the attribute wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild024.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild024.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild024.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild023.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>
+        <instanceTest name="wild024.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute in no namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild024.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                      
+        <instanceTest name="wild024.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild023.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                     
+    </testGroup>                
+    
+    <testGroup version="1.1" name="wild025">
+        <annotation>
+            <documentation>
+                <Title>Wildcard intersection</Title>
+                <Description>Type allows anything allowed by all the attribute wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild025.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild025.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild025.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild025.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>
+        <instanceTest name="wild025.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild025.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest> 
+        <instanceTest name="wild025.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild025.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>          
+        <instanceTest name="wild025.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild025.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>          
+        <instanceTest name="wild025.n4.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild025.n4.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                                                                
+    </testGroup>                   
+    
+    <testGroup version="1.1" name="wild026">
+        <annotation>
+            <documentation>
+                <Title>Wildcard intersection</Title>
+                <Description>Type allows anything allowed by all the attribute wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotNS"/>
+        <schemaTest name="wild026.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild026.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </schemaTest>
+        <instanceTest name="wild026.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute permitted.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild025.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>
+        <instanceTest name="wild026.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild025.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest> 
+        <instanceTest name="wild026.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild025.n2.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>          
+        <instanceTest name="wild026.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild025.n3.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>          
+        <instanceTest name="wild026.n4.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute in disallowed namespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild025.n4.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-17"/>
+        </instanceTest>                                                                
+    </testGroup> 
+    
+    <testGroup version="1.1" name="wild027">
+        <annotation>
+            <documentation>
+                <Title>Basic test of xs:anyAttribute with notQName attribute</Title>
+                <Description>Allows any attribute except for xml:space or xml:id</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild027.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild027.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild027.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, only permitted attributes present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild027.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>        
+        <instanceTest name="wild027.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed xml:space attribute present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild027.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild027.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed xml:id attribute present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild027.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>
+    </testGroup>                       
+    
+    <testGroup version="1.1" name="wild028">
+        <annotation>
+            <documentation>
+                <Title>Basic test of xs:any with notQName attribute</Title>
+                <Description>Allows any child element except for xml:space or xml:id</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild028.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild028.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild028.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, only permitted elements present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild028.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>        
+        <instanceTest name="wild028.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed xml:space element present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild028.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild028.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed xml:id element present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild028.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>
+    </testGroup>                          
+    
+    <testGroup version="1.1" name="wild029">
+        <annotation>
+            <documentation>
+                <Title>Test of xs:any with notQName attribute in an xs:sequence model group</Title>
+                <Description>Allows any child element except for a</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild029.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild029.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild029.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, only permitted elements present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild029.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>        
+        <instanceTest name="wild029.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed element present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild029.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild029.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, not element present to match the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild029.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>
+    </testGroup>                                
+    
+    <testGroup version="1.1" name="wild030">
+        <annotation>
+            <documentation>
+                <Title>Example from the spec: restricting away a child element that overlaps a wildcard</Title>
+                <Description>No speaker element allowed on the subtype</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild030.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild030.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild030.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, only permitted elements present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild030.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild030.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, valid instance of the subtype.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild030.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>                
+        <instanceTest name="wild030.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, disallowed element "speaker" is present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild030.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild031">
+        <annotation>
+            <documentation>
+                <Title>Name in notQName is a name that would not be allowed anyway</Title>
+                <Description>Violates rule 4 of 3.10.6.1 Wildcard Properties Correct</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild031.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild031.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup version="1.1" name="wild032">
+        <annotation>
+            <documentation>
+                <Title>Name in notQName is a name that would not be allowed anyway</Title>
+                <Description>Violates rule 4 of 3.10.6.1 Wildcard Properties Correct</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild032.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild032.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup version="1.1" name="wild033">
+        <annotation>
+            <documentation>
+                <Title>Name in notQName is a name that would not be allowed anyway</Title>
+                <Description>Violates rule 4 of 3.10.6.1 Wildcard Properties Correct</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild033.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild033.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>  
+    
+    <testGroup version="1.1" name="wild034">
+        <annotation>
+            <documentation>
+                <Title>Name in notQName is a name that would not be allowed anyway</Title>
+                <Description>Violates rule 4 of 3.10.6.1 Wildcard Properties Correct</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild034.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild034.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild035">
+        <annotation>
+            <documentation>
+                <Title>Name in notQName is a name that would not be allowed anyway</Title>
+                <Description>Violates rule 4 of 3.10.6.1 Wildcard Properties Correct</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild035.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild035.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>        
+    
+    <testGroup version="1.1" name="wild036">
+        <annotation>
+            <documentation>
+                <Title>Undeclared prefix in QName</Title>
+                <Description>invalid QName in notQName attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild036.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild036.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>         
+    
+    <testGroup version="1.1" name="wild037">
+        <annotation>
+            <documentation>
+                <Title>Invalid QName in notQName</Title>
+                <Description>invalid QName in notQName attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild037.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild037.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>              
+    
+    <testGroup version="1.1" name="wild038">
+        <annotation>
+            <documentation>
+                <Title>Invalid QName in notQName</Title>
+                <Description>invalid QName in notQName attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild038.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild038.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>  
+    
+    <testGroup version="1.1" name="wild039">
+        <annotation>
+            <documentation>
+                <Title>Invalid QName in notQName</Title>
+                <Description>invalid QName in notQName attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild039.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild039.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild040">
+        <annotation>
+            <documentation>
+                <Title>Banning xsi attributes has no effect</Title>
+                <Description>xsi:type is validated without reference to attribute uses or wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild040.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild040.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild040.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, xsi:type is permitted despite the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild040.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild040.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, xsi:type has to conform to the standard rules regardless of processContents=skip.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild040.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+    </testGroup> 
+    
+    <testGroup version="1.1" name="wild041">
+        <annotation>
+            <documentation>
+                <Title>Explicit attribute in xsi namespace is not allowed</Title>
+                <Description>Error: see 3.2.6.4 xsi: not allowed</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild041.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild041.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild042">
+        <annotation>
+            <documentation>
+                <Title>xsi attribute wildcards are allowed</Title>
+                <Description>There's no rule to stop non-standard attributes in the xsi namespace being
+                introduced by wildcard</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards"/>
+        <schemaTest name="wild042.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild042.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild042.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, xsi:banana is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild042.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild042.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, xsi:nil is governed by the built-in type definition, not the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild042.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+    </testGroup>              
+    
+    <testGroup version="1.1" name="wild043">
+        <annotation>
+            <documentation>
+                <Title>Wildcard intersection with notQName</Title>
+                <Description>disallows the union of the disallowed QNames</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild043.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild043.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild043.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute f is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild043.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild043.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild043.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild043.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild043.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>
+        <instanceTest name="wild043.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild043.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>                  
+    </testGroup>         
+    
+    <testGroup version="1.1" name="wild044">
+        <annotation>
+            <documentation>
+                <Title>Wildcard intersection with notQName</Title>
+                <Description>disallows the union of the disallowed QNames</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild044.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild044.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild044.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute f is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild044.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild044.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild044.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild044.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild044.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>           
+    </testGroup>              
+    
+    <testGroup version="1.1" name="wild045">
+        <annotation>
+            <documentation>
+                <Title>Wildcard union with notQName</Title>
+                <Description>disallows the intersection of the disallowed QNames</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild045.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild045.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild045.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute a is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild045.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild045.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute d is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild045.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>           
+        <instanceTest name="wild045.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute c is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild045.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild045.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute xml:space is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild045.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>           
+    </testGroup>                           
+    
+    <testGroup version="1.1" name="wild046">
+        <annotation>
+            <documentation>
+                <Title>Wildcard union with notQName and notNamespace</Title>
+                <Description>disallows the intersection of the disallowed QNames</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild046.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild046.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild046.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute a is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild045.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild046.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute d is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild045.v2.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>           
+        <instanceTest name="wild046.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute c is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild045.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild046.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute xml:lang is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild045.n2.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>           
+    </testGroup>           
+    
+    <testGroup version="1.1" name="wild047">
+        <annotation>
+            <documentation>
+                <Title>Element Wildcard union with notQName and notNamespace</Title>
+                <Description>disallows the intersection of the disallowed QNames</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild047.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild047.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild047.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, child is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild047.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild047.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, child element is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild047.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild048">
+        <annotation>
+            <documentation>
+                <Title>Complex type restriction using wildcard particles</Title>
+                <Description>Base type disallows QNames that the restricted type does not disallow</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild048.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild048.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>      
+    
+    <testGroup version="1.1" name="wild049">
+        <annotation>
+            <documentation>
+                <Title>Complex type restriction using wildcard particles</Title>
+                <Description>Restricted type disallows all QNames that the base type disallows</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild049.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild049.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>       
+    
+    <testGroup version="1.1" name="wild050">
+        <annotation>
+            <documentation>
+                <Title>Complex type restriction using wildcard particles</Title>
+                <Description>Restricted type disallows all QNames that the base type disallows</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild050.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild050.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild051">
+        <annotation>
+            <documentation>
+                <Title>Complex type restriction using wildcard particles</Title>
+                <Description>Restricted type does not disallow all QNames that the base type disallows</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild051.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild051.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild052">
+        <annotation>
+            <documentation>
+                <Title>Element Wildcard with notQName=##defined</Title>
+                <Description>Basic test of ##defined</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefined"/>
+        <schemaTest name="wild052.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild052.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild052.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, child is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild052.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild052.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, child is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild052.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>           
+        <instanceTest name="wild052.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, child element is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild052.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild052.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, child element is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild052.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>         
+    </testGroup>       
+    
+    <testGroup version="1.1" name="wild053">
+        <annotation>
+            <documentation>
+                <Title>Element Wildcard with notQName=##defined</Title>
+                <Description>Basic test of ##defined with multiple namespaces</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefined"/>
+        <schemaTest name="wild053.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild053.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild053.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, child is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild053.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild053.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, child is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild053.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>           
+        <instanceTest name="wild053.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, child element is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild053.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild053.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, child element is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild053.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>         
+    </testGroup>                       
+    
+    <testGroup version="1.1" name="wild054">
+        <annotation>
+            <documentation>
+                <Title>Attribute Wildcard with notQName=##defined</Title>
+                <Description>Basic test of ##defined</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefined"/>
+        <schemaTest name="wild054.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild054.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild054.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild054.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>   
+        <instanceTest name="wild054.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild054.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>           
+        <instanceTest name="wild054.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild054.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild054.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild054.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>         
+    </testGroup>                        
+    
+    <testGroup version="1.1" name="wild055">
+        <annotation>
+            <documentation>
+                <Title>Attribute Wildcard with notQName=##defined</Title>
+                <Description>Valid restriction of wildcard</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefined"/>
+        <schemaTest name="wild055.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild055.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild055.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attributes are permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild055.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>      
+        <instanceTest name="wild055.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild055.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild055.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild055.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>         
+        <instanceTest name="wild055.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild055.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>                 
+    </testGroup>                              
+    
+    <testGroup version="1.1" name="wild056">
+        <annotation>
+            <documentation>
+                <Title>Attribute Wildcard with notQName=##defined</Title>
+                <Description>Valid restriction of wildcard</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefined"/>
+        <schemaTest name="wild056.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild056.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild056.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attributes are permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild055.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>      
+        <instanceTest name="wild056.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild055.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild056.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild055.n2.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>         
+        <instanceTest name="wild056.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild055.n3.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>                 
+    </testGroup>      
+    
+    <testGroup version="1.1" name="wild057">
+        <annotation>
+            <documentation>
+                <Title>Attribute Wildcard with notQName=##defined</Title>
+                <Description>Invalid restriction of wildcard</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefined"/>
+        <schemaTest name="wild057.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild057.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup version="1.1" name="wild058">
+        <annotation>
+            <documentation>
+                <Title>Attribute Wildcard intersection with notQName=##defined</Title>
+                <Description>Both wildcards specify notQName="##defined"</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefined"/>
+        <schemaTest name="wild058.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild058.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild058.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attributes are permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild058.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>      
+        <instanceTest name="wild058.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is specifically excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild058.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild058.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard, it's a global attribute declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild058.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>                  
+    </testGroup>        
+    
+    <testGroup version="1.1" name="wild059">
+        <annotation>
+            <documentation>
+                <Title>Attribute Wildcard intersection with notQName=##defined</Title>
+                <Description>One wildcard specifies notQName="##defined"</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefined"/>
+        <schemaTest name="wild059.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild059.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild059.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, attributes are permitted by the wildcard.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild058.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>         
+        <instanceTest name="wild059.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, attribute is specifically excluded by the wildcard.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild058.n1.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>
+        <instanceTest name="wild059.n2.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, zong attribute is not present in the intersection of the attribute groups.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild058.n2.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>                          
+    </testGroup> 
+    
+    <testGroup version="1.1" name="wild060">
+        <annotation>
+            <documentation>
+                <Title>Attribute Wildcard union with notQName=##defined</Title>
+                <Description>Both wildcards specify notQName="##defined" so union is expressible</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefined"/>
+        <schemaTest name="wild060.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild060.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </schemaTest>
+        <instanceTest name="wild060.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, attributes are permitted by the wildcard.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild058.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>      
+        <instanceTest name="wild060.v2.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, attribute is allowed in the union wildcard.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild058.n1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest> 
+        <instanceTest name="wild060.n2.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, attribute is excluded by the wildcard, it's a global attribute declaration.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild058.n2.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-20"/>
+        </instanceTest>                  
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild061">
+        <annotation>
+            <documentation>
+                <Title>Element fails "dynamic EDC" test - governing type not substitutable for context-determined type</Title>
+                <Description>Schema is valid, instance is not</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild061.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild061.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </schemaTest>
+        <instanceTest name="wild061.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid in 1.1, second e element fails dynamic EDC test.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild061.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>      
+    </testGroup>     
+    
+    <testGroup version="1.1" name="wild062">
+        <annotation>
+            <documentation>
+                <Title>Element fails "dynamic EDC" test - lax wildcard</Title>
+                <Description>Schema is valid, instance is not</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild062.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild062.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </schemaTest>
+        <instanceTest name="wild062.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, g element is skipped.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild062.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>           
+        <instanceTest name="wild062.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid in 1.1, second e element fails dynamic EDC test.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild062.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>      
+        <instanceTest name="wild062.n2.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid in 1.1, second e element fails dynamic EDC test because of xsi:type
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild062.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>       
+        <instanceTest name="wild062.n3.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid in 1.1, second f element fails dynamic EDC test because of xsi:type
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild062.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>                         
+    </testGroup>                    
+    
+    <testGroup version="1.1" name="wild063">
+        <annotation>
+            <documentation>
+                <Title>Element fails "dynamic EDC" test - lax wildcard</Title>
+                <Description>Schema is valid, instance is not</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild063.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild063.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </schemaTest>
+        <instanceTest name="wild063.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, second e element is OK.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild063.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>    
+        <instanceTest name="wild063.v2.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, second f element is OK.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild063.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>                   
+        <instanceTest name="wild063.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid in 1.1, second e element fails dynamic EDC test.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild063.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>      
+        <instanceTest name="wild063.n2.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid in 1.1, second e element fails dynamic EDC test because of xsi:type
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild063.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>                        
+    </testGroup>        
+    
+    <testGroup version="1.1" name="wild064">
+        <annotation>
+            <documentation>
+                <Title>Element fails "dynamic EDC" test - lax wildcard</Title>
+                <Description>Schema is valid, instance is not</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild064.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild064.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </schemaTest>
+        <instanceTest name="wild064.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, g element is OK.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild064.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>
+        <instanceTest name="wild064.v2.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, second e element is OK because of xsi:type
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild064.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>                            
+        <instanceTest name="wild064.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid in 1.1, second e element fails dynamic EDC test.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild064.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>                          
+    </testGroup>         
+    
+    <testGroup version="1.1" name="wild065">
+        <annotation>
+            <documentation>
+                <Title>Element fails "dynamic EDC" test - lax wildcard</Title>
+                <Description>Schema is valid, instance is not</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild065.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild065.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </schemaTest>
+        <instanceTest name="wild065.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, g element is OK because of xsi:type.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild065.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>                 
+        <instanceTest name="wild065.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid in 1.1, g element fails dynamic EDC test.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild065.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>                          
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild066">
+        <annotation>
+            <documentation>
+                <Title>Element fails "dynamic EDC" test - lax wildcard</Title>
+                <Description>Substitutability involving a union</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild066.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild066.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </schemaTest>
+        <instanceTest name="wild066.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, e element is OK, belongs to a member of the union.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild066.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>
+    </testGroup>    
+    
+    <testGroup version="1.1" name="wild067">
+        <annotation>
+            <documentation>
+                <Title>Element fails "dynamic EDC" test - lax wildcard</Title>
+                <Description>Substitutability involving a union</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild067.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild067.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </schemaTest>
+        <instanceTest name="wild067.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, e element is not OK, belongs not to a member of the union.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild067.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>
+    </testGroup>           
+    
+    <testGroup version="1.1" name="wild068">
+        <annotation>
+            <documentation>
+                <Title>Element fails "dynamic EDC" test - lax wildcard</Title>
+                <Description>Context determined type comes from base type of restriction</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild068.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild068.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </schemaTest>
+        <instanceTest name="wild068.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, e element is not OK, clashes with element particle e defined in base type.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild068.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-04"/>
+        </instanceTest>
+    </testGroup>        
+    
+    <testGroup version="1.1" name="wild069">
+        <annotation>
+            <documentation>
+                <Title>Element fails "dynamic EDC" test - lax wildcard - xs:all content model</Title>
+                <Description>Context determined type comes from base type of restriction</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild069.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild069.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-17"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild070">
+        <annotation>
+            <documentation>
+                <Title>Basic test of notQName=##definedSibling</Title>
+                <Description>notQName=##definedSibling in a sequence content model</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefineSibling"/>
+        <schemaTest name="wild070.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild070.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="wild070.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild070.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+        <instanceTest name="wild070.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with a defined sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild070.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+        <instanceTest name="wild070.n2.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with a defined sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild070.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+    </testGroup>             
+    
+    <testGroup version="1.1" name="wild071">
+        <annotation>
+            <documentation>
+                <Title>Basic test of notQName=##definedSibling with substitution groups</Title>
+                <Description>notQName=##definedSibling in a sequence content model</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefineSibling"/>
+        <schemaTest name="wild071.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild071.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="wild071.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild071.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+        <instanceTest name="wild071.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with a defined sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild071.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+        <instanceTest name="wild071.n2.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with a defined sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild071.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+    </testGroup>         
+    
+    <testGroup version="1.1" name="wild072">
+        <annotation>
+            <documentation>
+                <Title>Test of notQName=##definedSibling with substitution groups in xs:all content model</Title>
+                <Description>notQName=##definedSibling in an xs:all content model</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefineSibling"/>
+        <schemaTest name="wild072.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild072.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="wild072.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild072.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+        <instanceTest name="wild072.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with a defined sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild072.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+        <instanceTest name="wild072.n2.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with a defined sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild072.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+    </testGroup>  
+    
+    <testGroup version="1.1" name="wild073">
+        <annotation>
+            <documentation>
+                <Title>Test of wildcards and substitution groups in xs:all content model</Title>
+                <Description>Variant of wild072 without the ##definedSibling, for comparison</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefineSibling"/>
+        <schemaTest name="wild073.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild073.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="wild073.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild072.v1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+        <instanceTest name="wild073.v2.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with a defined sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild072.n1.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+        <instanceTest name="wild073.v3.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with a defined sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild072.n2.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild074">
+        <annotation>
+            <documentation>
+                <Title>Test of openContent wildcards and substitution groups in xs:sequence content model</Title>
+                <Description>Open Content with ##definedSibling</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotXDefineSibling"/>
+        <schemaTest name="wild074.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild074.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </schemaTest>
+        <instanceTest name="wild074.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild074.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+        <instanceTest name="wild074.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with a defined sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild074.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+        <instanceTest name="wild074.n2.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with a defined sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild074.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild075">
+        <annotation>
+            <documentation>
+                <Title>Consistency of governing type declarations between locally-declared elements and wildcards in a content model</Title>
+                <Description>Violation of Element Locally Valid (Complex Type) Rule 5</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild075.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild075.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </schemaTest>
+        <instanceTest name="wild075.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild075.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </instanceTest>
+        <instanceTest name="wild075.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with type of a sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild075.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild076">
+        <annotation>
+            <documentation>
+                <Title>Consistency of governing type declarations between locally-declared elements and wildcards in a content model</Title>
+                <Description>Violation of Element Locally Valid (Complex Type) Rule 5</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild076.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild076.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </schemaTest>
+        <instanceTest name="wild076.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild075.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </instanceTest>
+        <instanceTest name="wild076.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Invalid, a element is not OK, clashes with type of a sibling.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild075.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild077">
+        <annotation>
+            <documentation>
+                <Title>Consistency of governing type declarations between locally-declared elements and wildcards in a content model</Title>
+                <Description>Violation of Element Locally Valid (Complex Type) Rule 5, not a problem with a skip wildcard</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild077.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild077.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </schemaTest>
+        <instanceTest name="wild077.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild075.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </instanceTest>
+        <instanceTest name="wild077.n1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, element is OK because it's a skip wildcard.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild075.n1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-12"/>
+        </instanceTest>
+    </testGroup>
+    
+     <testGroup version="1.1" name="wild078">
+        <annotation>
+            <documentation>
+                <Title>Consistency of governing type declarations between locally-declared elements and strict wildcards in a content model</Title>
+                <Description>Violation of Element Declarations Consistent (type tables differ)</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild078.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild078.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild079">
+        <annotation>
+            <documentation>
+                <Title>Consistency of governing type declarations between locally-declared elements and lax wildcards in a content model</Title>
+                <Description>Violation of Element Declarations Consistent</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild079.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild079.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </schemaTest>
+    </testGroup> 
+    
+     <testGroup version="1.1" name="wild080">
+        <annotation>
+            <documentation>
+                <Title>Consistency of governing type declarations between locally-declared elements and lax  wildcards in a content model</Title>
+                <Description>No violation of Element Declarations Consistent with a skip wildcard</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild080.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild080.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </schemaTest>
+        <instanceTest name="wild080.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, element is OK because it's a skip wildcard.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild080.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild081">
+        <annotation>
+            <documentation>
+                <Title>Consistency of governing type declarations between locally-declared elements and strict wildcards in a content model</Title>
+                <Description>Violation of Element Declarations Consistent (type tables differ)</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild081.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild081.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild082">
+        <annotation>
+            <documentation>
+                <Title>Consistency of governing type declarations between locally-declared elements in a content model</Title>
+                <Description>No violation of Element Declarations Consistent because the type tables are "the same"</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#Wildcards"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-TighterMatchingRuleForEDC"/>
+        <schemaTest name="wild082.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild082.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </schemaTest>
+        <instanceTest name="wild082.v1.xml">
+	        <annotation>
+	            <documentation>
+	                Valid, element is OK.
+	            </documentation>
+	        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild082.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-16"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild083">
+        <annotation>
+            <documentation>
+                <Title>Element Wildcard union with notQName="##defined"</Title>
+                <Description>Tests the spec note:
+                Note: When one of the wildcards has defined in {disallowed names} and the other does not, 
+                then defined is not included in the union. This may allow QNames that are not allowed by 
+                either wildcard. This is to ensure that all unions are expressible. If defined is intended 
+                to be included, then it is necessary to have it in both wildcards.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#cos-aw-union"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild083.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild083.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-24"/>
+        </schemaTest>
+        <instanceTest name="wild083.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, attribute is permitted by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild083.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-24"/>
+        </instanceTest>   
+        <instanceTest name="wild047.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild083.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-10-24"/>
+        </instanceTest> 
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild084">
+        <annotation>
+            <documentation>
+                <Title>Element Wildcard union with notQName="##defined"</Title>
+                <Description></Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#cos-aw-union"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild083.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild084.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-06-29"/>
+        </schemaTest>
+        <instanceTest name="wild084.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, attribute is excluded by the wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild084.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-06-29"/>
+        </instanceTest> 
+    </testGroup>
+    
+</testSet>    

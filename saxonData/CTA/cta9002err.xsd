@@ -1,0 +1,105 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+  
+  <!-- invalid, undefined variable in XPath expression -->
+  
+<xs:complexType name="messageType" mixed="true">
+ <xs:sequence>
+  <xs:any processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+ </xs:sequence>
+ <xs:attribute name="kind">
+  <xs:simpleType>
+   <xs:union>
+    <xs:simpleType>
+     <xs:restriction base="xs:string">
+      <xs:enumeration value="string"/>
+      <xs:enumeration value="base64"/>
+      <xs:enumeration value="binary"/>
+      <xs:enumeration value="date"/>
+      <xs:enumeration value="time"/>            
+      <xs:enumeration value="xml"/>
+      <xs:enumeration value="XML"/>
+     </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType>
+     <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+   </xs:union>
+  </xs:simpleType>
+ </xs:attribute>
+ <xs:anyAttribute processContents="skip"/>
+</xs:complexType>
+
+<xs:complexType name="messageTypeString">
+ <xs:simpleContent>
+  <xs:restriction base="messageType">
+   <xs:simpleType>
+    <xs:restriction base="xs:string"/>
+   </xs:simpleType>
+  </xs:restriction>
+ </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="messageTypeDate">
+ <xs:simpleContent>
+  <xs:restriction base="messageType">
+   <xs:simpleType>
+    <xs:restriction base="xs:date"/>
+   </xs:simpleType>
+  </xs:restriction>
+ </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="messageTypeTime">
+ <xs:simpleContent>
+  <xs:restriction base="messageType">
+   <xs:simpleType>
+    <xs:restriction base="xs:time"/>
+   </xs:simpleType>
+  </xs:restriction>
+ </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="messageTypeBase64">
+ <xs:simpleContent>
+  <xs:restriction base="messageType">
+   <xs:simpleType>
+    <xs:restriction base="xs:base64Binary"/>
+   </xs:simpleType>
+  </xs:restriction>
+ </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="messageTypeXML">
+ <xs:complexContent>
+  <xs:restriction base="messageType">
+   <xs:sequence>
+    <xs:any processContents="strict"/>
+   </xs:sequence>
+  </xs:restriction>
+ </xs:complexContent>
+</xs:complexType>
+
+<!-- invalid, test attribute missing on non-final alternative -->
+
+
+<xs:element name="message" type="messageType">
+  <xs:alternative test="@kind='string'" type="messageTypeString"/>
+  <xs:alternative test="@kind='base64'" type="messageTypeBase64"/>
+  <xs:alternative test="@kind='binary'" type="messageTypeBase64"/>
+  <xs:alternative test="$kind='binary'" type="messageTypeDate"/>
+  <xs:alternative test="@kind='time'" type="messageTypeTime"/>  
+  <xs:alternative test="@kind='xml'"    type="messageTypeXML"/>
+  <xs:alternative test="@kind='XML'"    type="messageTypeXML"/>
+</xs:element>
+
+<xs:element name="messages">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="message" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>
+  

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- wildcard intersection: allows anything in namespace adam (only) -->
+
+<xs:element name="eden" type="T"/>
+
+<xs:complexType name="T">
+    <xs:sequence/>
+    <xs:attributeGroup ref="a"/> 
+    <xs:attributeGroup ref="b"/>  
+</xs:complexType>
+
+
+<xs:attributeGroup name="a">
+  <xs:anyAttribute namespace="http://adam.com/ http://eve.com/ http://eve.com/" processContents="lax"/>
+</xs:attributeGroup>
+
+<xs:attributeGroup name="b">
+  <xs:anyAttribute notNamespace="http://eve.com/ http://abel.com/" processContents="lax"/>
+</xs:attributeGroup>
+    
+</xs:schema>

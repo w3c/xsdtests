@@ -1,0 +1,8 @@
+<doc lang="de">
+  <part lang="fr">
+    <chap><de/></chap>
+  </part>
+  <part lang="en">
+    <chap lang="fr"><fr/></chap>
+  </part>
+</doc>

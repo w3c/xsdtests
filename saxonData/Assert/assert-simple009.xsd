@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+   <!-- xs:assert on a simple type restriction; assertion fails due to run-time error (position() is undefined) -->
+
+  <xs:element name="date">
+    <xs:simpleType>
+       <xs:restriction base="xs:date">
+         <xs:assertion test="position() le 50"/>
+       </xs:restriction>   
+    </xs:simpleType>
+  </xs:element>
+  
+  <xs:element name="outer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="date" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>  
+  </xs:element>
+  
+</xs:schema>

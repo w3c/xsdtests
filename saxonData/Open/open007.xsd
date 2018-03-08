@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- interleaved open content within a counting content model -->
+
+<xs:element name="doc">
+  <xs:complexType>
+    <xs:openContent mode="interleave">
+      <xs:any namespace="http://open.com/" processContents="lax"/>
+    </xs:openContent>
+    <xs:sequence>
+      <xs:element name="a" minOccurs="5" maxOccurs="10"/>
+      <xs:element name="b" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+    
+</xs:schema>

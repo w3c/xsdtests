@@ -1,0 +1,6 @@
+<!-- invalid document - too few elements in namespace \a -->
+<doc xmlns:a="http://a.ns/" xmlns:b="http://b.ns/">
+  <a:wasp/>
+  <b:bee/>
+  <b:ant/>
+</doc>

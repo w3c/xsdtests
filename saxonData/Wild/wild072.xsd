@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- element wildcard with ##definedSibling in a xs:all content model, substitution groups. -->
+
+<xs:element name="root" type="zing"/>
+
+<xs:complexType name="zing">
+  <xs:all>
+    <xs:element ref="a" minOccurs="0"/>
+    <xs:element name="b" type="xs:string" minOccurs="0"/>
+    <xs:element name="c" type="xs:string" minOccurs="0"/>
+    <xs:any notQName="##definedSibling" processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+  </xs:all>  
+</xs:complexType>
+
+<xs:element name="a" type="xs:string"/>
+
+<xs:element name="A" substitutionGroup="a"/>
+
+   
+</xs:schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    targetNamespace="http://assert021.ns/"
+    xmlns:t="http://assert021.ns/">
+    
+  <!-- effect of chameleon include on XPath expressions -->
+  
+  <xs:include schemaLocation="assert021a.xsd"/>
+  
+  <xs:element name="doc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="t:temp" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

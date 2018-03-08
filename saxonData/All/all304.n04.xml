@@ -1,0 +1,8 @@
+<!-- invalid document, too many elements matching wildcard -->
+<doc xmlns:n1="http://one.com/" xmlns:n2="http://two.com/">
+  <n1:one/>
+  <n2:two/>
+  <n1:three/>
+  <n2:four/> 
+  <n1:three/>    
+</doc>

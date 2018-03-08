@@ -1,0 +1,4 @@
+<doc>
+  <a></a>
+  <b abc:lang="jp" xmlns:abc="http://abc.com/"/>
+</doc>

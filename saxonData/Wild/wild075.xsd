@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Element Locally Valid (Complex Type) rule 5 is violated because of a strict wildcard selecting a governing type that is not
+     the same as the locally declared type ("dynamic EDC constraint", see bug 5970) -->
+
+
+<xs:element name="root" type="zing"/>
+
+<xs:complexType name="zing">
+  <xs:sequence>
+    <xs:element name="a" type="xs:integer"/>
+    <xs:any namespace="##local" processContents="strict"/>
+  </xs:sequence>  
+</xs:complexType>
+
+<xs:element name="a" type="xs:date"/>
+
+<xs:element name="b" type="xs:date"/>
+
+   
+</xs:schema>

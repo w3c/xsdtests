@@ -1,0 +1,37 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  attributeFormDefault="qualified">
+  
+  <!--Error, alternative is not substitutable for the declared type -->
+  
+  <xs:element name="doc" type="docType"/>
+  
+  <xs:complexType name="docType">
+        <xs:sequence>
+            <xs:element ref="chap" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="lang" inheritable="true"/>
+   </xs:complexType>
+  
+ 
+  
+  <xs:element name="chap" type="docType">
+    <xs:alternative test="@lang='de'">
+        <xs:complexType>
+            <xs:sequence>
+             <xs:element name="de"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:alternative>
+    <xs:alternative test="@lang='fr'">
+        <xs:complexType>
+            <xs:sequence>
+            <xs:element name="fr"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:alternative>
+  </xs:element>   
+  
+
+</xs:schema>
+  

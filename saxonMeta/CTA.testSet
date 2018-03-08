@@ -1,0 +1,1494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<testSet name="CTA"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+      version="1.1">
+
+    <testGroup name="cta0001">
+        <annotation>
+            <documentation>
+                <Title>Conditional simple type: example based on spec</Title>
+                <Description>Simple type of message depends on enumerated kind attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <schemaTest name="cta0001">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-12"/>
+        </schemaTest>
+        <instanceTest name="cta0001.v01">
+		        <annotation>
+		            <documentation>
+		                Valid, message with kind="date".
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0001.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-12"/>
+        </instanceTest>        
+        <instanceTest name="cta0001.v02">
+		        <annotation>
+		            <documentation>
+		                Valid, message with kind="time".
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0001.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-12"/>
+        </instanceTest>
+        <instanceTest name="cta0001.v03">
+		        <annotation>
+		            <documentation>
+		                Valid, multiple messages at inner level.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0001.v03.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-12"/>
+         </instanceTest>                                 
+         <instanceTest name="cta0001.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid, message with kind="date" but content is a time
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0001.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-12"/>
+         </instanceTest>        
+         <instanceTest name="cta0001.n02">
+		        <annotation>
+		            <documentation>
+		                Invalid, message with kind="date" at inner level
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0001.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-12"/>
+         </instanceTest>                
+    </testGroup>
+    
+    <testGroup name="cta0002">
+        <annotation>
+            <documentation>
+                <Title>Conditional complex type with namespaces</Title>
+                <Description>Complex type of message depends on enumerated min attribute</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <schemaTest name="cta0002">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </schemaTest>
+        <instanceTest name="cta0002.v01">
+		        <annotation>
+		            <documentation>
+		                Valid, various messages.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0002.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </instanceTest>                       
+         <instanceTest name="cta0002.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid, message with min=1 but no child elements
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0002.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-19"/>
+         </instanceTest>        
+    </testGroup>    
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0003">
+        <annotation>
+            <documentation>
+                <Title>Conditional complex type with namespaces</Title>
+                <Description>Trivial reference to the name of the element</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <schemaTest name="cta0003">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </schemaTest>
+        <instanceTest name="cta0003.v01">
+		        <annotation>
+		            <documentation>
+		                Valid, various messages.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0003.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </instanceTest>                       
+         <instanceTest name="cta0003.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid, message with min=1 but no child elements
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0003.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-19"/>
+         </instanceTest>        
+    </testGroup>        
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0004">
+        <annotation>
+            <documentation>
+                <Title>Conditional complex type with namespaces</Title>
+                <Description>Variant of cta0003 (same instance documents) using xpathDefaultNamespace</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-ImpactOfXPathDefaultNS"/>
+        <schemaTest name="cta0004">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0004.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </schemaTest>
+        <instanceTest name="cta0004.v01">
+		        <annotation>
+		            <documentation>
+		                Valid, various messages.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0003.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </instanceTest>                       
+         <instanceTest name="cta0004.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid, message with min=1 but no child elements
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0003.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-19"/>
+         </instanceTest>        
+    </testGroup>            
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0005">
+        <annotation>
+            <documentation>
+                <Title>Conditional complex type with namespaces</Title>
+                <Description>Variant of cta0003 (same instance documents) using xpathDefaultNamespace
+                         at the schema level</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-ImpactOfXPathDefaultNS"/>
+        <schemaTest name="cta0005">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0005.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </schemaTest>
+        <instanceTest name="cta0005.v01">
+		        <annotation>
+		            <documentation>
+		                Valid, various messages.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0003.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </instanceTest>                       
+         <instanceTest name="cta0005.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid, message with min=1 but no child elements
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0003.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-19"/>
+         </instanceTest>        
+    </testGroup> 
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0006">
+        <annotation>
+            <documentation>
+                <Title>Conditional simple type: selecting a branch of a union</Title>
+                <Description>Simple type of message depends on enumerated kind attribute, value is
+                 a QName identifying the branch of a union (xsi:type simulation)</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <schemaTest name="cta0006">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0006.xsd"/>
+            <expected validity="valid" version="full-xpath-in-CTA"/>
+            <expected validity="invalid" version="restricted-xpath-in-CTA"/>
+            <current status="accepted" date="2011-07-29">
+                <annotation>
+                    <documentation>Added conditional results (bug 13455)</documentation>
+                </annotation>
+            </current>
+            <prior status="accepted" date="2007-11-19"/>
+        </schemaTest>
+        <instanceTest name="cta0006.v01">
+		        <annotation>
+		            <documentation>
+		                Valid messages
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0006.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </instanceTest>        
+        <instanceTest name="cta0006.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid message with kind="xs:int"
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0006.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </instanceTest>
+        <instanceTest name="cta0006.n02">
+		        <annotation>
+		            <documentation>
+		                Invalid message with kind="xs:QName (namespace not declared"
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0006.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </instanceTest>
+    </testGroup>          
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0007">
+        <annotation>
+            <documentation>
+                <Title>Variant of cta0006 using xs:error</Title>
+                <Description>Chosen alternative has a type of xs:error</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XSErrorType"/>
+        <schemaTest name="cta0007">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0007.xsd"/>
+            <expected validity="valid" version="full-xpath-in-CTA"/>
+            <expected validity="invalid" version="restricted-xpath-in-CTA"/>
+            <current status="accepted" date="2011-07-29">
+                <annotation>
+                    <documentation>Added conditional results (bug 13455)</documentation>
+                </annotation>
+            </current>
+            <prior status="accepted" date="2008-07-30"/>
+        </schemaTest>
+        <instanceTest name="cta0007.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid message with kind="xs:anyURI" leading to selection of type xs:error
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0007.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-07-30"/>
+        </instanceTest>
+    </testGroup>              
+    
+    <testGroup version="1.1" name="cta0008">
+        <annotation>
+            <documentation>
+                <Title>Inline type alternative</Title>
+                <Description>Type alternative is an anonymous type defined as child of xs:alternative</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <schemaTest name="cta0008">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0008.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-17">
+              <annotation>
+                <documentation>
+                  Changed 'eq' operator in CTA to '=' to stay within minimal XPath subset.
+                  Bug 13455.
+                </documentation>
+              </annotation>
+            </current>  
+            <prior status="accepted" date="2009-05-05"/>
+        </schemaTest>
+        <instanceTest name="cta0008.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0008.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-05-05"/>
+        </instanceTest>
+        <instanceTest name="cta0008.n01">
+		        <annotation>
+		            <documentation>
+		                inalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0008.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-05-05"/>
+        </instanceTest>
+    </testGroup> 
+    
+    <testGroup version="1.1" name="cta0009">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using an inherited attribute</Title>
+                <Description>Type alternative is an anonymous type defined as child of xs:alternative</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-InheritableAttr"/>
+        <schemaTest name="cta0009">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0009.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0009.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0009.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0009.v02">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0009.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0009.n01">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0009.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0009.n02">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0009.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta0010">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using an inherited attribute</Title>
+                <Description>Type alternative is an anonymous type defined as child of xs:alternative</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-InheritableAttr"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XSErrorType"/>
+        <schemaTest name="cta0010">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0010.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0010.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0010.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0010.v02">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0010.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0010.n01">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0010.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0010.n02">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0010.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta0011">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using an inherited attribute</Title>
+                <Description>Inheritability differs between attribute declaration and use: attribute use wins</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-InheritableAttr"/>
+        <schemaTest name="cta0011">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0011.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0011.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0009.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0011.v02">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0009.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0011.n01">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0009.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0011.n02">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0009.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta0012">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using an inherited attribute</Title>
+                <Description>Inheritability differs between attribute declaration and use: attribute use wins</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-InheritableAttr"/>
+        <schemaTest name="cta0012">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0012.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0012.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0012.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+         <instanceTest name="cta0012.n01">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0012.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+    </testGroup>
+    
+     <testGroup version="1.1" name="cta0013">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using an inherited attribute</Title>
+                <Description>A non-inheritable attribute does not mask an inheritable attribute on an ancestor</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-InheritableAttr"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XSErrorType"/>
+        <schemaTest name="cta0013">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0013.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0013.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0013.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0013.v02">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0013.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0013.n01">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0013.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0013.n02">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0013.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta0014">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>Explicit default alternative as last alternative</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-DefaultBranch"/>
+        <schemaTest name="cta0014">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0014.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0014.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0014.v02">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0014.n01">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0014.n02">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta0015">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>Implicit default alternative as last alternative</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-DefaultBranch"/>
+        <schemaTest name="cta0015">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0015.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0015.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0015.v02">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0015.n01">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0015.n02">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0016">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>Error in XPath evaluation treated as false</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-DynamicErrInXPathEval"/>
+        <schemaTest name="cta0016">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0016.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0016.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0016.v02">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0016.n01">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0016.n02">
+		        <annotation>
+		            <documentation>
+		                invalid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0014.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0017">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>XPath expression can only access attributes</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XPathExprAttrOnly"/>
+        <schemaTest name="cta0017">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0017.xsd"/>
+            <expected validity="valid" version="full-xpath-in-CTA"/>
+            <expected validity="invalid" version="restricted-xpath-in-CTA"/>
+            <current status="accepted" date="2011-07-29">
+                <annotation>
+                    <documentation>Added conditional results (bug 13455)</documentation>
+                </annotation>
+            </current>
+            <prior status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0017.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0017.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>  
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0018">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>XPath expression sees untyped data</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XPathExprAttrOnly"/>
+        <schemaTest name="cta0018">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0018.xsd"/>
+            <expected validity="valid" version="full-xpath-in-CTA"/>
+            <expected validity="invalid" version="restricted-xpath-in-CTA"/>
+            <current status="accepted" date="2011-07-29">
+                <annotation>
+                    <documentation>Added conditional results (bug 13455)</documentation>
+                </annotation>
+            </current>
+            <prior status="accepted" date="2010-10-15"/>
+            
+        </schemaTest>
+        <instanceTest name="cta0018.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0017.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup> 
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0019">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>XPath expression sees untyped data</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XPathExprAttrOnly"/>
+        <schemaTest name="cta0019">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0019.xsd"/>
+            <expected validity="valid" version="full-xpath-in-CTA"/>
+            <expected validity="invalid" version="restricted-xpath-in-CTA"/>
+            <current status="accepted" date="2011-07-29">
+                <annotation>
+                    <documentation>Added conditional results (bug 13455)</documentation>
+                </annotation>
+            </current>
+            <prior status="accepted" date="2010-10-15"/>                        
+        </schemaTest>
+        <instanceTest name="cta0019.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0017.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup> 
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0020">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>XPath expression sees name of element node</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XPathExprAttrOnly"/>
+        <schemaTest name="cta0020">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0020.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0020.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0017.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>     
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0021">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>XPath expression sees base URI of element node</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-XPathExprAttrOnly"/>
+        <schemaTest name="cta0021">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0021.xsd"/>
+            <expected validity="valid" version="full-xpath-in-CTA"/>
+            <expected validity="invalid" version="restricted-xpath-in-CTA"/>
+            <current status="accepted" date="2011-07-29">
+                <annotation>
+                    <documentation>Added conditional results (bug 13455)</documentation>
+                </annotation>
+            </current>
+            <prior status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0021.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0021.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0021.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid message: base URI does not match the test, so the error alternative is chosen
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0021.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0022">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>Dynamic context of XPath expression</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticDynamicContextOfXPathExpr"/>
+        <schemaTest name="cta0022">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0022.xsd"/>
+            <expected validity="valid" version="full-xpath-in-CTA"/>
+            <expected validity="invalid" version="restricted-xpath-in-CTA"/>
+            <current status="accepted" date="2011-07-29">
+                <annotation>
+                    <documentation>Added conditional results (bug 13455)</documentation>
+                </annotation>
+            </current>
+            <prior status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0022.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0017.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0023">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>Static context of XPath expression</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticDynamicContextOfXPathExpr"/>
+        <schemaTest name="cta0023">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0023.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0023.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0023.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0024">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>Static context of XPath expression</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticDynamicContextOfXPathExpr"/>
+        <schemaTest name="cta0024">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0024.xsd"/>
+            <expected validity="valid" version="full-xpath-in-CTA"/>
+            <expected validity="invalid" version="restricted-xpath-in-CTA"/>
+            <current status="accepted" date="2011-07-29">
+                <annotation>
+                    <documentation>Added conditional results (bug 13455)</documentation>
+                </annotation>
+            </current>
+            <prior status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0024.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0023.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0025">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>Static context of XPath expression</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticDynamicContextOfXPathExpr"/>
+        <schemaTest name="cta0025">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0025.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0025.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0023.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0026">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>Static context of XPath expression</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticDynamicContextOfXPathExpr"/>
+        <schemaTest name="cta0026">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0026.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0026.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0023.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0027">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>Static context of XPath expression</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticDynamicContextOfXPathExpr"/>
+        <schemaTest name="cta0027">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0027.xsd"/>
+            <expected validity="valid" version="full-xpath-in-CTA"/>
+            <expected validity="invalid" version="restricted-xpath-in-CTA"/>
+            <current status="accepted" date="2011-07-29">
+                <annotation>
+                    <documentation>Added conditional results (bug 13455)</documentation>
+                </annotation>
+            </current>
+            <prior status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0027.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0023.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>
+    
+    <testGroup version="full-xpath-in-CTA" name="cta0028">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using a simple type</Title>
+                <Description>Static context of XPath expression</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticDynamicContextOfXPathExpr"/>
+        <schemaTest name="cta0028">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0028.xsd"/>
+            <expected validity="valid" version="full-xpath-in-CTA"/>
+            <expected validity="invalid" version="restricted-xpath-in-CTA"/>
+            <current status="accepted" date="2011-07-29">
+                <annotation>
+                    <documentation>Added conditional results (bug 13455)</documentation>
+                </annotation>
+            </current>
+            <prior status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0028.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0023.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta0040">
+        <annotation>
+            <documentation>
+                <Title>Type alternative - substitutability</Title>
+                <Description>Valid substitution in a substitution group</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-DerivationByRestr"/>
+        <schemaTest name="cta0040">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0040.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0040.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0040.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0040.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid message - appendix dateTime has no timezone
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0040.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta0041">
+        <annotation>
+            <documentation>
+                <Title>Type alternative - substitutability</Title>
+                <Description>Invalid substitution in a substitution group - detected only at validation time, by particular instances</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-DerivationByRestr"/>
+        <schemaTest name="cta0041">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0041.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0041.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0041.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+        <instanceTest name="cta0041.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid message - appendix dateTime has no timezone, which is OK for an appendix
+		                but not for a chap, making it an invalid substitution.
+		                <!-- Although this appears wrong on the surface, it's not clear that the spec actually
+		                     prohibits it. See MHK message on schema-ig list, 2011-02-08 -->
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0041.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>  
+    </testGroup>   
+    
+    <testGroup version="1.1" name="cta0042">
+        <annotation>
+            <documentation>
+                <Title>Element Declarations Consistent</Title>
+                <Description>Two particles in a content model have the same name; permitted because they have the same type table</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-TypeTablesConsistentInEDC"/>
+        <schemaTest name="cta0042">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0042.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+        <instanceTest name="cta0042.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0042.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </instanceTest>
+    </testGroup>                           
+
+    <testGroup version="1.1" name="cta0043">
+        <annotation>
+            <documentation>
+                <Title>Type alternative - substitutability</Title>
+                <Description>Invalid substitution in a restricted type - detected only at validation time, by particular instances</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-DerivationByRestr"/>
+        <schemaTest name="cta0043">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0043.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-10-08">
+              <annotation>
+                <documentation>
+                  Changed status to invalid (and dropped instance tests);
+                  reflects resolution of spec bug 12185 requiring
+                  the type tables of the elements in base type and
+                  derived type content models to be equivalent.
+                </documentation>
+              </annotation>
+            </current>  
+            <prior status="accepted" date="2011-02-08"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta0044">
+        <annotation>
+            <documentation>
+                <Title>Type alternatives - restricting attributes</Title>
+                <Description>Attribute allowed in one alternative but not allowed in another</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-DerivationByRestr"/>
+        <schemaTest name="cta0044">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0044.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-14"/>
+        </schemaTest>
+        <instanceTest name="cta0044.v01">
+		        <annotation>
+		            <documentation>
+		                Valid message
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0044.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-14"/>
+        </instanceTest>
+        <instanceTest name="cta0044.n01">
+		        <annotation>
+		            <documentation>
+		                Invalid message - attribute is prohibited in this type alternative
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/CTA/cta0044.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-14"/>
+        </instanceTest>  
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta0045">
+        <annotation>
+            <documentation>
+                <Title>Element Declarations Consistent</Title>
+                <Description>Two particles in a content model have the same type table; one of the type alternatives has no condition</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-TypeTablesConsistentInEDC"/>
+        <schemaTest name="cta0042">
+            <schemaDocument xlink:href="../saxonData/CTA/cta0045.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2013-09-22"/>
+        </schemaTest>
+    </testGroup>    
+    
+    <testGroup version="1.1" name="cta9001err">
+        <annotation>
+            <documentation>
+                <Title>Conditional simple type: example based on spec</Title>
+                <Description>Test attribute missing on non-final alternative</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-Basic"/>
+        <schemaTest name="cta9001err">
+            <schemaDocument xlink:href="../saxonData/CTA/cta9001err.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-12"/>
+        </schemaTest>
+    </testGroup>        
+    
+    <testGroup version="full-xpath-in-CTA" name="cta9002err">
+        <annotation>
+            <documentation>
+                <Title>Conditional simple type: example based on spec</Title>
+                <Description>Invalid XPath expression - reference to undeclared variable (also uses XPath syntax outside the CTA subset)</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticErrorsInXPathExpr"/>
+        <schemaTest name="cta9002err">
+            <schemaDocument xlink:href="../saxonData/CTA/cta9002err.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </schemaTest>
+    </testGroup>       
+    
+    <testGroup version="full-xpath-in-CTA" name="cta9003err">
+        <annotation>
+            <documentation>
+                <Title>Error case - reference to user-defined type</Title>
+                <Description>User-defined types are not part of the static context</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-StaticErrorsInXPathExpr"/>
+        <schemaTest name="cta9003err">
+            <schemaDocument xlink:href="../saxonData/CTA/cta9003err.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-19"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup version="1.1" name="cta9004err">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using an inherited attribute</Title>
+                <Description>Invalid complex type description: inheritability varies between base type and restricted type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-InheritableAttr"/>
+        <schemaTest name="cta9004err">
+            <schemaDocument xlink:href="../saxonData/CTA/cta9004err.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest> 
+    </testGroup>   
+    
+    <testGroup version="1.1" name="cta9005err">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using an inherited attribute</Title>
+                <Description>Invalid complex type description: inheritability varies between base type and restricted type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-InheritableAttr"/>
+        <schemaTest name="cta9005err">
+            <schemaDocument xlink:href="../saxonData/CTA/cta9005err.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest> 
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta9006err">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using an inherited attribute</Title>
+                <Description>Non-boolean value for "inheritable"</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-InheritableAttr"/>
+        <schemaTest name="cta9006err">
+            <schemaDocument xlink:href="../saxonData/CTA/cta9006err.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest> 
+    </testGroup>    
+    
+    <testGroup version="1.1" name="cta9007err">
+        <annotation>
+            <documentation>
+                <Title>Type alternative using an inherited attribute</Title>
+                <Description>Non-boolean value for "inheritable"</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-InheritableAttr"/>
+        <schemaTest name="cta9007err">
+            <schemaDocument xlink:href="../saxonData/CTA/cta9007err.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest> 
+    </testGroup> 
+    
+    <testGroup version="1.1" name="cta9008err">
+        <annotation>
+            <documentation>
+                <Title>Error, alternative is not substitutable for the declared type</Title>
+                <Description>Each alternative must be substitutable for declared type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-AltsSubstitable"/>
+        <schemaTest name="cta9008err">
+            <schemaDocument xlink:href="../saxonData/CTA/cta9008err.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest> 
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta9009err">
+        <annotation>
+            <documentation>
+                <Title>Element Declarations Consistent</Title>
+                <Description>Two particles in a content model have the same name; disallowed because they have different type tables</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-TypeTablesConsistentInEDC"/>
+        <schemaTest name="cta9009err">
+            <schemaDocument xlink:href="../saxonData/CTA/cta9009err.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="cta9010err">
+        <annotation>
+            <documentation>
+                <Title>Element Declarations Consistent</Title>
+                <Description>Two particles in a content model have the same name; disallowed because they have different type tables</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cTypeAlternative"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-CTA-TypeTablesConsistentInEDC"/>
+        <schemaTest name="cta9010err">
+            <schemaDocument xlink:href="../saxonData/CTA/cta9010err.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-10-15"/>
+        </schemaTest>
+    </testGroup>                              
+    
+  
+    
+</testSet>    

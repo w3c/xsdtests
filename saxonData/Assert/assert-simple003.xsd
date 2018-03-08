@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+   <!-- xs:assert on a simple type restriction, using xpathDefaultNamespace (not easy!) -->
+
+  <xs:element name="n">
+    <xs:simpleType>
+       <xs:restriction base="xs:string">
+         <xs:assertion test="$value castable as double" xpathDefaultNamespace="http://www.w3.org/2001/XMLSchema"/>
+       </xs:restriction>   
+    </xs:simpleType>
+  </xs:element>
+  
+  <xs:element name="outer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="n" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>  
+  </xs:element>
+  
+</xs:schema>

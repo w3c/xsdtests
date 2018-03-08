@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- test year zero allowed in xs:date, and leap years in proleptic Gregorian calendar -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc">
+    <xs:simpleType>
+       <xs:restriction base="xs:date">
+         <xs:explicitTimezone value="prohibited"/>     
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

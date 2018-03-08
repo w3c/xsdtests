@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<testSet name="PDecimal"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+      version="1.1"
+      xmlns:saxon="http://saxon.sf.net/">
+      
+    <!-- Note that precisionDecimal has been withdrawn from XSD 1.1, though the definition is
+         retained in a working group note and the facility may be present in some implementations.
+         The tests are therefore no longer part of the main test suite rooted at suite.xml. They
+         have been moved to a set of auxiliary tests referenced in extra-suite.xml. -->  
+
+    <testGroup name="pdecimal001" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Attribute of type precisionDecimal</Title>
+                <Description>Simple precisionDecimal value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Validation"/>
+        <schemaTest name="pdecimal001.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal001.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal001.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal001.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal with leading and trailing whitespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal001.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>        
+        <instanceTest name="pdecimal001.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid precisionDecimal attribute.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal001.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal001.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid precisionDecimal attribute.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal001.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal001.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid precisionDecimal attribute.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal001.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal001.n4.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid precisionDecimal attribute.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal001.n4.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal001.n5.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid precisionDecimal attribute.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal001.n5.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="pdecimal001a" version="1.0">
+        <annotation>
+            <documentation>
+                <Title>Attribute of type precisionDecimal - invalid in XSD 1.0</Title>
+                <Description>Simple precisionDecimal attribute: valid in XSD 1.1, but not in XSD 1.0</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Validation"/>
+        <schemaTest name="pdecimal001.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal001.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="pdecimal002" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal using the minInclusive facet</Title>
+                <Description>Restriction of type precisionDecimal using the minInclusive facet</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal002.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal002.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal002.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal002.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal002.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal002.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal002.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal002.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal002.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        
+    </testGroup>
+    
+    <testGroup name="pdecimal003" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal using the minExclusive facet</Title>
+                <Description>Restriction of type precisionDecimal using the minExclusive facet</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal003.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal003.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal003.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal003.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal003.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal003.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal003.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal003.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal003.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal003.n4.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal003.n4.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        
+    </testGroup>
+    
+    <testGroup name="pdecimal004" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal using the maxInclusive facet</Title>
+                <Description>Restriction of type precisionDecimal using the maxInclusive facet</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal004.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal004.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal004.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal004.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal004.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal004.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal004.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal004.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal004.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal004.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+    </testGroup>    
+    
+    <testGroup name="pdecimal005" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal using the maxExclusive facet</Title>
+                <Description>Restriction of type precisionDecimal using the maxExclusive facet</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal005.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal005.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal005.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal005.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal005.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal005.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal005.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal005.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal005.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal005.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+    </testGroup>        
+    
+    <testGroup name="pdecimal006" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal using the enumeration facet</Title>
+                <Description>Restriction of type precisionDecimal using the enumeration facet</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal006.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal006.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal006.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal006.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal006.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal006.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal006.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal006.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+    </testGroup>         
+    
+    <testGroup name="pdecimal007" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal using the pattern facet with value NaN</Title>
+                <Description>Restriction of type precisionDecimal using the pattern facet with value NaN</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal007.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal007.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal007.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal007.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal007.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal007.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="pdecimal008" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal using the totalDigits facet with value 4</Title>
+                <Description>Restriction of type precisionDecimal using the totalDigits facet with value 4</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal008.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal008.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal008.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal008.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal008.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal008.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal008.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal008.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal008.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal008.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal008.n4.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal008.n4.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal008.n5.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal008.n5.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="pdecimal009" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal using the fractionDigits facet</Title>
+                <Description>Restriction of type precisionDecimal using the fractionDigits facet (not allowed)</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal009.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal009.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="pdecimal010" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal using the minScale and maxScale facets</Title>
+                <Description>Restriction of type precisionDecimal using the minScale and maxScale facets</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal010.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal010.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal010.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal010.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal010.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal010.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal010.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal010.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal010.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal010.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal010.n4.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal010.n4.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal010.n5.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal010.n5.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="pdecimal011" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal: error, minScale > maxScale</Title>
+                <Description>Restriction of type precisionDecimal: error, minScale > maxScale</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal011.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal011.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+    </testGroup>       
+    
+    <testGroup name="pdecimal012" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal: error, minScale lt minScale of base type</Title>
+                <Description>Restriction of type precisionDecimal: error, minScale lt minScale of base type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal012.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal012.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+    </testGroup>    
+    
+    <testGroup name="pdecimal013" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal: error, maxScale lt maxScale of base type</Title>
+                <Description>Restriction of type precisionDecimal: error, maxScale lt maxScale of base type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal013.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal013.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+    </testGroup>      
+    
+   <testGroup name="pdecimal014" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal: error, maxScale lt minScale of base type</Title>
+                <Description>Restriction of type precisionDecimal: error, maxScale lt minScale of base type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal014.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal014.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+    </testGroup>  
+    
+    <testGroup name="pdecimal015" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal: error, minScale > maxScale of base type</Title>
+                <Description>Restriction of type precisionDecimal: error, minScale > maxScale of base type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal015.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal015.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="pdecimal016" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Restriction of type precisionDecimal using negative minScale and maxScale facets</Title>
+                <Description>Restriction of type precisionDecimal using negative minScale and maxScale facets</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal016.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal016.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal016.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal016.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal016.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal016.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal016.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal016.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal016.n3.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal016.n3.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal016.n4.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal016.n4.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="pdecimal017" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Cannot use length facet with precisionDecimal</Title>
+                <Description>Cannot use length facet with precisionDecimal</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal017.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal017.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+    </testGroup>   
+    
+    <testGroup name="pdecimal018" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Cannot use length facet with precisionDecimal</Title>
+                <Description>Cannot use length facet with precisionDecimal</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal018.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal018.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="pdecimal019" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>List of type precisionDecimal </Title>
+                <Description>List of type precisionDecimal</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal019.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal019.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal019.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal019.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal019.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal019.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+    </testGroup>                    
+    
+    <testGroup name="pdecimal020" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Union of type precisionDecimal </Title>
+                <Description>Union of type precisionDecimal</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#precisionDecimal"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-PrecisionDecimal-Facets"/>
+        <schemaTest name="pdecimal020.xsd">
+            <schemaDocument xlink:href="../saxonData/PDecimal/pdecimal020.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </schemaTest>
+        <instanceTest name="pdecimal020.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid attributes of type precision decimal.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal020.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+        <instanceTest name="pdecimal020.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid attribute of type precision decimal (violates the facet).
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/PDecimal/pdecimal020.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-01-19"/>
+        </instanceTest>
+    </testGroup>                                 
+              
+
+
+    
+</testSet>    

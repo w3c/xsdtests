@@ -1,0 +1,7 @@
+<doc>
+  <a/>
+  <b>23</b>
+  <x/>
+  <d/>
+  <b xmlns="http://disallowed.com/">not-a-number</b>
+</doc>

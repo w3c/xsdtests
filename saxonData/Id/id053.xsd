@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Use xpathDefaultNamespace=##targetNamespace at local level for a key constraint, overriding the default
+
+-->
+
+<xs:schema
+  xmlns="IdConstrDefs/fields"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://id050.ly/"
+  elementFormDefault="qualified"
+  xmlns:s="http://id050.ly/"
+  xpathDefaultNamespace="##local">
+
+  <xs:element name="doc">
+      <xs:complexType>
+         <xs:sequence>
+           <xs:element name="emp" type="s:empType" maxOccurs="unbounded"/>
+         </xs:sequence>
+      </xs:complexType>
+      <xs:key name="unique-clause">
+        <xs:selector xpath="emp" xpathDefaultNamespace="##targetNamespace"/>
+        <xs:field xpath="s:nr"/>
+      </xs:key>
+  </xs:element>
+  
+  <xs:complexType name="empType">
+    <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="nr" type="xs:integer"/>
+        <xs:element name="manager" type="xs:integer" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

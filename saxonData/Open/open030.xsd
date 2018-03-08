@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- complex type extension: derived type takes openContent from the default open content
+     of the schema in preference to that of the base type. This makes the extension invalid. -->
+
+  <xs:defaultOpenContent mode="suffix">
+    <xs:annotation/>
+    <xs:any namespace="http://open.com/" processContents="lax"/>
+  </xs:defaultOpenContent>
+
+  <xs:complexType name="B">
+    <xs:openContent mode="interleave">
+       <xs:any namespace="http://closed.com/" processContents="lax"/>
+    </xs:openContent>
+    <xs:sequence>
+      <xs:element name="a" maxOccurs="unbounded"/>
+      <xs:element name="b" minOccurs="0"/>
+      <xs:element name="c" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="R">
+    <xs:complexContent>
+      <xs:extension base="B">
+        <xs:sequence>
+          <xs:element name="d" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>  
+  </xs:complexType>  
+
+<xs:element name="doc" type="R"/>
+
+    
+</xs:schema>

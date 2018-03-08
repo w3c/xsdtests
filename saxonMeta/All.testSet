@@ -1,0 +1,1517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<testSet name="All"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+      version="1.1"
+      xmlns:saxon="http://saxon.sf.net/">
+
+    <testGroup name="all001" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group with extended minOccurs and maxOccurs values</Title>
+                <Description>All model group with extended minOccurs and maxOccurs values</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-MaxOccurs"/>
+        <schemaTest name="all001.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </schemaTest>
+        <instanceTest name="all001.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the minOccurs and maxOccurs constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all001.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>        
+        <instanceTest name="all001.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Inalid, too few occurrences.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all001.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>        
+        <instanceTest name="all001.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too few occurrences.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all001.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>          
+        <instanceTest name="all001.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too many occurrences.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all001.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>                              
+    </testGroup>            
+                      
+    <testGroup name="all002" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group with substitution groups</Title>
+                <Description>All model group with extended minOccurs and maxOccurs values</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-MaxOccurs"/>
+        <schemaTest name="all002.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </schemaTest>
+        <instanceTest name="all002.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the minOccurs and maxOccurs constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all002.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>        
+        <instanceTest name="all002.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too few occurrences.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all002.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>        
+        <instanceTest name="all002.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too few occurrences.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all002.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>          
+        <instanceTest name="all002.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too many occurrences.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all002.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>                              
+    </testGroup>
+    
+    <testGroup name="all003" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group with mixed content with extended minOccurs and maxOccurs values</Title>
+                <Description>All model group with mixed content with extended minOccurs and maxOccurs values</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-MaxOccurs"/>
+        <schemaTest name="all003.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </schemaTest>
+        <instanceTest name="all003.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the minOccurs and maxOccurs constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all003.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>        
+        <instanceTest name="all003.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all003.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>        
+        <instanceTest name="all003.v03.xml">
+		        <annotation>
+		            <documentation>
+		                Valid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all003.v03.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>                         
+    </testGroup> 
+    
+    <testGroup name="all004" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group with nillable="true"</Title>
+                <Description>Test cases involving xsi:nil="true" or "false"</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-MaxOccurs"/>
+        <schemaTest name="all004.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all004.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </schemaTest>
+        <instanceTest name="all004.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the minOccurs and maxOccurs constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all004.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>        
+        <instanceTest name="all004.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all004.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>        
+        <instanceTest name="all004.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. Element is nilled but contains content.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all004.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>
+        <instanceTest name="all004.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. Element is nilled but contains content, albeit whitespace.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all004.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-17"/>
+        </instanceTest>                         
+    </testGroup> 
+    
+    <testGroup name="all005" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group with two xs:any wildcards</Title>
+                <Description>Test cases matching and non-matching wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <schemaTest name="all005.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all005.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </schemaTest>
+        <instanceTest name="all005.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the minOccurs and maxOccurs constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all005.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>        
+        <instanceTest name="all005.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. Element c not allowed
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all005.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>           
+        <instanceTest name="all005.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. Element c:c not allowed
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all005.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>
+        <instanceTest name="all005.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. maxOccurs() limit exceeded on a wildcard
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all005.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>  
+        <instanceTest name="all005.n04.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. minOccurs() limit not reached on a wildcard
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all005.n04.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>     
+        <instanceTest name="all005.n05.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. minOccurs() limit disallows empty content
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all005.n05.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>                                                                                                                      
+    </testGroup>    
+    
+    <testGroup name="all006" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group, test on children</Title>
+                <Description>Test that each child of an all group is validated against the right type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <schemaTest name="all006.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all006.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </schemaTest>
+        <instanceTest name="all006.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all006.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>        
+        <instanceTest name="all006.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. Element a has wrong type
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all006.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>           
+        <instanceTest name="all006.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. Element b has wrong type
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all006.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>
+        <instanceTest name="all006.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. Element c has wrong type
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all006.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>  
+        <instanceTest name="all006.n04.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid. Element C is permitted but value out of range
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all006.n04.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-25"/>
+        </instanceTest>                                                                                                          
+    </testGroup>
+    
+    <testGroup name="all007" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group with a nested xs:group reference</Title>
+                <Description>All model group with with a nested xs:group reference (otherwise same as all001)</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-NamedModelGroupRef"/>
+        <schemaTest name="all007.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all007.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-13"/>
+        </schemaTest>
+        <instanceTest name="all007.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the minOccurs and maxOccurs constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all001.v01.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-13"/>
+        </instanceTest>        
+        <instanceTest name="all007.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Inalid, too few occurrences.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all001.n01.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-13"/>
+        </instanceTest>        
+        <instanceTest name="all007.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too few occurrences.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all001.n02.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-13"/>
+        </instanceTest>          
+        <instanceTest name="all007.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too many occurrences.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all001.n03.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-13"/>
+        </instanceTest>                              
+    </testGroup>
+    
+    <testGroup name="all008" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group with an incorrect nested xs:group reference</Title>
+                <Description>All model group with with an incorrect nested xs:group reference</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-NamedModelGroupRef"/>
+        <schemaTest name="all008.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all008.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-13"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="all009" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group with an incorrect nested xs:group reference</Title>
+                <Description>All model group with with an incorrect nested xs:group reference</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-NamedModelGroupRef"/>
+        <schemaTest name="all008.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all009.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-13"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="all010" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group with an incorrect nested xs:group reference</Title>
+                <Description>All model group with with an incorrect nested xs:group reference</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-NamedModelGroupRef"/>
+        <schemaTest name="all008.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all010.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-13"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="all011" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group with an incorrect nested xs:group reference</Title>
+                <Description>All model group with with an incorrect nested xs:group reference</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-NamedModelGroupRef"/>
+        <schemaTest name="all008.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all011.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-13"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="all201" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Simple valid all:all subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all201.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all201.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>                
+    
+    <testGroup name="all202" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Simple invalid all:all subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all202.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all202.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>       
+    
+    <testGroup name="all203" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Simple invalid all:all subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all203.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all203.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup name="all204" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Simple invalid all:all subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all204.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all204.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>   
+    
+    <testGroup name="all205" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Simple invalid all:all subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all205.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all205.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="all206" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Valid all:all subsumption using named model groups</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-NamedModelGroupRef"/>
+        <schemaTest name="all206.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all206.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-14"/>
+        </schemaTest>
+    </testGroup>    
+    
+    <testGroup name="all211" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:sequence</Title>
+                <Description>Simple valid all:sequence subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToSequence"/>
+        <schemaTest name="all211.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all211.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>                
+    
+    <testGroup name="all212" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:sequence</Title>
+                <Description>Simple invalid all:sequence subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToSequence"/>
+        <schemaTest name="all212.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all212.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>       
+    
+    <testGroup name="all213" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:sequence</Title>
+                <Description>Simple invalid all:sequence subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToSequence"/>
+        <schemaTest name="all213.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all213.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup name="all214" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:sequence</Title>
+                <Description>Simple invalid all:sequence subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToSequence"/>
+        <schemaTest name="all214.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all214.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>   
+    
+    <testGroup name="all215" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:sequence</Title>
+                <Description>Simple invalid all:sequence subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToSequence"/>
+        <schemaTest name="all215.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all215.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup> 
+    
+    <testGroup name="all216" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:sequence</Title>
+                <Description>Valid all:sequence subsumption; one element appears twice in sequence</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToSequence"/>
+        <schemaTest name="all216.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all216.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>         
+    
+    <testGroup name="all217" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:sequence</Title>
+                <Description>Valid all:sequence subsumption; derived sequence is a single element particle</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToSequence"/>
+        <schemaTest name="all217.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all217.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-08-02"/>
+        </schemaTest>
+    </testGroup>       
+    
+    <testGroup name="all218" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:sequence</Title>
+                <Description>Valid all:sequence subsumption; derived sequence is a single wildcard particle</Description>
+                <!-- Saxon is currently failing on this one - 2 Aug 2008 -->
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToSequence"/>
+        <schemaTest name="all218.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all218.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-08-02"/>
+        </schemaTest>
+    </testGroup>                             
+    
+    <testGroup name="all221" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Valid all:all subsumption involving substitution group</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all221.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all221.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>          
+    
+    <testGroup name="all222" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Valid all:all subsumption involving substitution group</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all222.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all222.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>        
+    
+    <testGroup name="all223" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Invalid all:all subsumption involving substitution group</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all223.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all223.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>             
+    
+    <testGroup name="all224" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Invalid all:all subsumption involving substitution group</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all224.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all224.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>            
+    
+    <testGroup name="all225" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Valid all:all subsumption involving substitution group</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all225.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all225.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>   
+    
+    <testGroup name="all226" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Valid all:all subsumption involving apparent substitution group</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all226.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all226.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>      
+    
+    <testGroup name="all227" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Invalid all:all subsumption, child element type wrong</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all227.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all227.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="all228" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Valid all:all subsumption involving two wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all228.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all228.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>                
+    
+    <testGroup name="all229" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Invalid all:all subsumption involving two wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all229.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all229.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>   
+    
+    <testGroup name="all230" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Valid all:all subsumption; one wildcard in the base type covers two in the derived type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all230.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all230.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>                                  
+    
+    <testGroup name="all231" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:choice</Title>
+                <Description>Valid all:choice subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToChoice"/>
+        <schemaTest name="all231.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all231.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>        
+    
+    <testGroup name="all232" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:choice</Title>
+                <Description>Valid all:choice subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToChoice"/>
+        <schemaTest name="all232.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all232.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>              
+    
+    <testGroup name="all233" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:choice - invalid</Title>
+                <Description>Invalid all:choice subsumption in third branch</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-RestrictionComplexTypes-RestrAllToChoice"/>
+        <schemaTest name="all233.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all233.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>     
+    
+    <testGroup name="all234" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:sequence/choice - valid but difficult</Title>
+                <Description>Valid all:sequence/choice subsumption</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all234.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all234.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2007-11-29"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="all235" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Invalid all:all subsumption; one wildcard in the base type covers two in the derived type,
+                 but the maxOccurs is too small</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all235.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all235.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>        
+    
+    <testGroup name="all236" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Invalid all:all subsumption; one wildcard in the base type covers two in the derived type,
+                 but the minOccurs is too large</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all236.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all236.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>        
+    
+    <testGroup name="all237" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Valid all:all subsumption; pathologically overlapping wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all237.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all237.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>          
+    
+    <testGroup name="all238" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Valid all:all subsumption; pathologically overlapping wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all238.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all238.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>                               
+    
+    <testGroup name="all240" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:all UPA violation: two elements with same name</Title>
+                <Description>UPA violation: two elements with same name</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-nonambig"/>
+        <schemaTest name="all240.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all240.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>          
+    
+    <testGroup name="all241" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:all UPA violation: one element in substitution group of another</Title>
+                <Description>UPA violation: one element in substitution group of another</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-nonambig"/>
+        <schemaTest name="all241.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all241.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>        
+    
+    <testGroup name="all242" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:all UPA violation: one element in substitution group of two others</Title>
+                <Description>UPA violation: one element in substitution group of two others</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-nonambig"/>
+        <schemaTest name="all242.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all242.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>            
+    
+    <testGroup name="all243" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:all UPA violation: two overlapping wildcards</Title>
+                <Description>xs:all UPA violation: two overlapping wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-nonambig"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <schemaTest name="all243.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all243.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-08-04"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="all244" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Subsumption - all:all</Title>
+                <Description>Invalid all:all subsumption; pathologically overlapping wildcards</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#cos-content-act-restrict"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-WildcardsAllowed"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByRestriction"/>
+        <schemaTest name="all244.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all244.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-02-07"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="all301" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group derived by extension from another all model group</Title>
+                <Description>Allowed in 1.1</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#Model_Groups"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all301.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all301.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-30"/>
+        </schemaTest>
+        <instanceTest name="all301.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the minOccurs and maxOccurs constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all301.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-10-30"/>
+        </instanceTest>        
+        <instanceTest name="all301.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Inalid, element h not allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all301.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </instanceTest>        
+        <instanceTest name="all301.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too many occurrences of d.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all301.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-30"/>
+        </instanceTest>          
+        <instanceTest name="all301.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too few occurrences of b
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all301.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-10-30"/>
+        </instanceTest>                              
+    </testGroup>
+    
+    <testGroup name="all302" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:all invalid extension, overlapping particles</Title>
+                <Description>xs:all UPA violation: two overlapping element particles</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all302.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all302.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest> 
+    </testGroup>        
+    
+    <testGroup name="all303" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:all invalid extension, overlappping particles</Title>
+                <Description>xs:all UPA violation: two element particles have overlapping substitution groups</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all303.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all303.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest> 
+    </testGroup> 
+    
+    <testGroup name="all304" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group derived by extension from another all model group</Title>
+                <Description>Allowed in 1.1</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all304.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all304.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest>
+        <instanceTest name="all304.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the minOccurs and maxOccurs constraints.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all304.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </instanceTest>        
+        <instanceTest name="all304.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too few occurrences matching wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all304.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </instanceTest>        
+        <instanceTest name="all304.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too few occurrences matching wildcard.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all304.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </instanceTest>          
+        <instanceTest name="all304.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too many occurrences matching wildcard
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all304.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </instanceTest>     
+        <instanceTest name="all304.n04.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too many occurrences matching wildcard
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all304.n04.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </instanceTest>                                       
+    </testGroup> 
+    
+    <testGroup name="all305" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:all invalid extension, overlappping wildcard particles</Title>
+                <Description>xs:all UPA violation: two wildcard particles have overlapping namespaces</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all305.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all305.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest> 
+    </testGroup>
+    
+    <testGroup name="all306" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group derived by extension from another all model group;
+                      mixed="true" in extension.</Title>
+                <Description>Allowed in 1.1</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all306.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all306.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest>
+        <instanceTest name="all306.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, mixed content allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all306.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </instanceTest>
+    </testGroup>              
+    
+    <testGroup name="all307" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group derived by extension from another all model group;
+                      mixed="false" in extension.</Title>
+                <Description>Allowed in 1.1</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all307.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all307.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest>
+        <instanceTest name="all307.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, mixed content not allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all306.v01.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="all308" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:all extension of "mixed empty" content</Title>
+                <Description>Currently invalid, but see bug 6202 against the spec.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all308.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all308.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest>
+        <!--<instanceTest name="all308.xml">
+		        <annotation>
+		            <documentation>
+		                Would be valid, if only the schema were valid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all308.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </instanceTest>-->         
+    </testGroup>
+    
+    <testGroup name="all309" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Even in 1.1, xs:all cannot extend xs:sequence</Title>
+                <Description>Result of extension is invalid</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all309.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all309.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest> 
+    </testGroup>          
+    
+    <testGroup name="all310" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Even in 1.1, xs:sequence cannot extend xs:all</Title>
+                <Description>Result of extension is invalid</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all310.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all310.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest> 
+    </testGroup>      
+    
+    <testGroup name="all311" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Even in 1.1, xs:sequence cannot extend xs:all, even if the xs:all is a singleton</Title>
+                <Description>Result of extension is invalid</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all311.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all311.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest> 
+    </testGroup> 
+    
+    <testGroup name="all312" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Even in 1.1, xs:sequence cannot extend xs:all, even if the xs:all is a singleton</Title>
+                <Description>Result of extension is invalid</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all312.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all312.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-02"/>
+        </schemaTest> 
+    </testGroup> 
+    
+    <testGroup name="all313" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>When xs:all extends xs:all, the minOccurs must be the same.</Title>
+                <Description>Result of extension is invalid. Test case from Priscilla Walmsley</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all313.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all313.n.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-19"/>
+        </schemaTest> 
+    </testGroup>
+    
+    <testGroup name="all314" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>All model group derived by extension from another all model group, both minOccurs="0"</Title>
+                <Description>Allowed in 1.1. Test case from Priscilla Walmsley</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#sec-cos-ct-extends"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-AllGroups-DerivationByExtension"/>
+        <schemaTest name="all314.xsd">
+            <schemaDocument xlink:href="../saxonData/All/all314.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </schemaTest>
+        <instanceTest name="all314.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, both elements present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all314.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </instanceTest>
+        <instanceTest name="all314.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, both elements present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all314.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </instanceTest>
+        <instanceTest name="all314.v05.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no elements present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all314.v05.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </instanceTest>        
+        <instanceTest name="all314.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unrecognized child.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all314.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </instanceTest>  
+        <instanceTest name="all314.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, too many children.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all314.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </instanceTest>
+        <instanceTest name="all314.n03.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, if the group is present then all elements must be present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all314.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </instanceTest>
+        <instanceTest name="all314.n04.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, if the group is present then all elements must be present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/All/all314.n04.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-20"/>
+        </instanceTest>                                 
+    </testGroup>                                                                                                                                                                                                                   
+                                                          
+</testSet>    

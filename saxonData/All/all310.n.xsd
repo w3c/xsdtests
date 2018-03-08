@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Even in 1.1, xs:sequence cannot extend xs:all -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:complexType name="b" mixed="true">
+       <xs:all>
+         <xs:element name="a"/>
+         <xs:element name="b"/>
+       </xs:all>     
+    </xs:complexType>
+    
+    <xs:complexType name="ext">
+      <xs:complexContent mixed="true">
+        <xs:extension base="b">
+          <xs:sequence>
+            <xs:element name="d" minOccurs="0" maxOccurs="2"/>
+            <xs:element name="e" minOccurs="0" maxOccurs="4"/>
+          </xs:sequence>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType> 
+    
+    <xs:element name="doc" type="ext"/> 
+          
+
+</xs:schema>

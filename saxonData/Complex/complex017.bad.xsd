@@ -1,0 +1,23 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!-- violation of Element Declarations Consistent -->
+
+<xs:element name="product" type="ExtendedProductType"/>
+
+<xs:complexType name="ProductType">
+  <xs:sequence>
+    <xs:element name="child1" type="xs:integer"/>
+  </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ExtendedProductType">
+  <xs:complexContent>
+    <xs:extension base="ProductType">
+      <xs:sequence>
+        <xs:element name="child1" type="xs:date"/>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Schema with alternative formulations for XSD 1.0 and XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+           elementFormDefault="qualified" attributeFormDefault="unqualified"
+           >
+  <xs:element name="temp">
+    <xs:simpleType>
+       <xs:restriction base="xs:date">       
+         <xs:assertion test="year-from-date($value) eq 2008" vc:minVersion="1.1" />
+         <xs:pattern value="2008.*" vc:maxVersion="1.1" />
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>

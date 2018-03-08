@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Type xs:error is available under 1.1 but not under 1.0 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+           xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
+  <xs:element name="temp">
+    <xs:complexType>
+       <xs:sequence/>     
+       <xs:attribute name="x" use="required"/>
+       <xs:attribute name="y" use="optional" type="xs:error" vc:typeAvailable="xs:error"/>
+       <xs:attribute name="y" use="optional" vc:typeUnavailable="xs:error">
+         <xs:simpleType>
+           <xs:restriction base="xs:integer">
+             <xs:pattern value="A"/> <!-- impossible to satisfy -->
+           </xs:restriction>
+         </xs:simpleType>
+       </xs:attribute>      
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

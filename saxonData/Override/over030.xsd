@@ -1,0 +1,14 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ex="http://example.org/ns/document"
+           elementFormDefault="qualified"
+           targetNamespace="http://example.org/ns/document">
+  
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="over030b.xsd"/>
+
+  <xs:override schemaLocation="over030a.xsd">
+    <xs:attributeGroup name="common.attributes">
+      <xs:attribute ref="xml:id"/>
+      <xs:attribute ref="xml:base"/>
+    </xs:attributeGroup>
+  </xs:override>
+</xs:schema>

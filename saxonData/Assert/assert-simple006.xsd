@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+   <!-- xs:assert on a union of two built-in types -->
+
+  <xs:element name="value">
+    <xs:simpleType>
+       <xs:restriction base="union-of-date-and-dateTime">
+         <xs:assertion test="starts-with(string($value), '2008')"/>
+       </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  <xs:simpleType name="union-of-date-and-dateTime">
+     <xs:union memberTypes="xs:date xs:dateTime"/>
+  </xs:simpleType>
+  
+  <xs:element name="outer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="value" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>  
+  </xs:element>
+  
+</xs:schema>

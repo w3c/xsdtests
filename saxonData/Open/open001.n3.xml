@@ -1,0 +1,7 @@
+<doc>
+  <a/>
+  <b/>
+  <c/>
+  <extra xmlns="http://open.com/">42</extra>
+  <extra xmlns="http://wrong.com/">97</extra>
+</doc>

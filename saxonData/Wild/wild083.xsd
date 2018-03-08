@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:x="http://extra.com/">
+<!-- Attribute wildcard union with notQName=#defined. Attribute surprise is allowed in the 
+     union even though it is not allowed by either operand of the union. 
+     Note, in an earlier version of the spec (see bug 6163) this union was inexpressible,
+     so the attribute wildcard from the base type was used, which meant that the surprise
+     attribute was disallowed -->
+
+<xs:complexType name="B">
+    <xs:sequence/>
+    <xs:anyAttribute notQName="##defined no-surprise" processContents="skip"/>  
+</xs:complexType>
+
+<xs:complexType name="E">
+  <xs:complexContent>
+    <xs:extension base="B">
+      <xs:sequence/>
+      <xs:anyAttribute notNamespace="http://www.w3.org/XML/1998/namespace"
+                       notQName="surprise no-surprise" processContents="skip"/>
+   </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+
+<xs:element name="e" type="E"/>
+
+<xs:attribute name="surprise" type="xs:boolean"/>
+    
+</xs:schema>

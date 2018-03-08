@@ -1,0 +1,18 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance"/>
+    
+    <!-- Nillable element, complex type with simple content -->
+    
+<xs:element name="root" nillable="true">
+    <xs:complexType>
+        <xs:simpleContent>
+            <xs:extension base="xs:decimal">
+             <xs:attribute name="present" type="xs:boolean" default="true"/>
+            </xs:extension>
+        </xs:simpleContent>        
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>

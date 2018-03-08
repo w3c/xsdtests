@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- all content group comprising two skip wildcards (XSDL 1.1 only) -->
+<!-- requires XSDL 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc" nillable="1" >
+    <xs:complexType mixed="1">
+       <xs:all>     
+         <xs:any namespace="http://a.ns/" minOccurs="2" maxOccurs="5" processContents="skip"/>
+         <xs:any namespace="http://b.ns/" minOccurs="0" maxOccurs="unbounded" processContents="skip"/>
+       </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

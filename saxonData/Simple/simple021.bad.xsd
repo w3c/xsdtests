@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+The string [^] is not a valid regular expression
+-->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://simple020.ly/"
+  elementFormDefault="qualified"
+  xmlns:s="http://simple021.ly/">
+  
+
+  
+   <xs:simpleType name="test">
+       <xs:restriction base="xs:string">
+          <xs:pattern value="[^]"/>
+       </xs:restriction>
+   </xs:simpleType>
+
+
+</xs:schema>

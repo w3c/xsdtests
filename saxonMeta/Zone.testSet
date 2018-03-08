@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<testSet name="Zone"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+      version="1.1"
+      xmlns:saxon="http://saxon.sf.net/">
+
+    <testGroup version="1.1" name="zone001">
+        <annotation>
+            <documentation>
+                <Title>Test timezone facet with value="required"</Title>
+                <Description>Allows an xs:time value provided it has a timezone</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-2-20091203/datatypes.html#rf-explicitTimezone"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <schemaTest name="zone001.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </schemaTest>
+        <instanceTest name="zone001.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone001.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </instanceTest>  
+        <instanceTest name="zone001.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone001.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </instanceTest>                
+        <instanceTest name="zone001.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, no timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone001.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </instanceTest>                      
+    </testGroup>    
+    
+    <testGroup version="1.1" name="zone002">
+        <annotation>
+            <documentation>
+                <Title>Test timezone facet with value="prohibited"</Title>
+                <Description>Allows an xs:time value provided it has a timezone</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-2-20091203/datatypes.html#rf-explicitTimezone"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <schemaTest name="zone002.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </schemaTest>
+        <instanceTest name="zone002.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone001.v01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </instanceTest>  
+        <instanceTest name="zone002.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone001.v02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </instanceTest>                
+        <instanceTest name="zone002.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone001.n01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </instanceTest>                      
+    </testGroup>    
+    
+    <testGroup version="1.1" name="zone003">
+        <annotation>
+            <documentation>
+                <Title>Test timezone facet with value="optional"</Title>
+                <Description>Allows an xs:time value provided it has a timezone</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-2-20091203/datatypes.html#rf-explicitTimezone"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <schemaTest name="zone003.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </schemaTest>
+        <instanceTest name="zone003.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone001.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </instanceTest>  
+        <instanceTest name="zone003.v02.xml">
+		        <annotation>
+		            <documentation>
+		                valid, timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone001.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </instanceTest>                
+        <instanceTest name="zone003.v03.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, no timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone001.n01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-11-03"/>
+        </instanceTest>                      
+    </testGroup>
+    
+    <testGroup version="1.1" name="zone004">
+        <annotation>
+            <documentation>
+                <Title>Test timezone facet with value="optional" derived from value="required"</Title>
+                <Description>Invalid restriction</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-2-20091203/datatypes.html#rf-explicitTimezone"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <schemaTest name="zone004.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone004.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-12-21"/>
+        </schemaTest>
+    </testGroup>  
+    
+    <testGroup version="1.1" name="zone005">
+        <annotation>
+            <documentation>
+                <Title>Test timezone facet with value="optional" derived from value="prohibited"</Title>
+                <Description>Invalid restriction</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-2-20091203/datatypes.html#rf-explicitTimezone"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <schemaTest name="zone005.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone005.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-12-21"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="zone006">
+        <annotation>
+            <documentation>
+                <Title>Test timezone facet</Title>
+                <Description>Invalid facet value</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-2-20091203/datatypes.html#rf-explicitTimezone"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <schemaTest name="zone006.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone006.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-12-21"/>
+        </schemaTest>
+    </testGroup>    
+    
+    <testGroup version="1.1" name="zone007">
+        <annotation>
+            <documentation>
+                <Title>Test timezone facet</Title>
+                <Description>Used on inapplicable data type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-2-20091203/datatypes.html#rf-explicitTimezone"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <schemaTest name="zone007.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone007.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-12-21"/>
+        </schemaTest>
+    </testGroup>      
+    
+    <testGroup version="1.1" name="zone008">
+        <annotation>
+            <documentation>
+                <Title>Test timezone facet</Title>
+                <Description>Used on inapplicable data type (union type)</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-2-20091203/datatypes.html#rf-explicitTimezone"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <schemaTest name="zone008.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone008.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-12-21"/>
+        </schemaTest>
+    </testGroup>           
+    
+    <testGroup version="1.1" name="zone101">
+        <annotation>
+            <documentation>
+                <Title>Test built-in type xs:dateTimeStamp</Title>
+                <Description>A dateTime value with a required timezone</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-2-20091203/datatypes.html#rf-explicitTimezone"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>
+        <schemaTest name="zone101.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone101.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-12-22"/>
+        </schemaTest>
+        <instanceTest name="zone101.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone101.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-12-22"/>
+        </instanceTest>  
+        <instanceTest name="zone101.v02.xml">
+		        <annotation>
+		            <documentation>
+		                valid, timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone101.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-12-22"/>
+        </instanceTest>                
+        <instanceTest name="zone101.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, no timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone101.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-12-22"/>
+        </instanceTest>                      
+    </testGroup>                  
+    
+    <testGroup version="1.1" name="zone102">
+        <annotation>
+            <documentation>
+                <Title>Test built-in type xs:dateTimeStamp</Title>
+                <Description>restriction from xs:dateTimeStamp</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-2-20091203/datatypes.html#rf-explicitTimezone"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-DTStampDerivedType"/>
+        <schemaTest name="zone102.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone102.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-12-22"/>
+        </schemaTest>
+        <instanceTest name="zone102.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone101.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-12-22"/>
+        </instanceTest>  
+        <instanceTest name="zone102.v02.xml">
+		        <annotation>
+		            <documentation>
+		                valid, timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone101.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2008-12-22"/>
+        </instanceTest>                
+        <instanceTest name="zone102.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, no timezone present.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone101.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-12-22"/>
+        </instanceTest> 
+        <instanceTest name="zone102.n02.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, value out of range.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone102.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2008-12-22"/>
+        </instanceTest>                              
+    </testGroup>                      
+         
+    <testGroup version="1.1" name="zone201">
+        <annotation>
+            <documentation>
+                <Title>Test year zero allowed in type xs:dateTimeStamp</Title>
+                <Description>use year zero in minInclusive facet</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTime-value-space"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-AllowYearZero"/>
+        <schemaTest name="zone201.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone201.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </schemaTest>
+        <instanceTest name="zone201.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, year zero date after minInclusive.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone201.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone201.v02.xml">
+		        <annotation>
+		            <documentation>
+		                valid, year zero in proleptic Gregorian calendar was a leap year.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone201.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone201.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, year zero date before minInclusive.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone201.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>                
+    </testGroup>            
+    
+    <testGroup version="1.1" name="zone202">
+        <annotation>
+            <documentation>
+                <Title>Test year zero allowed in type xs:gYearMonth</Title>
+                <Description>use year zero in enumeration facet</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTime-value-space"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-AllowYearZero"/>
+        <schemaTest name="zone202.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone202.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </schemaTest>
+        <instanceTest name="zone202.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, year zero gYearmonth.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone202.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone202.v02.xml">
+		        <annotation>
+		            <documentation>
+		                valid, year zero gYearmonth.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone202.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone202.v03.xml">
+		        <annotation>
+		            <documentation>
+		                valid, year zero gYearmonth.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone202.v03.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone202.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, year zero date before minInclusive.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone202.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>     
+        <instanceTest name="zone202.n02.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, year zero date before minInclusive.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone202.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>     
+        <instanceTest name="zone202.n03.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, year zero date before minInclusive.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone202.n03.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>                
+    </testGroup>       
+    
+    <testGroup version="1.1" name="zone203">
+        <annotation>
+            <documentation>
+                <Title>Test leap years in proleptic Gregorian calendar</Title>
+                <Description>0, -4, ... are a leap years; but not -100</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTime-value-space"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-AllowYearZero"/>
+        <schemaTest name="zone203.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone203.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </schemaTest>
+        <instanceTest name="zone203.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, leap year.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone203.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone203.v02.xml">
+		        <annotation>
+		            <documentation>
+		                valid, leap year.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone203.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone203.v03.xml">
+		        <annotation>
+		            <documentation>
+		                valid, leap year.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone203.v03.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone203.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, not a leap year.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone203.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>     
+        <instanceTest name="zone203.n02.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, not a leap year.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone203.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>     
+    </testGroup>
+    
+    <testGroup version="1.1" name="zone204">
+        <annotation>
+            <documentation>
+                <Title>Leap seconds are not permitted</Title>
+                <Description>31 Dec 2008 included a leap second, but xs:dateTime ignores it</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTime-value-space"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-NoLeapSecs"/>
+        <schemaTest name="zone204.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone204.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </schemaTest>
+        <instanceTest name="zone204.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, leap seconds not allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone204.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>
+     </testGroup>
+     
+     <testGroup version="1.1" name="zone205">
+        <annotation>
+            <documentation>
+                <Title>Test equality of xs:dateTime values appearing in an enumeration</Title>
+                <Description>For example, 00:00:00 is equal to 24:00:00 on the previous day</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTime-value-space"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-ExplicitTZFacet"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-EqualityOfDurations"/>
+        <schemaTest name="zone205.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone205.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </schemaTest>
+        <instanceTest name="zone205.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, 00:00 = 24:00.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone205.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone205.v02.xml">
+		        <annotation>
+		            <documentation>
+		                valid, fraction digits equivalent.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone205.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone205.v03.xml">
+		        <annotation>
+		            <documentation>
+		                valid, same instant in different timezones.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone205.v03.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone205.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, different timezone.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone205.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>     
+        <instanceTest name="zone205.n02.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, 24:00:00 is the highest time value allowed.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone205.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>     
+    </testGroup>            
+    
+    <testGroup version="1.1" name="zone206">
+        <annotation>
+            <documentation>
+                <Title>Test equality of xs:time values appearing in integrity constraints</Title>
+                <Description>For example, 00:00:00 is equal to 24:00:00</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dateTime-value-space"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-EqualityOfDurations"/>
+        <schemaTest name="zone206.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone206.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </schemaTest>
+        <instanceTest name="zone206.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, all values equivalent.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone206.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone206.v02.xml">
+		        <annotation>
+		            <documentation>
+		               valid, all values equivalent.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone206.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone206.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, values not equivalent.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone206.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>
+        <instanceTest name="zone206.n02.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, values not equivalent.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone206.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>     
+    </testGroup>
+    
+    <testGroup version="1.1" name="zone301">
+        <annotation>
+            <documentation>
+                <Title>Test xs:dayTimeDuration including equality rules</Title>
+                <Description>For example, P1D is equal to P24H</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-EqualityOfDurations"/>
+        <schemaTest name="zone301.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone301.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </schemaTest>
+        <instanceTest name="zone301.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, all values equivalent.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone301.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone301.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, values not equivalent.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone301.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>
+    </testGroup>   
+    
+    <testGroup version="1.1" name="zone302">
+        <annotation>
+            <documentation>
+                <Title>Test xs:yearMonthDuration including equality rules</Title>
+                <Description>For example, P1Y is equal to P12M</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-EqualityOfDurations"/>
+        <schemaTest name="zone302.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone302.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </schemaTest>
+        <instanceTest name="zone302.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, all values equivalent.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone302.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone302.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, values not equivalent.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone302.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="zone303">
+        <annotation>
+            <documentation>
+                <Title>Test xs:dayTimeDuration min/max rules</Title>
+                <Description>For example, P1Y is equal to P12M</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#dayTimeDuration"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-EqualityOfDurations"/>
+        <schemaTest name="zone303.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone303.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </schemaTest>
+        <instanceTest name="zone303.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, all values valid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone303.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone303.v02.xml">
+		        <annotation>
+		            <documentation>
+		                valid, all values valid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone303.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone303.v03.xml">
+		        <annotation>
+		            <documentation>
+		                valid, all values valid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone303.v03.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone303.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, values out of range.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone303.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>
+        <instanceTest name="zone303.n02.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, values out of range.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone303.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup version="1.1" name="zone304">
+        <annotation>
+            <documentation>
+                <Title>Test xs:yearMonthDuration min/max rules</Title>
+                <Description>For example, P1Y is equal to P12M</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-2/#yearMonthDuration"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-BuiltInDerivedYMAndDT"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DateTimeTypes-EqualityOfDurations"/>
+        <schemaTest name="zone304.xsd">
+            <schemaDocument xlink:href="../saxonData/Zone/zone304.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </schemaTest>
+        <instanceTest name="zone304.v01.xml">
+		        <annotation>
+		            <documentation>
+		                valid, all values valid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone304.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone304.v02.xml">
+		        <annotation>
+		            <documentation>
+		                valid, all values valid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone304.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone304.v03.xml">
+		        <annotation>
+		            <documentation>
+		                valid, all values valid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone304.v03.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>  
+        <instanceTest name="zone304.n01.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, values out of range.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone304.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>
+        <instanceTest name="zone304.n02.xml">
+		        <annotation>
+		            <documentation>
+		                invalid, values out of range.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Zone/zone304.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-09-19"/>
+        </instanceTest>
+    </testGroup>                          
+</testSet>

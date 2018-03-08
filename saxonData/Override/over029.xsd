@@ -1,0 +1,24 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:spc="http://datypic.com/spc"
+           xmlns="http://datypic.com/ord"
+           targetNamespace="http://datypic.com/ord"
+           elementFormDefault="qualified">
+  <xs:import namespace="http://datypic.com/spc" schemaLocation="over029a.xsd"/>
+  <xs:override schemaLocation="over029b.xsd">
+    <xs:complexType name="ProductType">
+      <xs:sequence>
+        <xs:element name="number" type="xs:integer"/>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="size" type="xs:integer" minOccurs="0"/>
+        <xs:element ref="spc:giftWrap" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute ref="spc:points"/>
+    </xs:complexType>
+  </xs:override>
+    <xs:complexType name="OrderType">
+      <xs:sequence>
+        <xs:element name="product" type="ProductType"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:element name="order" type="OrderType"/>
+</xs:schema>

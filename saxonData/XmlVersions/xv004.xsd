@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <!-- use names allowed only in  XML 1.1 (or XML 1.0 5e) for components such as types and attribute groups -->
+  <xs:element name="D&#x133;kstra">
+    <xs:complexType>
+       <xs:sequence/>     
+       <xs:attributeGroup ref="G&#x25000;"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="A&#x15000;">
+    <xs:restriction base="xs:NCName">
+        <xs:enumeration value="B&#x20000;"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:attributeGroup name="G&#x25000;">
+    <xs:attribute name="A&#x30000;" type="A&#x15000;" use="optional"/>
+  </xs:attributeGroup>
+  
+  
+</xs:schema>

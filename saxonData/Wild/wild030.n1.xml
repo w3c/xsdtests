@@ -1,0 +1,8 @@
+<computer xsi:type="quietComputer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CPU>Intel</CPU>
+  <disk>Seagate</disk>
+  <memory>4Gb</memory>
+  <monitor>17inch</monitor>
+  <speaker>loud</speaker>  
+  <mouse>USB</mouse>
+</computer>

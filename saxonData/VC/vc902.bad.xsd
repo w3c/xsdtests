@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bad schema, invalid vc:maxVersion -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="temp">
+    <xs:complexType>
+       <xs:sequence/>     
+       <xs:attribute name="x" use="required"/>
+       <xs:attribute name="y" use="optional" vc:minVersion="10g" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"/>      
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

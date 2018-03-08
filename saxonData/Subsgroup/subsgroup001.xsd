@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Element in more than one substitution group -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+ 
+ <xs:element name="doc">
+    <xs:complexType>
+       <xs:sequence>     
+         <xs:element ref="body"/>
+         <xs:element ref="back"/>
+       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="body">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="chapContent"  minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="back">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="appendixContent"  minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element> 
+  
+  <xs:element name="chapContent" abstract="true"/> 
+  
+  <xs:element name="appendixContent" abstract="true"/>
+  
+  <xs:element name="para" substitutionGroup="chapContent appendixContent" type="xs:string"/>   
+
+</xs:schema>

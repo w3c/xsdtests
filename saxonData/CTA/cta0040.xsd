@@ -1,0 +1,79 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified"
+>
+  
+  <!-- Conditional Type Substitutable constraint -->
+  
+  <xs:element name="doc">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="chap" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="chap">
+    <xs:alternative test="@type='date'">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:date">
+                    <xs:attribute name="type" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:alternative>
+    <xs:alternative test="@type='dateTime'">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:dateTime">
+                    <xs:attribute name="type" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:alternative>
+    <xs:alternative test="@type='time'">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:time">
+                    <xs:attribute name="type" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:alternative>
+  </xs:element>
+  
+  <xs:element name="appendix" substitutionGroup="chap">
+    <!-- valid restriction of the base type -->
+    <xs:alternative test="@type='date'">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:date">
+                    <xs:attribute name="type" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:alternative>
+    <xs:alternative test="@type='dateTime'">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:dateTimeStamp">
+                    <xs:attribute name="type" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:alternative>
+    <xs:alternative test="@type='time'">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:time">
+                    <xs:attribute name="type" type="xs:NCName"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:alternative>    
+  </xs:element>  
+  
+
+</xs:schema>
+  

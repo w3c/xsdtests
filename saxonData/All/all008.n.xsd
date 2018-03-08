@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- simple xs:all model group with relaxed minOccurs and maxOccurs -->
+<!-- model group reference in xs:all must be an xs:all group -->
+<!-- requires XSD 1.1 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc">
+    <xs:complexType>
+       <xs:all>     
+         <xs:element name="a" minOccurs="0" maxOccurs="5"/>
+         <xs:group ref="allgroup"/>
+       </xs:all>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:group name="allgroup">
+    <xs:sequence>
+        <xs:element name="b" minOccurs="1" maxOccurs="5"/>
+        <xs:element name="c" minOccurs="2" maxOccurs="unbounded"/>
+        <xs:element name="d" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:group>
+    
+</xs:schema>

@@ -1,0 +1,20 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <xs:import namespace="http://www.w3.org/2001/XMLSchema-instance"/>
+    
+    <!-- Creates a type with a fixed value of xsi:nil which is ignored
+except that the instance if present must match        
+    -->
+    
+<xs:element name="root" nillable="true">
+    <xs:complexType>
+        <xs:simpleContent>
+            <xs:extension base="xs:decimal">
+             <xs:attribute ref="xsi:nil" fixed="true"/>
+            </xs:extension>
+        </xs:simpleContent>        
+    </xs:complexType>
+</xs:element>
+
+</xs:schema>

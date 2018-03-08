@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <!-- Test that a pattern facet on a union type is applied to the value
+      produced by applying the whitespace normalization defined on the member
+      type against which the input was validated -->
+      
+ <!-- See https://saxonica.plan.io/issues/2247 -->
+ <!-- See http://stackoverflow.com/questions/27307880/xml-schema-union-ignore-whitespace-property/27314369 -->
+      
+ <xs:simpleType name="myUnion">
+    <xs:union>
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:whiteSpace value="collapse"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:union>
+ </xs:simpleType>
+    <xs:element name="elem">
+        <xs:simpleType>
+            <xs:restriction base="myUnion">
+                <xs:pattern value="Hello world" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+</xs:schema>

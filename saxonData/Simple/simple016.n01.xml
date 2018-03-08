@@ -1,0 +1,9 @@
+<book xmlns="http://simple016.ly/">
+
+<doc><chap>2010-10-12Z</chap></doc>
+<doc><chap>2010-10-12T13:13:13Z</chap></doc>
+<doc><chap xsi:type="xs:date" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2010-10-12Z</chap></doc>
+
+
+
+</book>

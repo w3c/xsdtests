@@ -1,0 +1,9 @@
+<doc>
+  <node id-one="aaa bbb" id-two="bbb aaa">
+    <id>zzz</id>
+    <node id-one="ccc ccc" id-two="ddd ddd"/>
+    <node id-one="eee" id-two="eee bbb"/>
+    <id>zzz bbb</id>
+    <id>aaa zzz bbb</id>
+  </node>
+</doc>

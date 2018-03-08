@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- valid restriction: Saxon handles it, but using some coding that seems designed specifically for this test case  -->
+
+  <xs:complexType name="B">
+    <xs:sequence>
+      <xs:any namespace="http://open.com/" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="R">
+    <xs:complexContent>
+      <xs:restriction base="B">
+        <xs:openContent mode="interleave">
+          <xs:any namespace="http://open.com/" processContents="lax"/>
+        </xs:openContent>      
+        <xs:sequence/>
+      </xs:restriction>
+    </xs:complexContent>  
+  </xs:complexType>  
+
+<xs:element name="doc" type="R"/>
+
+    
+</xs:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  elementFormDefault="qualified">
+  
+  <xs:simpleType name="yesno-att.class">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="yes"/>
+      <xs:enumeration value="no"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:attributeGroup name="image.attributes">
+    <xs:attribute name="href" type="xs:string"/>
+    <xs:attribute name="scalefit" type="yesno-att.class"/>
+  </xs:attributeGroup>
+  
+  <xs:element name="test">
+    <xs:complexType>
+      <xs:attributeGroup ref="image.attributes"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

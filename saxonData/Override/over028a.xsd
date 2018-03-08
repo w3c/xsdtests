@@ -1,0 +1,10 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:override schemaLocation="over028.xsd">
+<xs:simpleType name="DressSizeType">
+<xs:restriction base="xs:integer">
+<xs:maxInclusive value="16"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:override>
+<xs:element name="newSize" type="DressSizeType"/>
+</xs:schema>

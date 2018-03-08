@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- example from the spec: to restrict away an element that overlaps a wildcard, use notQName -->
+
+<xs:complexType name="computer">
+ <xs:all>
+  <xs:element name="CPU" type="xs:string"/>
+  <xs:element name="memory" type="xs:string"/>
+  <xs:element name="monitor" type="xs:string"/>
+  <xs:element name="speaker" type="xs:string"
+              minOccurs="0"/>
+  <!-- Any additional information about the computer -->
+  <xs:any processContents="lax"
+          minOccurs="0" maxOccurs="unbounded"/>
+ </xs:all>
+</xs:complexType>
+
+<xs:complexType name="quietComputer">
+ <xs:complexContent>
+  <xs:restriction base="computer">
+   <xs:all>
+    <xs:element name="CPU" type="xs:string"/>
+    <xs:element name="memory" type="xs:string"/>
+    <xs:element name="monitor" type="xs:string"/>
+    <!-- Any additional information about the computer -->
+    <xs:any processContents="lax" notQName="speaker"
+            minOccurs="0" maxOccurs="unbounded"/>
+   </xs:all>
+  </xs:restriction>
+ </xs:complexContent>
+</xs:complexType>
+
+<xs:element name="computer" type="computer"/>
+    
+</xs:schema>

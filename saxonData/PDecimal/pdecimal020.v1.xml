@@ -1,0 +1,15 @@
+<doc>
+    <e value="2e4"/>
+    <e value="2e5"/>
+    <e value="2e6"/>
+    <e value="0.2e5"/>
+    <e value="0.2e6"/>
+    <e value="0.2e7"/>
+    <e value="INF"/>
+    <e value="+INF"/>
+    <e value="-INF"/>
+    <e value="NaN"/>
+    <e value="0e4"/>
+    <e value="-0e4"/>
+    <e value="-1234"/>
+</doc>

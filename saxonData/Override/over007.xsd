@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:override schemaLocation="over007a.xsd">
+      <xs:group name="g">
+        <xs:sequence>
+            <xs:element name="head" type="xs:string"/>
+            <xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:group>
+      <!-- the following declaration overrides nothing, so it is ignored; but as it is not referenced, this does no harm -->
+      <xs:group name="h">
+        <xs:sequence>
+          <xs:element name="hhh" type="xs:string"/>
+        </xs:sequence>
+      </xs:group>
+  </xs:override>
+  <xs:element name="section">
+        <xs:complexType>
+           <xs:group ref="g"/>
+           <xs:attribute name="nr" type="xs:decimal" use="required"/>
+         </xs:complexType>
+  </xs:element>
+</xs:schema>

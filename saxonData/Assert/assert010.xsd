@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="temp">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:date">
+          <xs:attribute name="startDate" use="required" type="xs:date"/>
+          <xs:assert test="$value gt xs:date(@startDate)"/> 
+          <!-- Saxon currently builds an untyped tree for use by assertions! -->
+        </xs:extension>  
+      </xs:simpleContent>       
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

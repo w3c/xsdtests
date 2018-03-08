@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- default open content, applies to types declared within xs:redefine -->
+
+<xs:redefine schemaLocation="open048x.xsd">
+    
+    <xs:complexType name="beta">
+        <xs:complexContent>
+            <xs:restriction base="beta">
+                <xs:sequence/>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>    
+    
+</xs:redefine>
+
+<xs:defaultOpenContent mode="suffix" appliesToEmpty="true">
+      <xs:any namespace="http://open.com/" processContents="lax"/>
+</xs:defaultOpenContent>    
+    
+
+
+<xs:element name="doc">
+  <xs:complexType mixed=" 1 ">
+    <xs:sequence>
+        <xs:element name="a" type="alpha"/>
+        <xs:element name="b" type="beta"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+
+    
+</xs:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:x="http://extra.com/">
+<!-- wildcard in restricted type allows only elements permitted by a wildcard in base type -->
+
+<xs:complexType name="computer">
+  <xs:all>
+    <xs:element name="name" type="xs:string"/>
+    <xs:any namespace="##any" notQName="a b x:e x:d" minOccurs="2" maxOccurs="6" processContents="skip"/>
+  </xs:all>  
+</xs:complexType>
+
+<xs:complexType name="restrictedComputer">
+  <xs:complexContent>
+    <xs:restriction base="computer">
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>      
+        <xs:any namespace="##local" notQName="a b c" minOccurs="1" maxOccurs="3" processContents="skip"/>
+        <xs:any notNamespace="##local" notQName="x:c x:d x:e" minOccurs="1" maxOccurs="3" processContents="skip"/>
+      </xs:sequence>
+    </xs:restriction>
+  </xs:complexContent>
+</xs:complexType>
+
+
+<xs:element name="computer" type="restrictedComputer"/>
+    
+</xs:schema>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.myexample.com/actions/local"
+    xmlns:tns="http://www.myexample.com/actions/local" xmlns:command="http://www.myexample.com/command"
+    elementFormDefault="qualified">
+    <xs:import namespace="http://www.myexample.com/command"
+        schemaLocation="subsgroup003a.xsd" />
+
+    <xs:element name="popup" type="tns:PopupType"
+        substitutionGroup="command:Action" />
+
+        <xs:complexType name="PopupType">
+        <xs:complexContent>
+            <xs:extension base="command:ActionType" >
+                <xs:attribute name="width" type="xs:float"/> 
+                <xs:attribute name="height" type="xs:float"/>
+                <xs:attribute name="view" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>

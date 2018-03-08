@@ -1,0 +1,5 @@
+<!-- valid document -->
+<doc>
+    <para nota="foo"><year>2010</year><month>05</month><day>11</day></para>
+    <para nota="bez"><year>2011</year><month>05</month><day>11</day></para>
+</doc>

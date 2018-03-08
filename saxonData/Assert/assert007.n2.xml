@@ -1,0 +1,9 @@
+<game xmlns="http://chess/ns/">
+  <white>e4</white>
+  <black>e5</black>
+  <white>oo</white>
+  <black>e3</black>
+  <white>oo</white>
+  <black>h3</black>
+  <result>draw</result>
+</game>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+      <xs:group name="g">
+        <xs:sequence>
+            <xs:element name="head" type="xs:string"/>
+            <xs:element ref="section" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="foot" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:group> 
+</xs:schema>

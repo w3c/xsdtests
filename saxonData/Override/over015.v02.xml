@@ -1,0 +1,4 @@
+<!-- valid document -->
+<doc>
+    <bezzle xsi:type="notaFooBar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bez</bezzle>
+</doc>

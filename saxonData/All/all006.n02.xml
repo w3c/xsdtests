@@ -1,0 +1,7 @@
+<!-- invalid document - type of b -->
+<doc xmlns:d="http://other.ns/">
+  <c>12:00:00</c>
+  <b>1980-02-02</b>
+  <a>1980-01-01</a>
+  <d:d>banana</d:d>
+</doc>

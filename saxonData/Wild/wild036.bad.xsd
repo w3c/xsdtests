@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Undeclared prefix in notQName -->
+
+<xs:complexType name="computer">
+ <xs:sequence/>
+  <xs:anyAttribute processContents="lax"
+          notNamespace="http://www.w3.org/2001/XMLSchema-instance"
+          notQName="xsl:stylesheet"/>
+</xs:complexType>
+
+
+<xs:element name="computer" type="computer"/>
+    
+</xs:schema>

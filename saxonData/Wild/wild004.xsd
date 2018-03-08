@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- basic test of a notNamespace element wildcard with ##local-->
+
+<xs:element name="eden">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:any notNamespace=" ##local " processContents="skip" minOccurs="0"/>
+    </xs:sequence>  
+  </xs:complexType>
+</xs:element>
+    
+</xs:schema>

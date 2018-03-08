@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- open content and regular content match the same input elements -->
+
+  <xs:complexType name="T">
+    <xs:openContent> <!-- default mode is interleave -->
+      <xs:any namespace="##local" processContents="skip"/>
+    </xs:openContent>
+    <xs:sequence>
+      <xs:element name="i" maxOccurs="unbounded" type="xs:integer"/>
+      <xs:element name="d" minOccurs="0" maxOccurs="unbounded" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+<xs:element name="doc" type="T"/>
+
+    
+</xs:schema>

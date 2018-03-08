@@ -1,0 +1,6 @@
+<doc>
+  <node mixedA="A001 B001"/>
+  <node mixedB="A001 B001"/>
+  <node><mixedA>A002 B002</mixedA></node>
+  <node><mixedB>A002 B002</mixedB></node>     
+</doc>

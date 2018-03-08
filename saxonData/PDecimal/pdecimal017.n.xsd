@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="doc">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="e" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>  
+       
+  <xs:element name="e">
+    <xs:complexType>
+       <xs:sequence/>     
+       <xs:attribute name="value" type="u" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:simpleType name="t">
+    <xs:restriction base="xs:precisionDecimal">
+      <xs:length value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="u">
+    <xs:restriction base="t">
+      <xs:minScale value="-2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+</xs:schema>

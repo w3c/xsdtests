@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Command xmlns="http://www.myexample.com/command" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:crud="http://www.myexample.com/actions/data"
+    xmlns:local="http://www.myexample.com/actions/local"
+    xsi:schemaLocation="http://www.myexample.com/command subsgroup003a.xsd 
+    http://www.myexample.com/actions/data subsgroup003b.xsd 
+    http://www.myexample.com/actions/local subsgroup003c.xsd">
+    <local:popup/>
+    <crud:read/>
+</Command>

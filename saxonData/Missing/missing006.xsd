@@ -1,0 +1,16 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <!-- List type declaration with missing item type.
+    -->
+    
+
+<xs:element name="good" type="xs:integer"/>
+
+<xs:element name="bad" type="list"/>
+
+<xs:simpleType name="list">
+ <xs:list itemType="absent"/>
+</xs:simpleType> 
+
+</xs:schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+List of xs:anyAtomicType is disallowed, as a consequence of the resolution of bug 11103
+-->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+
+  <xs:element name="e">
+    <xs:simpleType>
+      <xs:restriction>
+        <xs:simpleType>
+          <xs:list itemType="xs:anyAtomicType"/>
+        </xs:simpleType>
+        <xs:assertion test="count($value) eq 5"/>
+      </xs:restriction> 
+    </xs:simpleType>
+  </xs:element>
+
+  
+</xs:schema>

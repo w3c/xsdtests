@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!-- Element Declarations Consistent is violated because a wildcard matches a global element declaration whose type
+     table differs from that of a like-named local element particle -->
+
+
+<xs:element name="root" type="zing"/>
+
+<xs:complexType name="zing">
+  <xs:sequence>
+    <xs:element name="a"/>
+    <xs:any namespace="##local" processContents="lax"/>
+  </xs:sequence>  
+</xs:complexType>
+
+<xs:element name="a">
+    <xs:alternative type="xs:integer"/>
+</xs:element>
+
+
+   
+</xs:schema>

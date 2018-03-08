@@ -1,0 +1,1048 @@
+<testSet name="Override"
+      xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      contributor="Saxonica"
+      version="1.1"
+      xmlns:saxon="http://saxon.sf.net/">
+
+    <testGroup name="over001" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:override overriding an element declaration</Title>
+                <Description>xs:override overriding an element declaration</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over001.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over001.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over001.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over001.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over001.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over001.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over001.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over001.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="over002" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:override overriding an element declaration which is referenced in the overridden schema doc</Title>
+                <Description>xs:override overriding an element declaration which is referenced in the overridden schema doc</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over002.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over002.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over002.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over002.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over002.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over002.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over002.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over002.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>        
+    
+    <testGroup name="over003" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:override including a declaration which overrides nothing in the overridden schema</Title>
+                <Description>xs:override including a declaration which overrides nothing in the overridden schema</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over003.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over003.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over003.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over003.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over003.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over003.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over003.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over003.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>            
+    
+    <testGroup name="over004" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:override including a declaration outside the xs:override. Depends on over003</Title>
+                <Description>xs:override including a declaration outside the xs:override</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over004.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over004.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over004.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over003.v01.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over004.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over003.n01.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over004.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over003.n02.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>        
+    
+    <testGroup name="over005" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:override of an attribute declaration</Title>
+                <Description>xs:override of an attribute declaration</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over005.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over005.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over005.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over005.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over005.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over005.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over005.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over005.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="over006" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:override of a self-referential element declaration</Title>
+                <Description>xs:override of self-referential element declaration</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over006.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over006.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over006.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over006.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over006.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over006.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over006.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over006.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="over007" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:override of a model group declaration</Title>
+                <Description>xs:override of model group declaration</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over007.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over007.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over007.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over007.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over007.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over007.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over007.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over007.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="over008" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>xs:override of an attribute group declaration</Title>
+                <Description>xs:override of an attribute group declaration</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over008.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over008.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over008.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over008.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over008.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over008.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over008.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over008.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>      
+    
+    <testGroup name="over009" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Double override</Title>
+                <Description>Double override. Depends on schema documents in over003</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over009.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over009.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over009.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over009.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over009.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over009.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over009.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over009.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="over010" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override a simple type</Title>
+                <Description>Override a simple type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over010.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over010.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over010.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over010.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over010.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over010.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over010.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over010.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="over011" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override a simple type incorrectly by restricting its former self</Title>
+                <Description>Override a simple type incorrectly by restricting its former self</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over011.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over011.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+    </testGroup>   
+    
+    <testGroup name="over012" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override a complex type</Title>
+                <Description>Override a complex type</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over012.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over012.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over012.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over012.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over012.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over012.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over012.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over012.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="over013" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override a complex type incorrectly with a simple type</Title>
+                <Description>Override a complex type with a simple type. 
+                This is not in fact an error: the override is simply ignored.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over013.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over013.bad.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-11-29">
+              <annotation>
+                <documentation>
+                  Changed status to valid. See bug 14442.
+                </documentation>
+              </annotation>
+            </current>  
+            <prior status="accepted" date="2010-05-05"/>
+        </schemaTest>
+    </testGroup>     
+    
+    <testGroup name="over014" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override a complex type by self-restriction</Title>
+                <Description>Override a complex type by self-restriction</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over014.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over014.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="over015" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override a notation</Title>
+                <Description>Override a notation</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over015.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over015.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over015.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over015.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>
+        <instanceTest name="over015.v02.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over015.v02.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2011-10-10"/>
+        </instanceTest>
+        <instanceTest name="over015.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over015.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over015.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over015.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup> 
+    
+    <testGroup name="over016" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override schema with wrong namespace</Title>
+                <Description>Override schema with wrong namespace</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over016.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over016.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+    </testGroup>   
+    
+    <testGroup name="over017" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override schema with wrong namespace</Title>
+                <Description>Override schema with wrong namespace</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over017.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over017.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="over018" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override declaration in a target namespace</Title>
+                <Description>Override declaration in a target namespace</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over018.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over018.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over018.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over018.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over018.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over018.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over018.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over018.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>                      
+    
+    <testGroup name="over019" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Chameleon Override declaration</Title>
+                <Description>Chameleon Override declaration</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over019.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over019.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over019.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over019.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over019.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over019.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over019.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over019.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="over020" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Indirect chameleon Override declaration</Title>
+                <Description>Indirect chameleon Override declaration (uses over019)</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over020.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over020.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over020.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over019.v01.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over020.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over019.n01.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over020.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over019.n02.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>      
+    
+    <testGroup name="over021" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override the same thing twice</Title>
+                <Description>Override the same thing twice</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over021.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over021.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+    </testGroup>             
+    
+    <testGroup name="over022" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override the same thing twice</Title>
+                <Description>Override the same thing twice</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over022.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over022.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="over023" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>A permissible circular xs:override</Title>
+                <Description>A permissible circular xs:override (doesn't work in Saxon 9.3)</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over023.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over023.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over023.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, satisfies the overriding declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over001.v01.xml"/><!--sic-->
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over023.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, uses content model before override.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over001.n01.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+        <instanceTest name="over023.n02.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, unknown element declaration.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over001.n02.xml"/><!--sic-->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>                               
+    </testGroup>
+    
+    <testGroup name="over024" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Disallowed circular xs:override</Title>
+                <Description>Disallowed circular xs:override</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-CyclicDependenciesRedefineIncludeImportOverride"/>
+        <schemaTest name="over024.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over024.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+    </testGroup>       
+    
+    <testGroup name="over025" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Import is not transitive</Title>
+                <Description>Can't reference components unless the namespace is imported</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImport"/>
+        <schemaTest name="over025.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over025.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-11-17"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="over026" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Overrides ignored if there's nothing to override</Title>
+                <Description>A child of xs:override that doesn't override anything is ignored, so the reference
+                to it is a dangling references which makes the schema invalid</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-NSRefRequiresImport"/>
+        <schemaTest name="over026.bad.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over026.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2011-10-10"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="over027" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override a notation</Title>
+                <Description>Override a notation. Was over015. See bug 14388</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over027.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over027.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </schemaTest>
+        <instanceTest name="over027.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, cannot validate against xs:NOTATION directly, only against a subtype with
+		                an enumeration facet.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over015.v01.xml"/> <!-- sic -->
+            <expected validity="invalid"/>
+            <current status="accepted" date="2010-05-05"/>
+        </instanceTest>        
+    </testGroup>
+    
+    <testGroup name="over028" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Simple override test. Test case from Priscilla Walmsley</Title>
+                <Description>Override a simpleType</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over028.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over028a.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-19"/>
+        </schemaTest>
+        <instanceTest name="over028.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, value of simple type is out of range.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over028.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-04-19"/>
+        </instanceTest>
+        <instanceTest name="over028.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, value of simple type is in range.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over028.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-04-19"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="over029" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Interaction of xs:override and xs:import. Test case from Priscilla Walmsley</Title>
+                <Description>The xs:override contains a reference to a type in an imported schema
+                document, which is not imported into the overridden schema document. See
+                Saxon bug 1505 and W3C bug 17574</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over029.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over029.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-06-25"/>
+        </schemaTest>
+        <instanceTest name="over029.n01.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, child elements are in the wrong order.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over029.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2012-06-25"/>
+        </instanceTest>
+        <instanceTest name="over029.v01.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, child elements are in the right order.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Override/over029.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2012-06-25"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="over030" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Override a schema document with top-level annotation</Title>
+                <Description>See W3C bug 20784. Test case supplied by Norm Walsh.</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+        <schemaTest name="over030.xsd">
+            <schemaDocument xlink:href="../saxonData/Override/over030.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2013-01-27"/>
+        </schemaTest>
+        <instanceTest name="over030.v01.xml">
+            <instanceDocument xlink:href="../saxonData/Override/over030.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2013-01-27"/>
+        </instanceTest>
+    </testGroup>
+    
+</testSet>    

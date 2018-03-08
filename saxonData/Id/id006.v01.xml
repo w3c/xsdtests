@@ -1,0 +1,10 @@
+<doc>
+  <node id="aaa 23 bbb">
+    <node idrefs="bbb ccc 29 ggg"/>
+    <node id="ggg 23">
+        <idrefs>aaa 97 ddd</idrefs>
+    </node>
+    <id>ccc ddd</id>
+    <id>12</id>
+  </node>
+</doc>
