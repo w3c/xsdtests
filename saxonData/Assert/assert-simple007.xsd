@@ -2,11 +2,14 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 
    <!-- xs:assert on a simple type restriction; assertion fails due to run-time error -->
+   <!-- 2018-07-23 MHK - assertion updated to prevent it being optimized away under the XPath 
+     "errors and optimization" rules. (exists(xs:date(x)) can be optimized to true without checking
+     the value of x, because xs:date always returns a singleton).
 
   <xs:element name="date">
     <xs:simpleType>
        <xs:restriction base="xs:date">
-         <xs:assertion test="exists(xs:date(concat(string($value), '!!!')))"/>
+         <xs:assertion test="xs:date(concat(string($value), '!!!')) gt xs:date('1900-01-01')"/>
        </xs:restriction>   
     </xs:simpleType>
   </xs:element>
