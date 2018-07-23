@@ -4,7 +4,7 @@
    <!-- xs:assert on a simple type restriction; assertion fails due to run-time error -->
    <!-- 2018-07-23 MHK - assertion updated to prevent it being optimized away under the XPath 
      "errors and optimization" rules. (exists(xs:date(x)) can be optimized to true without checking
-     the value of x, because xs:date always returns a singleton).
+     the value of x, because xs:date always returns a singleton).-->
 
   <xs:element name="date">
     <xs:simpleType>
