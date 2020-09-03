@@ -3481,10 +3481,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reF20">
          <schemaDocument xlink:href="../msData/regex/reF20.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reF20.i">
+      <instanceTest name="reF20.i" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reF20.xml"/>
          <expected validity="invalid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -3497,10 +3498,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reF21">
          <schemaDocument xlink:href="../msData/regex/reF21.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reF21.i">
+      <instanceTest name="reF21.i" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reF21.xml"/>
          <expected validity="invalid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -3513,10 +3515,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reF22">
          <schemaDocument xlink:href="../msData/regex/reF22.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reF22.i">
+      <instanceTest name="reF22.i" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reF22.xml"/>
          <expected validity="invalid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -3529,10 +3532,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reF23">
          <schemaDocument xlink:href="../msData/regex/reF23.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reF23.i">
+      <instanceTest name="reF23.i" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reF23.xml"/>
          <expected validity="invalid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4237,10 +4241,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reG26">
          <schemaDocument xlink:href="../msData/regex/reG26.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reG26.v">
+      <instanceTest name="reG26.v" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reG26.xml"/>
          <expected validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4253,10 +4258,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reG27">
          <schemaDocument xlink:href="../msData/regex/reG27.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reG27.v">
+      <instanceTest name="reG27.v" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reG27.xml"/>
          <expected validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4269,10 +4275,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reG28">
          <schemaDocument xlink:href="../msData/regex/reG28.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reG28.v">
+      <instanceTest name="reG28.v" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reG28.xml"/>
          <expected validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4285,10 +4292,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reG29">
          <schemaDocument xlink:href="../msData/regex/reG29.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reG29.v">
+      <instanceTest name="reG29.v" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reG29.xml"/>
          <expected validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4301,10 +4309,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reG30">
          <schemaDocument xlink:href="../msData/regex/reG30.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reG30.v">
+      <instanceTest name="reG30.v" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reG30.xml"/>
          <expected validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4317,10 +4326,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reG31">
          <schemaDocument xlink:href="../msData/regex/reG31.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reG31.v">
+      <instanceTest name="reG31.v" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reG31.xml"/>
          <expected validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4333,10 +4343,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reG32">
          <schemaDocument xlink:href="../msData/regex/reG32.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reG32.v">
+      <instanceTest name="reG32.v" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reG32.xml"/>
          <expected validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4349,10 +4360,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reG33">
          <schemaDocument xlink:href="../msData/regex/reG33.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reG33.v">
+      <instanceTest name="reG33.v" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reG33.xml"/>
          <expected validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4876,10 +4888,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reH19">
          <schemaDocument xlink:href="../msData/regex/reH19.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reH19.v">
+      <instanceTest name="reH19.v" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reH19.xml"/>
          <expected validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4892,10 +4905,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reH20">
          <schemaDocument xlink:href="../msData/regex/reH20.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reH20.i">
+      <instanceTest name="reH20.i" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reH20.xml"/>
          <expected validity="invalid"/>
          <current date="2006-07-16" status="accepted"/>
@@ -4908,10 +4922,11 @@
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reH21">
          <schemaDocument xlink:href="../msData/regex/reH21.xsd"/>
-         <expected validity="valid"/>
+         <expected version="1.0" validity="invalid"/>
+         <expected version="1.1" validity="valid"/>
          <current date="2006-07-16" status="accepted"/>
       </schemaTest>
-      <instanceTest name="reH21.i">
+      <instanceTest name="reH21.i" version="1.1">
          <instanceDocument xlink:href="../msData/regex/reH21.xml"/>
          <expected validity="invalid"/>
          <current date="2006-07-16" status="accepted"/>
