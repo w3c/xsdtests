@@ -123,4 +123,18 @@
         </schemaTest>
     </testGroup>
     
+    <testGroup name="target007" version="1.1">
+        <annotation>
+            <documentation>
+                <Title>Invalid xs:import - targetNamespace does not match</Title>
+                <Description>Should report an error</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="target007.xsd">
+            <schemaDocument xlink:href="../saxonData/TargetNS/target007.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2018-10-01"/>
+        </schemaTest>                         
+    </testGroup>
+    
 </testSet>    

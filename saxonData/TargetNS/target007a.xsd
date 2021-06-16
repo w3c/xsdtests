@@ -1,0 +1,5 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://missing007/">
+    
+<xs:element name="one"/>
+
+</xs:schema>

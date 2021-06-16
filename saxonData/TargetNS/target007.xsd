@@ -1,0 +1,7 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://target007/top">
+    
+    <!-- target namespace of imported schema must be absent -->
+    
+<xs:import schemaLocation="target007a.xsd"/>
+
+</xs:schema>

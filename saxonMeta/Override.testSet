@@ -1044,5 +1044,21 @@
             <current status="accepted" date="2013-01-27"/>
         </instanceTest>
     </testGroup>
+  
+  <testGroup name="over031" version="1.1">
+    <annotation>
+      <documentation>
+        <Title>Saxon bug 4518, from Octavian Nadolu</Title>
+        <Description>Saxon 9.9 complains "xs:schema element must be top-level</Description>
+      </documentation>
+    </annotation>
+    <documentationReference xlink:href="http://www.w3.org/TR/xmlschema11-1/#override-schema"/>
+    <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-SchemaComposition-Override"/>
+    <schemaTest name="over031.xsd">
+      <schemaDocument xlink:href="../saxonData/Override/over031.xsd"/>
+      <expected validity="valid"/>
+      <current status="accepted" date="2020-04-14"/>
+    </schemaTest>
+  </testGroup>
     
 </testSet>    

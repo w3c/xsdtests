@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="meeting">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="start-time" type="xs:time" />
+                <xs:element name="end-time" type="xs:time" />
+                <xs:element name="room-number" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="calendar">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="meeting" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:override schemaLocation="over031a.xsd">
+        <xs:element name="meeting">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="track-id" type="xs:string" />
+                    <xs:element name="speaker" type="xs:string" />
+                    <xs:element name="room-capacity" type="xs:nonNegativeInteger" />
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+    </xs:override>
+
+</xs:schema>
