@@ -3,11 +3,11 @@
            xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning">
 	
 	<xs:element name="test" type="xs:positiveInteger">
-       <xs:alternative test="@v2 cast as xs:boolean" type="TEST_V2" vc:minVersion="1.1" />
-	   <xs:alternative type="xs:error" vc:minVersion="1.1" />
+       <xs:alternative test="@v2 cast as xs:boolean" type="TEST_V2" vc:minversion="1.0" />
+	   <xs:alternative type="xs:error" vc:minversion="1.0" />
     </xs:element>
 	
-	<xs:complexType name="TEST_V2" vc:minVersion="1.1">
+	<xs:complexType name="TEST_V2" vc:minversion="1.0">
 	  <xs:simpleContent>
 	    <xs:extension base="xs:positiveInteger">		  
 		  <xs:attribute name="v2" type="xs:boolean" />

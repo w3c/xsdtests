@@ -17,7 +17,7 @@
 		</xs:complexType>
   </xs:element>
   <xs:element name="root" 
-    vc:minVersion="1.1"
+    vc:minversion="1.0"
     vc:maxVersion="3.2">
     <!--* declaration suitable for processors
         * supporting versions 1.1 through versions

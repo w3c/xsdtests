@@ -1,4 +1,4 @@
-<?xml version="1.1"?>
+<?xml version="1.0"?>
 <schema xmlns          ="http://www.w3.org/2001/XMLSchema"
         targetNamespace="http://xstest-tns/IBM3_11V01"
         xmlns:v01      ="http://xstest-tns/IBM3_11V01">

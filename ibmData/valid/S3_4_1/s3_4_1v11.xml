@@ -2,7 +2,7 @@
 <root   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="a"
 		xmlns:b="a"
-        xsi:schemaLocation="a s3_4_1v11.xsd" version="1.1">
+        xsi:schemaLocation="a s3_4_1v11.xsd" version="1.0">
 		123abc12133b
 		<element>xk</element>
 		23123124noifew

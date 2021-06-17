@@ -5,7 +5,7 @@
 	<xs:element name="test">
         <xs:simpleType>
            <xs:restriction base="xs:positiveInteger">
-              <xs:assertion test="$value mod 2 = 0" vc:minVersion="1.1" />
+              <xs:assertion test="$value mod 2 = 0" vc:minversion="1.0" />
            </xs:restriction>
         </xs:simpleType>
     </xs:element>
