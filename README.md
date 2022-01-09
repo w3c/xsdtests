@@ -18,7 +18,8 @@ were added to the repository individually.
 
 ## Process
 
-To gain commit access to this repository, please apply to Liam Quin at W3C.
+To gain commit access to this repository, please apply to W3C. 
+Current contact address not known (Jan 2022).
 
 If you have commit access, there is no formal process for agreeing changes to tests,
 but you should respect the fact that the test suite is stable. Some tests are marked
@@ -43,7 +44,7 @@ all the instances against the schema and confirm that the validity reported by
 a schema processor is the same as that recorded in the test metadata.
 
 A schema for the test metadata, with additional documentation, can be found in
-the file `nistMeta/annotatedTSSchema.xsd`.
+the file `common/xsts.xsd`.
 
 The `introspection` test set checks that all the test metadata files are valid
 against the schema for test metadata.

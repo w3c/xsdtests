@@ -1,4 +1,4 @@
-<testSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/" name="ElemDecl" xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd" contributor="SUN">
+<testSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/" name="ElemDecl" xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ ../common/xsts.xsd" contributor="SUN">
 
     <testGroup name="abstract00101m">
         <annotation>

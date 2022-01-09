@@ -4,7 +4,7 @@
 <testSet name="CType"
       xmlns="http://www.w3.org/XML/2004/xml-schema-test-suite/"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ AnnotatedTSSchema.xsd"
+      xsi:schemaLocation="http://www.w3.org/XML/2004/xml-schema-test-suite/ ../common/xsts.xsd"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       contributor="SUN">
 
