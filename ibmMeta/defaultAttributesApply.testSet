@@ -211,7 +211,8 @@
         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-Override"/>
         <ts:schemaTest name="s3_4_2_4ii08s">
             <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii08.xsd"/>
-            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii08b.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii08b.xsd" 
+                               role="overridden"/>
             <ts:expected validity="valid"/>
             <ts:current date="2010-12-01" status="accepted"/>
         </ts:schemaTest>
@@ -249,7 +250,8 @@
         <ts:documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-DefaultAttributeGroup-Override"/>
         <ts:schemaTest name="s3_4_2_4ii10s">
             <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii10.xsd"/>
-            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii10b.xsd"/>
+            <ts:schemaDocument xlink:href="../ibmData/instance_invalid/S3_4_2_4/s3_4_2_4ii10b.xsd"
+                               role="overridden"/>
             <ts:expected validity="valid"/>
             <ts:current date="2010-12-01" status="accepted"/>
         </ts:schemaTest>
