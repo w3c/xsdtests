@@ -783,7 +783,7 @@
   </xsd:element>
 
 
-  <xsd:element name="schemaDocument" type="ts:ref"/>
+  <xsd:element name="schemaDocument" type="ts:schemaDocumentRef"/>
   <xsd:element name="instanceDocument" type="ts:ref"/>
 
 
@@ -853,6 +853,7 @@
 
   <xsd:simpleType name="status">
     <xsd:restriction base="xsd:token">
+      <xsd:enumeration value="submitted"/>
       <xsd:enumeration value="accepted"/>
       <xsd:enumeration value="stable"/>
       <xsd:enumeration value="queried"/>
@@ -1387,6 +1388,37 @@
     <xsd:attribute ref="xlink:type" default="locator"/>
     <xsd:attribute ref="xlink:href"/>
     <xsd:anyAttribute namespace="##other" processContents="lax"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="schemaDocumentRef">
+    <xsd:complexContent>
+      <xsd:extension base="ts:ref">
+        <xsd:attribute name="role" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>
+              <div xmlns="http://www.w3.org/1999/xhtml" >
+                <p>
+                  Describes how the schema document is used. A "principal" schema
+                  document is not referenced from any other; the other roles indicate
+                  that a schema document is referenced from others using xs:import,
+                  xs:include, xs:redefines, or xs:override.
+                </p>
+                <p>This attribute is a late introduction and is not widely used.</p>
+              </div>
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:token">
+              <xsd:enumeration value="principal"/>
+              <xsd:enumeration value="imported"/>
+              <xsd:enumeration value="included"/>
+              <xsd:enumeration value="redefined"/>
+              <xsd:enumeration value="overridden"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
   </xsd:complexType>
 
 
