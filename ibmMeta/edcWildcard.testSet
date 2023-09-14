@@ -30,7 +30,11 @@
             <ts:current date="2011-07-29" status="accepted">
               <ts:annotation>
                     <ts:documentation>
-                        Changed the status to "invalid" in response to bug #12130
+                        Changed the status to "invalid" in response to bug #12130.
+                        Note: (MHK 2023-07-30) The test has a probably unintended feature:
+                        the xsi:schemaLocation in the instance document pairs a namespace URI
+                        "a" with a schema document whose target namespace is actually "b".
+                        It seems this is not an error according to the spec.
                     </ts:documentation>
               </ts:annotation>
             </ts:current>
