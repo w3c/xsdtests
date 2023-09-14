@@ -1598,7 +1598,60 @@
             <expected validity="valid"/>
             <current status="accepted" date="2014-12-05"/>
         </instanceTest>
-     </testGroup>     
+     </testGroup>  
+    
+    <testGroup name="simple086">
+        <annotation>
+            <documentation>
+                <Title>Duration seconds component requires a digit before and after the decimal point</Title>
+                <Description>The BNF for the lexical space in XSD 1.1 (part 2, § 3.3.6.2) suggests that the 
+                    seconds component can start or end with a decimal separator, but this disagrees with 
+                    the regular expressions in the same section. The BNF is believed to be in error.
+                </Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="https://www.w3.org/TR/xmlschema11-2/#duration"/>
+        <schemaTest name="simple086.xsd">
+            <annotation>
+                <documentation>
+                    schema is valid
+                </documentation>
+            </annotation>
+            <schemaDocument xlink:href="../saxonData/Simple/simple086.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2023-09-14"/>
+        </schemaTest>
+        <instanceTest name="simple086.v01.xml">
+            <annotation>
+                <documentation>
+                    Valid; pattern matches the input after whitespace normalization
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple086.v01.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2023-09-14"/>
+        </instanceTest>
+        <instanceTest name="simple086.n01.xml">
+            <annotation>
+                <documentation>
+                    Invalid; trailing "." not allowed
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple086.n01.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2023-09-14"/>
+        </instanceTest>
+        <instanceTest name="simple086.n02.xml">
+            <annotation>
+                <documentation>
+                    Invalid; leading "." not allowed
+                </documentation>
+            </annotation>
+            <instanceDocument xlink:href="../saxonData/Simple/simple086.n02.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2023-09-14"/>
+        </instanceTest>
+    </testGroup>  
                       
 
  
