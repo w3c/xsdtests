@@ -109,6 +109,84 @@
             <current status="accepted" date="2005-06-21"/>
         </instanceTest>
     </testGroup>
+    
+    <testGroup name="test003a">
+        <annotation>
+            <documentation>
+                <Title>A variant of test003 that blocks extension on complex types but not on elements</Title>
+                <Description>Produced by Michael Kay, Saxonica, August 2023, in response to Saxon bug 6153</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="test">
+            <schemaDocument xlink:href="../sunData/combined/003a/test.xsd"/>
+            <expected validity="valid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </schemaTest>
+        <instanceTest name="test.1.v">
+            <instanceDocument xlink:href="../sunData/combined/003a/test.1.v.xml"/>
+            <expected validity="valid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </instanceTest>
+        <instanceTest name="test.2.n">
+            <instanceDocument xlink:href="../sunData/combined/003a/test.2.n.xml"/>
+            <expected validity="invalid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </instanceTest>
+        <instanceTest name="test.3.n">
+            <instanceDocument xlink:href="../sunData/combined/003a/test.3.n.xml"/>
+            <expected validity="invalid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </instanceTest>
+        <instanceTest name="test.4.n">
+            <instanceDocument xlink:href="../sunData/combined/003a/test.4.n.xml"/>
+            <expected validity="invalid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </instanceTest>
+        <instanceTest name="test.5.n">
+            <instanceDocument xlink:href="../sunData/combined/003a/test.5.n.xml"/>
+            <expected validity="invalid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </instanceTest>
+    </testGroup>
+    
+    <testGroup name="test003b">
+        <annotation>
+            <documentation>
+                <Title>A variant of test003 that blocks extension on elements but not on complex types</Title>
+                <Description>Produced by Michael Kay, Saxonica, August 2023, in response to Saxon bug 6153</Description>
+            </documentation>
+        </annotation>
+        <schemaTest name="test">
+            <schemaDocument xlink:href="../sunData/combined/003a/test.xsd"/>
+            <expected validity="valid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </schemaTest>
+        <instanceTest name="test.1.v">
+            <instanceDocument xlink:href="../sunData/combined/003a/test.1.v.xml"/>
+            <expected validity="valid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </instanceTest>
+        <instanceTest name="test.2.n">
+            <instanceDocument xlink:href="../sunData/combined/003a/test.2.n.xml"/>
+            <expected validity="invalid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </instanceTest>
+        <instanceTest name="test.3.n">
+            <instanceDocument xlink:href="../sunData/combined/003a/test.3.n.xml"/>
+            <expected validity="invalid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </instanceTest>
+        <instanceTest name="test.4.n">
+            <instanceDocument xlink:href="../sunData/combined/003a/test.4.n.xml"/>
+            <expected validity="invalid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </instanceTest>
+        <instanceTest name="test.5.n">
+            <instanceDocument xlink:href="../sunData/combined/003a/test.5.n.xml"/>
+            <expected validity="invalid"/>
+            <current status="submitted" date="2023-08-04"/>
+        </instanceTest>
+    </testGroup>
 
     <testGroup name="test004">
         <annotation>
