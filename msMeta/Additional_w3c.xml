@@ -1827,7 +1827,7 @@ invalid, schema restored to validity, instance made invalid</documentation></ann
       <documentationReference xlink:href=""/>
       <schemaTest name="addB132">
          <schemaDocument xlink:href="../msData/additional/test66745_a.xsd"/>
-         <schemaDocument xlink:href="../msData/additional/test66745_b.xsd"/>
+         <schemaDocument xlink:href="../msData/additional/test66745_b.xsd" role="imported"/>
          <expected validity="valid"/>
          <current status="accepted" date="2006-07-16"/>
       </schemaTest>
