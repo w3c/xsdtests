@@ -1770,7 +1770,14 @@ implementations may reasonably differ</documentation>
    </testGroup>
    <testGroup name="schZ012_b">
       <annotation>
-         <documentation>TEST :schema collection and schema location : comparison of file urls to be case insensitive while adding multiple schemas</documentation>
+         <documentation>TEST :schema collection and schema location : 
+            comparison of file urls to be case insensitive while adding multiple schemas.
+            Note: (MHK, 2023-07-31) Saxon passes this test not because it does a case
+            insensitive comparison of URIs, which appears to be what the test author
+            intended, but rather because there is no schema document at the location
+            Schz012_b.xsd, but there are other schema components already loaded for the
+            relevant namespace, and in that situation the schemaLocation can be ignored.
+         </documentation>
       </annotation>
       <documentationReference
          xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#Schemas"/>
