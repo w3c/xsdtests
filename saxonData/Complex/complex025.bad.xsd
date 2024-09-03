@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+   <!-- The type of element root has mixed content, so it cannot be derived by extension
+       from a type with element-only content. See (in 1.1 part 1) section 3.4.6.2 Derivation Valid (Extension)
+       rule 1.4.3.2.2.1 -->
+
+  <xs:complexType name="mixedElement">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="elem"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:element name="root">
+    <xs:complexType mixed="true">
+      <xs:complexContent>
+        <xs:extension base="mixedElement"/>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

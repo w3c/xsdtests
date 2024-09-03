@@ -1099,7 +1099,77 @@
             <expected validity="invalid"/>
             <current status="accepted" date="2011-02-06"/>
         </instanceTest>
-    </testGroup>        
+    </testGroup> 
+    
+    <testGroup name="complex023">
+        <annotation>
+            <documentation>
+                <Title>Derivation by extension; locally element-only</Title>
+                <Description>If the extension is locally element-only then if one type
+                has variety=mixed, then both must have variety=mixed</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="https://stackoverflow.com/questions/78940667"/>
+        <schemaTest name="complex001.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex023.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2024-09-03"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="complex024">
+        <annotation>
+            <documentation>
+                <Title>Derivation by extension; locally element-only</Title>
+                <Description>If the extension is locally element-only then if one type
+                has variety=mixed, then both must have variety=mixed</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="https://stackoverflow.com/questions/78940667"/>
+        <schemaTest name="complex001.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex024.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2024-09-03"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="complex025">
+        <annotation>
+            <documentation>
+                <Title>Derivation by extension; locally empty</Title>
+                <Description>If the extension is locally empty then the {content type}
+                    of the base type is inherited, including the mixed="true" setting,
+                    even if the derived type says mixed="false".</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="https://stackoverflow.com/questions/78940667"/>
+        <schemaTest name="complex001.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex025.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2024-09-03"/>
+        </schemaTest>
+    </testGroup>
+    
+    <testGroup name="complex026">
+        <annotation>
+            <documentation>
+                <Title>Derivation by extension; locally empty</Title>
+                <Description>If the extension is locally empty then the {content type}
+                    of the base type is inherited, including the mixed="true" setting,
+                    even if the derived type says mixed="false".</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/xmlschema-1/#d0e13819"/>
+        <documentationReference xlink:href="https://stackoverflow.com/questions/78940667"/>
+        <schemaTest name="complex001.xsd">
+            <schemaDocument xlink:href="../saxonData/Complex/complex026.bad.xsd"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2024-09-03"/>
+        </schemaTest>
+    </testGroup>
     
 
          

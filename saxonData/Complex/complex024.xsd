@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <!-- Not an error. As a result of (XSD 1.1 part 1) 
+    section 3.4.2.3.3 Mapping Rules for Content Type Property of Complex Content,
+    the {content type} of the derived type is `mixed`, so it behaves as if
+    mixed='true' were explicitly specified on the derived type. -->
+  
+  <!-- Specifically, the mapping rules for {content type} of the derived type are as follows:
+      Rule 1: `effective mixed` is false
+      Rule 2: `explicit content` is empty
+      Rule 3: `effective content` is empty
+      Rule 4: (4.2.2) {Content Type|} is {base type definition}.{content type} which has variety `mixed`.
+      Therefore both complex type components have {variety}=mixed, so there is no conflict.
+      -->
+
+  <xs:complexType name="mixedElement" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="elem"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="mixedElement"/>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
