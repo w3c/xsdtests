@@ -38032,7 +38032,8 @@ testing disabled</documentation>
    </testGroup>
    <testGroup name="reZ003v">
       <annotation>
-         <documentation>TEST :branch : Valid characeter mappings from character sequence \w</documentation>
+         <documentation>TEST :branch : Valid characeter mappings from character sequence \w
+                        Modified by Michael Kay 2024-09-24 to fix GitHub issue #2</documentation>
       </annotation>
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/datatypes.html#regexs"/>
       <schemaTest name="reZ003v">

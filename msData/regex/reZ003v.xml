@@ -1686,8 +1686,8 @@
 <value>&#x2305;</value>
 <value>&#x2306;</value>
 <value>&#x2307;</value>
-<value>&#x2308;</value>
-<value>&#x2309;</value>
+<!--<value>&#x2308;</value>
+<value>&#x2309;</value>--> <!-- See GitHub issue #2 --> 
 <value>&#x2310;</value>
 <value>&#x2311;</value>
 <value>&#x2312;</value>
