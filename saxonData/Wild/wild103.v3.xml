@@ -1,0 +1,17 @@
+<doc xmlns="http://example.com/sample">
+   
+   <!-- valid, duplicate id in skipped content -->
+
+  <note>
+     <id>note1</id>
+    <p>A paragraph in note.</p>
+  </note>
+
+  <wrapper>
+    Any <stuff/> can go here, even a note:
+     <note><id>note1</id><p>Some stuff</p></note>
+  </wrapper>
+
+  
+
+</doc>

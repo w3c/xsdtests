@@ -1,0 +1,20 @@
+<doc xmlns="http://example.com/sample">
+
+  <note>
+    <id>note1</id>
+    <p>A paragraph in note.</p>
+  </note>
+   
+   <note>
+     <id>note2</id>
+    <p>A paragraph in note.</p>
+  </note>
+
+  <wrapper>
+    Any <stuff/> can go here, even a note:
+     <not><id>note3</id><p>Some stuff</p></not>
+  </wrapper>
+
+  
+
+</doc>
