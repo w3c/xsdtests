@@ -1,0 +1,20 @@
+<doc xmlns="http://example.com/sample">
+   
+   <!-- invalid for xs:key, valid for xs:unique, missing id in non-skipped content -->
+
+  <note id='note1'>
+    <p>A paragraph in note.</p>
+  </note>
+  
+  <note>
+    <p>A paragraph in note.</p>
+  </note>
+
+  <wrapper>
+    Any <stuff/> can go here, even a note:
+     <note id="note2"><p>Some stuff</p></note>
+  </wrapper>
+
+  
+
+</doc>

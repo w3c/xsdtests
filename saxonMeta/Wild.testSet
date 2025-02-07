@@ -3129,4 +3129,136 @@
         </instanceTest> 
     </testGroup>
     
+    <testGroup version="1.1" name="wild101">
+        <annotation>
+            <documentation>
+                <Title>Interaction of xs:key with skip validation</Title>
+                <Description>Saxon bug 6682</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#cos-aw-union"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild101.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild101.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </schemaTest>
+        <instanceTest name="wild101.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid keys.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild101.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </instanceTest>
+        <instanceTest name="wild101.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid keys.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild101.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </instanceTest>
+        <instanceTest name="wild101.v3.xml">
+		        <annotation>
+		            <documentation>
+		                Valid keys.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild101.v3.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </instanceTest>
+        <instanceTest name="wild101.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, duplicate keys.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild101.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </instanceTest> 
+        <instanceTest name="wild101.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, missing keys.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild101.n2.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </instanceTest> 
+    </testGroup>
+    
+    <testGroup version="1.1" name="wild102">
+        <annotation>
+            <documentation>
+                <Title>Interaction of xs:unique with skip validation</Title>
+                <Description>Same test cases, different outcome as wild101</Description>
+            </documentation>
+        </annotation>
+        <documentationReference xlink:href="http://www.w3.org/TR/2009/WD-xmlschema11-1-20091203/structures.html#cos-aw-union"/>
+        <documentationReference xlink:href="../common/XSD1_1TestCategories.xml#xsd1_1-Wildcards-NotQName"/>
+        <schemaTest name="wild102.xsd">
+            <schemaDocument xlink:href="../saxonData/Wild/wild102.xsd"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </schemaTest>
+        <instanceTest name="wild101.v1.xml">
+		        <annotation>
+		            <documentation>
+		                Valid keys.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild101.v1.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </instanceTest>
+        <instanceTest name="wild101.v2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid keys.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild101.v2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </instanceTest>
+        <instanceTest name="wild101.v3.xml">
+		        <annotation>
+		            <documentation>
+		                Valid keys.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild101.v3.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </instanceTest>
+        <instanceTest name="wild101.n1.xml">
+		        <annotation>
+		            <documentation>
+		                Invalid, duplicate keys.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild101.n1.xml"/>
+            <expected validity="invalid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </instanceTest> 
+        <instanceTest name="wild101.n2.xml">
+		        <annotation>
+		            <documentation>
+		                Valid, missing keys are OK with xs:unique.
+		            </documentation>
+		        </annotation>
+            <instanceDocument xlink:href="../saxonData/Wild/wild101.n2.xml"/>
+            <expected validity="valid"/>
+            <current status="accepted" date="2025-02-07"/>
+        </instanceTest> 
+    </testGroup>
+    
 </testSet>    
