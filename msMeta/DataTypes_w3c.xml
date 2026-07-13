@@ -16605,7 +16605,7 @@ the schema (or instance) invalid -- see <a xmlns="" href="http://www.w3.org/TR/x
       </schemaTest>
       <instanceTest name="anyURI_a004_1339.i">
          <instanceDocument xlink:href="../msData/datatypes/Facets/anyURI/anyURI_a004.xml"/>
-         <expected validity="invalid"/>
+         <expected validity="valid"/>
          <current bugzilla="http://www.w3.org/Bugs/Public/show_bug.cgi?id=4126" status="queried" date="2010-07-09"/>
          <prior status="accepted" date="2006-07-16"/>
       </instanceTest>
