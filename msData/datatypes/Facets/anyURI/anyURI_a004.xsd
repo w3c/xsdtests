@@ -31,9 +31,9 @@
 
 	<xsd:simpleType name="st">
 		<xsd:restriction base="xsd:anyURI">
-			<xsd:enumeration value="ftp://ftp.is.co.za/rfc/rfc1808.txt"/>
+			<xsd:enumeration value="ftp://127.0.0.1/must%20not%20resolve%20.xyzzy"/>
 			<xsd:enumeration value="gopher://spinaltap.micro.umn.edu/00/Weather/California/Los%20Angeles"/>
-			<xsd:enumeration value="http://www.math.uio.no/faq/compression-faq/part1.html"/>
+			<xsd:enumeration value="http://127.0.0.1/must%20not%20resolve%20.xyzzy"/>
 			<xsd:enumeration value="mailto:mduerst@ifi.unizh.ch"/>
 			<xsd:enumeration value="news:comp.infosystems.www.servers.unix"/>
 			<xsd:enumeration value="telnet://melvyl.ucop.edu/"/>
