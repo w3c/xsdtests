@@ -3210,7 +3210,7 @@ http://www.w3.org/2001/XMLSchema-instance, and form is qualified.</documentation
       </schemaTest>
       <instanceTest name="attP031.i">
          <instanceDocument xlink:href="../msData/attribute/attP031.xml"/>
-         <expected validity="valid" version="1.0"/>
+         <expected validity="invalid" version="1.0"/>
          <current status="accepted" date="2011-10-07"/>
          <prior status="accepted" date="2006-07-16"/>
       </instanceTest>
