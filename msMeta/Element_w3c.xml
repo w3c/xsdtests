@@ -4670,7 +4670,7 @@ restriction.</documentation>
       <documentationReference xlink:href="http://www.w3.org/TR/2004/REC-xmlschema-1-20041028/#cElement_Declarations"/>
       <schemaTest name="elemZ027_c">
          <schemaDocument xlink:href="../msData/element/elemZ027c.xsd"/>
-         <expected validity="invalid"/>
+         <expected validity="valid"/>
          <current bugzilla="http://www.w3.org/Bugs/Public/show_bug.cgi?id=4680" status="queried" date="2007-06-21"/>
 <prior date="2006-07-16" status="accepted"/>
       </schemaTest>
