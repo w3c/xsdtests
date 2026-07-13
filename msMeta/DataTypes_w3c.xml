@@ -28145,7 +28145,7 @@ the schema (or instance) invalid -- see <a xmlns="" href="http://www.w3.org/TR/x
       </schemaTest>
       <instanceTest name="gMonth002_2061.v">
          <instanceDocument xlink:href="../msData/datatypes/gMonth002.xml"/>
-         <expected validity="valid"/>
+         <expected validity="invalid"/>
          <current bugzilla="http://www.w3.org/Bugs/Public/show_bug.cgi?id=6901" status="queried" date="2009-05-13"/>
          <prior status="accepted" date="2006-07-16"/>
       </instanceTest>
@@ -28179,7 +28179,7 @@ the schema (or instance) invalid -- see <a xmlns="" href="http://www.w3.org/TR/x
       </schemaTest>
       <instanceTest name="gMonth004_2063.v">
          <instanceDocument xlink:href="../msData/datatypes/gMonth004.xml"/>
-         <expected validity="valid"/>
+         <expected validity="invalid"/>
          <current bugzilla="http://www.w3.org/Bugs/Public/show_bug.cgi?id=6901" status="queried" date="2009-05-13"/>
 <prior status="accepted" date="2006-07-16"/>
       </instanceTest>
